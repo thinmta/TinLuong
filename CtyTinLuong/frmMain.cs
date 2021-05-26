@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmMain : Form
     {
-      
+      //
         private void QuyenTruyCap()
         {
            // thiếtLậpBanĐầuToolStripMenuItem.Enabled = false;
