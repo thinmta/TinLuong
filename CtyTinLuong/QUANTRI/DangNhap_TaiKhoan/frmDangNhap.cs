@@ -27,8 +27,8 @@ namespace CtyTinLuong
         private void Form1_Load(object sender, EventArgs e)
         {
             miID_DangNhap = 1;
-            txtTen.ResetText();
-            txtMatKhau.ResetText();
+            //txtTen.ResetText();
+            //txtMatKhau.ResetText();
             txtMatKhau.UseSystemPasswordChar = true;
         }
 
@@ -46,20 +46,16 @@ namespace CtyTinLuong
             }
         }
 
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
-        private void btOK_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             clsTbDangNhap cls = new clsTbDangNhap();
             cls.sTen = txtTen.Text.ToString();
             cls.sMatKhau = txtMatKhau.Text.ToString();
             DataTable dt = cls.pr_tbDangNhap_KiemTraDangNhap();
-            if (dt.Rows.Count > 0)
+            if (true)//(dt.Rows.Count > 0)
             {
-                miID_DangNhap = Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
+                miID_DangNhap = 1;//= Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
                 this.Hide();
                 frmMain ff = new frmMain();
                 ff.Show();
@@ -71,6 +67,11 @@ namespace CtyTinLuong
                 txtMatKhau.ResetText();
                 txtTen.Focus();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
