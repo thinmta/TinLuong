@@ -27,9 +27,6 @@ namespace CtyTinLuong
         private void Form1_Load(object sender, EventArgs e)
         {
             miID_DangNhap = 1;
-            //txtTen.ResetText();
-            //txtMatKhau.ResetText();
-            txtMatKhau.UseSystemPasswordChar = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -72,6 +69,11 @@ namespace CtyTinLuong
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = true;
         }
     }
 }
