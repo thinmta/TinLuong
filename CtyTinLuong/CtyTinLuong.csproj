@@ -201,6 +201,12 @@
     <Compile Include="KhoThanhPham\KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.Designer.cs">
       <DependentUpon>KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.cs</DependentUpon>
     </Compile>
+    <Compile Include="MuaHang\MuaHang_frmChiTietMotVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaHang\MuaHang_frmChiTietMotVatTu.Designer.cs">
+      <DependentUpon>MuaHang_frmChiTietMotVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MuaHang\MuaHang_frmCongNo.cs">
       <SubType>Form</SubType>
     </Compile>

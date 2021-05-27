@@ -12,6 +12,7 @@ namespace CtyTinLuong
 {
     public partial class UCMuaHang_ALL : UserControl
     {
+        public static int miID_VTHH;
      
         public static DateTime GetFistDayInMonth(int year, int month)
         {
@@ -146,6 +147,17 @@ namespace CtyTinLuong
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
+            {
+                miID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                MuaHang_frmChiTietMotVatTu ff = new MuaHang_frmChiTietMotVatTu();                
+                ff.Show();
+            }
+            
         }
     }
 }
