@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
+    //thay doi huu 2222222
     public partial class frmChiTietNhapXuatTon_MotVatTu : Form
     {
         public static bool mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = false;

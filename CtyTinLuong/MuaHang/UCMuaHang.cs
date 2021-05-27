@@ -19,7 +19,7 @@ namespace CtyTinLuong
         {
             clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
             cls2.iID_MuaHang = xxiDmuahang;
-            DataTable dt3 = cls2.HienThi_SuaDonHang();
+            DataTable dt3 = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietMuaHang"); // ID của tbChi tiet don hàng
             dt2.Columns.Add("ID_MuaHang");

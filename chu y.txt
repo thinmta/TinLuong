@@ -11,3 +11,8 @@ TrangThai_MuaHang1_BanHang2_VAT3_
 
 vat=3
 con lai =0
+
+
+Huutq-88
+Huutq@88
+C:\Users\HUU\Documents\GitHub\TinLuong

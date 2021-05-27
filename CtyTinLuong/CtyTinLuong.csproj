@@ -237,6 +237,12 @@
     <Compile Include="MuaHang\MuaHang_frmChiTietCongNo_MuaHang.Designer.cs">
       <DependentUpon>MuaHang_frmChiTietCongNo_MuaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="MuaHang\MuaHang_frmChiTietMotVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaHang\MuaHang_frmChiTietMotVatTu.Designer.cs">
+      <DependentUpon>MuaHang_frmChiTietMotVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="NganHang_Quy\frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1412,12 +1418,6 @@
     <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.Designer.cs">
       <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuaHang\UCMuaHang_ALL.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MuaHang\UCMuaHang_ALL.Designer.cs">
-      <DependentUpon>UCMuaHang_ALL.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoNPL\UCNPL_ChiTietDaNhapKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2094,6 +2094,9 @@
     <EmbeddedResource Include="MuaHang\MuaHang_frmChiTietCongNo_MuaHang.resx">
       <DependentUpon>MuaHang_frmChiTietCongNo_MuaHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MuaHang\MuaHang_frmChiTietMotVatTu.resx">
+      <DependentUpon>MuaHang_frmChiTietMotVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\MuaHang_frmCongNo.resx">
       <DependentUpon>MuaHang_frmCongNo.cs</DependentUpon>
     </EmbeddedResource>
@@ -2309,9 +2312,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\NPL_ChiTietLenhSanXuat.resx">
       <DependentUpon>NPL_ChiTietLenhSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MuaHang\UCMuaHang_ALL.resx">
-      <DependentUpon>UCMuaHang_ALL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\UCMuaHang_ChiTietTatCa.resx">
       <DependentUpon>UCMuaHang_ChiTietTatCa.cs</DependentUpon>

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
+  
     public partial class UCMuaHang_ChiTietTatCa : UserControl
     {
+        public static int miID_VTHH;
         public static DateTime GetFistDayInMonth(int year, int month)
         {
             DateTime aDateTime = new DateTime(year, month, 1);
@@ -23,7 +25,7 @@ namespace CtyTinLuong
             DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
             return retDateTime;
         }
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
+        private void HienThi()
         {
 
             DataTable dt2 = new DataTable();
@@ -63,34 +65,7 @@ namespace CtyTinLuong
                     }
                 }
             }
-            //DataTable dt = cls.SelectAll_HienThi_ALL();
-            //dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-            //DataView dv = dt.DefaultView;
-            //DataTable dt22 = dv.ToTable();
-            //dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-            //DataView dv2 = dt22.DefaultView;
-            //dv2.Sort = "NgayChungTu DESC, ID_MuaHang DESC";
-            //DataTable dxxxx = dv2.ToTable();
-            //for (int i = 0; i < dxxxx.Rows.Count; i++)
-            //{
-            //    int iiID_NCC = Convert.ToInt32(dxxxx.Rows[i]["IDNhaCungCap"].ToString());
-            //    clsTbNhaCungCap clscc = new clsTbNhaCungCap();
-            //    clscc.iID_NhaCungCap = iiID_NCC;
-            //    DataTable dtcc = clscc.SelectOne();
-            //    double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-            //    double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
-            //    DataRow _ravi = dt2.NewRow();
-            //    _ravi["ID_VTHH"] = Convert.ToInt16(dxxxx.Rows[i]["ID_VTHH"].ToString());
-            //    _ravi["TenNhaCungCap"] = clscc.sTenNhaCungCap.Value;
-            //    _ravi["MaVT"] = dxxxx.Rows[i]["MaVT"].ToString();
-            //    _ravi["TenVTHH"] = dxxxx.Rows[i]["TenVTHH"].ToString();
-            //    _ravi["SoLuong"] = SoLuong;
-            //    _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
-            //    _ravi["DonViTinh"] = dxxxx.Rows[i]["DonViTinh"].ToString();
-            //    _ravi["DonGia"] = DonGia;
-            //    _ravi["ThanhTien"] = SoLuong * DonGia;
-            //    dt2.Rows.Add(_ravi);
-            //}
+        
             gridControl1.DataSource = dt2;
 
 
@@ -104,29 +79,11 @@ namespace CtyTinLuong
 
         private void UCMuaHang_ChiTietTatCa_Load(object sender, EventArgs e)
         {
-            DateTime ngaydautien, ngaycuoicung;
-            DateTime ngayhomnay = DateTime.Today;
-            int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
-            int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
-            ngaydautien = GetFistDayInMonth(nam, thang);
-            ngaycuoicung = GetLastDayInMonth(nam, thang);
-            dteDenNgay.EditValue = ngaycuoicung;
-            dteTuNgay.EditValue = ngaydautien;
-            HienThi(ngaydautien, ngaycuoicung);
+          
+            HienThi();
         }
 
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            {
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-        }
-
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            UCMuaHang_ChiTietTatCa_Load( sender,  e);
-        }
+    
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
@@ -139,6 +96,16 @@ namespace CtyTinLuong
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             gridControl1.ShowPrintPreview();
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
+            {
+                miID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                MuaHang_frmChiTietMotVatTu ff = new MuaHang_frmChiTietMotVatTu();
+                ff.Show();
+            }
         }
     }
 }

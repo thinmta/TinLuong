@@ -15,7 +15,48 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsMH_tbChiTietMuaHang : clsDBInteractionBase
 	{
-        //pr_MH_tbChiTietMuaHang_Select_Sum_SoLuong_ThanhTien_W_ID_VTHH
+        //pr_MH_tbChiTietMuaHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai
+        public DataTable SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbChiTietMuaHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_MH_tbChiTietMuaHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietMuaHang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietMuaHang));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MuaHang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MuaHang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuong));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@fDonGia", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fDonGia));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChu", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChu));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_MH_tbChiTietMuaHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable Select_Sum_SoLuong_ThanhTien_W_ID_VTHH()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -235,12 +276,12 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public DataTable SelectOne_W_ID_MuaHang()
+        public DataTable SelectAll_W_ID_MuaHang()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbChiTietDonHang_SelectOne_W_ID_MuaHang]";
+            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbChiTietMuaHang_SelectAll_W_ID_MuaHang]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_MH_tbChiTietDonHang_SelectOne_W_ID_MuaHang");
+            DataTable dtToReturn = new DataTable("pr_MH_tbChiTietMuaHang_SelectAll_W_ID_MuaHang");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -250,14 +291,23 @@ namespace CtyTinLuong
             {
                 m_scoMainConnection.Open();
 
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietMuaHang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietMuaHang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MuaHang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MuaHang));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuong));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@fDonGia", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fDonGia));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChu", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChu));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;
             }
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_MH_tbChiTietDonHang_SelectOne_W_ID_MuaHang", ex);
+                throw new Exception("pr_MH_tbChiTietMuaHang_SelectAll_W_ID_MuaHang", ex);
             }
             finally
             {
@@ -268,12 +318,12 @@ namespace CtyTinLuong
             }
         }
        
-        public DataTable HienThi_SuaDonHang()
+        public DataTable SelectAll_W_ID_MuaHang_MaVT_TenVT()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbChiTietDonHang_SuaDonHang]";
+            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbChiTietMuaHang_SelectAll_W_ID_MuaHang_MaVT_TenVT]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_MH_tbChiTietDonHang_SuaDonHang");
+            DataTable dtToReturn = new DataTable("pr_MH_tbChiTietMuaHang_SelectAll_W_ID_MuaHang_MaVT_TenVT");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -291,7 +341,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_MH_tbChiTietDonHang_SuaDonHang", ex);
+                throw new Exception("pr_MH_tbChiTietMuaHang_SelectAll_W_ID_MuaHang_MaVT_TenVT", ex);
             }
             finally
             {
