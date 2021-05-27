@@ -112,7 +112,7 @@ namespace CtyTinLuong
         {
             Load_Lockup();
             gridMaVT.EditValue = UCMuaHang_ChiTietTatCa.miID_VTHH;
-            dteDenNgay.EditValue = null;
+            dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL(UCMuaHang_ChiTietTatCa.miID_VTHH);
         }

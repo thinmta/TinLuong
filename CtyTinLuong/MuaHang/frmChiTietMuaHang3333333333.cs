@@ -238,7 +238,7 @@ namespace CtyTinLuong
 
         }
 
-        private void Luu_Chitiet_BanHang(int xxxID_MuaHang)
+        private void Luu_Chitiet_MuaHang(int xxxID_MuaHang)
         {
 
             if (!KiemTraLuu()) return;
@@ -254,7 +254,7 @@ namespace CtyTinLuong
                 clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
                 DataTable dt2_cu = new DataTable();
                 cls2.iID_MuaHang = xxxID_MuaHang;
-                dt2_cu = cls2.SelectOne_W_ID_MuaHang();
+                dt2_cu = cls2.SelectAll_W_ID_MuaHang();
                 if (dt2_cu.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt2_cu.Rows.Count; i++)
@@ -299,7 +299,7 @@ namespace CtyTinLuong
                 // xoa ton tai=false
                 DataTable dt2_moi11111 = new DataTable();
                 cls2.iID_MuaHang = xxxID_MuaHang;
-                dt2_moi11111 = cls2.SelectOne_W_ID_MuaHang();
+                dt2_moi11111 = cls2.SelectAll_W_ID_MuaHang();
                 dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
                 DataView dvdt2_moi = dt2_moi11111.DefaultView;
                 DataTable dt2_moi = dvdt2_moi.ToTable();
@@ -430,7 +430,7 @@ namespace CtyTinLuong
                             clsxx.daNgayThang = dteNgayChungTu.DateTime;
                             clsxx.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[2]["ID_TaiKhoanKeToanCon"].ToString());
                             if (dv3cccccc.Rows[2]["Co"].ToString() != "")
-                                clsxx.fCo = Convert.ToDouble(dv3cccccc.Rows[12]["Co"].ToString());
+                                clsxx.fCo = Convert.ToDouble(dv3cccccc.Rows[2]["Co"].ToString());
                             else clsxx.fCo = 0;
                             if (dv3cccccc.Rows[2]["No"].ToString() != "")
                                 clsxx.fNo = Convert.ToDouble(dv3cccccc.Rows[2]["No"].ToString());
@@ -540,7 +540,7 @@ namespace CtyTinLuong
                     cls.Update();
                 }
                 // luwu chi tiet mua hang
-                Luu_Chitiet_BanHang(iiiID_MuaHang);
+                Luu_Chitiet_MuaHang(iiiID_MuaHang);
                 Luu_BienDongTaiKhoan(iiiID_MuaHang);
               
             }
@@ -585,7 +585,7 @@ namespace CtyTinLuong
                     cls.Update();
                 }
                 // luwu chi tiet mua hang
-                Luu_Chitiet_BanHang(iiiID_MuaHang);
+                Luu_Chitiet_MuaHang(iiiID_MuaHang);
                 Luu_BienDongTaiKhoan(iiiID_MuaHang);
                 Luu_TbThuChi(iiiID_MuaHang);              
             }
@@ -720,7 +720,7 @@ namespace CtyTinLuong
          
             clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
             cls2.iID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
-            DataTable dt3 = cls2.HienThi_SuaDonHang();           
+            DataTable dt3 = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();           
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietMuaHang"); // ID của tbChi tiet don hàng
             dt2.Columns.Add("ID_MuaHang");
@@ -870,7 +870,7 @@ namespace CtyTinLuong
 
             clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
             cls2.iID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
-            DataTable dt3 = cls2.HienThi_SuaDonHang();
+            DataTable dt3 = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietMuaHang"); // ID của tbChi tiet don hàng
             dt2.Columns.Add("ID_MuaHang");
