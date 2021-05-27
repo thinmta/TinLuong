@@ -614,11 +614,14 @@
             this.btnKhoThanhPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhoThanhPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoThanhPham.ForeColor = System.Drawing.Color.White;
-            this.btnKhoThanhPham.Location = new System.Drawing.Point(589, 305);
+            this.btnKhoThanhPham.Image = ((System.Drawing.Image)(resources.GetObject("btnKhoThanhPham.Image")));
+            this.btnKhoThanhPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhoThanhPham.Location = new System.Drawing.Point(589, 304);
             this.btnKhoThanhPham.Name = "btnKhoThanhPham";
+            this.btnKhoThanhPham.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnKhoThanhPham.Size = new System.Drawing.Size(285, 141);
             this.btnKhoThanhPham.TabIndex = 14;
-            this.btnKhoThanhPham.Text = "Kho thành phẩm";
+            this.btnKhoThanhPham.Text = "                          Kho                              thành phẩm";
             this.btnKhoThanhPham.UseVisualStyleBackColor = false;
             this.btnKhoThanhPham.Click += new System.EventHandler(this.btnKhoThanhPham_Click);
             // 
@@ -629,11 +632,14 @@
             this.btnKhoBanThanhPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhoBanThanhPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoBanThanhPham.ForeColor = System.Drawing.Color.White;
-            this.btnKhoBanThanhPham.Location = new System.Drawing.Point(300, 305);
+            this.btnKhoBanThanhPham.Image = ((System.Drawing.Image)(resources.GetObject("btnKhoBanThanhPham.Image")));
+            this.btnKhoBanThanhPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhoBanThanhPham.Location = new System.Drawing.Point(300, 304);
             this.btnKhoBanThanhPham.Name = "btnKhoBanThanhPham";
+            this.btnKhoBanThanhPham.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnKhoBanThanhPham.Size = new System.Drawing.Size(285, 141);
             this.btnKhoBanThanhPham.TabIndex = 14;
-            this.btnKhoBanThanhPham.Text = "Kho bán thành phẩm";
+            this.btnKhoBanThanhPham.Text = "                      Kho bán                         thành phẩm";
             this.btnKhoBanThanhPham.UseVisualStyleBackColor = false;
             this.btnKhoBanThanhPham.Click += new System.EventHandler(this.btnKhoBanThanhPham_Click);
             // 
@@ -644,11 +650,14 @@
             this.btnKhoNguyenPhuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhoNguyenPhuLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoNguyenPhuLieu.ForeColor = System.Drawing.Color.White;
-            this.btnKhoNguyenPhuLieu.Location = new System.Drawing.Point(11, 305);
+            this.btnKhoNguyenPhuLieu.Image = ((System.Drawing.Image)(resources.GetObject("btnKhoNguyenPhuLieu.Image")));
+            this.btnKhoNguyenPhuLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhoNguyenPhuLieu.Location = new System.Drawing.Point(11, 304);
             this.btnKhoNguyenPhuLieu.Name = "btnKhoNguyenPhuLieu";
+            this.btnKhoNguyenPhuLieu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnKhoNguyenPhuLieu.Size = new System.Drawing.Size(285, 141);
             this.btnKhoNguyenPhuLieu.TabIndex = 14;
-            this.btnKhoNguyenPhuLieu.Text = "Kho nguyên phụ liệu";
+            this.btnKhoNguyenPhuLieu.Text = "                     Kho nguyên                        phụ liệu";
             this.btnKhoNguyenPhuLieu.UseVisualStyleBackColor = false;
             this.btnKhoNguyenPhuLieu.Click += new System.EventHandler(this.btnKhoNguyenPhuLieu_Click);
             // 
@@ -659,11 +668,14 @@
             this.btnQuyNganHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuyNganHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuyNganHang.ForeColor = System.Drawing.Color.White;
+            this.btnQuyNganHang.Image = ((System.Drawing.Image)(resources.GetObject("btnQuyNganHang.Image")));
+            this.btnQuyNganHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuyNganHang.Location = new System.Drawing.Point(589, 159);
             this.btnQuyNganHang.Name = "btnQuyNganHang";
+            this.btnQuyNganHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQuyNganHang.Size = new System.Drawing.Size(285, 141);
             this.btnQuyNganHang.TabIndex = 14;
-            this.btnQuyNganHang.Text = "Qũy, ngân hàng";
+            this.btnQuyNganHang.Text = "                          Qũy,                             ngân hàng";
             this.btnQuyNganHang.UseVisualStyleBackColor = false;
             this.btnQuyNganHang.Click += new System.EventHandler(this.btnQuyNganHang_Click);
             // 
@@ -674,11 +686,14 @@
             this.btnLuongChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuongChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuongChamCong.ForeColor = System.Drawing.Color.White;
+            this.btnLuongChamCong.Image = ((System.Drawing.Image)(resources.GetObject("btnLuongChamCong.Image")));
+            this.btnLuongChamCong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuongChamCong.Location = new System.Drawing.Point(300, 159);
             this.btnLuongChamCong.Name = "btnLuongChamCong";
+            this.btnLuongChamCong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLuongChamCong.Size = new System.Drawing.Size(285, 141);
             this.btnLuongChamCong.TabIndex = 14;
-            this.btnLuongChamCong.Text = "Lương, chấm công";
+            this.btnLuongChamCong.Text = "                         Lương,                           chấm công";
             this.btnLuongChamCong.UseVisualStyleBackColor = false;
             this.btnLuongChamCong.Click += new System.EventHandler(this.btnLuongChamCong_Click);
             // 
@@ -689,11 +704,14 @@
             this.btnQLSX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLSX.ForeColor = System.Drawing.Color.White;
+            this.btnQLSX.Image = ((System.Drawing.Image)(resources.GetObject("btnQLSX.Image")));
+            this.btnQLSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLSX.Location = new System.Drawing.Point(11, 159);
             this.btnQLSX.Name = "btnQLSX";
+            this.btnQLSX.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLSX.Size = new System.Drawing.Size(285, 141);
             this.btnQLSX.TabIndex = 14;
-            this.btnQLSX.Text = "Quản lý sản xuất";
+            this.btnQLSX.Text = "                Quản lý sản xuất";
             this.btnQLSX.UseVisualStyleBackColor = false;
             this.btnQLSX.Click += new System.EventHandler(this.btnQLSX_Click);
             // 
@@ -704,11 +722,14 @@
             this.btnDaiLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDaiLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDaiLy.ForeColor = System.Drawing.Color.White;
+            this.btnDaiLy.Image = ((System.Drawing.Image)(resources.GetObject("btnDaiLy.Image")));
+            this.btnDaiLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDaiLy.Location = new System.Drawing.Point(589, 14);
             this.btnDaiLy.Name = "btnDaiLy";
+            this.btnDaiLy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDaiLy.Size = new System.Drawing.Size(285, 141);
             this.btnDaiLy.TabIndex = 14;
-            this.btnDaiLy.Text = "Đại lý";
+            this.btnDaiLy.Text = "                Đại lý";
             this.btnDaiLy.UseVisualStyleBackColor = false;
             this.btnDaiLy.Click += new System.EventHandler(this.btnDaiLy_Click);
             // 
@@ -719,11 +740,14 @@
             this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBanHang.ForeColor = System.Drawing.Color.White;
+            this.btnBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btnBanHang.Image")));
+            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanHang.Location = new System.Drawing.Point(300, 14);
             this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBanHang.Size = new System.Drawing.Size(285, 141);
             this.btnBanHang.TabIndex = 14;
-            this.btnBanHang.Text = "Bán hàng";
+            this.btnBanHang.Text = "                Bán hàng";
             this.btnBanHang.UseVisualStyleBackColor = false;
             this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
@@ -734,11 +758,14 @@
             this.btnMuaHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMuaHang.ForeColor = System.Drawing.Color.White;
+            this.btnMuaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnMuaHang.Image")));
+            this.btnMuaHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMuaHang.Location = new System.Drawing.Point(11, 14);
             this.btnMuaHang.Name = "btnMuaHang";
+            this.btnMuaHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMuaHang.Size = new System.Drawing.Size(285, 141);
             this.btnMuaHang.TabIndex = 14;
-            this.btnMuaHang.Text = "Mua hàng";
+            this.btnMuaHang.Text = "                Mua hàng";
             this.btnMuaHang.UseVisualStyleBackColor = false;
             this.btnMuaHang.Click += new System.EventHandler(this.btnMuaHang_Click);
             // 
