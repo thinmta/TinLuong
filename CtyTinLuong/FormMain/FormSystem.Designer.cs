@@ -28,61 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSaoLuuCSDL = new System.Windows.Forms.Button();
+            this.btnPhucHoiCSDL = new System.Windows.Forms.Button();
+            this.btnThietLapBanDau = new System.Windows.Forms.Button();
+            this.btnChuyenDLSangNamMoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSaoLuuCSDL
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(431, 210);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSaoLuuCSDL.FlatAppearance.BorderSize = 0;
+            this.btnSaoLuuCSDL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaoLuuCSDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaoLuuCSDL.Location = new System.Drawing.Point(12, 12);
+            this.btnSaoLuuCSDL.Name = "btnSaoLuuCSDL";
+            this.btnSaoLuuCSDL.Size = new System.Drawing.Size(431, 210);
+            this.btnSaoLuuCSDL.TabIndex = 0;
+            this.btnSaoLuuCSDL.Text = "Sao lưu CSDL";
+            this.btnSaoLuuCSDL.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnPhucHoiCSDL
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(449, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(407, 210);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPhucHoiCSDL.FlatAppearance.BorderSize = 0;
+            this.btnPhucHoiCSDL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhucHoiCSDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhucHoiCSDL.Location = new System.Drawing.Point(447, 12);
+            this.btnPhucHoiCSDL.Name = "btnPhucHoiCSDL";
+            this.btnPhucHoiCSDL.Size = new System.Drawing.Size(407, 210);
+            this.btnPhucHoiCSDL.TabIndex = 0;
+            this.btnPhucHoiCSDL.Text = "Phục hồi CSDL";
+            this.btnPhucHoiCSDL.UseVisualStyleBackColor = true;
+            this.btnPhucHoiCSDL.Click += new System.EventHandler(this.btnPhucHoiCSDL_Click);
             // 
-            // button3
+            // btnThietLapBanDau
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(12, 228);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(431, 221);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnThietLapBanDau.FlatAppearance.BorderSize = 0;
+            this.btnThietLapBanDau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThietLapBanDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThietLapBanDau.Location = new System.Drawing.Point(12, 226);
+            this.btnThietLapBanDau.Name = "btnThietLapBanDau";
+            this.btnThietLapBanDau.Size = new System.Drawing.Size(431, 221);
+            this.btnThietLapBanDau.TabIndex = 0;
+            this.btnThietLapBanDau.Text = "Thiết lập ban đầu";
+            this.btnThietLapBanDau.UseVisualStyleBackColor = true;
+            this.btnThietLapBanDau.Click += new System.EventHandler(this.btnThietLapBanDau_Click);
             // 
-            // button4
+            // btnChuyenDLSangNamMoi
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(449, 228);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(407, 221);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnChuyenDLSangNamMoi.FlatAppearance.BorderSize = 0;
+            this.btnChuyenDLSangNamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChuyenDLSangNamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuyenDLSangNamMoi.Location = new System.Drawing.Point(447, 226);
+            this.btnChuyenDLSangNamMoi.Name = "btnChuyenDLSangNamMoi";
+            this.btnChuyenDLSangNamMoi.Size = new System.Drawing.Size(407, 221);
+            this.btnChuyenDLSangNamMoi.TabIndex = 0;
+            this.btnChuyenDLSangNamMoi.Text = "Chuyển dữ liệu sang năm mới";
+            this.btnChuyenDLSangNamMoi.UseVisualStyleBackColor = true;
             // 
             // FormSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 461);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnChuyenDLSangNamMoi);
+            this.Controls.Add(this.btnPhucHoiCSDL);
+            this.Controls.Add(this.btnThietLapBanDau);
+            this.Controls.Add(this.btnSaoLuuCSDL);
             this.Name = "FormSystem";
             this.Text = "        HỆ THỐNG";
             this.ResumeLayout(false);
@@ -91,9 +101,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSaoLuuCSDL;
+        private System.Windows.Forms.Button btnPhucHoiCSDL;
+        private System.Windows.Forms.Button btnThietLapBanDau;
+        private System.Windows.Forms.Button btnChuyenDLSangNamMoi;
     }
 }

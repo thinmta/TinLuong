@@ -13,6 +13,10 @@ namespace CtyTinLuong
 {
     public partial class frmMain : Form
     {
+        public void HideFormMain()
+        {
+            this.Hide();
+        }
       //
         private void QuyenTruyCap()
         {
@@ -45,14 +49,12 @@ namespace CtyTinLuong
                     btnQuyNganHang.Enabled = false;
                 if (cls.bBQuanTri.Value == true)
                 {
-                    stripQuanTri.Enabled = true;
-                    stripHeThong.Enabled = true;
+                    //stripQuanTri.Enabled = true;
                 }
 
                 else
                 {
-                    stripQuanTri.Enabled = false;
-                    stripHeThong.Enabled = false;
+                    //stripQuanTri.Enabled = false;
                 }
                     
             }
@@ -82,47 +84,6 @@ namespace CtyTinLuong
             Application.Exit();
         }
 
-        private void quảnTrịTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyTaiKhoan ff = new CtyTinLuong.frmQuanLyTaiKhoan();
-            ff.Show();
-        }
-
-
-        private void quảnTrịVTHHToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmVatTuHangHoa ff = new frmVatTuHangHoa();
-            ff.Show();
-        }
-
-        private void quảnTrịNhânSựToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmNhanSu ff = new frmNhanSu();
-            ff.Show();
-        }
-
-        private void quảnTrịKháchHầngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmKhachHang ff = new frmKhachHang();
-            ff.Show();
-        }
-
-        private void quảnTrịNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmNhaCungCap ff = new frmNhaCungCap();
-            ff.Show();
-        }
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             QuyenTruyCap();
@@ -145,62 +106,6 @@ namespace CtyTinLuong
             
         }
 
-        private void quảnTrịĐơnVịTínhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyDonViTinh ff = new frmQuanLyDonViTinh();
-            ff.Show();
-        }
-
-
-        private void quảnTrịĐạiLýToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyDaiLy ff = new frmQuanLyDaiLy();
-            ff.Show();
-        }
-
-        private void quảnTrịMáySảnXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyMayMoc ff = new CtyTinLuong.frmQuanLyMayMoc();
-            ff.Show();
-        }
-
-
-        private void quảnTrịĐịnhMứcLươngCôngNhậtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong();
-            ff.Show();
-        }
-
-        private void quảnTrịĐịnhMứcLươngTheoSảnLượngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyDinhMucLuongTheoSanLuong ff = new frmQuanLyDinhMucLuongTheoSanLuong();
-            ff.Show();
-        }
-
-
-        private void quảnTrịHệThốngTàiKhoảnKếToánToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyTaiKhoanKeToan ff = new CtyTinLuong.frmQuanLyTaiKhoanKeToan();
-            ff.Show();
-        }
-
-
-        private void quảnTrịTàiKhoảnGửiNgânHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void vvvvToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void thiếtLậpBanĐầuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii ggg = new frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii();
-            ggg.Show();
-        }
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
@@ -217,23 +122,6 @@ namespace CtyTinLuong
             MessageBox.Show("Đã xong");
         }
 
-        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmDangNhap ff = new frmDangNhap();
-            ff.Show();
-        }
-
-        private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmDoiMatKhau ff = new frmDoiMatKhau();
-            ff.Show();
-        }
-
-        private void tắtChươngTrìnhToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
@@ -345,36 +233,6 @@ namespace CtyTinLuong
             MessageBox.Show("Đã xong");
         }
 
-        private void càiĐặtMặcĐịnhNgườiKýToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
-            ff.Show();
-        }
-
-        private void kếHoạchSảnXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmKeHoachSanXuat ff = new frmKeHoachSanXuat();
-            ff.Show();
-
-        }
-
-        private void insertPhieuSảnXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmImPortPhieuSanXuat_banDau ff = new frmImPortPhieuSanXuat_banDau();
-            ff.Show();
-        }
-
-        private void ngânHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmImPortPhieuNganHang ff = new frmImPortPhieuNganHang();
-            ff.Show();
-        }
-
-        private void nXTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBaoCaoNXT ff = new frmBaoCaoNXT();
-            ff.Show();
-        }
 
 
         //=========================Themes===================
@@ -465,7 +323,8 @@ namespace CtyTinLuong
 
         private void btnKHSX_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormMain.FormKHSX(), sender);
+            frmKeHoachSanXuat ff = new frmKeHoachSanXuat();
+            ff.Show();
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -563,6 +422,31 @@ namespace CtyTinLuong
         private void btnMinimum_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnPhieuSX_Click(object sender, EventArgs e)
+        {
+            frmImPortPhieuSanXuat_banDau ff = new frmImPortPhieuSanXuat_banDau();
+            ff.Show();
+        }
+
+        private void btnNganHang_Click(object sender, EventArgs e)
+        {
+            frmImPortPhieuNganHang ff = new frmImPortPhieuNganHang();
+            ff.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDangNhap ff = new frmDangNhap();
+            ff.Show();
+        }
+
+        private void btnBaoCaoNXT_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoNXT ff = new frmBaoCaoNXT();
+            ff.Show();
         }
     }
 }

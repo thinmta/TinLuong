@@ -35,8 +35,25 @@ namespace CtyTinLuong.FormMain
                 }
             }
 
-            label1.ForeColor = ThemeColor.SecondaryColor;
+            //label1.ForeColor = ThemeColor.SecondaryColor;
 
+        }
+
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau ff = new frmDoiMatKhau();
+            ff.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoatChuongTrinh_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

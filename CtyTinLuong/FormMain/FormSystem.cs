@@ -35,5 +35,16 @@ namespace CtyTinLuong.FormMain
             
             
         }
+
+        private void btnPhucHoiCSDL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThietLapBanDau_Click(object sender, EventArgs e)
+        {
+            frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii ggg = new frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii();
+            ggg.Show();
+        }
     }
 }

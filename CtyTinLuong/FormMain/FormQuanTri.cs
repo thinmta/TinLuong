@@ -35,9 +35,80 @@ namespace CtyTinLuong.FormMain
                 }
             }
 
-            label1.ForeColor = ThemeColor.SecondaryColor;
+            //label1.ForeColor = ThemeColor.SecondaryColor;
 
         }
 
+        private void btnQuanTriTaiKhoan_Click(object sender, EventArgs e)
+        {
+            frmQuanLyTaiKhoan ff = new CtyTinLuong.frmQuanLyTaiKhoan();
+            ff.Show();
+        }
+
+        private void btnQuanTriNhanSu_Click(object sender, EventArgs e)
+        {
+            frmNhanSu ff = new frmNhanSu();
+            ff.Show();
+        }
+
+        private void btnQuanTriKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang ff = new frmKhachHang();
+            ff.Show();
+        }
+
+        private void btnQuanTriNhaCC_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCap ff = new frmNhaCungCap();
+            ff.Show();
+        }
+
+        private void btnQuanTriVTHH_Click(object sender, EventArgs e)
+        {
+            frmVatTuHangHoa ff = new frmVatTuHangHoa();
+            ff.Show();
+        }
+
+        private void btnQuanTriDVT_Click(object sender, EventArgs e)
+        {
+            frmQuanLyDonViTinh ff = new frmQuanLyDonViTinh();
+            ff.Show();
+        }
+
+        private void btnQuanTriDaiLy_Click(object sender, EventArgs e)
+        {
+            frmQuanLyDaiLy ff = new frmQuanLyDaiLy();
+            ff.Show();
+        }
+
+        private void btnQuanTriMaySX_Click(object sender, EventArgs e)
+        {
+            frmQuanLyMayMoc ff = new CtyTinLuong.frmQuanLyMayMoc();
+            ff.Show();
+        }
+
+        private void btnMucLuongCongNhat_Click(object sender, EventArgs e)
+        {
+            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong();
+            ff.Show();
+        }
+
+        private void btnMucLuongSanLuong_Click(object sender, EventArgs e)
+        {
+            frmQuanLyDinhMucLuongTheoSanLuong ff = new frmQuanLyDinhMucLuongTheoSanLuong();
+            ff.Show();
+        }
+
+        private void btnHTTKKeToan_Click(object sender, EventArgs e)
+        {
+            frmQuanLyTaiKhoanKeToan ff = new CtyTinLuong.frmQuanLyTaiKhoanKeToan();
+            ff.Show();
+        }
+
+        private void btnMacDinhNguoiKy_Click(object sender, EventArgs e)
+        {
+            frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
+            ff.Show();
+        }
     }
 }
