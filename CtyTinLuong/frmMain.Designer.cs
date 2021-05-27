@@ -56,7 +56,6 @@
             this.insertPhieuSảnXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngânHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -73,6 +72,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnMinimum = new System.Windows.Forms.Button();
+            this.btnMaximum = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
@@ -310,16 +312,6 @@
             this.simpleButton6.Text = "DELETE_ALL_Chi Hữu Dùng";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
-            // btThooat
-            // 
-            this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(87, 500);
-            this.btThooat.Name = "btThooat";
-            this.btThooat.Size = new System.Drawing.Size(75, 23);
-            this.btThooat.TabIndex = 64;
-            this.btThooat.Text = "Thoát";
-            this.btThooat.Click += new System.EventHandler(this.btThooat_Click);
-            // 
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(207, 570);
@@ -345,7 +337,6 @@
             this.panelMenu.Controls.Add(this.button8);
             this.panelMenu.Controls.Add(this.button7);
             this.panelMenu.Controls.Add(this.button6);
-            this.panelMenu.Controls.Add(this.btThooat);
             this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.btnKHSX);
             this.panelMenu.Controls.Add(this.btnCongCu);
@@ -558,6 +549,9 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.btnMinimum);
+            this.panelTitleBar.Controls.Add(this.btnMaximum);
+            this.panelTitleBar.Controls.Add(this.btnClose);
             this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -565,6 +559,52 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(884, 80);
             this.panelTitleBar.TabIndex = 67;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // btnMinimum
+            // 
+            this.btnMinimum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimum.FlatAppearance.BorderSize = 0;
+            this.btnMinimum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimum.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimum.ForeColor = System.Drawing.Color.White;
+            this.btnMinimum.Location = new System.Drawing.Point(784, 3);
+            this.btnMinimum.Name = "btnMinimum";
+            this.btnMinimum.Size = new System.Drawing.Size(30, 33);
+            this.btnMinimum.TabIndex = 2;
+            this.btnMinimum.Text = "O";
+            this.btnMinimum.UseVisualStyleBackColor = true;
+            this.btnMinimum.Click += new System.EventHandler(this.btnMinimum_Click);
+            // 
+            // btnMaximum
+            // 
+            this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximum.FlatAppearance.BorderSize = 0;
+            this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximum.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximum.ForeColor = System.Drawing.Color.White;
+            this.btnMaximum.Location = new System.Drawing.Point(819, 3);
+            this.btnMaximum.Name = "btnMaximum";
+            this.btnMaximum.Size = new System.Drawing.Size(30, 33);
+            this.btnMaximum.TabIndex = 2;
+            this.btnMaximum.Text = "O";
+            this.btnMaximum.UseVisualStyleBackColor = true;
+            this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(852, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 33);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "O";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCloseChildForm
             // 
@@ -807,7 +847,6 @@
         private System.Windows.Forms.ToolStripMenuItem stripHeThong;
         private System.Windows.Forms.ToolStripMenuItem stripQuanTri;
         private System.Windows.Forms.ToolStripMenuItem quảnTrịTàiKhoảnToolStripMenuItem;
-        private DevExpress.XtraEditors.SimpleButton btThooat;
         private System.Windows.Forms.ToolStripMenuItem saoLưuCSDLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phụcHồiCSDLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnTrịNhânSựToolStripMenuItem;
@@ -859,5 +898,8 @@
         private System.Windows.Forms.Button btnLuongChamCong;
         private System.Windows.Forms.Button btnQLSX;
         private System.Windows.Forms.Button btnDaiLy;
+        private System.Windows.Forms.Button btnMinimum;
+        private System.Windows.Forms.Button btnMaximum;
+        private System.Windows.Forms.Button btnClose;
     }
 }

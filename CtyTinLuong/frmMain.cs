@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -63,7 +64,19 @@ namespace CtyTinLuong
             Color colorStart = SelectThemeColor();
             ThemeColor.PrimaryColor = colorStart;
             btnCloseChildForm.Visible = false;
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        //Drag form:
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -73,12 +86,6 @@ namespace CtyTinLuong
         {
             frmQuanLyTaiKhoan ff = new CtyTinLuong.frmQuanLyTaiKhoan();
             ff.Show();
-        }
-
-
-        private void btThooat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
 
@@ -530,6 +537,32 @@ namespace CtyTinLuong
         {
             frmQuanLyKhoThanhPham ff = new CtyTinLuong.frmQuanLyKhoThanhPham();
             ff.Show();
+        }
+
+
+        //Mousedown event tại paneltitleBar: cho phép kéo di chuyển Form
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximum_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void btnMinimum_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
