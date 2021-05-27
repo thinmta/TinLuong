@@ -25,23 +25,23 @@ namespace CtyTinLuong
                
 
                 if (cls.bBMuaHang.Value == false)
-                    btMuaHang.Enabled = false;
+                    btnMuaHang.Enabled = false;
                 if (cls.bBBanHang.Value == false)
-                    btBanHang.Enabled = false;
+                    btnBanHang.Enabled = false;
                 if (cls.bBNguyenPhuLieu.Value == false)
-                    btNguyenPhuLieu.Enabled = false;
+                    btnKhoNguyenPhuLieu.Enabled = false;
                 if (cls.bBBanThanhPham.Value == false)
-                    btBanThanhPham.Enabled = false;
+                    btnKhoBanThanhPham.Enabled = false;
                 if (cls.bBDaiLy.Value == false)
-                    btDaily.Enabled = false;
+                    btnDaiLy.Enabled = false;
                 if (cls.bBThanhPham.Value == false)
-                    btThanhPham.Enabled = false;
+                    btnKhoThanhPham.Enabled = false;
                 if (cls.bBQuanLySanXuat.Value == false)
-                    btQuanLySanXuat.Enabled = false;
+                    btnQLSX.Enabled = false;
                 if (cls.bBLuongChamCong.Value == false)
-                    btLuongChamCong.Enabled = false;
+                    btnLuongChamCong.Enabled = false;
                 if (cls.bBQuyNganHang.Value == false)
-                    btQuyNganHang.Enabled = false;
+                    btnQuyNganHang.Enabled = false;
                 if (cls.bBQuanTri.Value == true)
                 {
                     stripQuanTri.Enabled = true;
@@ -75,23 +75,12 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            frmMuaHang2222 ff = new frmMuaHang2222();
-            ff.Show();
-        }
 
         private void btThooat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            KhoNPL_frmNPL ff = new KhoNPL_frmNPL();
-            ff.Show();
-                
-        }
 
         private void quảnTrịVTHHToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -155,11 +144,6 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            frmQuanLyKhoDaiLy ff = new frmQuanLyKhoDaiLy();
-            ff.Show();
-        }
 
         private void quảnTrịĐạiLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -173,11 +157,6 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void btQuanLySanXuat_Click(object sender, EventArgs e)
-        {
-            SanXuat_frmQuanLySanXuat ff = new SanXuat_frmQuanLySanXuat();
-            ff.Show();
-        }
 
         private void quảnTrịĐịnhMứcLươngCôngNhậtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -191,24 +170,6 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void simpleButton7_Click(object sender, EventArgs e)
-        {
-            frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
-            ff.Show();
-        }
-
-        private void btKhoThanhPham_Click(object sender, EventArgs e)
-        {
-            frmQuanLyKhoThanhPham ff = new CtyTinLuong.frmQuanLyKhoThanhPham();
-            ff.Show();
-        }
-
-        private void simpleButton9_Click(object sender, EventArgs e)
-        {
-
-            frmQuanLyBanHang ff = new CtyTinLuong.frmQuanLyBanHang();
-            ff.Show();
-        }
 
         private void quảnTrịHệThốngTàiKhoảnKếToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -216,11 +177,6 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            frmQuy_NganHang_Newwwwwwwwwwwwwwwww ff = new CtyTinLuong.frmQuy_NganHang_Newwwwwwwwwwwwwwwww();
-            ff.Show();
-        }
 
         private void quảnTrịTàiKhoảnGửiNgânHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -232,11 +188,6 @@ namespace CtyTinLuong
             
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            frmQuanLyKhoBanThanhPham ff = new CtyTinLuong.frmQuanLyKhoBanThanhPham();
-            ff.Show();
-        }
 
         private void thiếtLậpBanĐầuToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -520,11 +471,65 @@ namespace CtyTinLuong
         private void Reset()
         {
             DisableButton();
-            lblTitle.Text = "HOME";
+            lblTitle.Text = "              HOME";
             panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
             btnCloseChildForm.Visible = false;
+        }
+
+        private void btnMuaHang_Click(object sender, EventArgs e)
+        {
+            frmMuaHang2222 ff = new frmMuaHang2222();
+            ff.Show();
+        }
+
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            frmQuanLyBanHang ff = new CtyTinLuong.frmQuanLyBanHang();
+            ff.Show();
+        }
+
+        private void btnDaiLy_Click(object sender, EventArgs e)
+        {
+            frmQuanLyKhoDaiLy ff = new frmQuanLyKhoDaiLy();
+            ff.Show();
+        }
+
+        private void btnQLSX_Click(object sender, EventArgs e)
+        {
+            SanXuat_frmQuanLySanXuat ff = new SanXuat_frmQuanLySanXuat();
+            ff.Show();
+        }
+
+        private void btnLuongChamCong_Click(object sender, EventArgs e)
+        {
+            frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
+            ff.Show();
+        }
+
+        private void btnQuyNganHang_Click(object sender, EventArgs e)
+        {
+            frmQuy_NganHang_Newwwwwwwwwwwwwwwww ff = new CtyTinLuong.frmQuy_NganHang_Newwwwwwwwwwwwwwwww();
+            ff.Show();
+        }
+
+        private void btnKhoNguyenPhuLieu_Click(object sender, EventArgs e)
+        {
+            KhoNPL_frmNPL ff = new KhoNPL_frmNPL();
+            ff.Show();
+        }
+
+        private void btnKhoBanThanhPham_Click(object sender, EventArgs e)
+        {
+            frmQuanLyKhoBanThanhPham ff = new CtyTinLuong.frmQuanLyKhoBanThanhPham();
+            ff.Show();
+        }
+
+        private void btnKhoThanhPham_Click(object sender, EventArgs e)
+        {
+            frmQuanLyKhoThanhPham ff = new CtyTinLuong.frmQuanLyKhoThanhPham();
+            ff.Show();
         }
     }
 }
