@@ -19,6 +19,7 @@ namespace CtyTinLuong
 
             dt2.Columns.Add("SoChungTu", typeof(string));
             dt2.Columns.Add("DienGiai", typeof(string));
+            dt2.Columns.Add("TenNhaCungCap", typeof(string));
             dt2.Columns.Add("SoLuong", typeof(double));
             dt2.Columns.Add("DonGia", typeof(double));
             dt2.Columns.Add("ThanhTien", typeof(double));
@@ -37,6 +38,10 @@ namespace CtyTinLuong
             {
                 double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
                 double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
+                int IDNhaCungCapxx = Convert.ToInt32(dxxxx.Rows[i]["IDNhaCungCap"].ToString());
+                clsTbNhaCungCap clsncc = new clsTbNhaCungCap();
+                clsncc.iID_NhaCungCap = IDNhaCungCapxx;
+                DataTable dtncc = clsncc.SelectOne();
                 DataRow _ravi = dt2.NewRow();
                
                 _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
@@ -45,6 +50,7 @@ namespace CtyTinLuong
                 _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());               
                 _ravi["DonGia"] = DonGia;
                 _ravi["ThanhTien"] = SoLuong * DonGia;
+                _ravi["TenNhaCungCap"] = clsncc.sTenNhaCungCap.Value;
                 dt2.Rows.Add(_ravi);
             }
             gridControl1.DataSource = dt2;

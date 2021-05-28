@@ -19,13 +19,14 @@ namespace CtyTinLuong
 
             dt2.Columns.Add("SoChungTu", typeof(string));
             dt2.Columns.Add("DienGiai", typeof(string));
+            dt2.Columns.Add("TenKH", typeof(string));
             dt2.Columns.Add("SoLuong", typeof(double));
             dt2.Columns.Add("DonGia", typeof(double));
             dt2.Columns.Add("ThanhTien", typeof(double));
             dt2.Columns.Add("NgayChungTu", typeof(DateTime));
-            clsMH_tbChiTietMuaHang cls = new CtyTinLuong.clsMH_tbChiTietMuaHang();
+            clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
             cls.iID_VTHH = xxID_VTHH;
-            DataTable dt = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai();
+            DataTable dt = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH();
             dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
             DataView dv = dt.DefaultView;
             DataTable dt22 = dv.ToTable();
@@ -37,6 +38,10 @@ namespace CtyTinLuong
             {
                 double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
                 double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
+                int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
+                clsTbKhachHang clsncc = new clsTbKhachHang();
+                clsncc.iID_KhachHang = iID_KhachHangccc;
+                DataTable dtncc = clsncc.SelectOne();
                 DataRow _ravi = dt2.NewRow();
 
                 _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
@@ -45,6 +50,7 @@ namespace CtyTinLuong
                 _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
                 _ravi["DonGia"] = DonGia;
                 _ravi["ThanhTien"] = SoLuong * DonGia;
+                _ravi["TenKH"] = clsncc.sTenKH.Value;
                 dt2.Rows.Add(_ravi);
             }
             gridControl1.DataSource = dt2;
@@ -61,20 +67,20 @@ namespace CtyTinLuong
             dt2.Columns.Add("DonGia", typeof(double));
             dt2.Columns.Add("ThanhTien", typeof(double));
             dt2.Columns.Add("NgayChungTu", typeof(DateTime));
-            dt2.Columns.Add("TenNhaCungCap", typeof(string));
+            dt2.Columns.Add("TenKH", typeof(string));
             //TenNhaCungCap
 
-            clsMH_tbChiTietMuaHang cls = new CtyTinLuong.clsMH_tbChiTietMuaHang();
+            clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
             cls.iID_VTHH = xxID_VTHH;
-            DataTable dxxxx = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai();
+            DataTable dxxxx = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH();
 
             for (int i = 0; i < dxxxx.Rows.Count; i++)
             {
                 double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
                 double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
-                int IDNhaCungCapxx = Convert.ToInt32(dxxxx.Rows[i]["IDNhaCungCap"].ToString());
-                clsTbNhaCungCap clsncc = new clsTbNhaCungCap();
-                clsncc.iID_NhaCungCap = IDNhaCungCapxx;
+                int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
+                clsTbKhachHang clsncc = new clsTbKhachHang();
+                clsncc.iID_KhachHang = iID_KhachHangccc;
                 DataTable dtncc = clsncc.SelectOne();
                 DataRow _ravi = dt2.NewRow();
                 _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
@@ -83,7 +89,7 @@ namespace CtyTinLuong
                 _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
                 _ravi["DonGia"] = DonGia;
                 _ravi["ThanhTien"] = SoLuong * DonGia;
-                _ravi["TenNhaCungCap"] = clsncc.sTenNhaCungCap.Value;
+                _ravi["TenKH"] = clsncc.sTenKH.Value;
                 dt2.Rows.Add(_ravi);
             }
             gridControl1.DataSource = dt2;
@@ -98,9 +104,9 @@ namespace CtyTinLuong
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("TenVTHH", typeof(string));
 
-            clsMH_tbChiTietMuaHang cls = new CtyTinLuong.clsMH_tbChiTietMuaHang();
+            clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtdistin = cls.SelectAll_DISTINCT_W_ID_VTHH();
+            DataTable dtdistin = cls.SelectAll_Distint_ID_VTHH();
             if (dtdistin.Rows.Count > 0)
             {
                 for (int i = 0; i < dtdistin.Rows.Count; i++)
@@ -162,6 +168,28 @@ namespace CtyTinLuong
             }
             catch
             { }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            BanHang_frmChiTietMotVatTu_Load(sender, e);
+        }
+
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                int iiID = Convert.ToInt32(gridMaVT.EditValue.ToString());
+                HienThi(iiID, dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+            }
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
         }
     }
 }
