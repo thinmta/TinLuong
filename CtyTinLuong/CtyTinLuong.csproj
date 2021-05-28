@@ -122,6 +122,12 @@
     <Compile Include="BanHang\BanHang_FrmThamChieuKeHoachSanXuat.Designer.cs">
       <DependentUpon>BanHang_FrmThamChieuKeHoachSanXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\BanHang_frmChiTietMotVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHang_frmChiTietMotVatTu.Designer.cs">
+      <DependentUpon>BanHang_frmChiTietMotVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaiDatBanDau\clsDaiLy_tbChiTiet_TonDauKy - Copy.cs" />
     <Compile Include="CaiDatBanDau\clsDaiLy_tbChiTiet_TonDauKy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy - Copy.cs" />
@@ -1893,6 +1899,9 @@
     <Compile Include="Xtra_XuatKho_DaiLy_NhieuKho.Designer.cs">
       <DependentUpon>Xtra_XuatKho_DaiLy_NhieuKho.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BanHang\BanHang_frmChiTietMotVatTu.resx">
+      <DependentUpon>BanHang_frmChiTietMotVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_FrmThamChieuKeHoachSanXuat.resx">
       <DependentUpon>BanHang_FrmThamChieuKeHoachSanXuat.cs</DependentUpon>
     </EmbeddedResource>
