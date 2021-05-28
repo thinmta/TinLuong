@@ -157,6 +157,30 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain\FormCongCu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain\FormCongCu.Designer.cs">
+      <DependentUpon>FormCongCu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain\FormKHSX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain\FormKHSX.Designer.cs">
+      <DependentUpon>FormKHSX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain\FormQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain\FormQuanTri.Designer.cs">
+      <DependentUpon>FormQuanTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain\FormSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain\FormSystem.Designer.cs">
+      <DependentUpon>FormSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1736,6 +1760,7 @@
     <Compile Include="QuanLySanXuat\UCDinhMucHangNhu.Designer.cs">
       <DependentUpon>UCDinhMucHangNhu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemeColor.cs" />
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1888,6 +1913,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\KhoNPL_CaiDatBanDau.resx">
       <DependentUpon>KhoNPL_CaiDatBanDau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain\FormCongCu.resx">
+      <DependentUpon>FormCongCu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain\FormKHSX.resx">
+      <DependentUpon>FormKHSX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain\FormQuanTri.resx">
+      <DependentUpon>FormQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain\FormSystem.resx">
+      <DependentUpon>FormSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.resx">
       <DependentUpon>DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs</DependentUpon>
