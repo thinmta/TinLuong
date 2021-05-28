@@ -187,6 +187,12 @@
     <Compile Include="FormMain\FormSystem.Designer.cs">
       <DependentUpon>FormSystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\frmPrint_baoGia_BanHanag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\frmPrint_baoGia_BanHanag.Designer.cs">
+      <DependentUpon>frmPrint_baoGia_BanHanag.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1809,6 +1815,12 @@
     <Compile Include="Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.Designer.cs">
       <DependentUpon>Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_baoGia_BanHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_baoGia_BanHang.Designer.cs">
+      <DependentUpon>Xtra_baoGia_BanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_ChiTiet_Phieu_I_C_D.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1907,6 +1919,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\frmCaiDatBangGia_BanHang.resx">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\frmPrint_baoGia_BanHanag.resx">
+      <DependentUpon>frmPrint_baoGia_BanHanag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\frmQuanLyBanHang.resx">
       <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
@@ -2665,6 +2680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.resx">
       <DependentUpon>Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_baoGia_BanHang.resx">
+      <DependentUpon>Xtra_baoGia_BanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_ChiTiet_Phieu_I_C_D.resx">
       <DependentUpon>Xtra_ChiTiet_Phieu_I_C_D.cs</DependentUpon>
