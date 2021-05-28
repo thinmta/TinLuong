@@ -91,15 +91,34 @@ namespace CtyTinLuong
         }
         private void Load_Lockup()
         {
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_VTHH", typeof(int));
+            dt2.Columns.Add("MaVT", typeof(string));
+            dt2.Columns.Add("TenVTHH", typeof(string));
 
+            clsMH_tbChiTietMuaHang cls = new CtyTinLuong.clsMH_tbChiTietMuaHang();
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
+            DataTable dtdistin = cls.SelectAll_DISTINCT_W_ID_VTHH();
+            if(dtdistin.Rows.Count>0)
+            {
+                for (int i = 0; i < dtdistin.Rows.Count; i++)
+                {
 
+                    int iiiID_VTHH = Convert.ToInt32(dtdistin.Rows[i]["ID_VTHH"].ToString());
+                    clsvthhh.iID_VTHH = iiiID_VTHH;
+                    DataTable dt = clsvthhh.SelectOne();
+                    DataRow _ravi = dt2.NewRow();
+                    _ravi["ID_VTHH"] = iiiID_VTHH;
+                    _ravi["MaVT"] = clsvthhh.sMaVT.Value;
+                    _ravi["TenVTHH"] = clsvthhh.sTenVTHH.Value;
+                    dt2.Rows.Add(_ravi);
+                }
+            }
+            
+            
+          
 
-            gridMaVT.Properties.DataSource = newdtvthh;
+            gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";
         }
@@ -127,6 +146,12 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 txtTenVT.Text = cls.sTenVTHH.Value;
                 txtDVT.Text = cls.sDonViTinh.Value;
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    HienThi(iiID, dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                }
+                else 
+                HienThi_ALL(iiID);
             }
             catch
             { }
@@ -141,7 +166,8 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi(UCMuaHang_ChiTietTatCa.miID_VTHH,dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                int iiID = Convert.ToInt32(gridMaVT.EditValue.ToString());
+                HienThi(iiID, dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
             }
         }
 
