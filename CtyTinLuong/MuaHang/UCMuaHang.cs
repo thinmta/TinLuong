@@ -53,18 +53,20 @@ namespace CtyTinLuong
 
             gridControl2.DataSource = dt2;
         }
-        private void HienThi_ALL()
+        private void HienThi_ALL(bool bxxTranLaiHangMua)
         {
 
             clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
             DataTable dt = cls.SelectAll_HienThi_GridConTrol();
-            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            if (bxxTranLaiHangMua == true)
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and CheckTraLaiNhaCungCap = True";
+            else dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and CheckTraLaiNhaCungCap = False";
             DataView dv = dt.DefaultView;
             dv.Sort = " GuiDuLieu ASC, NgayChungTu DESC, ID_MuaHang DESC";
             DataTable dxxxx = dv.ToTable();
             gridControl1.DataSource = dxxxx;
         }
-        private void HienThi()
+        private void HienThi(bool bxxTranLaiHangMua)
         {
             if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
             {
@@ -73,7 +75,10 @@ namespace CtyTinLuong
 
                 clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
                 DataTable dt = cls.SelectAll_HienThi_GridConTrol();
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'";
+                if (bxxTranLaiHangMua == true)
+                    dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'and CheckTraLaiNhaCungCap = True";
+                else dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'and CheckTraLaiNhaCungCap = False";
+              
                 DataView dv = dt.DefaultView;
                 DataTable dt22 = dv.ToTable();
                 dt22.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
@@ -114,7 +119,9 @@ namespace CtyTinLuong
             Load_LockUp();
             dteNgay.EditValue = null;
             dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            if(frmMuaHang2222.mbTraLaiHangMua==true)
+            HienThi_ALL(true);
+            else HienThi_ALL(false);
 
             mbbTheMoi_DonHang = false;
           
@@ -204,8 +211,11 @@ namespace CtyTinLuong
                     clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
                     cls2.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     cls2.Delete_W_ID_MuaHang();
-                    MessageBox.Show("Đã xóa");
-                    HienThi();
+                    MessageBox.Show("Đã xóa");                   
+
+                    if (frmMuaHang2222.mbTraLaiHangMua == true)
+                        HienThi(true);
+                    else HienThi(false);
                 }
             }
         }
@@ -214,7 +224,9 @@ namespace CtyTinLuong
         {
             if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi();
+                if (frmMuaHang2222.mbTraLaiHangMua == true)
+                    HienThi(true);
+                else HienThi(false);
             }
         }
 

@@ -52,6 +52,8 @@
             this.clDienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memoDienGiai = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clSoChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clNCC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.memoNCC = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btLayDuLieu = new DevExpress.XtraEditors.SimpleButton();
@@ -67,8 +69,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.clNCC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memoNCC = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -78,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoDienGiai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -93,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNCC)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -200,9 +200,9 @@
             // 
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(802, 421);
+            this.btThoat.Location = new System.Drawing.Point(836, 421);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(132, 22);
+            this.btThoat.Size = new System.Drawing.Size(98, 22);
             this.btThoat.StyleController = this.dataLayoutControl1;
             this.btThoat.TabIndex = 94;
             this.btThoat.Text = "Thoát";
@@ -368,6 +368,23 @@
             this.clSoChungTu.Visible = true;
             this.clSoChungTu.VisibleIndex = 2;
             // 
+            // clNCC
+            // 
+            this.clNCC.AppearanceCell.Options.UseTextOptions = true;
+            this.clNCC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.clNCC.Caption = "Nhà cung cấp";
+            this.clNCC.ColumnEdit = this.memoNCC;
+            this.clNCC.FieldName = "TenNhaCungCap";
+            this.clNCC.Name = "clNCC";
+            this.clNCC.OptionsColumn.AllowEdit = false;
+            this.clNCC.Visible = true;
+            this.clNCC.VisibleIndex = 3;
+            this.clNCC.Width = 164;
+            // 
+            // memoNCC
+            // 
+            this.memoNCC.Name = "memoNCC";
+            // 
             // dteTuNgay
             // 
             this.dteTuNgay.EditValue = null;
@@ -501,9 +518,9 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btThoat;
-            this.layoutControlItem6.Location = new System.Drawing.Point(800, 419);
+            this.layoutControlItem6.Location = new System.Drawing.Point(834, 419);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(136, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(102, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -512,7 +529,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 419);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(800, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(834, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
@@ -542,23 +559,6 @@
             this.layoutControlItem9.Text = "ĐVT";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(47, 13);
             // 
-            // clNCC
-            // 
-            this.clNCC.AppearanceCell.Options.UseTextOptions = true;
-            this.clNCC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.clNCC.Caption = "Nhà cung cấp";
-            this.clNCC.ColumnEdit = this.memoNCC;
-            this.clNCC.FieldName = "TenNhaCungCap";
-            this.clNCC.Name = "clNCC";
-            this.clNCC.OptionsColumn.AllowEdit = false;
-            this.clNCC.Visible = true;
-            this.clNCC.VisibleIndex = 3;
-            this.clNCC.Width = 164;
-            // 
-            // memoNCC
-            // 
-            this.memoNCC.Name = "memoNCC";
-            // 
             // MuaHang_frmChiTietMotVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,6 +578,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoDienGiai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoNCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -593,7 +594,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNCC)).EndInit();
             this.ResumeLayout(false);
 
         }

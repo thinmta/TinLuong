@@ -12,6 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmMuaHang2222 : Form
     {
+        public static bool mbTraLaiHangMua;
         private void HienThi_Caption()
         {
             clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();
@@ -34,6 +35,7 @@ namespace CtyTinLuong
 
         private void navBarItemMuaHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            mbTraLaiHangMua = false;
             UCMuaHang ucc = new UCMuaHang();
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
@@ -51,21 +53,7 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //UCMuaHang_KhongNhapKho ucc = new UCMuaHang_KhongNhapKho();
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
-        }
-
-        private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //UCMuaHang_ALL ucc = new UCMuaHang_ALL();
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
-        }
+        
 
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -89,6 +77,15 @@ namespace CtyTinLuong
         {
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
             ff.Show();
+        }
+
+        private void navBarItem1_LinkClicked_3(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            mbTraLaiHangMua = true;
+            UCMuaHang ucc = new UCMuaHang();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
         }
     }
 }

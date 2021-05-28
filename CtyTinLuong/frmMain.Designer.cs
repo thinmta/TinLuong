@@ -33,7 +33,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btCongNo = new System.Windows.Forms.Button();
             this.btnBaoCaoNXT = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnNganHang = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.button9);
+            this.panelMenu.Controls.Add(this.btCongNo);
             this.panelMenu.Controls.Add(this.btnBaoCaoNXT);
             this.panelMenu.Controls.Add(this.btnDangXuat);
             this.panelMenu.Controls.Add(this.btnNganHang);
@@ -114,23 +114,23 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 561);
             this.panelMenu.TabIndex = 66;
             // 
-            // button9
+            // btCongNo
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 448);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(200, 46);
-            this.button9.TabIndex = 75;
-            this.button9.Text = "          button9";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
+            this.btCongNo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCongNo.FlatAppearance.BorderSize = 0;
+            this.btCongNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCongNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCongNo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btCongNo.Image = ((System.Drawing.Image)(resources.GetObject("btCongNo.Image")));
+            this.btCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCongNo.Location = new System.Drawing.Point(0, 448);
+            this.btCongNo.Name = "btCongNo";
+            this.btCongNo.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btCongNo.Size = new System.Drawing.Size(200, 46);
+            this.btCongNo.TabIndex = 75;
+            this.btCongNo.Text = "          Công nợ";
+            this.btCongNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCongNo.UseVisualStyleBackColor = true;
             // 
             // btnBaoCaoNXT
             // 
@@ -335,7 +335,7 @@
             this.btnMinimum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimum.FlatAppearance.BorderSize = 0;
             this.btnMinimum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimum.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimum.ForeColor = System.Drawing.Color.White;
             this.btnMinimum.Location = new System.Drawing.Point(784, 3);
             this.btnMinimum.Name = "btnMinimum";
@@ -350,7 +350,7 @@
             this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximum.FlatAppearance.BorderSize = 0;
             this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximum.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximum.ForeColor = System.Drawing.Color.White;
             this.btnMaximum.Location = new System.Drawing.Point(819, 3);
             this.btnMaximum.Name = "btnMaximum";
@@ -365,7 +365,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(852, 3);
             this.btnClose.Name = "btnClose";
@@ -610,7 +610,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btCongNo;
         private System.Windows.Forms.Button btnBaoCaoNXT;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Button btnNganHang;

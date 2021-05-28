@@ -22,7 +22,7 @@ namespace CtyTinLuong
         public static decimal mdcSoTienNo, mdcSoTienCo, mdcSoTienVAT, mdcTongTienCoVAT;
         public static DataTable mdttableDuLieuMuaHang;
         int bienthangthai, iiiID_MuaHang;
-        string sochungtu_tbThuChi;
+       
 
       
         public void HienThiSoChungTu(int bientrangthaikkkkkkkkkk)
@@ -528,6 +528,7 @@ namespace CtyTinLuong
                 cls.bMuaHangNhapKho = checkMuaHangNhapKho.Checked;
                 cls.bTienUSD = checkUSD.Checked;
                 cls.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                cls.bCheckTraLaiNhaCungCap = checkTraLaiHangMua.Checked;
                 if (UCMuaHang.mbbTheMoi_DonHang == true)
                 {
                     cls.Insert();
@@ -551,8 +552,6 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-
-
                 clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
                 cls.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls.sSoChungTu = txtSoChungTu.Text.ToString();
@@ -572,6 +571,7 @@ namespace CtyTinLuong
                 cls.bMuaHangNhapKho = checkMuaHangNhapKho.Checked;
                 cls.bTienUSD = checkUSD.Checked;
                 cls.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                cls.bCheckTraLaiNhaCungCap = checkTraLaiHangMua.Checked;
                 if (UCMuaHang.mbbTheMoi_DonHang == true)
                 {
                     cls.Insert();
@@ -594,6 +594,9 @@ namespace CtyTinLuong
         private void HienThi_themMoi()
         {
             checkBaoVe_LaiXe.Checked = false;
+            if (frmMuaHang2222.mbTraLaiHangMua == true)
+                checkTraLaiHangMua.Checked = true;
+            else checkTraLaiHangMua.Checked = false;
             gridNguoiLap.EditValue = 12;
             //btBaoVe.Enabled = false;
             //btLaiXe.Enabled = false;
@@ -702,7 +705,8 @@ namespace CtyTinLuong
             else
                 txtNguoiGiaoHang.Text = cls.sNguoiGiaoHang.Value.ToString();
 
-            if (cls.bGuiDuLieu.Value == true & UCMuaHang.mbCopY==false)
+            checkTraLaiHangMua.Checked = cls.bCheckTraLaiNhaCungCap.Value;           
+            if (cls.bGuiDuLieu.Value == true & UCMuaHang.mbCopY == false)
             {
                 btLuu_Copy.Enabled = false;
                 btLuu_Dong.Enabled = false;
@@ -806,6 +810,9 @@ namespace CtyTinLuong
         }
         private void HienThi_Copy()
         {
+            if (frmMuaHang2222.mbTraLaiHangMua == true)
+                checkTraLaiHangMua.Checked = true;
+            else checkTraLaiHangMua.Checked = false;
             clsMH_tbMuaHang cls = new CtyTinLuong.clsMH_tbMuaHang();
             cls.iID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
             DataTable dt = cls.SelectOne();
@@ -838,8 +845,7 @@ namespace CtyTinLuong
             txtSoHoaDon.Text = cls.sSoHoaDon.Value.ToString();
             dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
             checkMuaHangNhapKho.Checked = cls.bMuaHangNhapKho.Value;
-            gridNguoiLap.EditValue = cls.iID_NguoiMua.Value;
-            //gridNCC.EditValue = cls.iIDNhaCungCap.Value;
+            gridNguoiLap.EditValue = cls.iID_NguoiMua.Value;           
             txtDienGiai.Text = cls.sDienGiai.Value.ToString();
             txtTongTienHangChuaVAT.Text = cls.fTongTienHangChuaVAT.Value.ToString();
             txtTongTienHangCoVAT.Text = cls.fTongTienHangCoVAT.Value.ToString();
@@ -850,23 +856,7 @@ namespace CtyTinLuong
             if (dt.Rows[0]["NguoiGiaoHang"].ToString() == "")
                 txtNguoiGiaoHang.Text = "";
             else
-                txtNguoiGiaoHang.Text = cls.sNguoiGiaoHang.Value.ToString();
-
-            //if (cls.bGuiDuLieu.Value == true & UCMuaHang.mbCopY == false)
-            //{
-            //    btLuu_Copy.Enabled = false;
-            //    btLuu_Dong.Enabled = false;
-            //    btLuu_Gui_Copy.Enabled = false;
-            //    btLuu_Gui_Dong.Enabled = false;
-
-            //}
-            //else
-            //{
-            //    btLuu_Copy.Enabled = true;
-            //    btLuu_Dong.Enabled = true;
-            //    btLuu_Gui_Copy.Enabled = true;
-            //    btLuu_Gui_Dong.Enabled = true;
-            //}
+                txtNguoiGiaoHang.Text = cls.sNguoiGiaoHang.Value.ToString();                      
 
             clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
             cls2.iID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
