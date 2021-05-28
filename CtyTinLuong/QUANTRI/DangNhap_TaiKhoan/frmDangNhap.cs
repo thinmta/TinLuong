@@ -52,7 +52,7 @@ namespace CtyTinLuong
             DataTable dt = cls.pr_tbDangNhap_KiemTraDangNhap();
             if (true)//(dt.Rows.Count > 0)
             {
-                miID_DangNhap = 1;//= Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
+                miID_DangNhap = Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
                 this.Hide();
                 frmMain ff = new frmMain();
                 ff.Show();

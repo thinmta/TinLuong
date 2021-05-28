@@ -152,6 +152,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
+            this.checkTraLaiHangMua = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
@@ -1427,11 +1428,22 @@
             this.checkBaoVe_LaiXe.UseVisualStyleBackColor = true;
             this.checkBaoVe_LaiXe.CheckedChanged += new System.EventHandler(this.checkBaoVe_LaiXe_CheckedChanged);
             // 
+            // checkTraLaiHangMua
+            // 
+            this.checkTraLaiHangMua.AutoSize = true;
+            this.checkTraLaiHangMua.Location = new System.Drawing.Point(129, 678);
+            this.checkTraLaiHangMua.Name = "checkTraLaiHangMua";
+            this.checkTraLaiHangMua.Size = new System.Drawing.Size(133, 17);
+            this.checkTraLaiHangMua.TabIndex = 90;
+            this.checkTraLaiHangMua.Text = "checkTraLaiHangMua";
+            this.checkTraLaiHangMua.UseVisualStyleBackColor = true;
+            // 
             // frmChiTietMuaHang3333333333
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 711);
+            this.Controls.Add(this.checkTraLaiHangMua);
             this.Controls.Add(this.checkBaoVe_LaiXe);
             this.Controls.Add(this.txtsochungtu_tbThuChi);
             this.Controls.Add(this.groupBox1);
@@ -1620,5 +1632,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private System.Windows.Forms.CheckBox checkBaoVe_LaiXe;
+        private System.Windows.Forms.CheckBox checkTraLaiHangMua;
     }
 }
