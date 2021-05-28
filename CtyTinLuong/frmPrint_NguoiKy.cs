@@ -297,12 +297,5 @@ namespace CtyTinLuong
            
         }
 
-        private void btDongY_Click(object sender, EventArgs e)
-        {
-           
-           
-           
-           
-        }
     }
 }
