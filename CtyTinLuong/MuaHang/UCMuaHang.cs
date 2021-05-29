@@ -190,14 +190,13 @@ namespace CtyTinLuong
 
         private void btXoa_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();
+            clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();           
             cls1.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
             DataTable dt1 = cls1.SelectOne();
-            if (cls1.bGuiDuLieu.Value==true)
+            if (cls1.bTrangThaiNhapKho.Value == true)
             {
-                MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
+                MessageBox.Show("Đã nhập kho, không thể xoá");
                 return;
-
             }
             else
             {
@@ -205,19 +204,19 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
-
                     cls1.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     cls1.Delete();
                     clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
                     cls2.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     cls2.Delete_W_ID_MuaHang();
-                    MessageBox.Show("Đã xóa");                   
-
+                    MessageBox.Show("Đã xóa");
                     if (frmMuaHang2222.mbTraLaiHangMua == true)
                         HienThi(true);
                     else HienThi(false);
                 }
             }
+                
+
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

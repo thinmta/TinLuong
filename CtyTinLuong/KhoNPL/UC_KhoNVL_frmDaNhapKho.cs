@@ -58,17 +58,6 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThi2222()
-        {
-            clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
-        }
-        
       
         public UC_KhoNVL_frmDaNhapKho()
         {

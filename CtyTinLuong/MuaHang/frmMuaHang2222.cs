@@ -57,10 +57,7 @@ namespace CtyTinLuong
 
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCMuaHang_ChiTietTatCa ucc = new UCMuaHang_ChiTietTatCa();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            
         }
 
         private void frmMuaHang2222_Load(object sender, EventArgs e)
@@ -83,6 +80,14 @@ namespace CtyTinLuong
         {
             mbTraLaiHangMua = true;
             UCMuaHang ucc = new UCMuaHang();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+        }
+
+        private void navChiTiet_ALL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UCMuaHang_ChiTietTatCa ucc = new UCMuaHang_ChiTietTatCa();
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
