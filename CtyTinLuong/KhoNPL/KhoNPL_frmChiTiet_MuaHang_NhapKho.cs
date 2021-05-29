@@ -59,6 +59,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaNhapKho = true;
                 cls1.bBool_TonDauKy = false;
+                cls1.bCheck_NhapKho_Khac = false;
                 cls1.Insert();
                 // insert tbChiTietNhapKho
                 string shienthi = "1";

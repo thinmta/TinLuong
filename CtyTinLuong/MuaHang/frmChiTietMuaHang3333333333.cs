@@ -15,12 +15,12 @@ namespace CtyTinLuong
     public partial class frmChiTietMuaHang3333333333 : Form
     {        
        
-        public static bool bPrintMuaHangNhapKho;
+        public static bool mbPrint, mbTraLaiHangMua;
         public static int miiID_nguoiLap;
         public static DateTime mdangaythang;
         public static string mssochungtu, mssohoadon, msNguoiGiaoHang, msNguoiMuaHang, msTKNo, msTKCo, msTKVAT;
         public static decimal mdcSoTienNo, mdcSoTienCo, mdcSoTienVAT, mdcTongTienCoVAT;
-        public static DataTable mdttableDuLieuMuaHang;
+        public static DataTable mdtPrint;
         int bienthangthai, iiiID_MuaHang;
        
 
@@ -1071,7 +1071,7 @@ namespace CtyTinLuong
         }
         private void frmChiTietMuaHang3333333333_Load(object sender, EventArgs e)
         {
-            bPrintMuaHangNhapKho = false;            
+                 
             txtTienVAT.Text = "0";
             
             Load_LockUp();
@@ -1250,11 +1250,30 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
                 txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
-                double tongtienchuaVAT, tienvat;
+                double tongtienchuaVAT, tienVAT;
                 tongtienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
-                tienvat = Convert.ToDouble(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
-                
+                tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
+                //double tongtienCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+              
+                //if (tienVAT == 0)
+                //{
+                //    gridView8.SetRowCellValue(0, clNo, tongtienCoVAT);
+                //    gridView8.SetRowCellValue(0, clCo, 0);
+                //    gridView8.SetRowCellValue(1, clNo, 0);
+                //    gridView8.SetRowCellValue(1, clCo, tongtienCoVAT);
+                //}
+                //else
+                //{
+                //    gridView8.SetRowCellValue(0, clNo, tongtienchuaVAT);
+                //    gridView8.SetRowCellValue(0, clCo, 0);
+
+                //    gridView8.SetRowCellValue(1, clNo, tienVAT);
+                //    gridView8.SetRowCellValue(1, clCo, 0);
+
+                //    gridView8.SetRowCellValue(2, clNo, 0);
+                //    gridView8.SetRowCellValue(2, clCo, tongtienCoVAT);
+                //}
             }
             catch
             {
@@ -1313,6 +1332,28 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
                 txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
+
+               // double tongtienCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+               // double tongtienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+               // double tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+               // if(tienVAT==0)
+               // {
+               //     gridView8.SetRowCellValue(0, clNo, 0);
+               //     gridView8.SetRowCellValue(0, clCo, tongtienCoVAT);
+               //     gridView8.SetRowCellValue(1, clNo, tongtienCoVAT);
+               //     gridView8.SetRowCellValue(1, clCo, 0);
+               // }
+               //else
+               // {
+               //     gridView8.SetRowCellValue(0, clNo, 0);
+               //     gridView8.SetRowCellValue(0, clCo, tongtienCoVAT);
+
+               //     gridView8.SetRowCellValue(1, clNo, tienVAT);
+               //     gridView8.SetRowCellValue(1, clCo, 0);
+
+               //     gridView8.SetRowCellValue(2, clNo, 0);
+               //     gridView8.SetRowCellValue(2, clCo, tongtienCoVAT);
+               // }
             }
             catch
             {
@@ -1397,55 +1438,60 @@ namespace CtyTinLuong
                
                 dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
                 DataView dv = dttttt2.DefaultView;
-                mdttableDuLieuMuaHang = dv.ToTable();
-                bPrintMuaHangNhapKho = true;
-                miiID_nguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                mdangaythang = dteNgayChungTu.DateTime;
-                mssochungtu = txtSoChungTu.Text.ToString();
-                mssohoadon = txtSoHoaDon.Text.ToString();
-                if(txtNguoiGiaoHang.Text.ToString()!="")
-                    msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
-                else msNguoiGiaoHang = txtTenNhaCungCap.Text.ToString();
-                msNguoiMuaHang = txtNguoiMuaHang.Text.ToString();
-
-                string shienthixxx = "1";
-                DataTable dtttttcccc2 = (DataTable)gridControl2.DataSource;
-                dtttttcccc2.DefaultView.RowFilter = "HienThi=" + shienthixxx + "";
-                DataView dvccc222 = dtttttcccc2.DefaultView;
-                DataTable dv3cccccc = dvccc222.ToTable();
-                if (dv3cccccc.Rows.Count > 0)
+                mdtPrint = dv.ToTable();
+                if(mdtPrint.Rows.Count>0)
                 {
-                    clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                    cls.iID_TaiKhoanKeToanCon =Convert.ToInt32( dv3cccccc.Rows[0]["SoTaiKhoanCon"].ToString());
-                    DataTable dt1 = cls.SelectOne();
-                    msTKCo = dt1.Rows[0]["SoTaiKhoanCon"].ToString();
+                    mbTraLaiHangMua = checkTraLaiHangMua.Checked;
+                    mbPrint = true;
+                    miiID_nguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    mdangaythang = dteNgayChungTu.DateTime;
+                    mssochungtu = txtSoChungTu.Text.ToString();
+                    mssohoadon = txtSoHoaDon.Text.ToString();
+                    if (txtNguoiGiaoHang.Text.ToString() != "")
+                        msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                    else msNguoiGiaoHang = txtTenNhaCungCap.Text.ToString();
+                    msNguoiMuaHang = txtNguoiMuaHang.Text.ToString();
 
-                    cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[1]["SoTaiKhoanCon"].ToString());
-                    DataTable dt2 = cls.SelectOne();
-                    msTKNo = dt2.Rows[0]["SoTaiKhoanCon"].ToString();
-                    if (dv3cccccc.Rows.Count == 3)
+                    string shienthixxx = "1";
+                    DataTable dtttttcccc2 = (DataTable)gridControl2.DataSource;
+                    dtttttcccc2.DefaultView.RowFilter = "HienThi=" + shienthixxx + "";
+                    DataView dvccc222 = dtttttcccc2.DefaultView;
+                    DataTable dv3cccccc = dvccc222.ToTable();
+                    if (dv3cccccc.Rows.Count > 0)
                     {
-                        cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[2]["SoTaiKhoanCon"].ToString());
-                        DataTable dt3 = cls.SelectOne();
-                        msTKVAT = dt3.Rows[0]["SoTaiKhoanCon"].ToString();
+                        clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+                        cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[0]["SoTaiKhoanCon"].ToString());
+                        DataTable dt1 = cls.SelectOne();
+                        msTKCo = dt1.Rows[0]["SoTaiKhoanCon"].ToString();
+
+                        cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[1]["SoTaiKhoanCon"].ToString());
+                        DataTable dt2 = cls.SelectOne();
+                        msTKNo = dt2.Rows[0]["SoTaiKhoanCon"].ToString();
+                        if (dv3cccccc.Rows.Count == 3)
+                        {
+                            cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[2]["SoTaiKhoanCon"].ToString());
+                            DataTable dt3 = cls.SelectOne();
+                            msTKVAT = dt3.Rows[0]["SoTaiKhoanCon"].ToString();
+                        }
+                        else msTKVAT = "";
+                        mdcSoTienNo = Convert.ToDecimal(txtTongTienHangChuaVAT.Text.ToString());
+                        mdcSoTienCo = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
                     }
-                    else msTKVAT = "";
-                    mdcSoTienNo = Convert.ToDecimal(txtTongTienHangChuaVAT.Text.ToString());
-                    mdcSoTienCo = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
+                    else
+                    {
+                        msTKCo = "";
+                        msTKNo = "";
+                        msTKVAT = "";
+                        mdcSoTienNo = 0;
+                        mdcSoTienCo = 0;
+                    }
+                    mdcSoTienVAT = Convert.ToDecimal(txtTienVAT.Text.ToString());
+                    mdcTongTienCoVAT = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
+
+                    frmPrintMuaHang ff = new frmPrintMuaHang();
+                    ff.Show();
                 }
-                else
-                {
-                    msTKCo = "";
-                    msTKNo = "";                    
-                    msTKVAT = "";
-                    mdcSoTienNo = 0;
-                    mdcSoTienCo = 0;
-                }
-                mdcSoTienVAT = Convert.ToDecimal(txtTienVAT.Text.ToString());
-                mdcTongTienCoVAT = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
-       
-                frmPrintMuaHang ff = new frmPrintMuaHang();               
-                ff.Show();
+                
             }
             
         
@@ -1582,7 +1628,27 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTienVAT.Text);
                 txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
+                //double tongtienCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                //double tongtienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                //double tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                //if (tienVAT == 0)
+                //{
+                //    gridView8.SetRowCellValue(0, clNo, tongtienCoVAT);
+                //    gridView8.SetRowCellValue(0, clCo, 0);
+                //    gridView8.SetRowCellValue(1, clNo, 0);
+                //    gridView8.SetRowCellValue(1, clCo, tongtienCoVAT);
+                //}
+                //else
+                //{
+                //    gridView8.SetRowCellValue(0, clNo, tongtienchuaVAT);
+                //    gridView8.SetRowCellValue(0, clCo, 0);
 
+                //    gridView8.SetRowCellValue(1, clNo, tienVAT);
+                //    gridView8.SetRowCellValue(1, clCo, 0);
+
+                //    gridView8.SetRowCellValue(2, clNo, 0);
+                //    gridView8.SetRowCellValue(2, clCo, tongtienCoVAT);
+                //}
             }
             catch
             {

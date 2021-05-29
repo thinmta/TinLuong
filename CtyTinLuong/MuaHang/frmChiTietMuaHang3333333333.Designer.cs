@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -119,8 +119,8 @@
             this.ID_ChiTietBienDongTaiKhoan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_ChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_TaiKhoanKeToanCon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Co = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.No = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clCo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TiGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DaGhiSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -271,9 +271,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -1037,8 +1037,8 @@
             this.ID_ChiTietBienDongTaiKhoan,
             this.ID_ChungTu,
             this.ID_TaiKhoanKeToanCon,
-            this.Co,
-            this.No,
+            this.clCo,
+            this.clNo,
             this.TiGia,
             this.DaGhiSo,
             this.gridColumn11,
@@ -1086,42 +1086,42 @@
             this.ID_TaiKhoanKeToanCon.OptionsColumn.FixedWidth = true;
             this.ID_TaiKhoanKeToanCon.Width = 80;
             // 
-            // Co
+            // clCo
             // 
-            this.Co.AppearanceCell.Options.UseTextOptions = true;
-            this.Co.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.Co.Caption = "Có";
-            this.Co.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.Co.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Co.FieldName = "Co";
-            this.Co.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.Co.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Co.Name = "Co";
-            this.Co.OptionsColumn.FixedWidth = true;
-            this.Co.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.clCo.AppearanceCell.Options.UseTextOptions = true;
+            this.clCo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.clCo.Caption = "Có";
+            this.clCo.DisplayFormat.FormatString = "{0:#,##0.00}";
+            this.clCo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCo.FieldName = "Co";
+            this.clCo.GroupFormat.FormatString = "{0:#,##0.00}";
+            this.clCo.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCo.Name = "clCo";
+            this.clCo.OptionsColumn.FixedWidth = true;
+            this.clCo.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Co", "{0:#,##0.00}")});
-            this.Co.Visible = true;
-            this.Co.VisibleIndex = 4;
-            this.Co.Width = 150;
+            this.clCo.Visible = true;
+            this.clCo.VisibleIndex = 4;
+            this.clCo.Width = 150;
             // 
-            // No
+            // clNo
             // 
-            this.No.AppearanceCell.Options.UseTextOptions = true;
-            this.No.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.No.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.No.Caption = "Nợ";
-            this.No.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.No.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.No.FieldName = "No";
-            this.No.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.No.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.No.Name = "No";
-            this.No.OptionsColumn.FixedWidth = true;
-            this.No.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.clNo.AppearanceCell.Options.UseTextOptions = true;
+            this.clNo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.clNo.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clNo.Caption = "Nợ";
+            this.clNo.DisplayFormat.FormatString = "{0:#,##0.00}";
+            this.clNo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNo.FieldName = "No";
+            this.clNo.GroupFormat.FormatString = "{0:#,##0.00}";
+            this.clNo.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNo.Name = "clNo";
+            this.clNo.OptionsColumn.FixedWidth = true;
+            this.clNo.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "No", "{0:#,##0.00}")});
-            this.No.Visible = true;
-            this.No.VisibleIndex = 3;
-            this.No.Width = 150;
+            this.clNo.Visible = true;
+            this.clNo.VisibleIndex = 3;
+            this.clNo.Width = 150;
             // 
             // TiGia
             // 
@@ -1173,9 +1173,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1570,8 +1570,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietBienDongTaiKhoan;
         private DevExpress.XtraGrid.Columns.GridColumn ID_ChungTu;
         private DevExpress.XtraGrid.Columns.GridColumn ID_TaiKhoanKeToanCon;
-        private DevExpress.XtraGrid.Columns.GridColumn Co;
-        private DevExpress.XtraGrid.Columns.GridColumn No;
+        private DevExpress.XtraGrid.Columns.GridColumn clCo;
+        private DevExpress.XtraGrid.Columns.GridColumn clNo;
         private DevExpress.XtraGrid.Columns.GridColumn TiGia;
         private DevExpress.XtraGrid.Columns.GridColumn DaGhiSo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;

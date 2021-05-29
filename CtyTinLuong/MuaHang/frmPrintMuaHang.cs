@@ -16,10 +16,9 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
-       
-        private void frmPrintMuaHang_Load(object sender, EventArgs e)
+       private void PrintMuaHang(DataTable dt3)
         {
-            XtraMuaHang xtr111 = new XtraMuaHang();            
+            XtraMuaHang xtr111 = new XtraMuaHang();
             DataTable mdt_ChiTietNhapKho = new DataTable();
             mdt_ChiTietNhapKho.Columns.Add("STT");
             mdt_ChiTietNhapKho.Columns.Add("SoLuong", typeof(double));
@@ -28,12 +27,12 @@ namespace CtyTinLuong
             mdt_ChiTietNhapKho.Columns.Add("TenVTHH");
             mdt_ChiTietNhapKho.Columns.Add("DonViTinh");
             mdt_ChiTietNhapKho.Columns.Add("ThanhTien", typeof(double));
-            DataTable dt3 = frmChiTietMuaHang3333333333.mdttableDuLieuMuaHang;
+            
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbChiTietMuaHang.Clone();
             ds.tbChiTietMuaHang.Clear();
-            for (int i = 0; i < dt3.Rows.Count; i++)      
-            {              
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
                 DataRow _ravi = ds.tbChiTietMuaHang.NewRow();
                 _ravi["STT"] = (i + 1).ToString();
                 int ID_VTHH = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
@@ -45,16 +44,26 @@ namespace CtyTinLuong
                 _ravi["MaVT"] = cls.sMaVT.Value;
                 _ravi["TenVTHH"] = cls.sTenVTHH.Value;
                 _ravi["DonViTinh"] = cls.sDonViTinh.Value;
-                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());               
+                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
                 ds.tbChiTietMuaHang.Rows.Add(_ravi);
-            }          
+            }
             xtr111.DataSource = null;
             xtr111.DataSource = ds.tbChiTietMuaHang;
             xtr111.DataMember = "tbChiTietMuaHang";
-           // xtr111.IntData(sgiamdoc);
+            // xtr111.IntData(sgiamdoc);
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
 
+        }
+        private void frmPrintMuaHang_Load(object sender, EventArgs e)
+        {
+            if (frmChiTietMuaHang3333333333.mbPrint == true)
+                PrintMuaHang(frmChiTietMuaHang3333333333.mdtPrint);
+        }
+
+        private void frmPrintMuaHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmChiTietMuaHang3333333333.mbPrint = false;
         }
     }
 }
