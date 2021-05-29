@@ -139,8 +139,17 @@ namespace CtyTinLuong
             _ravi["ID_ChiTietBienDongTaiKhoan"] = 0;
             _ravi["ID_ChungTu"] = 0;
             _ravi["ID_TaiKhoanKeToanCon"] = ID_TaiKhoanKeToanCon;
-            _ravi["No"] =0;
-            _ravi["Co"] = tongtienhangcoVAT;
+            if(checkTraLaiHangMua.Checked==false)
+            {
+                _ravi["No"] = 0;
+                _ravi["Co"] = tongtienhangcoVAT;
+            }
+            else
+            {
+                _ravi["No"] = tongtienhangcoVAT;
+                _ravi["Co"] = 0;
+            }
+           
             _ravi["TienUSD"] = checkUSD.Checked;
             _ravi["TiGia"] = 1;
             _ravi["DaGhiSo"] = false;
@@ -149,16 +158,24 @@ namespace CtyTinLuong
             _ravi["TenTaiKhoanCon"] = dtcon.Rows[0]["TenTaiKhoanCon"].ToString();
             _ravi["HienThi"] = "1";
             dt2xx.Rows.Add(_ravi);
-            //gridTKNo.EditValue = 46;
-            //gridTKVAT.EditValue = 79;
+            
             DataRow _ravi2 = dt2xx.NewRow();
             clscon.iID_TaiKhoanKeToanCon = 46;
             DataTable dtcon2 = clscon.SelectOne();
             _ravi2["ID_ChiTietBienDongTaiKhoan"] = 0;
             _ravi2["ID_ChungTu"] = 0;
             _ravi2["ID_TaiKhoanKeToanCon"] = 46;
-            _ravi2["No"] = tongtienhang_ChuaCoVAT;
-            _ravi2["Co"] = 0;
+            if (checkTraLaiHangMua.Checked == false)
+            {
+                _ravi2["No"] = tongtienhang_ChuaCoVAT;
+                _ravi2["Co"] = 0;
+            }
+            else
+            {
+                _ravi2["No"] = 0;
+                _ravi2["Co"] = tongtienhang_ChuaCoVAT;
+            }
+          
             _ravi2["TienUSD"] = checkUSD.Checked;
             _ravi2["TiGia"] = 1;
             _ravi2["DaGhiSo"] = false;
@@ -176,8 +193,17 @@ namespace CtyTinLuong
                 _ravi3["ID_ChiTietBienDongTaiKhoan"] = 0;
                 _ravi3["ID_ChungTu"] = 0;
                 _ravi3["ID_TaiKhoanKeToanCon"] = 28;
-                _ravi3["No"] = tienVAT;
-                _ravi3["Co"] = 0;
+                if (checkTraLaiHangMua.Checked == false)
+                {
+                    _ravi3["No"] = tienVAT;
+                    _ravi3["Co"] = 0;
+                }
+                else
+                {
+                    _ravi3["No"] = 0;
+                    _ravi3["Co"] = tienVAT;
+                }
+               
                 _ravi3["TienUSD"] = checkUSD.Checked;
                 _ravi3["TiGia"] = 1;
                 _ravi3["DaGhiSo"] = false;
