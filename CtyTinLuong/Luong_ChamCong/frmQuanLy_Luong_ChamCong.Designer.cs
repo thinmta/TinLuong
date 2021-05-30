@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLy_Luong_ChamCong));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
@@ -50,12 +51,18 @@
             this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.label1 = new System.Windows.Forms.Label();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Location = new System.Drawing.Point(173, 12);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(971, 606);
@@ -181,7 +188,8 @@
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1});
+            this.navBarGroup1,
+            this.navBarGroup2});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem1,
             this.navBarItem4,
@@ -199,7 +207,10 @@
             this.navBarItem2,
             this.navBarItem9,
             this.navBarItem14,
-            this.navBarItem17});
+            this.navBarItem17,
+            this.navBarItem15,
+            this.navBarItem16,
+            this.navBarItem18});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
@@ -216,17 +227,45 @@
             this.label1.TabIndex = 69;
             this.label1.Text = "Lưu ý: Nên cài mã hàng tổ gấp dán trong tháng trước khi tạo bảng lương mới";
             // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Caption = "Chấm công";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem18)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            // 
+            // navBarItem15
+            // 
+            this.navBarItem15.Caption = "Chấm công tổ gấp dán";
+            this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            // 
+            // navBarItem16
+            // 
+            this.navBarItem16.Caption = "navBarItem16";
+            this.navBarItem16.Name = "navBarItem16";
+            // 
+            // navBarItem18
+            // 
+            this.navBarItem18.Caption = "navBarItem18";
+            this.navBarItem18.Name = "navBarItem18";
+            // 
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1156, 636);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuanLy_Luong_ChamCong";
-            this.Text = "frmQuanLy_Luong_ChamCong";
+            this.Text = "Chấm công";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.ResumeLayout(false);
@@ -258,5 +297,9 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem17;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem15;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem16;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem18;
     }
 }

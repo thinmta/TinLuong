@@ -18,6 +18,11 @@ namespace CtyTinLuong
         public static DataTable mdataatbaleDanhSachChamCOng;
         public static int miThang, miNam;
         public static string msTenNhanVien;
+
+        public void LoadData()
+        {
+
+        }
         private void HienThi()
         {
             clsHUU_DinhMucLuong_CongNhat clsluong = new clsHUU_DinhMucLuong_CongNhat();
@@ -178,12 +183,12 @@ namespace CtyTinLuong
             {
                 btGuiDuLieu.Enabled = false;
               
-                gridColumn1.OptionsColumn.AllowEdit = gridColumn2.OptionsColumn.AllowEdit =
-                    gridColumn3.OptionsColumn.AllowEdit = gridColumn4.OptionsColumn.AllowEdit =
-                    gridColumn5.OptionsColumn.AllowEdit = gridColumn6.OptionsColumn.AllowEdit =
-                    gridColumn7.OptionsColumn.AllowEdit = gridColumn8.OptionsColumn.AllowEdit =
-                    gridColumn9.OptionsColumn.AllowEdit = gridColumn10.OptionsColumn.AllowEdit =
-                    gridColumn11.OptionsColumn.AllowEdit = gridColumn12.OptionsColumn.AllowEdit =
+                Ngay1.OptionsColumn.AllowEdit = Ngay2.OptionsColumn.AllowEdit =
+                    Ngay3.OptionsColumn.AllowEdit = Ngay4.OptionsColumn.AllowEdit =
+                    Ngay5.OptionsColumn.AllowEdit = Ngay6.OptionsColumn.AllowEdit =
+                    Ngay7.OptionsColumn.AllowEdit = Ngay8.OptionsColumn.AllowEdit =
+                    Ngay9.OptionsColumn.AllowEdit = Ngay10.OptionsColumn.AllowEdit =
+                    Ngay11.OptionsColumn.AllowEdit = Ngay12.OptionsColumn.AllowEdit =
                     gridColumn13.OptionsColumn.AllowEdit = gridColumn14.OptionsColumn.AllowEdit =
                     gridColumn15.OptionsColumn.AllowEdit = gridColumn16.OptionsColumn.AllowEdit =
                     gridColumn17.OptionsColumn.AllowEdit = gridColumn18.OptionsColumn.AllowEdit =
@@ -191,7 +196,7 @@ namespace CtyTinLuong
                     gridColumn21.OptionsColumn.AllowEdit = gridColumn22.OptionsColumn.AllowEdit =
                     gridColumn23.OptionsColumn.AllowEdit = gridColumn24.OptionsColumn.AllowEdit =
                     gridColumn25.OptionsColumn.AllowEdit = gridColumn26.OptionsColumn.AllowEdit =
-                    gridColumn27.OptionsColumn.AllowEdit = gridColumn28.OptionsColumn.AllowEdit =
+                    Ngay27.OptionsColumn.AllowEdit = Ngay28.OptionsColumn.AllowEdit =
                     gridColumn29.OptionsColumn.AllowEdit = gridColumn30.OptionsColumn.AllowEdit =
                     gridColumn31.OptionsColumn.AllowEdit = false;
                 clSLTangCa.OptionsColumn.AllowEdit = false;
@@ -221,63 +226,63 @@ namespace CtyTinLuong
             string thutrongtuan = "";
 
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn1.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay1.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn2.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay2.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn3.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay3.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn4.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay4.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn5.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay5.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn6.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay6.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn7.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay7.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn8.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay8.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn9.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay9.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn10.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay10.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn11.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay11.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn12.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay12.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
@@ -352,12 +357,12 @@ namespace CtyTinLuong
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn27.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay27.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn28.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay28.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             if (days == 28)
             {
@@ -428,18 +433,18 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString() != "")
             {
                 clsHUU_CongNhat_ChiTiet_ChamCong cls = new CtyTinLuong.clsHUU_CongNhat_ChiTiet_ChamCong();
-                double ngay1 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn1).ToString());
-                double ngay2 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn2).ToString());
-                double ngay3 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn3).ToString());
-                double ngay4 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn4).ToString());
-                double ngay5 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn5).ToString());
-                double ngay6 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn6).ToString());
-                double ngay7 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn7).ToString());
-                double ngay8 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn8).ToString());
-                double ngay9 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn9).ToString());
-                double ngay10 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn10).ToString());
-                double ngay11 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn11).ToString());
-                double ngay12 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn12).ToString());
+                double ngay1 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay1).ToString());
+                double ngay2 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay2).ToString());
+                double ngay3 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay3).ToString());
+                double ngay4 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay4).ToString());
+                double ngay5 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay5).ToString());
+                double ngay6 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay6).ToString());
+                double ngay7 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay7).ToString());
+                double ngay8 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay8).ToString());
+                double ngay9 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay9).ToString());
+                double ngay10 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay10).ToString());
+                double ngay11 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay11).ToString());
+                double ngay12 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay12).ToString());
                 double ngay13 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn13).ToString());
                 double ngay14 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn14).ToString());
                 double ngay15 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn15).ToString());
@@ -454,8 +459,8 @@ namespace CtyTinLuong
                 double ngay24 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn24).ToString());
                 double ngay25 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn25).ToString());
                 double ngay26 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn26).ToString());
-                double ngay27 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn27).ToString());
-                double ngay28 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn28).ToString());
+                double ngay27 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay27).ToString());
+                double ngay28 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay28).ToString());
                 double ngay29 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
                 double ngay30 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
                 double ngay31 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
@@ -544,18 +549,18 @@ namespace CtyTinLuong
         {
             #region Tính tổng công làm việc
 
-            double ngay1 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn1).ToString());
-            double ngay2 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn2).ToString());
-            double ngay3 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn3).ToString());
-            double ngay4 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn4).ToString());
-            double ngay5 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn5).ToString());
-            double ngay6 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn6).ToString());
-            double ngay7 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn7).ToString());
-            double ngay8 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn8).ToString());
-            double ngay9 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn9).ToString());
-            double ngay10 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn10).ToString());
-            double ngay11 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn11).ToString());
-            double ngay12 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn12).ToString());
+            double ngay1 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay1).ToString());
+            double ngay2 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay2).ToString());
+            double ngay3 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay3).ToString());
+            double ngay4 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay4).ToString());
+            double ngay5 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay5).ToString());
+            double ngay6 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay6).ToString());
+            double ngay7 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay7).ToString());
+            double ngay8 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay8).ToString());
+            double ngay9 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay9).ToString());
+            double ngay10 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay10).ToString());
+            double ngay11 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay11).ToString());
+            double ngay12 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay12).ToString());
             double ngay13 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn13).ToString());
             double ngay14 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn14).ToString());
             double ngay15 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn15).ToString());
@@ -570,8 +575,8 @@ namespace CtyTinLuong
             double ngay24 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn24).ToString());
             double ngay25 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn25).ToString());
             double ngay26 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn26).ToString());
-            double ngay27 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn27).ToString());
-            double ngay28 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn28).ToString());
+            double ngay27 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay27).ToString());
+            double ngay28 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Ngay28).ToString());
             double ngay29 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
             double ngay30 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
             double ngay31 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
@@ -581,7 +586,7 @@ namespace CtyTinLuong
              ngay21 + ngay22 + ngay23 + ngay24 + ngay25 + ngay26 + ngay27 + ngay28 + ngay29 + ngay30 + ngay31;
 
 
-            if (e.Column == gridColumn1)
+            if (e.Column == Ngay1)
             {
 
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
@@ -595,7 +600,7 @@ namespace CtyTinLuong
                 }
 
             }
-            if (e.Column == gridColumn2)
+            if (e.Column == Ngay2)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -608,7 +613,7 @@ namespace CtyTinLuong
                 }
 
             }
-            if (e.Column == gridColumn3)
+            if (e.Column == Ngay3)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -620,7 +625,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn4)
+            if (e.Column == Ngay4)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -632,7 +637,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn5)
+            if (e.Column == Ngay5)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -644,7 +649,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn6)
+            if (e.Column == Ngay6)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -656,7 +661,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn7)
+            if (e.Column == Ngay7)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -668,7 +673,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn8)
+            if (e.Column == Ngay8)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -680,7 +685,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn9)
+            if (e.Column == Ngay9)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -692,7 +697,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn10)
+            if (e.Column == Ngay10)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -705,7 +710,7 @@ namespace CtyTinLuong
                 }
             }
 
-            if (e.Column == gridColumn11)
+            if (e.Column == Ngay11)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -717,7 +722,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn12)
+            if (e.Column == Ngay12)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -897,7 +902,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn27)
+            if (e.Column == Ngay27)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -909,7 +914,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, clSLTangCa, tongcong);
                 }
             }
-            if (e.Column == gridColumn28)
+            if (e.Column == Ngay28)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
                 if (e.RowHandle % 2 == 0)
@@ -963,11 +968,26 @@ namespace CtyTinLuong
         public frmChamCongToGapDan()
         {
             InitializeComponent();
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
+
+                cbBoPhan.DisplayMember = "TenBoPhan";
+                cbBoPhan.ValueMember = "ID_BoPhan";
+                cbBoPhan.DataSource = dt_;
+                cbBoPhan.SelectedValue = 18;
+                cbBoPhan.Enabled = true;
+            }
         }
 
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
            
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)

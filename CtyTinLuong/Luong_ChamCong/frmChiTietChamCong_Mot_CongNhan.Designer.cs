@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietChamCong_Mot_CongNhan));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btLUU = new DevExpress.XtraEditors.SimpleButton();
@@ -40,6 +41,9 @@
             this.txtHoTenxxx = new System.Windows.Forms.TextBox();
             this.gridMaDinhMucLuong = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtBaoHiem = new System.Windows.Forms.TextBox();
             this.txtLuongCoDinh = new System.Windows.Forms.TextBox();
             this.txtTrachNhiem = new System.Windows.Forms.TextBox();
@@ -92,10 +96,16 @@
             this.txtDienGiaiDM = new System.Windows.Forms.TextBox();
             this.gridDMLuong = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clDienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtNam = new System.Windows.Forms.TextBox();
             this.txtThang = new System.Windows.Forms.TextBox();
             this.gridMaNguoiLap = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtThucNhan = new System.Windows.Forms.TextBox();
             this.txtTongCong = new System.Windows.Forms.TextBox();
@@ -137,15 +147,6 @@
             this.layoutControlItem40 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -343,6 +344,30 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // ID_DinhMucLuong_CongNhat
+            // 
+            this.ID_DinhMucLuong_CongNhat.Caption = "ID_DinhMucLuong_CongNhat";
+            this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
+            this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
+            // 
+            // MaDinhMucLuongCongNhat
+            // 
+            this.MaDinhMucLuongCongNhat.Caption = "Mã lương";
+            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.Visible = true;
+            this.MaDinhMucLuongCongNhat.VisibleIndex = 0;
+            this.MaDinhMucLuongCongNhat.Width = 100;
+            // 
+            // DienGiai
+            // 
+            this.DienGiai.Caption = "Diễn giải";
+            this.DienGiai.FieldName = "DienGiai";
+            this.DienGiai.Name = "DienGiai";
+            this.DienGiai.Visible = true;
+            this.DienGiai.VisibleIndex = 1;
+            this.DienGiai.Width = 284;
             // 
             // txtBaoHiem
             // 
@@ -907,6 +932,30 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // clID
+            // 
+            this.clID.Caption = "ID";
+            this.clID.FieldName = "ID_DinhMucLuong_CongNhat";
+            this.clID.Name = "clID";
+            // 
+            // clMaDinhMucLuongCongNhat
+            // 
+            this.clMaDinhMucLuongCongNhat.Caption = "Mã ĐM";
+            this.clMaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
+            this.clMaDinhMucLuongCongNhat.Name = "clMaDinhMucLuongCongNhat";
+            this.clMaDinhMucLuongCongNhat.Visible = true;
+            this.clMaDinhMucLuongCongNhat.VisibleIndex = 0;
+            this.clMaDinhMucLuongCongNhat.Width = 192;
+            // 
+            // clDienGiai
+            // 
+            this.clDienGiai.Caption = "Diễn giải";
+            this.clDienGiai.FieldName = "DienGiai";
+            this.clDienGiai.Name = "clDienGiai";
+            this.clDienGiai.Visible = true;
+            this.clDienGiai.VisibleIndex = 1;
+            this.clDienGiai.Width = 200;
+            // 
             // txtNam
             // 
             this.txtNam.Location = new System.Drawing.Point(332, 2);
@@ -945,6 +994,30 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // clID_NhanSu
+            // 
+            this.clID_NhanSu.Caption = "ID";
+            this.clID_NhanSu.FieldName = "ID_NhanSu";
+            this.clID_NhanSu.Name = "clID_NhanSu";
+            // 
+            // clMaNhanVien
+            // 
+            this.clMaNhanVien.Caption = "Mã NV";
+            this.clMaNhanVien.FieldName = "MaNhanVien";
+            this.clMaNhanVien.Name = "clMaNhanVien";
+            this.clMaNhanVien.Visible = true;
+            this.clMaNhanVien.VisibleIndex = 0;
+            this.clMaNhanVien.Width = 100;
+            // 
+            // clTenNhanVien
+            // 
+            this.clTenNhanVien.Caption = "Họ tên";
+            this.clTenNhanVien.FieldName = "TenNhanVien";
+            this.clTenNhanVien.Name = "clTenNhanVien";
+            this.clTenNhanVien.Visible = true;
+            this.clTenNhanVien.VisibleIndex = 1;
+            this.clTenNhanVien.Width = 284;
             // 
             // textBox2
             // 
@@ -1361,84 +1434,14 @@
             this.layoutControlItem42.Text = "ĐM Tăng ca";
             this.layoutControlItem42.TextSize = new System.Drawing.Size(94, 13);
             // 
-            // ID_DinhMucLuong_CongNhat
-            // 
-            this.ID_DinhMucLuong_CongNhat.Caption = "ID_DinhMucLuong_CongNhat";
-            this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
-            this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
-            // 
-            // MaDinhMucLuongCongNhat
-            // 
-            this.MaDinhMucLuongCongNhat.Caption = "Mã lương";
-            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.Visible = true;
-            this.MaDinhMucLuongCongNhat.VisibleIndex = 0;
-            this.MaDinhMucLuongCongNhat.Width = 100;
-            // 
-            // DienGiai
-            // 
-            this.DienGiai.Caption = "Diễn giải";
-            this.DienGiai.FieldName = "DienGiai";
-            this.DienGiai.Name = "DienGiai";
-            this.DienGiai.Visible = true;
-            this.DienGiai.VisibleIndex = 1;
-            this.DienGiai.Width = 284;
-            // 
-            // clID
-            // 
-            this.clID.Caption = "ID";
-            this.clID.FieldName = "ID_DinhMucLuong_CongNhat";
-            this.clID.Name = "clID";
-            // 
-            // clMaDinhMucLuongCongNhat
-            // 
-            this.clMaDinhMucLuongCongNhat.Caption = "Mã ĐM";
-            this.clMaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
-            this.clMaDinhMucLuongCongNhat.Name = "clMaDinhMucLuongCongNhat";
-            this.clMaDinhMucLuongCongNhat.Visible = true;
-            this.clMaDinhMucLuongCongNhat.VisibleIndex = 0;
-            this.clMaDinhMucLuongCongNhat.Width = 192;
-            // 
-            // clDienGiai
-            // 
-            this.clDienGiai.Caption = "Diễn giải";
-            this.clDienGiai.FieldName = "DienGiai";
-            this.clDienGiai.Name = "clDienGiai";
-            this.clDienGiai.Visible = true;
-            this.clDienGiai.VisibleIndex = 1;
-            this.clDienGiai.Width = 200;
-            // 
-            // clID_NhanSu
-            // 
-            this.clID_NhanSu.Caption = "ID";
-            this.clID_NhanSu.FieldName = "ID_NhanSu";
-            this.clID_NhanSu.Name = "clID_NhanSu";
-            // 
-            // clMaNhanVien
-            // 
-            this.clMaNhanVien.Caption = "Mã NV";
-            this.clMaNhanVien.FieldName = "MaNhanVien";
-            this.clMaNhanVien.Name = "clMaNhanVien";
-            this.clMaNhanVien.Visible = true;
-            this.clMaNhanVien.VisibleIndex = 0;
-            this.clMaNhanVien.Width = 100;
-            // 
-            // clTenNhanVien
-            // 
-            this.clTenNhanVien.Caption = "Họ tên";
-            this.clTenNhanVien.FieldName = "TenNhanVien";
-            this.clTenNhanVien.Name = "clTenNhanVien";
-            this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 1;
-            this.clTenNhanVien.Width = 284;
-            // 
             // frmChiTietChamCong_Mot_CongNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(699, 480);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietChamCong_Mot_CongNhan";
             this.Text = "Chi tiết chấm công một nhân viên";
             this.Load += new System.EventHandler(this.frmChiTietChamCong_Mot_CongNhan_Load);

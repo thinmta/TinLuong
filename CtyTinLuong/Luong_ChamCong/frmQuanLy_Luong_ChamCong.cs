@@ -65,5 +65,11 @@ namespace CtyTinLuong
             frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
             ff.Show();
         }
+
+        private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmChamCongToGapDan ff = new frmChamCongToGapDan();
+            ff.Show();
+        }
     }
 }
