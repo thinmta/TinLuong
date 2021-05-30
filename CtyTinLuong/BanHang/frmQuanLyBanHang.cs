@@ -115,5 +115,11 @@ namespace CtyTinLuong
             frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
             ucc.Show();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
+            ff.Show();
+        }
     }
 }

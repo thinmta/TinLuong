@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class UC_KhoNVL_frmDaNhapKho : UserControl
+    public partial class UCNPL_NhapKho_Khacccccccccccc : UserControl
     {
         public static int miD_NhapKho;
-        public static string msThamChieuMuaHang;
+        public static bool mbThemMoi;
         private void Load_LockUp()
         {
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -31,7 +31,7 @@ namespace CtyTinLuong
         }
         private void HienThiGridControl_2(int xxIID_NhapKho)
         {
-            
+
             clsKhoNPL_tbChiTietNhapKho cls2 = new clsKhoNPL_tbChiTietNhapKho();
             cls2.iID_NhapKho = xxIID_NhapKho;
             DataTable dt3 = cls2.Select_W_ID_NhapKho_HienThi_SuaDonHang();
@@ -69,7 +69,7 @@ namespace CtyTinLuong
                 _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
                 dt2.Rows.Add(_ravi);
             }
-           
+
             gridControl2.DataSource = dt2;
         }
         private void HienThi()
@@ -81,7 +81,7 @@ namespace CtyTinLuong
 
                 clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
                 DataTable dt2xx = cls.SelectAll();
-                dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
+                dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=True";
                 DataView dv22xxx = dt2xx.DefaultView;
                 dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
                 DataTable dt2 = dv22xxx.ToTable();
@@ -104,11 +104,11 @@ namespace CtyTinLuong
 
         }
         private void HienThi_ALL()
-        {            
+        {
 
             clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
             DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
+            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=True";
             DataView dv = dt2.DefaultView;
             dv.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
             DataTable dxxxx = dv.ToTable();
@@ -116,15 +116,26 @@ namespace CtyTinLuong
 
 
         }
-      
-        public UC_KhoNVL_frmDaNhapKho()
+        public UCNPL_NhapKho_Khacccccccccccc()
         {
             InitializeComponent();
         }
 
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            UCNPL_NhapKho_Khacccccccccccc_Load( sender,  e);
+        }
+
+        private void UCNPL_NhapKho_Khacccccccccccc_Load(object sender, EventArgs e)
+        {
+            Load_LockUp();
+            dteNgay.EditValue = null;
+            dteTuNgay.EditValue = null;
+            HienThi_ALL();
+        }
+
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-
             if (e.Column == clSTT)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
@@ -133,33 +144,13 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            try
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString() != "")
             {
-                if (gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString() != "")
-                {
-                    msThamChieuMuaHang = gridView1.GetFocusedRowCellValue(clThamChieu).ToString();
-                    miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
-                    KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang ff = new KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang();
-                    ff.Show();
-                }
+                mbThemMoi = false;
+                miD_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
+                KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
+                ff.Show();
             }
-            catch
-            {
-
-            }
-        }
-
-        private void UC_KhoNVL_frmDaNhapKho_Load(object sender, EventArgs e)
-        {
-            Load_LockUp();
-            dteNgay.EditValue = null;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
-        }
-
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            UC_KhoNVL_frmDaNhapKho_Load(sender, e);
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
@@ -181,7 +172,6 @@ namespace CtyTinLuong
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-
             if (e.Column == clSTT2)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
@@ -215,9 +205,13 @@ namespace CtyTinLuong
 
             }
 
+        }
 
-
-
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+            mbThemMoi = true;
+            KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
+            ff.Show();
         }
     }
 }

@@ -41,6 +41,7 @@
             this.navXuatKho_GapDan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -50,7 +51,6 @@
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +115,7 @@
             // 
             this.navBarItem7.Caption = "Nhập kho khác";
             this.navBarItem7.Name = "navBarItem7";
+            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked_1);
             // 
             // navBarItem11
             // 
@@ -172,6 +173,11 @@
             this.navBarItem9.Caption = "Xuất kho _ ALL";
             this.navBarItem9.Name = "navBarItem9";
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
+            // 
+            // navBarItem12
+            // 
+            this.navBarItem12.Caption = "Trả lại hàng mua";
+            this.navBarItem12.Name = "navBarItem12";
             // 
             // navBarGroup2
             // 
@@ -237,11 +243,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // navBarItem12
-            // 
-            this.navBarItem12.Caption = "Trả lại hàng mua";
-            this.navBarItem12.Name = "navBarItem12";
             // 
             // KhoNPL_frmNPL
             // 
