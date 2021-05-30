@@ -259,6 +259,7 @@
             this.cbLoaiHangSX.Name = "cbLoaiHangSX";
             this.cbLoaiHangSX.Size = new System.Drawing.Size(192, 24);
             this.cbLoaiHangSX.TabIndex = 125;
+            this.cbLoaiHangSX.SelectedIndexChanged += new System.EventHandler(this.cbLoaiHangSX_SelectedIndexChanged);
             // 
             // label5
             // 

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -968,6 +970,8 @@ namespace CtyTinLuong
         public frmChamCongToGapDan()
         {
             InitializeComponent();
+            txtNam.Text = DateTime.Now.Year.ToString();
+            txtThang.Text = DateTime.Now.Month.ToString();
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
@@ -977,6 +981,15 @@ namespace CtyTinLuong
                 cbBoPhan.DataSource = dt_;
                 cbBoPhan.SelectedValue = 18;
                 cbBoPhan.Enabled = true;
+
+                DataTable dt2_ = clsThin_.T_LoaiHangSX_SF(10);
+
+                cbLoaiHangSX.DisplayMember = "TenVTHH";
+                cbLoaiHangSX.ValueMember = "ID_VTHH";
+                cbLoaiHangSX.DataSource = dt2_;
+
+                cbLoaiHangSX.Enabled = true;
+                 
             }
         }
 
@@ -989,7 +1002,99 @@ namespace CtyTinLuong
         {
 
         }
+        private int _id_dinhmuc_togapdan;
 
+        private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (clsThin clsThin_ = new clsThin())
+            {
+                int nam_, thang_;
+                try {
+                    thang_ = Convert.ToInt32(txtThang.Text);
+                }
+                catch {
+                    MessageBox.Show("Tháng không hợp lệ");
+                    return;
+                }
+                try
+                {
+                    nam_ = Convert.ToInt32(txtNam.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Năm không hợp lệ");
+                    return;
+                }
+                int id_vthh_ = cbLoaiHangSX.SelectedIndex;
+                DataTable dt_ = clsThin_.T_DinhMuc_DinhMuc_Luong_TheoSanLuong_SO(id_vthh_, thang_, nam_);
+                 
+                if (dt_ != null && dt_.Rows.Count > 0)
+                {
+                    _id_dinhmuc_togapdan = Convert.ToInt32(dt_.Rows[0]["ID_DinhMuc_Luong_SanLuong"]);
+                    float dinhmuc_ = ConvertToFloat(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
+                    txtDinhMuc.Text = dt_.Rows[0]["MaDinhMuc"] + " (" + dinhmuc_.ToString("N0") + ")";
+                    if (_id_dinhmuc_togapdan == 0)
+                    {
+                        txtDinhMuc.Text = "Chưa cài đặt định mức!";
+                        MessageBox.Show("Chưa cài đặt định mức! Vui lòng cài đặt định mức cho mã hàng này");
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    txtDinhMuc.Text = "Chưa cài đặt định mức!";
+                   MessageBox.Show("Chưa cài đặt định mức! Vui lòng cài đặt định mức cho mã hàng này");
+                    _id_dinhmuc_togapdan = 0;
+                }
+                //
+                /*
+                 
+                for (int i = 0; i < _Ds_ChamCong_ToGapDan_model.Count; ++i)
+                {
+                    _Ds_ChamCong_ToGapDan_model[i].ID_DinhMuc_Luong_SanLuong = _id_dinhmuc_togapdan;
+                    _Ds_ChamCong_ToGapDan_model[i].ID_VTHH = _ID_VTHH;
+                    _Ds_ChamCong_ToGapDan_model[i].MaVT = _MaVT;
+                    _Ds_ChamCong_ToGapDan_model[i].TenVTHH = _TenVTHH;
+                }
+                lst_Bill.ItemsSource = _Ds_ChamCong_ToGapDan_model;
+                */
+            }
+        }
+        private float ConvertToFloat(string s)
+        {
+            char systemSeparator = Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+            double result = 0;
+            try
+            {
+                if (s != null)
+                    if (!s.Contains(","))
+                        result = double.Parse(s, CultureInfo.InvariantCulture);
+                    else
+                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+            }
+            catch (Exception e)
+            {
+                try
+                {
+                    result = Convert.ToDouble(s);
+                }
+                catch
+                {
+                    try
+                    {
+                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                    }
+                    catch
+                    {
+                        throw new Exception("Wrong string-to-double format");
+                    }
+                }
+            }
+            return (float)result;
+        }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString() != "")
