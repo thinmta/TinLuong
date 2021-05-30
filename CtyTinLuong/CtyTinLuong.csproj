@@ -1377,12 +1377,6 @@
     <Compile Include="CaiDatBanDau\UCCaiDatBanDau_Kho_ThanhPham.Designer.cs">
       <DependentUpon>UCCaiDatBanDau_Kho_ThanhPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoNPL\UCNPL_baoCaoTonKho.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_baoCaoTonKho.Designer.cs">
-      <DependentUpon>UCNPL_baoCaoTonKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoNPL\UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1430,18 +1424,6 @@
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.Designer.cs">
       <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_ChiTietDaNhapKho.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_ChiTietDaNhapKho.Designer.cs">
-      <DependentUpon>UCNPL_ChiTietDaNhapKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_ChiTietXuatKho_ALL.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_ChiTietXuatKho_ALL.Designer.cs">
-      <DependentUpon>UCNPL_ChiTietXuatKho_ALL.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_ToGapDan.cs">
       <SubType>Form</SubType>
@@ -2290,12 +2272,6 @@
     <EmbeddedResource Include="frmPrint_NguoiKy.resx">
       <DependentUpon>frmPrint_NguoiKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\UCNPL_ChiTietDaNhapKho.resx">
-      <DependentUpon>UCNPL_ChiTietDaNhapKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\UCNPL_ChiTietXuatKho_ALL.resx">
-      <DependentUpon>UCNPL_ChiTietXuatKho_ALL.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\frmQuanLyKhoBanThanhPham.resx">
       <DependentUpon>frmQuanLyKhoBanThanhPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -2633,9 +2609,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\UCCaiDatBanDau_Kho_ThanhPham.resx">
       <DependentUpon>UCCaiDatBanDau_Kho_ThanhPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\UCNPL_baoCaoTonKho.resx">
-      <DependentUpon>UCNPL_baoCaoTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.resx">
       <DependentUpon>UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.cs</DependentUpon>

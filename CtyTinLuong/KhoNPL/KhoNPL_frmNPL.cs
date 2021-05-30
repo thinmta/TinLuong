@@ -142,33 +142,11 @@ namespace CtyTinLuong
             
         }
 
-        private void navBarItem11_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        { 
-            UCNPL_baoCaoTonKho uccc_XuatKho = new UCNPL_baoCaoTonKho();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
+      
 
         private void navBarItem3_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong uccc_XuatKho = new UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
-
-        private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCNPL_ChiTietDaNhapKho uccc_XuatKho = new UCNPL_ChiTietDaNhapKho();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
-
-        private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCNPL_ChiTietXuatKho_ALL uccc_XuatKho = new UCNPL_ChiTietXuatKho_ALL();
             uccc_XuatKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_XuatKho);
             uccc_XuatKho.BringToFront();
@@ -201,21 +179,7 @@ namespace CtyTinLuong
             uccc_XuatKho.BringToFront();
         }
 
-        private void navBarItem11_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCNPL_ChiTietDaNhapKho uccc_XuatKho = new UCNPL_ChiTietDaNhapKho();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
-
-        private void navBarItem9_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCNPL_ChiTietXuatKho_ALL uccc_XuatKho = new UCNPL_ChiTietXuatKho_ALL();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
+    
 
         private void navBarItem7_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {

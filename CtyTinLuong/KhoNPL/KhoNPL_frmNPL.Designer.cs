@@ -33,14 +33,12 @@
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navNhapKho_TuMuaHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navXuatKhoLSX_ICD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navXuatKho_GapDan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -76,8 +74,6 @@
             this.navXuatKho_GapDan,
             this.navBarItem2,
             this.navBarItem7,
-            this.navBarItem11,
-            this.navBarItem9,
             this.navBarItem12});
             this.navBarControl1.Location = new System.Drawing.Point(0, 14);
             this.navBarControl1.Name = "navBarControl1";
@@ -94,8 +90,7 @@
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNhapKho_TuMuaHang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarItem1
@@ -117,12 +112,6 @@
             this.navBarItem7.Name = "navBarItem7";
             this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked_1);
             // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Caption = "Nhập kho_ALL";
-            this.navBarItem11.Name = "navBarItem11";
-            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked_1);
-            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Xuất Kho";
@@ -133,7 +122,6 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKho_GapDan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
@@ -167,12 +155,6 @@
             this.navBarItem2.Caption = "Xuất kho Khác";
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked_2);
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Caption = "Xuất kho _ ALL";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
             // 
             // navBarItem12
             // 
@@ -288,8 +270,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem11;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
         private DevExpress.XtraNavBar.NavBarItem navBarItem12;
     }
 }
