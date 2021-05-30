@@ -39,7 +39,6 @@ namespace CtyTinLuong
             DataTable dxxxx = dv.ToTable();
             if(dxxxx.Rows.Count>0)
             {
-               
                 for (int i=0; i<dxxxx.Rows.Count; i++)
                 {
                     int ID_SoPhieu = Convert.ToInt32(dxxxx.Rows[i]["ID_SoPhieu"].ToString());

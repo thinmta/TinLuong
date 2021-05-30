@@ -22,6 +22,11 @@ namespace CtyTinLuong
        
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            btnTrangSau.Visible = true;
+            btnTrangTiep.Visible = true;
+            lbTongSoTrang.Visible = true;
+            txtSoTrang.Visible = true;
+
             UC_SanXuat_PhieuSanXuat ucc = new UC_SanXuat_PhieuSanXuat();
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);

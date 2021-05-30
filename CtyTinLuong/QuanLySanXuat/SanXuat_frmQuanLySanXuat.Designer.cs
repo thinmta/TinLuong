@@ -58,6 +58,10 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
+            this.btnTrangSau = new System.Windows.Forms.LinkLabel();
+            this.lbTongSoTrang = new System.Windows.Forms.Label();
+            this.txtSoTrang = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -296,11 +300,55 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // btnTrangTiep
+            // 
+            this.btnTrangTiep.AutoSize = true;
+            this.btnTrangTiep.Location = new System.Drawing.Point(385, 635);
+            this.btnTrangTiep.Name = "btnTrangTiep";
+            this.btnTrangTiep.Size = new System.Drawing.Size(55, 13);
+            this.btnTrangTiep.TabIndex = 79;
+            this.btnTrangTiep.TabStop = true;
+            this.btnTrangTiep.Text = "Trang tiếp";
+            this.btnTrangTiep.Visible = false;
+            // 
+            // btnTrangSau
+            // 
+            this.btnTrangSau.AutoSize = true;
+            this.btnTrangSau.Location = new System.Drawing.Point(248, 635);
+            this.btnTrangSau.Name = "btnTrangSau";
+            this.btnTrangSau.Size = new System.Drawing.Size(55, 13);
+            this.btnTrangSau.TabIndex = 80;
+            this.btnTrangSau.TabStop = true;
+            this.btnTrangSau.Text = "Trang sau";
+            this.btnTrangSau.Visible = false;
+            // 
+            // lbTongSoTrang
+            // 
+            this.lbTongSoTrang.AutoSize = true;
+            this.lbTongSoTrang.Location = new System.Drawing.Point(352, 636);
+            this.lbTongSoTrang.Name = "lbTongSoTrang";
+            this.lbTongSoTrang.Size = new System.Drawing.Size(12, 13);
+            this.lbTongSoTrang.TabIndex = 81;
+            this.lbTongSoTrang.Text = "/";
+            this.lbTongSoTrang.Visible = false;
+            // 
+            // txtSoTrang
+            // 
+            this.txtSoTrang.Location = new System.Drawing.Point(309, 633);
+            this.txtSoTrang.Name = "txtSoTrang";
+            this.txtSoTrang.Size = new System.Drawing.Size(37, 20);
+            this.txtSoTrang.TabIndex = 82;
+            this.txtSoTrang.Visible = false;
+            // 
             // SanXuat_frmQuanLySanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.txtSoTrang);
+            this.Controls.Add(this.lbTongSoTrang);
+            this.Controls.Add(this.btnTrangSau);
+            this.Controls.Add(this.btnTrangTiep);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btThooat);
@@ -352,5 +400,9 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel btnTrangTiep;
+        private System.Windows.Forms.LinkLabel btnTrangSau;
+        private System.Windows.Forms.Label lbTongSoTrang;
+        private System.Windows.Forms.TextBox txtSoTrang;
     }
 }
