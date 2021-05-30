@@ -22,12 +22,35 @@ namespace CtyTinLuong
        
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            UC_SanXuat_PhieuSanXuat ucc = new UC_SanXuat_PhieuSanXuat();
             btnTrangSau.Visible = true;
             btnTrangTiep.Visible = true;
             lbTongSoTrang.Visible = true;
             txtSoTrang.Visible = true;
+            int sotrang_ = 1; 
+            try {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+            }
+            catch
+            {
+                sotrang_ = 1;
+                txtSoTrang.Text = "1";
+            }
 
-            UC_SanXuat_PhieuSanXuat ucc = new UC_SanXuat_PhieuSanXuat();
+            ucc.LoadData(sotrang_,true);
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_TongPhieuSX(ucc._ngay_batdau,ucc._ngay_ketthuc,ucc._ma_phieu);
+                if (dt_ != null && dt_.Rows.Count > 0)
+                {
+                    lbTongSoTrang.Text = (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                }
+                else
+                {
+                    lbTongSoTrang.Text = "1";
+                }
+
+            }
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

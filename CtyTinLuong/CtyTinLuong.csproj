@@ -158,6 +158,7 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\clsThin.cs" />
     <Compile Include="FormMain\FormCongCu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2128,6 +2129,7 @@
     <EmbeddedResource Include="NganHang_Quy\Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.resx">
       <DependentUpon>Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmBaoCaoSanLuong_Theo_CongNhan.resx">
       <DependentUpon>frmBaoCaoSanLuong_Theo_CongNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -2509,7 +2511,6 @@
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietLenhSanXuat.resx">
       <DependentUpon>SanXuat_frmChiTietLenhSanXuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

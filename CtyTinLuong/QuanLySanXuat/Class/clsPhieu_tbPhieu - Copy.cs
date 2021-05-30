@@ -211,8 +211,7 @@ namespace  CtyTinLuong
                 scmCmdToExecute.Dispose();
                 sdaAdapter.Dispose();
             }
-        }
-        public DataTable SelectAll_TaoLenhSX()
+        }  public DataTable SelectAll_TaoLenhSX()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_Phieu_tbPhieu_SelectAll_TaoLenhSX]";

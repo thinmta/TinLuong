@@ -18,8 +18,71 @@ namespace CtyTinLuong
         public static string msTenSoPhieu;
        
         public static DateTime madaNgayPhieu;
-        private void HienThi_ALL()
+        //
+
+        public  DateTime _ngay_batdau;
+        public  DateTime _ngay_ketthuc;
+        public string _ma_phieu;
+        private int _SoTrang = 1;
+        private bool isload = false;
+
+        public void LoadData(int sotrang, bool isLoadLanDau)
         {
+            isload = true;
+            if (isLoadLanDau)
+            {
+                dteTuNgay.EditValue = DateTime.Now.AddDays(-7);
+                dteDenNgay.EditValue = DateTime.Now;
+                txtTimKiem.Text = "";
+            }
+            else { }
+            _ma_phieu = txtTimKiem.Text;
+            _ngay_batdau = (DateTime)dteTuNgay.EditValue;
+            _ngay_ketthuc = dteDenNgay.DateTime;
+            _SoTrang = sotrang;
+
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_SoPhieu", typeof(int));
+            dt2.Columns.Add("MaPhieu", typeof(string));
+            dt2.Columns.Add("NgayLapPhieu", typeof(DateTime));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            dt2.Columns.Add("GuiDuLieu", typeof(bool));
+            dt2.Columns.Add("ID_CaTruong", typeof(int));
+            dt2.Columns.Add("DaKetThuc", typeof(bool));
+            dt2.Columns.Add("TenNhanVien", typeof(string));
+            dt2.Columns.Add("MaHang", typeof(string));
+            dt2.Columns.Add("CaSanXuat", typeof(string));
+            using (clsThin cls_ = new clsThin())
+            {
+                DataTable dt_ = cls_.T_PhieuSX_SF(_SoTrang,_ngay_batdau,_ngay_ketthuc,_ma_phieu); 
+                if (dt_ != null && dt_.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt_.Rows.Count; i++)
+                    {
+                        int ID_SoPhieu = Convert.ToInt32(dt_.Rows[i]["ID_SoPhieu"].ToString());
+                        DataRow _ravi = dt2.NewRow();
+                        _ravi["ID_SoPhieu"] = ID_SoPhieu;
+                        _ravi["MaPhieu"] = dt_.Rows[i]["MaPhieu"].ToString();
+                        _ravi["NgayLapPhieu"] = Convert.ToDateTime(dt_.Rows[i]["NgayLapPhieu"].ToString());
+                        _ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
+                        _ravi["CaSanXuat"] = dt_.Rows[i]["CaSanXuat"].ToString();
+                        _ravi["GuiDuLieu"] = Convert.ToBoolean(dt_.Rows[i]["GuiDuLieu"].ToString());
+                        _ravi["ID_CaTruong"] = Convert.ToInt32(dt_.Rows[i]["ID_CaTruong"].ToString());
+                        _ravi["DaKetThuc"] = Convert.ToBoolean(dt_.Rows[i]["DaKetThuc"].ToString());
+                        _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
+                        _ravi["MaHang"] = dt_.Rows[i]["TenVTHH"].ToString();
+                         
+                        dt2.Rows.Add(_ravi);
+                    }
+                }
+            } 
+            gridControl1.DataSource = dt2;
+
+            isload = false;
+        }
+
+        private void HienThi_ALL()
+        { 
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_SoPhieu", typeof(int));
             dt2.Columns.Add("MaPhieu", typeof(string));
@@ -32,7 +95,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("MaHang", typeof(string));
             dt2.Columns.Add("CaSanXuat", typeof(string));
             clsPhieu_tbPhieu cls = new clsPhieu_tbPhieu();
-            DataTable dt = cls.SelectAll_W_TenCaTruong();
+            DataTable dt = null;
             dt.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=False";
             DataView dv = dt.DefaultView;
             dv.Sort = "GuiDuLieu ASC, NgayLapPhieu DESC, ID_SoPhieu DESC, CaSanXuat DESC";
@@ -148,10 +211,8 @@ namespace CtyTinLuong
 
         private void UC_SanXuat_PhieuSanXuat_Load(object sender, EventArgs e)
         {
-            dteDenNgay.EditValue = null;
-            dteTuNgay.EditValue = null;
             clCaLamViec.Caption = "Ca\n làm việc";
-            HienThi_ALL();
+          //  HienThi_ALL();
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -231,7 +292,11 @@ namespace CtyTinLuong
                     {
                         HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
                     }
-                    else HienThi_ALL();
+                    else
+                    {
+                        //  HienThi_ALL();ien
+                        LoadData(_SoTrang,false);
+                    }
                     
                 }
             }
@@ -327,6 +392,27 @@ namespace CtyTinLuong
             mbCopy_Phieu = false;
             SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
             ff.Show();
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            LoadData(_SoTrang,false);
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            LoadData(_SoTrang,false);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            LoadData(_SoTrang,false);
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
