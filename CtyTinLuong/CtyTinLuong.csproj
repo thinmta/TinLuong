@@ -304,10 +304,10 @@
     <Compile Include="KhoBanThanhPham\frmBaoCaoNhapXuatTon_BanThanhPham.Designer.cs">
       <DependentUpon>frmBaoCaoNhapXuatTon_BanThanhPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoNXT.cs">
+    <Compile Include="KhoNPL\frmBaoCaoNXT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBaoCaoNXT.Designer.cs">
+    <Compile Include="KhoNPL\frmBaoCaoNXT.Designer.cs">
       <DependentUpon>frmBaoCaoNXT.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietNhapXuatTon_MotVatTu.cs">
@@ -1939,7 +1939,7 @@
     <EmbeddedResource Include="frmAnhLon_KHSX.resx">
       <DependentUpon>frmAnhLon_KHSX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBaoCaoNXT.resx">
+    <EmbeddedResource Include="KhoNPL\frmBaoCaoNXT.resx">
       <DependentUpon>frmBaoCaoNXT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintCongNoNganHang.resx">
