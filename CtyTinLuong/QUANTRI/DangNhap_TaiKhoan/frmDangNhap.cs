@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace CtyTinLuong
 {
@@ -75,6 +76,28 @@ namespace CtyTinLuong
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
             txtMatKhau.UseSystemPasswordChar = true;
+        } 
+
+        private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnLogin_Click(null, null);
+            }
+        }
+
+        private void txtTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtMatKhau.Focus();
+            }
+            else
+            {
+
+            }
+
+
         }
     }
 }

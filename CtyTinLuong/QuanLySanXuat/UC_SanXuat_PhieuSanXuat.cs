@@ -204,8 +204,10 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
            
         }
-        public UC_SanXuat_PhieuSanXuat()
+        SanXuat_frmQuanLySanXuat _frmQLSX;
+        public UC_SanXuat_PhieuSanXuat(SanXuat_frmQuanLySanXuat frmQLSX)
         {
+            _frmQLSX = frmQLSX;
             InitializeComponent();
         }
 
@@ -398,21 +400,37 @@ namespace CtyTinLuong
         {
             if (isload)
                 return;
-            LoadData(_SoTrang,false);
+
+            try
+            {
+                _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
+                _frmQLSX.ResetSoTrang();
+                LoadData(1, false);
+            }
+            catch
+            { } 
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
             if (isload)
                 return;
-            LoadData(_SoTrang,false);
+            try {
+                _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
+                _frmQLSX.ResetSoTrang();
+                LoadData(1, false);
+            }
+            catch
+            { }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (isload)
                 return;
-            LoadData(_SoTrang,false);
+            _ma_phieu = txtTimKiem.Text;
+            _frmQLSX.ResetSoTrang();
+            LoadData(1, false);
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

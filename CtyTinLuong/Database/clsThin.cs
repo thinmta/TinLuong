@@ -34,7 +34,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_Phieu_ChiTietPhieu_May_IN_SelectAll_TaoLenhSX_May_IN", ex);
+                throw new Exception("T_TongPhieuSX", ex);
             }
             finally
             {

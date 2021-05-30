@@ -56,6 +56,7 @@
             this.txtTen.Size = new System.Drawing.Size(199, 15);
             this.txtTen.TabIndex = 0;
             this.txtTen.Text = "Tên đăng nhập";
+            this.txtTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTen_KeyPress);
             // 
             // txtMatKhau
             // 
@@ -69,6 +70,7 @@
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.Text = "Mật khẩu";
             this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
+            this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             // 
             // checkBox1
             // 

@@ -310,6 +310,7 @@
             this.btnTrangTiep.TabStop = true;
             this.btnTrangTiep.Text = "Trang tiếp";
             this.btnTrangTiep.Visible = false;
+            this.btnTrangTiep.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangTiep_LinkClicked);
             // 
             // btnTrangSau
             // 
@@ -321,6 +322,7 @@
             this.btnTrangSau.TabStop = true;
             this.btnTrangSau.Text = "Trang sau";
             this.btnTrangSau.Visible = false;
+            this.btnTrangSau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangSau_LinkClicked);
             // 
             // lbTongSoTrang
             // 
@@ -339,6 +341,8 @@
             this.txtSoTrang.Size = new System.Drawing.Size(37, 20);
             this.txtSoTrang.TabIndex = 82;
             this.txtSoTrang.Visible = false;
+            this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
+            this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
             // 
             // SanXuat_frmQuanLySanXuat
             // 
