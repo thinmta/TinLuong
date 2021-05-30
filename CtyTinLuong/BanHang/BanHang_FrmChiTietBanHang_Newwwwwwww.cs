@@ -14,7 +14,7 @@ namespace CtyTinLuong
     public partial class BanHang_FrmChiTietBanHang_Newwwwwwww : Form
     {
         int bienthangthai;
-        string sochungtu_tbThuChi;
+        //string sochungtu_tbThuChi;
         public static DateTime mdaNgayChungTu;
         public static double mdbSoLuongXuat;
 
@@ -357,7 +357,7 @@ namespace CtyTinLuong
                 DataTable dt2_moi = dvdt2_moi.ToTable();
                 for (int i = 0; i < dt2_moi.Rows.Count; i++)
                 {
-                    int ID_ChiTietBanHangxxxx = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBanHang"].ToString());
+                    int ID_ChiTietBanHangxxxx = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietBanHang"].ToString());
                     cls2.iID_ChiTietBanHang = ID_ChiTietBanHangxxxx;
                     cls2.Delete();
                 }

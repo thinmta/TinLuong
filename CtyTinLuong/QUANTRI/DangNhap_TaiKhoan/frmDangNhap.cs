@@ -59,6 +59,7 @@ namespace CtyTinLuong
             }
             else
             {
+             
                 MessageBox.Show("Kiểm tra lại Tên đăng nhập hoặc mật khẩu");
                 txtTen.ResetText();
                 txtMatKhau.ResetText();

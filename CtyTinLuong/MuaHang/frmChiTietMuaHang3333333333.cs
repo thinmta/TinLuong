@@ -331,7 +331,7 @@ namespace CtyTinLuong
                 DataTable dt2_moi = dvdt2_moi.ToTable();
                 for (int i = 0; i < dt2_moi.Rows.Count; i++)
                 {
-                    int ID_ChiTietBanHangxxxx = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietMuaHang"].ToString());
+                    int ID_ChiTietBanHangxxxx = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietMuaHang"].ToString());
                     cls2.iID_ChiTietMuaHang = ID_ChiTietBanHangxxxx;
                     cls2.Delete();
                 }
