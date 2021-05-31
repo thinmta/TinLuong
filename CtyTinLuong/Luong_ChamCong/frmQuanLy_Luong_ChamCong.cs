@@ -70,7 +70,7 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            _frmChamCongToGapDan.LoadData();
+            _frmChamCongToGapDan.LoadData(true);
             _frmChamCongToGapDan.Show();
         }
     }

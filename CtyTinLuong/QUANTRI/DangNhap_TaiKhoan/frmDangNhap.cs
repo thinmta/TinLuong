@@ -51,7 +51,7 @@ namespace CtyTinLuong
             cls.sTen = txtTen.Text.ToString();
             cls.sMatKhau = txtMatKhau.Text.ToString();
             DataTable dt = cls.pr_tbDangNhap_KiemTraDangNhap();
-            if (true)//(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 miID_DangNhap = Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
                 this.Hide();

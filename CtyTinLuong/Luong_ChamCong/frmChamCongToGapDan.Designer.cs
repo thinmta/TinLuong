@@ -509,6 +509,7 @@
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 2;
             // 
@@ -575,7 +576,7 @@
             this.clSLThuong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLThuong.Name = "clSLThuong";
             this.clSLThuong.Visible = true;
-            this.clSLThuong.VisibleIndex = 38;
+            this.clSLThuong.VisibleIndex = 35;
             this.clSLThuong.Width = 52;
             // 
             // clSLTangCa
@@ -588,7 +589,7 @@
             this.clSLTangCa.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLTangCa.Name = "clSLTangCa";
             this.clSLTangCa.Visible = true;
-            this.clSLTangCa.VisibleIndex = 39;
+            this.clSLTangCa.VisibleIndex = 36;
             this.clSLTangCa.Width = 53;
             // 
             // Ngay1
@@ -597,7 +598,7 @@
             this.Ngay1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay1.Caption = "01";
-            this.Ngay1.FieldName = "01";
+            this.Ngay1.FieldName = "Ngay1";
             this.Ngay1.MaxWidth = 27;
             this.Ngay1.MinWidth = 27;
             this.Ngay1.Name = "Ngay1";
@@ -1086,25 +1087,19 @@
             this.Tong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 37;
+            this.Tong.VisibleIndex = 34;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 34;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 35;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 36;
             // 
             // gridControl1
             // 
@@ -1143,6 +1138,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(192, 22);
             this.txtTimKiem.TabIndex = 129;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // frmChamCongToGapDan
             // 
