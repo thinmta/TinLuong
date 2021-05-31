@@ -100,46 +100,7 @@ namespace CtyTinLuong
                 clsHUU_LenhSanXuat clsxxx = new CtyTinLuong.clsHUU_LenhSanXuat();
                 clsxxx.iID_LenhSanXuat = UCNPL_XuatKho_TheoLenhSanXuat_mayIN.mID_iD_LenhSanXuat;
                 clsxxx.Update_TrangThai_XuatKho_NPL_may_IN();
-
-
-                //// luu bien dong tai khoan ke toán
-                //if(gridTKCo.EditValue != null & gridTKNo.EditValue != null)
-                //{
-                //    clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                //    cls.iID_TaiKhoanKeToanCon = Convert.ToInt16(gridTKNo.EditValue.ToString());
-                //    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                //    clscon.iID_TaiKhoanKeToanCon = Convert.ToInt16(gridTKNo.EditValue.ToString());
-                //    DataTable dtcon = clscon.SelectOne();
-                  
-                //    cls.iID_ChungTu = iiiiIDID_XuatKhoNPL;
-                //    cls.sSoChungTu = txtSoChungTu.Text.ToString();
-                //    cls.daNgayThang = dteNgayChungTuNPL.DateTime;
-                //    cls.fCo = 0;
-                //    cls.fNo = Convert.ToDouble(txtTienNo.Text.ToString());
-                //    cls.bNgungTheoDoi = false;
-                //    cls.bTonTai = true;
-                //    cls.fTiGia = 1;
-                //    cls.bTienUSD = false;
-             
-                //    cls.Insert();
-                //    // Có
-                //    cls.iID_TaiKhoanKeToanCon = Convert.ToInt16(gridTKCo.EditValue.ToString());
-                //    clsNganHang_TaiKhoanKeToanCon clscon2 = new clsNganHang_TaiKhoanKeToanCon();
-                //    clscon2.iID_TaiKhoanKeToanCon = Convert.ToInt16(gridTKCo.EditValue.ToString());
-                //    DataTable dtcon2 = clscon2.SelectOne();
-                    
-                //    cls.iID_ChungTu = iiiiIDID_XuatKhoNPL;
-                //    cls.sSoChungTu = txtSoChungTu.Text.ToString();
-                //    cls.daNgayThang = dteNgayChungTuNPL.DateTime;
-                //    cls.fCo = Convert.ToDouble(txtTienCo.Text.ToString());
-                //    cls.fNo = 0;
-                //    cls.bNgungTheoDoi = false;
-                //    cls.bTonTai = true;
-                //    cls.fTiGia = 1;
-                //    cls.bTienUSD = false;
-                  
-                //    cls.Insert();
-                //}
+                
                 
                 MessageBox.Show("Đã xuất kho");
                 this.Close();
@@ -175,20 +136,6 @@ namespace CtyTinLuong
             gridMaCN.Properties.ValueMember = "ID_NhanSu";
             gridMaCN.Properties.DisplayMember = "MaNhanVien";
 
-            clsNganHang_TaiKhoanKeToanCon clsme = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dtme = clsme.SelectAll();
-            dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-            DataView dvme = dtme.DefaultView;
-            DataTable newdtme = dvme.ToTable();
-
-            gridTKCo.Properties.DataSource = newdtme;
-            gridTKCo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKCo.Properties.DisplayMember = "SoTaiKhoanCon";
-
-
-            gridTKNo.Properties.DataSource = newdtme;
-            gridTKNo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKNo.Properties.DisplayMember = "SoTaiKhoanCon";
 
 
         }
@@ -289,8 +236,7 @@ namespace CtyTinLuong
             gridMaCN.EditValue = cls.iID_CongNhan.Value;
             
             txtGhiChu.Text = cls.sGhiChu.Value.ToString();
-
-            checkBox1.Checked = true;
+          
             dteNgayChungTuNPL.DateTime = DateTime.Today;
         }        
         public NPL_ChiTietLenhSanXuat()
@@ -477,38 +423,8 @@ namespace CtyTinLuong
             }
         }
 
-        private void txtTienNo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                decimal value = decimal.Parse(txtTienNo.Text);
-                txtTienNo.Text = String.Format("{0:#,##0.00}", value);
-                txtTienCo.Text = txtTienNo.Text;
-            }
-            catch
-            {
-            }
-        }
+       
 
-        private void txtTienCo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                decimal value = decimal.Parse(txtTienCo.Text);
-                txtTienCo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-                txtTienNo.Text = txtTongTienHang.Text;
-            if (checkBox1.Checked == false)
-                txtTienNo.Text = "0";
-        }
 
         private void btXuatKho_Click(object sender, EventArgs e)
         {

@@ -17,9 +17,9 @@ namespace CtyTinLuong
         public static bool mbPrint;
         public static DateTime mdaNgayChungTu;
         public static DataTable mdtPrint;
-        public static string msSoChungTu, msNguoiGiaoHang;
+        public static string msSoChungTu, msNguoiGiaoHang, msDienGiai;
         public static double mdbTongSotien;
-
+     
         public KhoNPL_ChiTiet_NhapKho_Khac()
         {
             InitializeComponent();
@@ -426,6 +426,7 @@ namespace CtyTinLuong
                 msSoChungTu = txtSoChungTu.Text.ToString();
                 msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
                 mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
                 ff.Show();
 

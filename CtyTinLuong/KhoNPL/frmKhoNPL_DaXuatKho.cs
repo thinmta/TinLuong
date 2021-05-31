@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,11 @@ namespace CtyTinLuong
 {
     public partial class frmKhoNPL_DaXuatKho : Form
     {
+        public static bool mbPrint;
+        public static DateTime mdaNgayChungTu;
+        public static DataTable mdtPrint;
+        public static string msSoChungTu, msNguoiNhanHang, msDienGiai;
+        public static double mdbTongSotien;
         private void Load_lockUP_EDIT()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
@@ -363,6 +369,32 @@ namespace CtyTinLuong
         private void btLuu_Click(object sender, EventArgs e)
         {
             Luu_XuatKho();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            DataTable dttttt2 = dv1212.ToTable();
+            string shienthi = "1";
+            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+            DataView dv = dttttt2.DefaultView;
+            mdtPrint = dv.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint = true;
+                mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                msNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
+                mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                msDienGiai = txtDienGiaiNPL.Text.ToString();
+                frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
+                ff.Show();
+
+            }
         }
     }
 }
