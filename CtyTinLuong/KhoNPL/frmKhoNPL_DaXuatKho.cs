@@ -64,7 +64,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
           
             dt2.Columns.Add("ThanhTien", typeof(float));
-            clsKhoNPL_tbChiTietNhapKho clsnhapkho = new clsKhoNPL_tbChiTietNhapKho();
+           
             for (int i = 0; i < dtxxxx.Rows.Count; i++)
             {
                 double soluong, dongia;
