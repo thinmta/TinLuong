@@ -69,7 +69,7 @@
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -112,11 +112,13 @@
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTongCong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -239,17 +241,23 @@
             // 
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThang.Location = new System.Drawing.Point(499, 7);
+            this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 22);
             this.txtThang.TabIndex = 128;
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
+            this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNam.Location = new System.Drawing.Point(625, 8);
+            this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(78, 22);
             this.txtNam.TabIndex = 129;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
+            this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
             // 
             // cbLoaiHangSX
             // 
@@ -283,7 +291,7 @@
             // 
             // txtDinhMuc
             // 
-            this.txtDinhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDinhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDinhMuc.Location = new System.Drawing.Point(499, 39);
             this.txtDinhMuc.Name = "txtDinhMuc";
             this.txtDinhMuc.Size = new System.Drawing.Size(204, 22);
@@ -381,7 +389,7 @@
             this.clSTT,
             this.clTenNhanVien,
             this.clTongLuong,
-            this.NoiDung,
+            this.TenVTHH,
             this.clID_ChiTietChamCong,
             this.clID_ChamCong,
             this.clThang,
@@ -424,7 +432,7 @@
             this.gridColumn31,
             this.clHienThi,
             this.clGuiDuLieu,
-            this.clTongCong,
+            this.Tong,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4});
@@ -495,14 +503,14 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
             this.clTongLuong.Width = 80;
             // 
-            // NoiDung
+            // TenVTHH
             // 
-            this.NoiDung.Caption = "Nội dung";
-            this.NoiDung.FieldName = "NoiDung";
-            this.NoiDung.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.NoiDung.Name = "NoiDung";
-            this.NoiDung.Visible = true;
-            this.NoiDung.VisibleIndex = 2;
+            this.TenVTHH.Caption = "Nội dung";
+            this.TenVTHH.FieldName = "TenVTHH";
+            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.Visible = true;
+            this.TenVTHH.VisibleIndex = 2;
             // 
             // clID_ChiTietChamCong
             // 
@@ -1062,23 +1070,23 @@
             this.clGuiDuLieu.FieldName = "GuiDuLieu";
             this.clGuiDuLieu.Name = "clGuiDuLieu";
             // 
-            // clTongCong
+            // Tong
             // 
-            this.clTongCong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clTongCong.AppearanceCell.ForeColor = System.Drawing.Color.Black;
-            this.clTongCong.AppearanceCell.Options.UseFont = true;
-            this.clTongCong.AppearanceCell.Options.UseForeColor = true;
-            this.clTongCong.AppearanceCell.Options.UseTextOptions = true;
-            this.clTongCong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clTongCong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clTongCong.Caption = "Tổng";
-            this.clTongCong.FieldName = "TongCong";
-            this.clTongCong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.clTongCong.Name = "clTongCong";
-            this.clTongCong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.Tong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tong.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.Tong.AppearanceCell.Options.UseFont = true;
+            this.Tong.AppearanceCell.Options.UseForeColor = true;
+            this.Tong.AppearanceCell.Options.UseTextOptions = true;
+            this.Tong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Tong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Tong.Caption = "Tổng";
+            this.Tong.FieldName = "Tong";
+            this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.Tong.Name = "Tong";
+            this.Tong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
-            this.clTongCong.Visible = true;
-            this.clTongCong.VisibleIndex = 37;
+            this.Tong.Visible = true;
+            this.Tong.VisibleIndex = 37;
             // 
             // gridColumn2
             // 
@@ -1103,7 +1111,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(12, 69);
+            this.gridControl1.Location = new System.Drawing.Point(12, 97);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1112,11 +1120,29 @@
             this.repositoryItemMemoEdit2,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemMemoEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1346, 599);
+            this.gridControl1.Size = new System.Drawing.Size(1346, 571);
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(18, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 16);
+            this.label7.TabIndex = 126;
+            this.label7.Text = "Tìm kiếm nhân viên :";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(189, 69);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(192, 22);
+            this.txtTimKiem.TabIndex = 129;
             // 
             // frmChamCongToGapDan
             // 
@@ -1125,7 +1151,9 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1370, 675);
             this.Controls.Add(this.btnThemDinhMuc);
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtDinhMuc);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbLoaiHangSX);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -1192,7 +1220,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn clTongLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn NoiDung;
+        private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clThang;
@@ -1235,10 +1263,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraGrid.Columns.GridColumn clHienThi;
         private DevExpress.XtraGrid.Columns.GridColumn clGuiDuLieu;
-        private DevExpress.XtraGrid.Columns.GridColumn clTongCong;
+        private DevExpress.XtraGrid.Columns.GridColumn Tong;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.GridControl gridControl1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTimKiem;
     }
 }

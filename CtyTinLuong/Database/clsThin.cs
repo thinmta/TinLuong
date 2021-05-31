@@ -182,6 +182,44 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+        public DataTable T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(int nam, int thang, int ID_BoPhan, int ID_VTHH)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("cpn_bp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
+            // Use base class' connection object
+
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_BoPhan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_VTHH));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsCpn_bp::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
     }
 }

@@ -12,9 +12,11 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLy_Luong_ChamCong : Form
     {
+        frmChamCongToGapDan _frmChamCongToGapDan;
         public frmQuanLy_Luong_ChamCong()
         {
             InitializeComponent();
+            _frmChamCongToGapDan = new frmChamCongToGapDan();
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -68,8 +70,8 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmChamCongToGapDan ff = new frmChamCongToGapDan();
-            ff.Show();
+            _frmChamCongToGapDan.LoadData();
+            _frmChamCongToGapDan.Show();
         }
     }
 }

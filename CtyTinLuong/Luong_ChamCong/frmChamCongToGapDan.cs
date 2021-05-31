@@ -21,9 +21,68 @@ namespace CtyTinLuong
         public static int miThang, miNam;
         public static string msTenNhanVien;
 
-        public void LoadData()
+        private int _nam, _thang, _id_bophan, _id_vthh;
+        public string _tennhanvien = "";
+        private DataTable _data;
+        private bool isload = true;
+        public void LoadData(bool islandau)
         {
+            isload = true;
+            if (islandau)
+            {
+                txtNam.Text = DateTime.Now.Year.ToString();
+                txtThang.Text = DateTime.Now.Month.ToString();
+                txtTimKiem.Text = "";
+            }
+            else
+            { 
+            } 
+            _nam = DateTime.Now.Year;
+            _thang = DateTime.Now.Month;
+            _tennhanvien = txtTimKiem.Text;
 
+            using (clsThin clsThin_ = new clsThin())
+            {
+                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam,_thang,_id_bophan,_id_vthh);
+                  
+                /*
+                if (dxcongnhat.Rows.Count > 0)
+                {
+                    repositoryItemGridLookUpEdit1.DataSource = dxcongnhat;
+                    repositoryItemGridLookUpEdit1.ValueMember = "ID_DinhMucLuong_CongNhat";
+                    repositoryItemGridLookUpEdit1.DisplayMember = "MaDinhMucLuongCongNhat";
+                } 
+                */  
+            }
+            gridControl1.DataSource = _data;
+
+            clsHuu_CongNhat clsxx = new clsHuu_CongNhat();
+            clsxx.iID_ChamCong = UCBangLuong.mID_iD_ChamCong;
+            DataTable dtxx = clsxx.SelectOne();
+            if (Convert.ToBoolean(dtxx.Rows[0]["GuiDuLieu"].ToString()) == true)
+            {
+                btGuiDuLieu.Enabled = false;
+
+                Ngay1.OptionsColumn.AllowEdit = Ngay2.OptionsColumn.AllowEdit =
+                    Ngay3.OptionsColumn.AllowEdit = Ngay4.OptionsColumn.AllowEdit =
+                    Ngay5.OptionsColumn.AllowEdit = Ngay6.OptionsColumn.AllowEdit =
+                    Ngay7.OptionsColumn.AllowEdit = Ngay8.OptionsColumn.AllowEdit =
+                    Ngay9.OptionsColumn.AllowEdit = Ngay10.OptionsColumn.AllowEdit =
+                    Ngay11.OptionsColumn.AllowEdit = Ngay12.OptionsColumn.AllowEdit =
+                    gridColumn13.OptionsColumn.AllowEdit = gridColumn14.OptionsColumn.AllowEdit =
+                    gridColumn15.OptionsColumn.AllowEdit = gridColumn16.OptionsColumn.AllowEdit =
+                    gridColumn17.OptionsColumn.AllowEdit = gridColumn18.OptionsColumn.AllowEdit =
+                    gridColumn19.OptionsColumn.AllowEdit = gridColumn20.OptionsColumn.AllowEdit =
+                    gridColumn21.OptionsColumn.AllowEdit = gridColumn22.OptionsColumn.AllowEdit =
+                    gridColumn23.OptionsColumn.AllowEdit = gridColumn24.OptionsColumn.AllowEdit =
+                    gridColumn25.OptionsColumn.AllowEdit = gridColumn26.OptionsColumn.AllowEdit =
+                    Ngay27.OptionsColumn.AllowEdit = Ngay28.OptionsColumn.AllowEdit =
+                    gridColumn29.OptionsColumn.AllowEdit = gridColumn30.OptionsColumn.AllowEdit =
+                    gridColumn31.OptionsColumn.AllowEdit = false;
+                clSLTangCa.OptionsColumn.AllowEdit = false;
+
+            }
+            isload = false;
         }
         private void HienThi()
         {
@@ -466,7 +525,7 @@ namespace CtyTinLuong
                 double ngay29 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
                 double ngay30 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
                 double ngay31 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
-                double tongcong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clTongCong).ToString());
+                double tongcong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(Tong).ToString());
                 int ID_ChiTietChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
                 if (e.RowHandle % 2 == 0)
                 {
@@ -591,7 +650,7 @@ namespace CtyTinLuong
             if (e.Column == Ngay1)
             {
 
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -604,7 +663,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay2)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -617,7 +676,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay3)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -629,7 +688,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay4)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -641,7 +700,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay5)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -653,7 +712,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay6)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -665,7 +724,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay7)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -677,7 +736,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay8)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -689,7 +748,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay9)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -701,7 +760,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay10)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -714,7 +773,7 @@ namespace CtyTinLuong
 
             if (e.Column == Ngay11)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -726,7 +785,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay12)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -738,7 +797,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn13)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -750,7 +809,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn14)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -762,7 +821,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn15)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -774,7 +833,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn16)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -786,7 +845,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn17)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -798,7 +857,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn18)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -810,7 +869,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn19)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -822,7 +881,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn20)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -834,7 +893,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn21)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -846,7 +905,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn22)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -858,7 +917,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn23)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -870,7 +929,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn24)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -882,7 +941,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn25)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -894,7 +953,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn26)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -906,7 +965,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay27)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -918,7 +977,7 @@ namespace CtyTinLuong
             }
             if (e.Column == Ngay28)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -930,7 +989,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn29)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -942,7 +1001,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn30)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -954,7 +1013,7 @@ namespace CtyTinLuong
             }
             if (e.Column == gridColumn31)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clTongCong, tongcong);
+                gridView1.SetRowCellValue(e.RowHandle, Tong, tongcong);
                 if (e.RowHandle % 2 == 0)
                 {
                     gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong);
@@ -972,6 +1031,12 @@ namespace CtyTinLuong
             InitializeComponent();
             txtNam.Text = DateTime.Now.Year.ToString();
             txtThang.Text = DateTime.Now.Month.ToString();
+
+            _nam = DateTime.Now.Year;
+            _thang = DateTime.Now.Month;
+            _id_bophan = 0;
+            _id_vthh = 0;
+
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
@@ -991,6 +1056,8 @@ namespace CtyTinLuong
                 cbLoaiHangSX.Enabled = true;
                  
             }
+            _id_vthh = cbLoaiHangSX.SelectedIndex;
+            _id_bophan = cbBoPhan.SelectedIndex;
         }
 
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1002,11 +1069,59 @@ namespace CtyTinLuong
         {
 
         }
+
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtThang_Leave(object sender, EventArgs e)
+        {
+
+        }
+        private void HoanThanhThang()
+        {
+            try
+            {
+                _thang = Convert.ToInt32(txtThang.Text);
+                LoadData(false);
+            }
+            catch {
+                MessageBox.Show("Tháng không hợp lệ");
+            }
+        }
+        private void HoanThanhNam()
+        {
+            try
+            {
+                _nam = Convert.ToInt32(txtNam.Text);
+                LoadData(false);
+            }
+            catch
+            {
+                MessageBox.Show("Tháng không hợp lệ");
+            }
+        }
+
+        private void txtNam_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (isload)
+                return;
+          //  if(e.KeyChar == )
+            HoanThanhNam();
+        }
+
         private int _id_dinhmuc_togapdan;
 
         private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtDinhMuc.ForeColor = Color.Black;
+            _id_vthh = cbLoaiHangSX.SelectedIndex;
             using (clsThin clsThin_ = new clsThin())
             {
                 int nam_, thang_;
@@ -1043,9 +1158,7 @@ namespace CtyTinLuong
                     {
 
                     }
-                }
-                    }
-                }
+                } 
                 else
                 {
                     txtDinhMuc.Text = "Chưa cài đặt định mức!";
