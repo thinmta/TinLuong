@@ -670,11 +670,16 @@ namespace CtyTinLuong
             }
         }
 
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btPrint_Click(object sender, EventArgs e)
         {
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
             {
-                mbPrint_NXT_Kho_NPL = true;
+               
                 DataTable DatatableABC = (DataTable)gridControl1.DataSource;
                 CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
                 string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
@@ -686,6 +691,7 @@ namespace CtyTinLuong
                     MessageBox.Show("Không có dữ liệu");
                 else
                 {
+                    mbPrint_NXT_Kho_NPL = true;
                     mdatungay = dteTuNgay.DateTime;
                     mdadenngay = dteDenNgay.DateTime;
                     msNguoiLap_Prtint = "";

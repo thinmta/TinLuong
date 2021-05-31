@@ -37,7 +37,7 @@
             this.navXuatKhoLSX_ICD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -47,7 +47,6 @@
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +70,6 @@
             this.navBarItem3,
             this.navBarItem8,
             this.navBarItem7,
-            this.navBarItem12,
             this.navBarItem9});
             this.navBarControl1.Location = new System.Drawing.Point(0, 14);
             this.navBarControl1.Name = "navBarControl1";
@@ -118,20 +116,19 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKhoLSX_ICD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navXuatKhoLSX_ICD
             // 
-            this.navXuatKhoLSX_ICD.Caption = "Xuất kho LSX (I-C-Đ)";
+            this.navXuatKhoLSX_ICD.Caption = "Xuất kho LSX ";
             this.navXuatKhoLSX_ICD.Name = "navXuatKhoLSX_ICD";
             this.navXuatKhoLSX_ICD.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkPressed);
             this.navXuatKhoLSX_ICD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
             // 
             // navBarItem3
             // 
-            this.navBarItem3.Caption = "Xuất kho ra Đại lý gia công";
+            this.navBarItem3.Caption = "Xuất kho ra Đại lý ";
             this.navBarItem3.Name = "navBarItem3";
             this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked_1);
             // 
@@ -141,10 +138,11 @@
             this.navBarItem8.Name = "navBarItem8";
             this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
             // 
-            // navBarItem12
+            // navBarItem9
             // 
-            this.navBarItem12.Caption = "Trả lại hàng mua";
-            this.navBarItem12.Name = "navBarItem12";
+            this.navBarItem9.Caption = "Xuất kho khác";
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarGroup2
             // 
@@ -211,12 +209,6 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Caption = "Xuất kho khác";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
-            // 
             // KhoNPL_frmNPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +251,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem12;
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
     }
 }
