@@ -57,6 +57,11 @@ namespace CtyTinLuong
         }
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
+           
+        }
+
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
             try
             {
                 clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
@@ -76,15 +81,15 @@ namespace CtyTinLuong
             }
             catch
             {
-              
+
             }
-           
+
 
             if (NPLChiTietNhapKho_DaiLy_ThemMoi.mbPrint_Chitiet_XuatKho_DaiLyGiaCong == true)
             {
                 NPLChiTietNhapKho_DaiLy_ThemMoi_In_AN();
             }
-            if(DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww.mbPrint_Chitiet_XuatKho_DaiLyGiaCong == true)
+            if (DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww.mbPrint_Chitiet_XuatKho_DaiLyGiaCong == true)
             {
                 DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_In_AN();
             }
