@@ -674,7 +674,7 @@ namespace CtyTinLuong
                     else
                         result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
-            catch (Exception e)
+            catch 
             {
                 try
                 {

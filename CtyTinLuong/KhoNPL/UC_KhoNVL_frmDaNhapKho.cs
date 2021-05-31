@@ -72,36 +72,27 @@ namespace CtyTinLuong
            
             gridControl2.DataSource = dt2;
         }
-        private void HienThi()
+        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
         {
-            if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
-            {
-                DateTime denngay = dteNgay.DateTime;
-                DateTime tungay = dteTuNgay.DateTime;
+           
 
                 clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
                 DataTable dt2xx = cls.SelectAll();
                 dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
                 DataView dv22xxx = dt2xx.DefaultView;
                 dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
-                DataTable dt2 = dv22xxx.ToTable();
+                DataTable dt = dv22xxx.ToTable();            
 
-                dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-                DataView dv = dt2.DefaultView;
-                dv.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
-                DataTable dt = dv.ToTable();
-
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'";
+                dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
                 DataView dvxxx = dt.DefaultView;
                 DataTable dt22 = dvxxx.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
+                dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
                 DataView dv2 = dt22.DefaultView;
                 dv2.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
                 DataTable dxxxx = dv2.ToTable();
 
                 gridControl1.DataSource = dxxxx;
-            }
-
+          
         }
         private void HienThi_ALL()
         {            
@@ -166,7 +157,7 @@ namespace CtyTinLuong
         {
             if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi();
+                HienThi(dteTuNgay.DateTime,dteNgay.DateTime.AddDays(1));
             }
         }
 
