@@ -278,14 +278,14 @@ namespace CtyTinLuong
 					m_bCheck_DaiLy = (bool)dtToReturn.Rows[0]["Check_DaiLy"];
 					m_sThamChieu = (string)dtToReturn.Rows[0]["ThamChieu"];
 					m_bDaNhapKho = (bool)dtToReturn.Rows[0]["DaNhapKho"];
-					m_bBool_TonDauKy = dtToReturn.Rows[0]["Bool_TonDauKy"] == System.DBNull.Value ? SqlBoolean.Null : (bool)dtToReturn.Rows[0]["Bool_TonDauKy"];
+					m_bBool_TonDauKy = (bool)dtToReturn.Rows[0]["Bool_TonDauKy"];
 					m_daThoiGian_KhoiTao = dtToReturn.Rows[0]["ThoiGian_KhoiTao"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_KhoiTao"];
 					m_daThoiGian_LaiXe = dtToReturn.Rows[0]["ThoiGian_LaiXe"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_LaiXe"];
 					m_daThoiGian_BaoVe = dtToReturn.Rows[0]["ThoiGian_BaoVe"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_BaoVe"];
 					m_daThoiGian_DaiLy = dtToReturn.Rows[0]["ThoiGian_DaiLy"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_DaiLy"];
 					m_sGhiChu = (string)dtToReturn.Rows[0]["GhiChu"];
 					m_bHoanThanh = (bool)dtToReturn.Rows[0]["HoanThanh"];
-					m_iHangDoT_1_hangNhu_2_ConLai3 = dtToReturn.Rows[0]["HangDoT_1_hangNhu_2_ConLai3"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["HangDoT_1_hangNhu_2_ConLai3"];
+					m_iHangDoT_1_hangNhu_2_ConLai3 = (Int32)dtToReturn.Rows[0]["HangDoT_1_hangNhu_2_ConLai3"];
 				}
 				return dtToReturn;
 			}
