@@ -76,7 +76,7 @@ namespace CtyTinLuong
                     _data.Rows[i]["ID_VTHH"] = _id_vthh;
                     _data.Rows[i]["TenVTHH"] = _ten_vthh;
                 }
-                //txttong
+                txtTongCong.Text = tong_tatca.ToString();
                 /*
                 if (dxcongnhat.Rows.Count > 0)
                 {
@@ -497,10 +497,12 @@ namespace CtyTinLuong
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 if (_data.Rows.Count > index_)
                 {
-                    _data.Rows[index_]["Tong"] =
-                    Convert.ToInt32(_data.Rows[index_][name_].ToString())
-                    + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
+                    int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
+                    _data.Rows[index_]["Tong"] = temp_  + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
+                    int tongcong_ = Convert.ToInt32(txtTongCong.Text);
+                    txtTongCong.Text = (tongcong_ + temp_).ToString();
                 }
+
             }
            // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
         }
@@ -579,6 +581,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         { 
             if (isload)
@@ -594,7 +601,7 @@ namespace CtyTinLuong
         {
             if (isload)
                 return;
-            txtDinhMuc.ForeColor = Color.Black;
+            txtTongCong.ForeColor = Color.Black;
             _id_vthh = cbLoaiHangSX.SelectedIndex;
             _ten_vthh = cbLoaiHangSX.Text;
             using (clsThin clsThin_ = new clsThin())
@@ -623,11 +630,11 @@ namespace CtyTinLuong
                 {
                     _id_dinhmuc_togapdan = Convert.ToInt32(dt_.Rows[0]["ID_DinhMuc_Luong_SanLuong"]);
                     float dinhmuc_ = ConvertToFloat(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
-                    txtDinhMuc.Text = dt_.Rows[0]["MaDinhMuc"] + " (" + dinhmuc_.ToString("N0") + ")";
+                    txtTongCong.Text = dt_.Rows[0]["MaDinhMuc"] + " (" + dinhmuc_.ToString("N0") + ")";
                     if (_id_dinhmuc_togapdan == 0)
                     {
-                        txtDinhMuc.Text = "Chưa cài đặt định mức!";
-                        txtDinhMuc.ForeColor = Color.Red; 
+                        txtTongCong.Text = "Chưa cài đặt định mức!";
+                        txtTongCong.ForeColor = Color.Red; 
                     }
                     else
                     {
@@ -636,8 +643,8 @@ namespace CtyTinLuong
                 } 
                 else
                 {
-                    txtDinhMuc.Text = "Chưa cài đặt định mức!";
-                    txtDinhMuc.ForeColor = Color.Red;
+                    txtTongCong.Text = "Chưa cài đặt định mức!";
+                    txtTongCong.ForeColor = Color.Red;
                     _id_dinhmuc_togapdan = 0;
                 }
                 //
