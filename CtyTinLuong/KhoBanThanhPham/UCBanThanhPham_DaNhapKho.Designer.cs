@@ -69,7 +69,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_NhapKhoNPL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_NhapKhoBTP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clNgayNhapKho = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -441,7 +441,7 @@
             this.gridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
-            this.clID_NhapKhoNPL,
+            this.clID_NhapKhoBTP,
             this.clDienGiai,
             this.clNgayNhapKho,
             this.clSoChungTu,
@@ -479,12 +479,12 @@
             this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 43;
             // 
-            // clID_NhapKhoNPL
+            // clID_NhapKhoBTP
             // 
-            this.clID_NhapKhoNPL.Caption = "ID_NhapKho";
-            this.clID_NhapKhoNPL.FieldName = "ID_NhapKho";
-            this.clID_NhapKhoNPL.Name = "clID_NhapKhoNPL";
-            this.clID_NhapKhoNPL.Width = 46;
+            this.clID_NhapKhoBTP.Caption = "ID_NhapKhoBTP";
+            this.clID_NhapKhoBTP.FieldName = "ID_NhapKhoBTP";
+            this.clID_NhapKhoBTP.Name = "clID_NhapKhoBTP";
+            this.clID_NhapKhoBTP.Width = 46;
             // 
             // clDienGiai
             // 
@@ -836,7 +836,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_NhapKhoNPL;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_NhapKhoBTP;
         private DevExpress.XtraGrid.Columns.GridColumn clDienGiai;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clNgayNhapKho;

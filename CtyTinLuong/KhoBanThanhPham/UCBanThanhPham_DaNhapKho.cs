@@ -13,7 +13,7 @@ namespace CtyTinLuong
     public partial class UCBanThanhPham_DaNhapKho : UserControl
     {
         public static int miD_NhapKho;
-        public static string msThamChieuMuaHang;
+      
         private void Load_LockUp()
         {
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -77,11 +77,11 @@ namespace CtyTinLuong
         {
 
 
-            clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
+            clsKhoBTP_tbNhapKho cls = new CtyTinLuong.clsKhoBTP_tbNhapKho();
             DataTable dt2xx = cls.SelectAll();
-            dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
+            dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=False";
             DataView dv22xxx = dt2xx.DefaultView;
-            dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
+            dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
             DataTable dt = dv22xxx.ToTable();
 
             dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
@@ -89,7 +89,7 @@ namespace CtyTinLuong
             DataTable dt22 = dvxxx.ToTable();
             dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
             DataView dv2 = dt22.DefaultView;
-            dv2.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
+            dv2.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
             DataTable dxxxx = dv2.ToTable();
 
             gridControl1.DataSource = dxxxx;
@@ -98,11 +98,11 @@ namespace CtyTinLuong
         private void HienThi_ALL()
         {
 
-            clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
+            clsKhoBTP_tbNhapKho cls = new CtyTinLuong.clsKhoBTP_tbNhapKho();
             DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
+            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=False";
             DataView dv = dt2.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
+            dv.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
             DataTable dxxxx = dv.ToTable();
             gridControl1.DataSource = dxxxx;
 
@@ -139,11 +139,11 @@ namespace CtyTinLuong
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString() != "")
+                if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
                 {
-                    msThamChieuMuaHang = gridView1.GetFocusedRowCellValue(clThamChieu).ToString();
-                    miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
-                    KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang ff = new KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang();
+                    
+                    miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
+                    KhoBTP_ChiTiet_DaNhapKho ff = new KhoBTP_ChiTiet_DaNhapKho();
                     ff.Show();
                 }
             }
@@ -163,9 +163,9 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
             {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
+                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
                 HienThiGridControl_2(iiIDnhapKhp);
             }
         }
@@ -180,19 +180,19 @@ namespace CtyTinLuong
 
         private void btXoa1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
             {
                 DialogResult traloi;
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
-                    clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
-                    cls1.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
+                    clsKhoBTP_tbNhapKho cls1 = new clsKhoBTP_tbNhapKho();
+                    cls1.iID_NhapKhoBTP = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
 
 
                     cls1.Delete();
-                    clsKhoNPL_tbChiTietNhapKho cls2 = new clsKhoNPL_tbChiTietNhapKho();
-                    cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
+                    clsKhoBTP_tbChiTietNhapKho cls2 = new clsKhoBTP_tbChiTietNhapKho();
+                    cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
                     cls2.Delete_ALL_W_ID_NhapKho();
                     MessageBox.Show("Đã xóa");
                     if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
