@@ -1006,6 +1006,7 @@ namespace CtyTinLuong
 
         private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtDinhMuc.ForeColor = Color.Black;
             using (clsThin clsThin_ = new clsThin())
             {
                 int nam_, thang_;
@@ -1036,17 +1037,19 @@ namespace CtyTinLuong
                     if (_id_dinhmuc_togapdan == 0)
                     {
                         txtDinhMuc.Text = "Chưa cài đặt định mức!";
-                        MessageBox.Show("Chưa cài đặt định mức! Vui lòng cài đặt định mức cho mã hàng này");
+                        txtDinhMuc.ForeColor = Color.Red; 
                     }
                     else
                     {
 
                     }
                 }
+                    }
+                }
                 else
                 {
                     txtDinhMuc.Text = "Chưa cài đặt định mức!";
-                   MessageBox.Show("Chưa cài đặt định mức! Vui lòng cài đặt định mức cho mã hàng này");
+                    txtDinhMuc.ForeColor = Color.Red;
                     _id_dinhmuc_togapdan = 0;
                 }
                 //
