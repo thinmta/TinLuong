@@ -592,6 +592,8 @@ namespace CtyTinLuong
 
         private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isload)
+                return;
             txtDinhMuc.ForeColor = Color.Black;
             _id_vthh = cbLoaiHangSX.SelectedIndex;
             _ten_vthh = cbLoaiHangSX.Text;
