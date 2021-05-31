@@ -39,7 +39,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("ID_VTHH", typeof(int));          
             dt2.Columns.Add("MaVT", typeof(string));          
             dt2.Columns.Add("DonViTinh", typeof(string));        
-            dt2.Columns.Add("TenVTHHH", typeof(string));           
+            dt2.Columns.Add("TenVTHH", typeof(string));           
             dt2.Columns.Add("SoLuong", typeof(float));               
             dt2.Columns.Add("HienThi", typeof(string));
             dt2.Columns.Add("DonGia", typeof(float));           
@@ -54,9 +54,9 @@ namespace CtyTinLuong
                 _ravi["ID_VTHH"] = iiDI_Vthh_vao;
                 clsVT_Vao.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
                 DataTable dtVT_vao = clsVT_Vao.SelectOne();
-                _ravi["MaVT_Vao"] = clsVT_Vao.sMaVT.Value;
+                _ravi["MaVT"] = iiDI_Vthh_vao;
                 _ravi["DonViTinh"] = clsVT_Vao.sDonViTinh.Value;
-                _ravi["TenVatTu"] = clsVT_Vao.sTenVTHH.Value;
+                _ravi["TenVTHH"] = clsVT_Vao.sTenVTHH.Value;
                 _ravi["SoLuong"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongVao"].ToString());
                 _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaVao"].ToString());              
                 soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongVao"].ToString());

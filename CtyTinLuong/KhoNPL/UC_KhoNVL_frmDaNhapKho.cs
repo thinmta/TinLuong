@@ -198,7 +198,7 @@ namespace CtyTinLuong
                     MessageBox.Show("Đã xóa");
                     if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
-                        HienThi();
+                        HienThi(dteTuNgay.DateTime, dteNgay.DateTime.AddDays(1));
                     }
                     else HienThi_ALL();
                 }
