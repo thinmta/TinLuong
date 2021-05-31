@@ -1346,6 +1346,7 @@ namespace CtyTinLuong
                 layoutControlItem16.Text = "Cục/ 1bao";
                 layoutControlItem15.Text = "Số lượng xuất";
                 layoutControlItem21.Text = "Tổng số cục";
+                txtSoLuong_BaoBe.Text = "0";
             }
         }
 
