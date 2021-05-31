@@ -76,5 +76,16 @@ namespace CtyTinLuong
             _frmChamCongToGapDan.LoadData(true);
             _frmChamCongToGapDan.Show();
         }
+
+        private void frmQuanLy_Luong_ChamCong_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmQuanLy_Luong_ChamCong_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _frmMain.Show();
+            this.Close();
+        }
     }
 }

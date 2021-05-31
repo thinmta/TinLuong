@@ -374,7 +374,7 @@ namespace CtyTinLuong
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
             _frmQuanLy_Luong_ChamCong = new CtyTinLuong.frmQuanLy_Luong_ChamCong(this);
-            this.Show();
+            this.Hide();
             _frmQuanLy_Luong_ChamCong.Show();
         }
 

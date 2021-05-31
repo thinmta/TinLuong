@@ -303,7 +303,7 @@
             this.txtTongCong.ReadOnly = true;
             this.txtTongCong.Size = new System.Drawing.Size(57, 22);
             this.txtTongCong.TabIndex = 129;
-            this.txtTongCong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTongCong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnThemDinhMuc
             // 

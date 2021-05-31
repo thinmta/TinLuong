@@ -50,11 +50,11 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -218,15 +218,6 @@
             this.navBarControl1.TabIndex = 66;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 621);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 13);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Lưu ý: Nên cài mã hàng tổ gấp dán trong tháng trước khi tạo bảng lương mới";
-            // 
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Chấm công";
@@ -253,6 +244,15 @@
             this.navBarItem18.Caption = "navBarItem18";
             this.navBarItem18.Name = "navBarItem18";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 621);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(368, 13);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Lưu ý: Nên cài mã hàng tổ gấp dán trong tháng trước khi tạo bảng lương mới";
+            // 
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,7 +265,10 @@
             this.Controls.Add(this.navBarControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuanLy_Luong_ChamCong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chấm công";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmQuanLy_Luong_ChamCong_FormClosed);
+            this.Load += new System.EventHandler(this.frmQuanLy_Luong_ChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.ResumeLayout(false);
