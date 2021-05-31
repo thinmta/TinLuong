@@ -438,12 +438,6 @@
     <Compile Include="KhoDaiLy\DaiLy_ChiTiet_NhapKho_Khac.Designer.cs">
       <DependentUpon>DaiLy_ChiTiet_NhapKho_Khac.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_ToGapDan_SauKhi_Gia_Cong_Xong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_ToGapDan_SauKhi_Gia_Cong_Xong.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTietNhapKho_ToGapDan_SauKhi_Gia_Cong_Xong.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_NhapKho_Khac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -471,12 +465,6 @@
       <DependentUpon>DaiLy_FrmChiTiet_XuatKho_GapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoBanThanhPham\clsKhoBTP_tbNhapKho - Copy.cs" />
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_HangGiaCongTuDaiLyVe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_HangGiaCongTuDaiLyVe.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTietNhapKho_HangGiaCongTuDaiLyVe.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,12 +479,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\frmPrint_LuongDaiLy_TrongThang.Designer.cs">
       <DependentUpon>frmPrint_LuongDaiLy_TrongThang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_ToGapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_ToGapDan.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTietNhapKho_ToGapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\clsGapDan_ChiTiet_NhapKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsGapDan_ChiTiet_NhapKho.cs" />
@@ -772,12 +754,6 @@
     <Compile Include="KhoBanThanhPham\frmQuanLyKhoBanThanhPham.Designer.cs">
       <DependentUpon>frmQuanLyKhoBanThanhPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_CAT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_CAT.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_CAT.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietDaXuatKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -789,36 +765,6 @@
     </Compile>
     <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_DaNhapKho.Designer.cs">
       <DependentUpon>KhoBTP_ChiTiet_DaNhapKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_IN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_IN.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_IN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_CAT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_CAT.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_DOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_DOT.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_DOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_DOT.Designer.cs">
-      <DependentUpon>KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBTP_frmChiTietXuatKhoDaiLyGiaCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoBTP_frmChiTietXuatKhoDaiLyGiaCong.Designer.cs">
-      <DependentUpon>KhoBTP_frmChiTietXuatKhoDaiLyGiaCong.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoNPL\frmKhoNPL_DaXuatKho.cs">
       <SubType>Form</SubType>
@@ -1275,24 +1221,6 @@
     <Compile Include="KhoNPL\UCKhoNPL_DaXuatKho.Designer.cs">
       <DependentUpon>UCKhoNPL_DaXuatKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKhoTheoLenhSanXuat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKhoTheoLenhSanXuat.Designer.cs">
-      <DependentUpon>UCBanThanhPham_NhapKhoTheoLenhSanXuat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.Designer.cs">
-      <DependentUpon>UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKhoTheoLenhSanXuat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKhoTheoLenhSanXuat.Designer.cs">
-      <DependentUpon>UCBanThanhPham_XuatKhoTheoLenhSanXuat.cs</DependentUpon>
-    </Compile>
     <Compile Include="CaiDatBanDau\UCThietLap_TaiKhoanNganHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1304,12 +1232,6 @@
     </Compile>
     <Compile Include="KhoBanThanhPham\UCbanThanhPham_DaXuatKho.Designer.cs">
       <DependentUpon>UCbanThanhPham_DaXuatKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKhoDaiLy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKhoDaiLy.Designer.cs">
-      <DependentUpon>UCBanThanhPham_XuatKhoDaiLy.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuongTheoMay.cs">
       <SubType>UserControl</SubType>
@@ -1328,12 +1250,6 @@
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_DOT.Designer.cs">
       <DependentUpon>UCSanXuat_baoCaoSanLuong_May_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_TongHopTonKho.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_TongHopTonKho.Designer.cs">
-      <DependentUpon>UCBanThanhPham_TongHopTonKho.cs</DependentUpon>
     </Compile>
     <Compile Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.cs">
       <SubType>UserControl</SubType>
@@ -1436,18 +1352,6 @@
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_CaiDatMacDinh.Designer.cs">
       <DependentUpon>UCSanXuat_CaiDatMacDinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_ChiTietDaXuatKho_ALL.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_ChiTietDaXuatKho_ALL.Designer.cs">
-      <DependentUpon>UCBanThanhPham_ChiTietDaXuatKho_ALL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_ChiTiet_DaNhapKho_ALL.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_ChiTiet_DaNhapKho_ALL.Designer.cs">
-      <DependentUpon>UCBanThanhPham_ChiTiet_DaNhapKho_ALL.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_ChiTietNHapKho_ALL.cs">
       <SubType>UserControl</SubType>
@@ -1593,12 +1497,6 @@
     <Compile Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.Designer.cs">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKho_ToGapDan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKho_ToGapDan.Designer.cs">
-      <DependentUpon>UCBanThanhPham_XuatKho_ToGapDan.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_NhapKho_GapDan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1610,18 +1508,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_XuatKho_GapDan.Designer.cs">
       <DependentUpon>UCDaiLy_XuatKho_GapDan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_TuDaiLy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_TuDaiLy.Designer.cs">
-      <DependentUpon>UCBanThanhPham_NhapKho_TuDaiLy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_Tu_GapDan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_Tu_GapDan.Designer.cs">
-      <DependentUpon>UCBanThanhPham_NhapKho_Tu_GapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.cs">
       <SubType>UserControl</SubType>
@@ -1725,6 +1611,12 @@
     </Compile>
     <Compile Include="KhoNPL\UCNPL_XuatKho_Khacccccccccccccc.Designer.cs">
       <DependentUpon>UCNPL_XuatKho_Khacccccccccccccc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKho.Designer.cs">
+      <DependentUpon>UCBanThanhPham_DaNhapKho.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
@@ -1897,6 +1789,9 @@
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKho.resx">
+      <DependentUpon>UCBanThanhPham_DaNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.resx">
       <DependentUpon>DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs</DependentUpon>
     </EmbeddedResource>
@@ -1969,26 +1864,11 @@
     <EmbeddedResource Include="KhoBanThanhPham\frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham.resx">
       <DependentUpon>frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_HangGiaCongTuDaiLyVe.resx">
-      <DependentUpon>KhoBTP_ChiTietNhapKho_HangGiaCongTuDaiLyVe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_ToGapDan_SauKhi_Gia_Cong_Xong.resx">
-      <DependentUpon>KhoBTP_ChiTietNhapKho_ToGapDan_SauKhi_Gia_Cong_Xong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTiet_NhapKho_Khac.resx">
       <DependentUpon>KhoBTP_ChiTiet_NhapKho_Khac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_Khac.resx">
       <DependentUpon>KhoBTP_ChiTiet_XuatKho_Khac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_Tu_GapDan.resx">
-      <DependentUpon>UCBanThanhPham_NhapKho_Tu_GapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_XuatKho_ToGapDan.resx">
-      <DependentUpon>UCBanThanhPham_XuatKho_ToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKho_ToGapDan.resx">
-      <DependentUpon>KhoBTP_ChiTietNhapKho_ToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_ChiTiet_NhapKho_Khac.resx">
       <DependentUpon>DaiLy_ChiTiet_NhapKho_Khac.cs</DependentUpon>
@@ -2141,12 +2021,6 @@
     <EmbeddedResource Include="frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii.resx">
       <DependentUpon>frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_ChiTietDaXuatKho_ALL.resx">
-      <DependentUpon>UCBanThanhPham_ChiTietDaXuatKho_ALL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_ChiTiet_DaNhapKho_ALL.resx">
-      <DependentUpon>UCBanThanhPham_ChiTiet_DaNhapKho_ALL.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_BaoCao_NhapXuatTon.resx">
       <DependentUpon>UCDaiLy_BaoCao_NhapXuatTon.cs</DependentUpon>
     </EmbeddedResource>
@@ -2225,26 +2099,8 @@
     <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietDaXuatKho.resx">
       <DependentUpon>KhoBTP_ChiTietDaXuatKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_IN.resx">
-      <DependentUpon>KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_IN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_CAT.resx">
-      <DependentUpon>KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_CAT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTiet_DaNhapKho.resx">
       <DependentUpon>KhoBTP_ChiTiet_DaNhapKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_CAT.resx">
-      <DependentUpon>KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_DOT.resx">
-      <DependentUpon>KhoBTP_ChiTietNhapKhoTheoLenhSanXuat_May_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_DOT.resx">
-      <DependentUpon>KhoBTP_ChiTiet_XuatKho_TheoLenhSanXuat_May_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBTP_frmChiTietXuatKhoDaiLyGiaCong.resx">
-      <DependentUpon>KhoBTP_frmChiTietXuatKhoDaiLyGiaCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\frmKhoNPL_DaXuatKho.resx">
       <DependentUpon>frmKhoNPL_DaXuatKho.cs</DependentUpon>
@@ -2514,23 +2370,11 @@
     <EmbeddedResource Include="KhoNPL\UCKhoNPL_DaXuatKho.resx">
       <DependentUpon>UCKhoNPL_DaXuatKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_NhapKhoTheoLenhSanXuat.resx">
-      <DependentUpon>UCBanThanhPham_NhapKhoTheoLenhSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.resx">
-      <DependentUpon>UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_XuatKhoTheoLenhSanXuat.resx">
-      <DependentUpon>UCBanThanhPham_XuatKhoTheoLenhSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\UCThietLap_TaiKhoanNganHang.resx">
       <DependentUpon>UCThietLap_TaiKhoanNganHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\UCbanThanhPham_DaXuatKho.resx">
       <DependentUpon>UCbanThanhPham_DaXuatKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_XuatKhoDaiLy.resx">
-      <DependentUpon>UCBanThanhPham_XuatKhoDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuongTheoMay.resx">
       <DependentUpon>UCSanXuat_baoCaoSanLuongTheoMay.cs</DependentUpon>
@@ -2540,9 +2384,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_DOT.resx">
       <DependentUpon>UCSanXuat_baoCaoSanLuong_May_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_TongHopTonKho.resx">
-      <DependentUpon>UCBanThanhPham_TongHopTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.resx">
       <DependentUpon>UCCaiDatBanDau_Kho_BTP.cs</DependentUpon>
@@ -2567,9 +2408,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_TuDaiLy.resx">
-      <DependentUpon>UCBanThanhPham_NhapKho_TuDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_Khac.resx">
       <DependentUpon>UCBanThanhPham_NhapKho_Khac.cs</DependentUpon>

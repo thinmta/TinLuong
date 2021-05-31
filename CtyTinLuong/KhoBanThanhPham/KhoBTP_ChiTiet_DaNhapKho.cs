@@ -15,7 +15,7 @@ namespace CtyTinLuong
         private void HienThi_Gridcontrol()
         {
             clsKhoBTP_tbChiTietNhapKho cls2 = new clsKhoBTP_tbChiTietNhapKho();
-            cls2.iID_NhapKho = UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.miiID_NhapKhoBTP;
+            cls2.iID_NhapKho = UCBanThanhPham_DaNhapKho.miD_NhapKho;
             DataTable dt3 = cls2.Select__W_ID_NhapKho_HienThi_SuaDonHang();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietNhapKho", typeof(int));
@@ -58,7 +58,7 @@ namespace CtyTinLuong
         private void HienThi()
         {
             clsKhoBTP_tbNhapKho cls1 = new clsKhoBTP_tbNhapKho();
-            cls1.iID_NhapKhoBTP = UCBanThanhPham_DaNhapKhoTheoLenhSanXuat.miiID_NhapKhoBTP;
+            cls1.iID_NhapKhoBTP = UCBanThanhPham_DaNhapKho.miD_NhapKho;
             DataTable dt1 = cls1.SelectOne();
             txtSoChungTuNhapKhoNPL.Text = cls1.sSoChungTu.Value;
             dteNgayChungTuNPL.EditValue = cls1.daNgayChungTu.Value;
