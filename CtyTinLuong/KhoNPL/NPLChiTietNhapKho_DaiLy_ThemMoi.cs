@@ -866,7 +866,7 @@ namespace CtyTinLuong
                 clsnplxk.bTonTai = true;
                 clsnplxk.bNgungTheoDoi = false;
                 clsnplxk.bDaXuatKho = true;
-                clsnplxk.bCheckDongBao_DongKien = false;
+             
                 if (dt2npl.Rows.Count == 0)
                 {
                     clsnplxk.Insert();
@@ -988,7 +988,7 @@ namespace CtyTinLuong
                 clsnplxk.bTonTai = true;
                 clsnplxk.bNgungTheoDoi = false;
                 clsnplxk.bDaXuatKho = true;
-                clsnplxk.bCheckDongBao_DongKien = false;
+                clsnplxk.bCheckXuatKho_Khac = false;
                 if (dt2npl.Rows.Count == 0)
                 {
                     clsnplxk.Insert();

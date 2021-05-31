@@ -233,6 +233,12 @@
     <Compile Include="KhoNPL\KhoNPL_ChiTiet_NhapKho_Khac.Designer.cs">
       <DependentUpon>KhoNPL_ChiTiet_NhapKho_Khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoNPL\KhoNPL_ChiTiet_XuatKho_Khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoNPL\KhoNPL_ChiTiet_XuatKho_Khac.Designer.cs">
+      <DependentUpon>KhoNPL_ChiTiet_XuatKho_Khac.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoThanhPham\KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,24 +499,6 @@
     <Compile Include="KhoDaiLy\clsGapDan_tbNhapKho.cs" />
     <Compile Include="KhoDaiLy\clsGapDan_tbXuatKho.cs" />
     <Compile Include="KhoNPL\clsKhoNPL_tbNhapKho - Copy.cs" />
-    <Compile Include="KhoNPL\NPLChiTietNhapKho_GapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\NPLChiTietNhapKho_GapDan.Designer.cs">
-      <DependentUpon>NPLChiTietNhapKho_GapDan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoNPL\NPLChiTietNhapKho_GapDan_SUaaaaaaaaaaaaaaa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\NPLChiTietNhapKho_GapDan_SUaaaaaaaaaaaaaaa.Designer.cs">
-      <DependentUpon>NPLChiTietNhapKho_GapDan_SUaaaaaaaaaaaaaaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoNPL\NPLChiTietXuatKho_Khac_DongBao_DongKien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\NPLChiTietXuatKho_Khac_DongBao_DongKien.Designer.cs">
-      <DependentUpon>NPLChiTietXuatKho_Khac_DongBao_DongKien.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoThanhPham\KhoThanhPham_ChiTiet_NhapKho_Khac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -717,12 +705,6 @@
     </Compile>
     <Compile Include="MuaHang\frmPrintMuaHang.Designer.cs">
       <DependentUpon>frmPrintMuaHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoNPL\NPL_ChiTietLenhSanXuat_ToGapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\NPL_ChiTietLenhSanXuat_ToGapDan.Designer.cs">
-      <DependentUpon>NPL_ChiTietLenhSanXuat_ToGapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoNPL\NPLChiTietNhapKho_DaiLy_ThemMoi.cs">
       <SubType>Form</SubType>
@@ -1522,12 +1504,6 @@
     <Compile Include="BanHang\UCBanHang_ChiTiet_ALL.Designer.cs">
       <DependentUpon>UCBanHang_ChiTiet_ALL.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoNPL\UCNPL_XuatKhoTheoLSXToGapDan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_XuatKhoTheoLSXToGapDan.Designer.cs">
-      <DependentUpon>UCNPL_XuatKhoTheoLSXToGapDan.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_IN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1624,12 +1600,6 @@
     <Compile Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.Designer.cs">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoNPL\UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww.Designer.cs">
-      <DependentUpon>UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoBanThanhPham\UCBanThanhPham_XuatKho_ToGapDan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1659,12 +1629,6 @@
     </Compile>
     <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_Tu_GapDan.Designer.cs">
       <DependentUpon>UCBanThanhPham_NhapKho_Tu_GapDan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_XuatKho_DongBao_DongKien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\UCNPL_XuatKho_DongBao_DongKien.Designer.cs">
-      <DependentUpon>UCNPL_XuatKho_DongBao_DongKien.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.cs">
       <SubType>UserControl</SubType>
@@ -1762,6 +1726,12 @@
     </Compile>
     <Compile Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.Designer.cs">
       <DependentUpon>UCNPL_NhapKho_Khacccccccccccc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhoNPL\UCNPL_XuatKho_Khacccccccccccccc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoNPL\UCNPL_XuatKho_Khacccccccccccccc.Designer.cs">
+      <DependentUpon>UCNPL_XuatKho_Khacccccccccccccc.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
@@ -1964,6 +1934,9 @@
     <EmbeddedResource Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.resx">
       <DependentUpon>UCNPL_NhapKho_Khacccccccccccc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_Khacccccccccccccc.resx">
+      <DependentUpon>UCNPL_XuatKho_Khacccccccccccccc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\frmBaoCaoNXT_KhoThanhPham.resx">
       <DependentUpon>frmBaoCaoNXT_KhoThanhPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -2065,21 +2038,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_XuatKho_Khac.resx">
       <DependentUpon>UCDaiLy_XuatKho_Khac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\NPLChiTietNhapKho_GapDan.resx">
-      <DependentUpon>NPLChiTietNhapKho_GapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\NPLChiTietNhapKho_GapDan_SUaaaaaaaaaaaaaaa.resx">
-      <DependentUpon>NPLChiTietNhapKho_GapDan_SUaaaaaaaaaaaaaaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\NPLChiTietXuatKho_Khac_DongBao_DongKien.resx">
-      <DependentUpon>NPLChiTietXuatKho_Khac_DongBao_DongKien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_DongBao_DongKien.resx">
-      <DependentUpon>UCNPL_XuatKho_DongBao_DongKien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww.resx">
-      <DependentUpon>UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.resx">
       <DependentUpon>frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.cs</DependentUpon>
@@ -2216,9 +2174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\NPLChiTietNhapKho_DaiLy_ThemMoi.resx">
       <DependentUpon>NPLChiTietNhapKho_DaiLy_ThemMoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\NPL_ChiTietLenhSanXuat_ToGapDan.resx">
-      <DependentUpon>NPL_ChiTietLenhSanXuat_ToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\UCThanhPham_ChiTiet_DaNhapKho_ALL.resx">
       <DependentUpon>UCThanhPham_ChiTiet_DaNhapKho_ALL.cs</DependentUpon>
@@ -2622,9 +2577,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\UCThanhPham_baoCaoTonKho.resx">
       <DependentUpon>UCThanhPham_baoCaoTonKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\UCNPL_XuatKhoTheoLSXToGapDan.resx">
-      <DependentUpon>UCNPL_XuatKhoTheoLSXToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.cs</DependentUpon>
