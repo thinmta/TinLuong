@@ -185,7 +185,7 @@
             this.groupBox2.Size = new System.Drawing.Size(896, 272);
             this.groupBox2.TabIndex = 97;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chi tiết nhập kho";
+            this.groupBox2.Text = "Chi tiết";
             // 
             // gridControl2
             // 
@@ -480,7 +480,6 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
-            this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
@@ -531,7 +530,7 @@
             this.clDienGiai.Name = "clDienGiai";
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
-            this.clDienGiai.VisibleIndex = 4;
+            this.clDienGiai.VisibleIndex = 3;
             this.clDienGiai.Width = 341;
             // 
             // repositoryItemMemoEdit1
@@ -551,7 +550,7 @@
             this.clNgayNhapKho.Name = "clNgayNhapKho";
             this.clNgayNhapKho.OptionsColumn.AllowEdit = false;
             this.clNgayNhapKho.Visible = true;
-            this.clNgayNhapKho.VisibleIndex = 3;
+            this.clNgayNhapKho.VisibleIndex = 2;
             this.clNgayNhapKho.Width = 89;
             // 
             // clSoChungTu
@@ -567,7 +566,7 @@
             this.clSoChungTu.OptionsColumn.AllowEdit = false;
             this.clSoChungTu.OptionsColumn.FixedWidth = true;
             this.clSoChungTu.Visible = true;
-            this.clSoChungTu.VisibleIndex = 2;
+            this.clSoChungTu.VisibleIndex = 1;
             this.clSoChungTu.Width = 100;
             // 
             // clTongTienHang
@@ -592,7 +591,7 @@
             this.clTongTienHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongTienHang", "{0:#,##0.00}")});
             this.clTongTienHang.Visible = true;
-            this.clTongTienHang.VisibleIndex = 5;
+            this.clTongTienHang.VisibleIndex = 4;
             this.clTongTienHang.Width = 140;
             // 
             // clNgungTheoDoi
@@ -621,8 +620,6 @@
             this.clThamChieu.Name = "clThamChieu";
             this.clThamChieu.OptionsColumn.AllowEdit = false;
             this.clThamChieu.OptionsColumn.FixedWidth = true;
-            this.clThamChieu.Visible = true;
-            this.clThamChieu.VisibleIndex = 1;
             this.clThamChieu.Width = 90;
             // 
             // clXoa1
@@ -633,7 +630,7 @@
             this.clXoa1.OptionsColumn.FixedWidth = true;
             this.clXoa1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa1.Visible = true;
-            this.clXoa1.VisibleIndex = 6;
+            this.clXoa1.VisibleIndex = 5;
             this.clXoa1.Width = 40;
             // 
             // btXoa1

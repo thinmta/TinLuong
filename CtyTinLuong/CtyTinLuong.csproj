@@ -1931,6 +1931,9 @@
     <EmbeddedResource Include="KhoNPL\KhoNPL_ChiTiet_NhapKho_Khac.resx">
       <DependentUpon>KhoNPL_ChiTiet_NhapKho_Khac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoNPL\KhoNPL_ChiTiet_XuatKho_Khac.resx">
+      <DependentUpon>KhoNPL_ChiTiet_XuatKho_Khac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.resx">
       <DependentUpon>UCNPL_NhapKho_Khacccccccccccc.cs</DependentUpon>
     </EmbeddedResource>

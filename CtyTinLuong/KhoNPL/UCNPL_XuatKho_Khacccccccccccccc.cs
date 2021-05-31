@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class UCNPL_XuatKho_Khacccccccccccccc : UserControl
     {
-        public static int miD_NhapKho;
+        public static int miiD_XuatKho;
         public static bool mbThemMoi;
         private void Load_LockUp()
         {
@@ -50,6 +50,8 @@ namespace CtyTinLuong
             for (int i = 0; i < dtxxxx.Rows.Count; i++)
             {
                 double soluong, dongia;
+                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
+                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
                 DataRow _ravi = dt2.NewRow();
                 int iiDI_Vthh = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
                 _ravi["ID_VTHH"] = iiDI_Vthh;
@@ -58,10 +60,9 @@ namespace CtyTinLuong
                 _ravi["MaVT"] = iiDI_Vthh;
                 _ravi["DonViTinh"] = cls.sDonViTinh.Value;
                 _ravi["TenVTHH"] = cls.sTenVTHH.Value;
-                _ravi["SoLuong"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuong"].ToString());
-                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
+                _ravi["SoLuong"] = soluong;
+                _ravi["DonGia"] = dongia;
+                
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
                 _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
@@ -135,7 +136,7 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
             {
                 mbThemMoi = false;
-                miD_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
+                miiD_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
                 KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
                 ff.Show();
             }
