@@ -131,16 +131,18 @@ namespace CtyTinLuong
                 int ID_VTHHxxx = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_VTHH"].ToString());
                 cls.iID_VTHH = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_VTHH"].ToString());
                 cls.iID_XuatKho = iixxXuatKho;
+                double soluongxuat;
                 if (dt_gridcontrol.Rows[i]["SoLuong"].ToString() != "")
                 {
-                    cls.fSoLuongXuat = Convert.ToDouble(dt_gridcontrol.Rows[i]["SoLuong"].ToString());
+                    soluongxuat = Convert.ToDouble(dt_gridcontrol.Rows[i]["SoLuong"].ToString());
                     
                 }
                 else
                 {
-                    cls.fSoLuongXuat = 0;
+                    soluongxuat = 0;
                     
                 }
+                cls.fSoLuongXuat = soluongxuat;
                 if (dt_gridcontrol.Rows[i]["DonGia"].ToString() != "")
                     cls.fDonGia = Convert.ToDouble(dt_gridcontrol.Rows[i]["DonGia"].ToString());
                 else cls.fDonGia = 0;
@@ -163,7 +165,21 @@ namespace CtyTinLuong
                 {
                     cls.Insert();
                 }
-
+                // update soluong ton tbnhapkho
+                clsKhoNPL_tbChiTietNhapKho clschitietnhapkho = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
+               
+              
+                clschitietnhapkho.iID_VTHH = ID_VTHHxxx;
+                DataTable dt2 = clschitietnhapkho.Select_W_ID_VTHH();
+                if(dt2.Rows.Count>0)
+                {
+                    Double douSoLuongTonCu;
+                    douSoLuongTonCu = Convert.ToDouble(dt2.Rows[0]["SoLuongTon"].ToString());
+                    clschitietnhapkho.iID_ChiTietNhapKho = Convert.ToInt16(dt2.Rows[0]["ID_ChiTietNhapKho"].ToString());
+                    clschitietnhapkho.fSoLuongTon = douSoLuongTonCu - soluongxuat;
+                    clschitietnhapkho.Update_SoLuongTon();
+                }
+              
             }
             // xoa ton tai=false
             clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();

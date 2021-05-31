@@ -2138,7 +2138,6 @@
     <EmbeddedResource Include="NganHang_Quy\Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.resx">
       <DependentUpon>Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmBaoCaoSanLuong_Theo_CongNhan.resx">
       <DependentUpon>frmBaoCaoSanLuong_Theo_CongNhan.cs</DependentUpon>
     </EmbeddedResource>
