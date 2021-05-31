@@ -76,7 +76,7 @@ namespace CtyTinLuong
                     _data.Rows[i]["ID_VTHH"] = _id_vthh;
                     _data.Rows[i]["TenVTHH"] = _ten_vthh;
                 }
-                txttong
+                //txttong
                 /*
                 if (dxcongnhat.Rows.Count > 0)
                 {
@@ -665,7 +665,7 @@ namespace CtyTinLuong
                     else
                         result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
-            catch (Exception e)
+            catch 
             {
                 try
                 {
