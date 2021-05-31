@@ -12,9 +12,11 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLy_Luong_ChamCong : Form
     {
+        frmMain _frmMain;
         frmChamCongToGapDan _frmChamCongToGapDan;
-        public frmQuanLy_Luong_ChamCong()
+        public frmQuanLy_Luong_ChamCong(frmMain frm)
         {
+            _frmMain = frm;
             InitializeComponent();
             _frmChamCongToGapDan = new frmChamCongToGapDan();
         }
@@ -37,6 +39,7 @@ namespace CtyTinLuong
 
         private void btThooat_Click(object sender, EventArgs e)
         {
+            _frmMain.Show();
             this.Close();
         }
 
