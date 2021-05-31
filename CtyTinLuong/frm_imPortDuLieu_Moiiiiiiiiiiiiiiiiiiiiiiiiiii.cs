@@ -13,10 +13,12 @@ namespace CtyTinLuong
 {
     public partial class frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii : Form
     {
-        
-        public frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii()
+        frmMain _frmMain;
+        public frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii(frmMain frm)
         {
+            _frmMain = frm;
             InitializeComponent();
+           
         }
        private void NhapKho_NPL(DataTable dt_NPL)
         {
@@ -431,6 +433,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
+            _frmMain.Show();
             this.Close();
         }
 

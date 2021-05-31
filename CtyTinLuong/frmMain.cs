@@ -94,11 +94,13 @@ namespace CtyTinLuong
         {
            
         }
+        frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii _frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii;
 
         private void importDuLieuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii ff = new CtyTinLuong.frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii();
-            ff.Show();
+            _frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii = new CtyTinLuong.frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii(this);
+            this.Hide();
+            _frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii.Show();
         }
 
         private void btDinhMucDot_Click(object sender, EventArgs e)
@@ -349,7 +351,7 @@ namespace CtyTinLuong
             frmMuaHang2222 ff = new frmMuaHang2222();
             ff.Show();
         }
-
+         
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             frmQuanLyBanHang ff = new CtyTinLuong.frmQuanLyBanHang();
@@ -368,10 +370,12 @@ namespace CtyTinLuong
             ff.Show();
         }
 
+        frmQuanLy_Luong_ChamCong _frmQuanLy_Luong_ChamCong;
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
-            frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
-            ff.Show();
+            _frmQuanLy_Luong_ChamCong = new CtyTinLuong.frmQuanLy_Luong_ChamCong(this);
+            this.Show();
+            _frmQuanLy_Luong_ChamCong.Show();
         }
 
         private void btnQuyNganHang_Click(object sender, EventArgs e)
