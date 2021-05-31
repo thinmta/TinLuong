@@ -76,7 +76,7 @@ namespace CtyTinLuong
                     _data.Rows[i]["ID_VTHH"] = _id_vthh;
                     _data.Rows[i]["TenVTHH"] = _ten_vthh;
                 }
-                txttong
+                //txttong
                 /*
                 if (dxcongnhat.Rows.Count > 0)
                 {
@@ -592,6 +592,8 @@ namespace CtyTinLuong
 
         private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isload)
+                return;
             txtDinhMuc.ForeColor = Color.Black;
             _id_vthh = cbLoaiHangSX.SelectedIndex;
             _ten_vthh = cbLoaiHangSX.Text;
