@@ -10,26 +10,17 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmPrint_XuatKho : Form
+    public partial class frmPrint_Nhap_Xuat_Kho : Form
     {
-        public frmPrint_XuatKho()
+        public frmPrint_Nhap_Xuat_Kho()
         {
             InitializeComponent();
         }
-        private void XuatKho_NPL_RaDaiLy_ThemMoi()
+        private void NhapKho_NPL(DataTable dt3)
         {
-            DataTable dt3 = new DataTable();
-            dt3 = NPLChiTietNhapKho_DaiLy_ThemMoi.mdt_ChiTietXuatKho;
-            Xtra_XuatKho xtr111 = new Xtra_XuatKho();
-            DataTable mdt_ChiTietNhapKho = new DataTable();
-            mdt_ChiTietNhapKho.Columns.Add("STT");
-            mdt_ChiTietNhapKho.Columns.Add("SoLuong", typeof(double));
-            mdt_ChiTietNhapKho.Columns.Add("DonGia", typeof(double));
-            mdt_ChiTietNhapKho.Columns.Add("MaVT");// tb VTHH
-            mdt_ChiTietNhapKho.Columns.Add("TenVTHH");
-            mdt_ChiTietNhapKho.Columns.Add("DonViTinh");
-            mdt_ChiTietNhapKho.Columns.Add("ThanhTien", typeof(double));
-            mdt_ChiTietNhapKho.Columns.Add("GhiChu", typeof(string));
+          
+           
+            Xtra_Nhap_XuatKho xtr111 = new Xtra_Nhap_XuatKho();       
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbNhapKho_XuatKho.Clone();
@@ -59,10 +50,18 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
-        private void frmPrint_XuatKho_Load(object sender, EventArgs e)
+        private void frmPrint_NhapKho_Load(object sender, EventArgs e)
         {
-            if (NPLChiTietNhapKho_DaiLy_ThemMoi.mbPrint_Chitiet_XuatKho_DaiLyGiaCong==true)
-            XuatKho_NPL_RaDaiLy_ThemMoi();
+            if (KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.mbPrint == true)
+                NhapKho_NPL(KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.mdtPrint);
+            if (KhoNPL_ChiTiet_NhapKho_Khac.mbPrint == true)
+                NhapKho_NPL(KhoNPL_ChiTiet_NhapKho_Khac.mdtPrint);
+        }
+
+        private void frmPrint_Nhap_Xuat_Kho_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.mbPrint = false;
+            KhoNPL_ChiTiet_NhapKho_Khac.mbPrint = false;
         }
     }
 }

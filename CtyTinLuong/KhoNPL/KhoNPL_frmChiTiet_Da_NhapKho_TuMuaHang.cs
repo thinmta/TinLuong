@@ -14,13 +14,12 @@ namespace CtyTinLuong
 {
     public partial class KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang : Form
     {
-        public static bool mbPrint_Chitiet_Da_NhapKho_TuMuaHang;
-        public static DateTime mdaNgayMuaHang, mdaNgayNhapKho;
-        public static DataTable mdt_ChiTietNhapKho;
-        public static double mdeTongTienHang_KhongVAT, mdeTienNo, mdeTienCo, mdeTienVAT, mdeTongTienHang_CoVAT;
-        public static string msSoChungTu_MuaHang, msSoHoaDon_MuaHang, msSoChungTu_NhapKho, msNguoiMuaHang, msThuKho, msTKNo, msTKCo, msTKVAT;
-
-        private void btLuu_Click(object sender, EventArgs e)
+        public static bool mbPrint;
+        public static DateTime mdaNgayChungTu;
+        public static DataTable mdtPrint;      
+        public static string msSoChungTu,msNguoiGiaoHang;
+        public static double mdbTongSotien;
+       private void btLuu_Click(object sender, EventArgs e)
         {
             Luu_NhapKho_NPL();
         }
@@ -351,7 +350,7 @@ namespace CtyTinLuong
         private void KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang_Load_1(object sender, EventArgs e)
         {
 
-            mbPrint_Chitiet_Da_NhapKho_TuMuaHang = false;
+            
             Load_LockUp();
             HienThi();
         }
@@ -393,7 +392,6 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            mbPrint_Chitiet_Da_NhapKho_TuMuaHang = true;
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
@@ -403,33 +401,24 @@ namespace CtyTinLuong
             string shienthi = "1";
             dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
             DataView dv = dttttt2.DefaultView;
-            mdt_ChiTietNhapKho = dv.ToTable();
-          
-            mdaNgayNhapKho = dteNgayChungTuNPL.DateTime;         
-            msSoChungTu_NhapKho = txtSoChungTuNhapKhoNPL.Text.ToString();
-            clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
-            cls1.iID_NhapKho = UC_KhoNVL_frmDaNhapKho.miD_NhapKho;
-            DataTable dt1 = cls1.SelectOne();
-            string sochungtumuahang = cls1.sThamChieu.Value;
-            clsMH_tbMuaHang cls2 = new clsMH_tbMuaHang();
-            cls2.sSoChungTu = sochungtumuahang;
-            DataTable dt2 = cls2.SelectOne_W_SoChungTu();
-            msSoChungTu_MuaHang = sochungtumuahang;
-            msThuKho = txtNguoNhap.Text.ToString();
-            mdaNgayMuaHang = Convert.ToDateTime(dt2.Rows[0]["NgayChungTu"].ToString());
-            int iID_NguoiMua = Convert.ToInt32(dt2.Rows[0]["ID_NguoiMua"].ToString());
-            clsNhanSu_tbNhanSu cls3 = new clsNhanSu_tbNhanSu();
-            cls3.iID_NhanSu = iID_NguoiMua;
-            DataTable dt3 = cls3.SelectOne();
-            msNguoiMuaHang = cls3.sTenNhanVien.Value;
-            frmPrint_NhapKho_KhoNPL ff = new frmPrint_NhapKho_KhoNPL();
-            ff.Show();
+            mdtPrint = dv.ToTable();
+            if(mdtPrint.Rows.Count>0)
+            {
+                mbPrint = true;
+                mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
+                msSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
+                msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
+                ff.Show();
+
+            }
 
         }
 
         private void KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            mbPrint_Chitiet_Da_NhapKho_TuMuaHang = false;
+            
         }
     }
 }

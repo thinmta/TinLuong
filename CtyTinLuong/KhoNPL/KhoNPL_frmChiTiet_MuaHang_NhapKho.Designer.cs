@@ -93,7 +93,6 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
@@ -770,20 +769,9 @@
             this.layoutControlItem21.Text = "Tổng tiền hàng (có VAT)";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(116, 13);
             // 
-            // btPrint
-            // 
-            this.btPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btPrint.Location = new System.Drawing.Point(652, 627);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(123, 23);
-            this.btPrint.TabIndex = 84;
-            this.btPrint.Text = "In Phiếu nhập kho";
-            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
-            // 
             // KhoNPL_frmChiTiet_MuaHang_NhapKho
             // 
             this.ClientSize = new System.Drawing.Size(984, 662);
-            this.Controls.Add(this.btPrint);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btThoat2);
@@ -893,6 +881,5 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraGrid.Columns.GridColumn clGhiChu;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private DevExpress.XtraEditors.SimpleButton btPrint;
     }
 }

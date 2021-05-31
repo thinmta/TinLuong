@@ -34,12 +34,12 @@ namespace CtyTinLuong
             if (frmChiTietMuaHang3333333333.mbTraLaiHangMua == true)
             {
                 pTieuDe.Value = "PHIẾU XUẤT TRẢ LẠI NHÀ CUNG CẤP";
-                pKho.Value = "Nhập tại kho: Kho Nguyên Phụ Liệu";
+                pKho.Value = "Xuất tại kho: Kho Nguyên Phụ Liệu";
             }
             else
             {
                 pTieuDe.Value = "PHIẾU NHẬP KHO";
-                pKho.Value = "Xuất tại kho: Kho Nguyên Phụ Liệu";
+                pKho.Value = "Nhập tại kho: Kho Nguyên Phụ Liệu";
             }
        
             clsSoTienBangChu cls = new clsSoTienBangChu();
@@ -57,13 +57,7 @@ namespace CtyTinLuong
             
         }
 
-        private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            
-           
-
-            
-        }
+      
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
@@ -82,7 +76,7 @@ namespace CtyTinLuong
             catch
             { }
            
-            if (frmChiTietMuaHang3333333333.mbPrint)
+            if (frmChiTietMuaHang3333333333.mbPrint==true)
                 printMuahang();
         }
     }

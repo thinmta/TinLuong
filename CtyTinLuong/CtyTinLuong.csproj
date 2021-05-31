@@ -195,6 +195,12 @@
     <Compile Include="BanHang\frmPrint_baoGia_BanHanag.Designer.cs">
       <DependentUpon>frmPrint_baoGia_BanHanag.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrint_Nhap_Xuat_Kho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrint_Nhap_Xuat_Kho.Designer.cs">
+      <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -583,18 +589,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\frmChiTietLuong_DaiLy.Designer.cs">
       <DependentUpon>frmChiTietLuong_DaiLy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrint_NhapKho_KhoNPL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrint_NhapKho_KhoNPL.Designer.cs">
-      <DependentUpon>frmPrint_NhapKho_KhoNPL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrint_XuatKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrint_XuatKho.Designer.cs">
-      <DependentUpon>frmPrint_XuatKho.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\frmLuong_ChiTietTraLuong_DaiLy.cs">
       <SubType>Form</SubType>
@@ -1810,12 +1804,6 @@
     <Compile Include="Xtra_NganHang_PhieuThu_Chi_Bao_Co_No.Designer.cs">
       <DependentUpon>Xtra_NganHang_PhieuThu_Chi_Bao_Co_No.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xtra_NhapKho.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Xtra_NhapKho.Designer.cs">
-      <DependentUpon>Xtra_NhapKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="Xtra_NhapKho_DaiLy.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1846,11 +1834,11 @@
     <Compile Include="Xtra_TraLuong.Designer.cs">
       <DependentUpon>Xtra_TraLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xtra_XuatKho.cs">
+    <Compile Include="Xtra_Nhap_XuatKho.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Xtra_XuatKho.Designer.cs">
-      <DependentUpon>Xtra_XuatKho.cs</DependentUpon>
+    <Compile Include="Xtra_Nhap_XuatKho.Designer.cs">
+      <DependentUpon>Xtra_Nhap_XuatKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Xtra_XuatKho_DaiLy.cs">
       <SubType>Component</SubType>
@@ -1905,6 +1893,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain\FormSystem.resx">
       <DependentUpon>FormSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
+      <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.resx">
       <DependentUpon>DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs</DependentUpon>
@@ -2119,12 +2110,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmChiTietLuong_DaiLy.resx">
       <DependentUpon>frmChiTietLuong_DaiLy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrint_NhapKho_KhoNPL.resx">
-      <DependentUpon>frmPrint_NhapKho_KhoNPL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrint_XuatKho.resx">
-      <DependentUpon>frmPrint_XuatKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmChiTietTamUng_DaiLy.resx">
       <DependentUpon>frmChiTietTamUng_DaiLy.cs</DependentUpon>
@@ -2634,9 +2619,6 @@
     <EmbeddedResource Include="Xtra_NganHang_PhieuThu_Chi_Bao_Co_No.resx">
       <DependentUpon>Xtra_NganHang_PhieuThu_Chi_Bao_Co_No.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Xtra_NhapKho.resx">
-      <DependentUpon>Xtra_NhapKho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Xtra_NhapKho_DaiLy.resx">
       <DependentUpon>Xtra_NhapKho_DaiLy.cs</DependentUpon>
     </EmbeddedResource>
@@ -2652,8 +2634,8 @@
     <EmbeddedResource Include="Xtra_TraLuong.resx">
       <DependentUpon>Xtra_TraLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Xtra_XuatKho.resx">
-      <DependentUpon>Xtra_XuatKho.cs</DependentUpon>
+    <EmbeddedResource Include="Xtra_Nhap_XuatKho.resx">
+      <DependentUpon>Xtra_Nhap_XuatKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_XuatKho_DaiLy.resx">
       <DependentUpon>Xtra_XuatKho_DaiLy.cs</DependentUpon>

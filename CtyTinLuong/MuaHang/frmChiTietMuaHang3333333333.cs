@@ -22,9 +22,6 @@ namespace CtyTinLuong
         public static decimal mdcSoTienNo, mdcSoTienCo, mdcSoTienVAT, mdcTongTienCoVAT;
         public static DataTable mdtPrint;
         int bienthangthai, iiiID_MuaHang;
-       
-
-      
         public void HienThiSoChungTu(int bientrangthaikkkkkkkkkk)
         {
             clsNganHang_tbThuChi cls2 = new clsNganHang_tbThuChi();
@@ -106,8 +103,6 @@ namespace CtyTinLuong
                 }
             }
         }
-  
-
         private void  HienThi_GridConTrol_SauKhiChon()
         {
             gridControl2.DataSource = null;
