@@ -885,7 +885,6 @@
     <Compile Include="KhoDaiLy\clsDaiLy_tbNhapKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDaiLy_tbXuatKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDaiLy_tbXuatKho.cs" />
-    <Compile Include="KhoDaiLy\clsKhoNPL_tbChiTietNhapKho - Copy - Copy.cs" />
     <Compile Include="MuaHang\frmMuaHang2222.cs">
       <SubType>Form</SubType>
     </Compile>
