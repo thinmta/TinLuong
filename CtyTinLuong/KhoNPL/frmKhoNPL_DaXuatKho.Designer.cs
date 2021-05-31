@@ -39,6 +39,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoNPL_DaXuatKho));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -80,6 +81,8 @@
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -561,11 +564,31 @@
             this.layoutControlItem21.Text = "Tổng tiền hàng";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(72, 13);
             // 
+            // btLuu
+            // 
+            this.btLuu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
+            this.btLuu.Location = new System.Drawing.Point(790, 626);
+            this.btLuu.Name = "btLuu";
+            this.btLuu.Size = new System.Drawing.Size(98, 23);
+            this.btLuu.TabIndex = 95;
+            this.btLuu.Text = "Lưu";
+            // 
+            // btPrint
+            // 
+            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
+            this.btPrint.Location = new System.Drawing.Point(686, 626);
+            this.btPrint.Name = "btPrint";
+            this.btPrint.Size = new System.Drawing.Size(98, 23);
+            this.btPrint.TabIndex = 94;
+            this.btPrint.Text = "Print";
+            // 
             // frmKhoNPL_DaXuatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.btLuu);
+            this.Controls.Add(this.btPrint);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.groupBox2);
@@ -643,5 +666,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraGrid.Columns.GridColumn clThanhTien;
+        private DevExpress.XtraEditors.SimpleButton btLuu;
+        private DevExpress.XtraEditors.SimpleButton btPrint;
     }
 }
