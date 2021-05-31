@@ -56,15 +56,13 @@ namespace CtyTinLuong
             dt2.Columns.Add("ID_XuatKho", typeof(int));
             dt2.Columns.Add("ID_VTHH", typeof(int));
             dt2.Columns.Add("SoLuongXuat", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(float));
-       
+            dt2.Columns.Add("DonGia", typeof(float));       
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("TenVTHH", typeof(string));
             dt2.Columns.Add("DonViTinh", typeof(string));                    //
-            dt2.Columns.Add("HienThi", typeof(string));
-          
+            dt2.Columns.Add("HienThi", typeof(string));          
             dt2.Columns.Add("ThanhTien", typeof(float));
-           
+            dt2.Columns.Add("GhiChu", typeof(string));
             for (int i = 0; i < dtxxxx.Rows.Count; i++)
             {
                 double soluong, dongia;
@@ -75,14 +73,15 @@ namespace CtyTinLuong
                 _ravi["ID_VTHH"] = iiDI_Vthh;
                 _ravi["SoLuongXuat"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
                 _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-                _ravi["MaVT"] = dtxxxx.Rows[i]["MaVT"].ToString();
+                _ravi["MaVT"] = iiDI_Vthh;
                 _ravi["TenVTHH"] = dtxxxx.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dtxxxx.Rows[i]["DonViTinh"].ToString();
                 soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
                 dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
-             
+                _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
+                dt2.Rows.Add(_ravi);
             }
             gridControl1.DataSource = dt2;
 
@@ -132,9 +131,9 @@ namespace CtyTinLuong
                 cls.iID_VTHH = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_VTHH"].ToString());
                 cls.iID_XuatKho = iixxXuatKho;
                 double soluongxuat;
-                if (dt_gridcontrol.Rows[i]["SoLuong"].ToString() != "")
+                if (dt_gridcontrol.Rows[i]["SoLuongXuat"].ToString() != "")
                 {
-                    soluongxuat = Convert.ToDouble(dt_gridcontrol.Rows[i]["SoLuong"].ToString());
+                    soluongxuat = Convert.ToDouble(dt_gridcontrol.Rows[i]["SoLuongXuat"].ToString());
                     
                 }
                 else
@@ -225,8 +224,7 @@ namespace CtyTinLuong
         }
 
         private void frmKhoNPL_DaXuatKho_Load(object sender, EventArgs e)
-        {
-          
+        {          
             Load_lockUP_EDIT();           
             HienThi_SUa_GridConTrolt();
             HienThi();

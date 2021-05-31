@@ -43,6 +43,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
             dt2.Columns.Add("DonGia", typeof(float));
             dt2.Columns.Add("ThanhTien", typeof(float));
+            dt2.Columns.Add("GhiChu", typeof(string));
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
             for (int i = 0; i < dtxxxx.Rows.Count; i++)
@@ -62,6 +63,7 @@ namespace CtyTinLuong
                 dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
+                _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
                 dt2.Rows.Add(_ravi);
             }
 
