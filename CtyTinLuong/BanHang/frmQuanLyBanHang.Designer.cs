@@ -60,7 +60,7 @@
             // 
             this.btThooat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(903, 626);
+            this.btThooat.Location = new System.Drawing.Point(1070, 626);
             this.btThooat.Name = "btThooat";
             this.btThooat.Size = new System.Drawing.Size(75, 23);
             this.btThooat.TabIndex = 73;
@@ -216,7 +216,7 @@
             // 
             this.panelControl1.Location = new System.Drawing.Point(251, 14);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(727, 606);
+            this.panelControl1.Size = new System.Drawing.Size(900, 606);
             this.panelControl1.TabIndex = 74;
             // 
             // linkLabel1
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 662);
+            this.ClientSize = new System.Drawing.Size(1157, 662);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);

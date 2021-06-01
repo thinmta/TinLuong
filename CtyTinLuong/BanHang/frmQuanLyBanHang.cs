@@ -15,17 +15,17 @@ namespace CtyTinLuong
         private void HienThi_Caption()
         {
 
-            clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
-            DataTable dt1 = cls1.SelectAll();
-            dt1.DefaultView.RowFilter = "TrangThaiBanHang=False";
-            DataView dv1 = dt1.DefaultView;
-            DataTable dxxxx1 = dv1.ToTable();
-            int k1 = dxxxx1.Rows.Count;
-            if (k1 > 0)
-            {
-                navBanHang.Caption = "Bán hàng (" + k1.ToString() + ")";
-                navBanHang.Appearance.Font = new Font(navBanHang.Appearance.Font, FontStyle.Bold);
-            }
+            //clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+            //DataTable dt1 = cls1.SelectAll();
+            //dt1.DefaultView.RowFilter = "TrangThai_KhoThanhPham=True";
+            //DataView dv1 = dt1.DefaultView;
+            //DataTable dxxxx1 = dv1.ToTable();
+            //int k1 = dxxxx1.Rows.Count;
+            //if (k1 > 0)
+            //{
+            //    navBanHang.Caption = "Bán hàng (" + k1.ToString() + ")";
+            //    navBanHang.Appearance.Font = new Font(navBanHang.Appearance.Font, FontStyle.Bold);
+            //}
 
             //clsKhoThanhPham_tbXuatKho cls3 = new clsKhoThanhPham_tbXuatKho();
             //DataTable dxxxx3xx = cls3.SelectAll();

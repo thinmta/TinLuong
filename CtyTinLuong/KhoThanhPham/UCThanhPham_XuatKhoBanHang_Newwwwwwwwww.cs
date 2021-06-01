@@ -139,6 +139,34 @@ namespace CtyTinLuong
 
         private void btXoa1_Click(object sender, EventArgs e)
         {
+            clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+            cls1.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
+            DataTable dt1 = cls1.SelectOne();
+            if (cls1.bTrangThai_KhoThanhPham.Value == true)
+            {
+                MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
+                return;
+            }
+            else
+            {
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
+                {
+                    cls1.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
+                    cls1.Delete();
+                    clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
+                    cls2.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
+                    cls2.Delete_W_iID_BanHang();
+                    MessageBox.Show("Đã xóa");
+                    if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
+                    {
+                        HienThi();
+                    }
+                    else
+                        HienThi_ALL();
+                }
+            }
 
         }
 
@@ -189,24 +217,24 @@ namespace CtyTinLuong
 
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (e.Column == clMaVT2)
-            {
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
-                if (dt != null)
-                {
-                    gridView4.SetRowCellValue(e.RowHandle, clID_VTHH2, kk);
-                    gridView4.SetRowCellValue(e.RowHandle, clTenVTHH2, dt.Rows[0]["TenVTHH"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, clDonViTinh2, dt.Rows[0]["DonViTinh"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, clHienThi2, "1");
+            //if (e.Column == clMaVT2)
+            //{
+            //    clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            //    cls.iID_VTHH = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+            //    int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+            //    DataTable dt = cls.SelectOne();
+            //    if (dt != null)
+            //    {
+            //        gridView4.SetRowCellValue(e.RowHandle, clID_VTHH2, kk);
+            //        gridView4.SetRowCellValue(e.RowHandle, clTenVTHH2, dt.Rows[0]["TenVTHH"].ToString());
+            //        gridView4.SetRowCellValue(e.RowHandle, clDonViTinh2, dt.Rows[0]["DonViTinh"].ToString());
+            //        gridView4.SetRowCellValue(e.RowHandle, clHienThi2, "1");
                  
-                }
+            //    }
 
 
 
-            }
+            //}
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
