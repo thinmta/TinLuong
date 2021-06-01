@@ -15,7 +15,7 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial  class clsDaiLy_tbChiTietNhapKho : clsDBInteractionBase
     {
-        //pr_DaiLy_tbChiTietNhapKho_Update_ALL_TonTai_W_ID_NhapKhoDaiLy
+   
         public void Update_ALL_TonTai_W_ID_NhapKhoDaiLy()
         {
 

@@ -37,9 +37,7 @@
             this.navXuatKhoLSX_ICD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navXuatKho_GapDan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -71,10 +69,8 @@
             this.navXuatKhoLSX_ICD,
             this.navBarItem3,
             this.navBarItem8,
-            this.navXuatKho_GapDan,
-            this.navBarItem2,
             this.navBarItem7,
-            this.navBarItem12});
+            this.navBarItem9});
             this.navBarControl1.Location = new System.Drawing.Point(0, 14);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
@@ -120,21 +116,19 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKhoLSX_ICD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKho_GapDan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navXuatKhoLSX_ICD
             // 
-            this.navXuatKhoLSX_ICD.Caption = "Xuất kho LSX (I-C-Đ)";
+            this.navXuatKhoLSX_ICD.Caption = "Xuất kho LSX ";
             this.navXuatKhoLSX_ICD.Name = "navXuatKhoLSX_ICD";
             this.navXuatKhoLSX_ICD.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkPressed);
             this.navXuatKhoLSX_ICD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
             // 
             // navBarItem3
             // 
-            this.navBarItem3.Caption = "Xuất kho ra Đại lý gia công";
+            this.navBarItem3.Caption = "Xuất kho ra Đại lý ";
             this.navBarItem3.Name = "navBarItem3";
             this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked_1);
             // 
@@ -144,22 +138,11 @@
             this.navBarItem8.Name = "navBarItem8";
             this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
             // 
-            // navXuatKho_GapDan
+            // navBarItem9
             // 
-            this.navXuatKho_GapDan.Caption = "Xuất kho Gấp dán";
-            this.navXuatKho_GapDan.Name = "navXuatKho_GapDan";
-            this.navXuatKho_GapDan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Caption = "Xuất kho Khác";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked_2);
-            // 
-            // navBarItem12
-            // 
-            this.navBarItem12.Caption = "Trả lại hàng mua";
-            this.navBarItem12.Name = "navBarItem12";
+            this.navBarItem9.Caption = "Xuất kho khác";
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarGroup2
             // 
@@ -266,10 +249,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
-        private DevExpress.XtraNavBar.NavBarItem navXuatKho_GapDan;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem12;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
     }
 }

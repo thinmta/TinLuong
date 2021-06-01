@@ -70,10 +70,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bCheck_NhapKho_Khac = true;
                 cls1.bBool_TonDauKy = false;
-                //if (gridTKCo.EditValue != null)
-                //    cls1.iID_TKCo = Convert.ToInt16(gridTKCo.EditValue.ToString());
-                //if (gridTKNo.EditValue != null)
-                //    cls1.iID_TKNo = Convert.ToInt16(gridTKNo.EditValue.ToString());
+               
 
                 if (UCBanThanhPham_NhapKho_Khac.mbThemMoi_NhapKho == true)
                 {
@@ -82,7 +79,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    cls1.iID_NhapKhoBTP = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+                    cls1.iID_NhapKhoBTP = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
                     cls1.Update();
                 }
 
@@ -92,7 +89,7 @@ namespace CtyTinLuong
                 if (UCBanThanhPham_NhapKho_Khac.mbThemMoi_NhapKho == false)
                 {
 
-                    clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+                    clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
                     clschitietNhapkho.Delete_ALL_W_ID_NhapKho();
                 }
 
@@ -112,7 +109,7 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+                        clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
                     }
                     clschitietNhapkho.iID_VTHH = Convert.ToInt16(dtmoi.Rows[i]["ID_VTHH"].ToString());
                     clschitietNhapkho.fSoLuongNhap = Convert.ToDouble(dtmoi.Rows[i]["SoLuong"].ToString());
@@ -160,7 +157,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    cls1.iID_NhapKhoBTP = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+                    cls1.iID_NhapKhoBTP = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
                     cls1.Update();
                 }
 
@@ -170,7 +167,7 @@ namespace CtyTinLuong
                 if (UCBanThanhPham_NhapKho_Khac.mbThemMoi_NhapKho == false)
                 {
 
-                    clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+                    clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
                     clschitietNhapkho.Delete_ALL_W_ID_NhapKho();
                 }
 
@@ -190,7 +187,7 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+                        clschitietNhapkho.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
                     }
                     clschitietNhapkho.iID_VTHH = Convert.ToInt16(dtmoi.Rows[i]["ID_VTHH"].ToString());
                     clschitietNhapkho.fSoLuongNhap = Convert.ToDouble(dtmoi.Rows[i]["SoLuong"].ToString());
@@ -212,7 +209,7 @@ namespace CtyTinLuong
         private void HienThi_Sua()
         {
             clsKhoBTP_tbNhapKho cls1 = new clsKhoBTP_tbNhapKho();
-            cls1.iID_NhapKhoBTP = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+            cls1.iID_NhapKhoBTP = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
             DataTable dt = cls1.SelectOne();
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
@@ -227,7 +224,7 @@ namespace CtyTinLuong
                 gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
             }
             clsKhoBTP_tbChiTietNhapKho cls2 = new clsKhoBTP_tbChiTietNhapKho();
-            cls2.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho_NPL;
+            cls2.iID_NhapKho = UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
             DataTable dtxx = cls2.SelectAll_W_ID_NhapKho();
 
             DataTable dt2 = new DataTable();

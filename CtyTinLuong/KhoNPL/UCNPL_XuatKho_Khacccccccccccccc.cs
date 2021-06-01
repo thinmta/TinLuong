@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class UCKhoNPL_DaXuatKho : UserControl
+    public partial class UCNPL_XuatKho_Khacccccccccccccc : UserControl
     {
-        public static int miD_XuatKhoNPL;
+        public static int miiD_XuatKho;
+        public static bool mbThemMoi;
         private void Load_LockUp()
         {
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -28,13 +29,13 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThiGridControl_2(int xxID_XuatKho)
+        private void HienThiGridControl_2(int xxiID_XuatKho)
         {
 
-            DataTable dt2 = new DataTable();
-            clsKhoNPL_tbChiTietXuatKho cls2 = new CtyTinLuong.clsKhoNPL_tbChiTietXuatKho();
-            cls2.iID_XuatKho = xxID_XuatKho;
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
+            cls2.iID_XuatKho = xxiID_XuatKho;
             DataTable dtxxxx = cls2.SelectAll_W_ID_XuatKho();
+            DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_VTHH", typeof(int));
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("DonViTinh", typeof(string));
@@ -49,52 +50,54 @@ namespace CtyTinLuong
             for (int i = 0; i < dtxxxx.Rows.Count; i++)
             {
                 double soluong, dongia;
+                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
+                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
                 DataRow _ravi = dt2.NewRow();
                 int iiDI_Vthh = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
                 _ravi["ID_VTHH"] = iiDI_Vthh;
-                cls.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
+                cls.iID_VTHH = iiDI_Vthh;
                 DataTable dtVT_vao = cls.SelectOne();
                 _ravi["MaVT"] = iiDI_Vthh;
                 _ravi["DonViTinh"] = cls.sDonViTinh.Value;
                 _ravi["TenVTHH"] = cls.sTenVTHH.Value;
-                _ravi["SoLuong"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
+                _ravi["SoLuong"] = soluong;
+                _ravi["DonGia"] = dongia;
+                
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
                 _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
                 dt2.Rows.Add(_ravi);
             }
-
+            
             gridControl2.DataSource = dt2;
         }
         private void HienThi(DateTime xxtungay, DateTime xxdenngay)
         {
-            clsKhoNPL_tbXuatKho cls = new CtyTinLuong.clsKhoNPL_tbXuatKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_XuatKhoNPL DESC";
-            DataTable dt = dv.ToTable();
+                clsKhoNPL_tbXuatKho cls = new CtyTinLuong.clsKhoNPL_tbXuatKho();
+                DataTable dt2xx = cls.SelectAll();
+                dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and checkXuatKho_Khac=True";
+                DataView dv22xxx = dt2xx.DefaultView;
+               
+                DataTable dt = dv22xxx.ToTable();
 
+                dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
+                DataView dvxxx = dt.DefaultView;
+                DataTable dt22 = dvxxx.ToTable();
+                dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
+                DataView dv2 = dt22.DefaultView;
+                dv2.Sort = "NgayChungTu DESC, ID_XuatKhoNPL DESC";
+                DataTable dxxxx = dv2.ToTable();
 
-            dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-            DataView dvxxx = dt.DefaultView;
-            DataTable dt22 = dvxxx.ToTable();
-            dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-            DataView dv2 = dt22.DefaultView;
-            dv2.Sort = "NgayChungTu DESC, ID_XuatKho DESC";
-            DataTable dxxxx = dv2.ToTable();
-
-            gridControl1.DataSource = dxxxx;
+                gridControl1.DataSource = dxxxx;
+         
 
         }
         private void HienThi_ALL()
         {
+
             clsKhoNPL_tbXuatKho cls = new CtyTinLuong.clsKhoNPL_tbXuatKho();
             DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
+            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and checkXuatKho_Khac=True";
             DataView dv = dt2.DefaultView;
             dv.Sort = "NgayChungTu DESC, ID_XuatKhoNPL DESC";
             DataTable dxxxx = dv.ToTable();
@@ -102,23 +105,22 @@ namespace CtyTinLuong
 
 
         }
-
-        public UCKhoNPL_DaXuatKho()
+        public UCNPL_XuatKho_Khacccccccccccccc()
         {
             InitializeComponent();
         }
 
-        private void UCKhoNPL_DaXuatKho_Load(object sender, EventArgs e)
+        private void UCNPL_XuatKho_Khacccccccccccccc_Load(object sender, EventArgs e)
         {
             Load_LockUp();
-            dteDenNgay.EditValue = null;
+            dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            UCKhoNPL_DaXuatKho_Load(sender, e);
+            UCNPL_XuatKho_Khacccccccccccccc_Load( sender,  e);
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -131,26 +133,12 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            try
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
             {
-                if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
-                {
-                    miD_XuatKhoNPL = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
-                    frmKhoNPL_DaXuatKho ff = new frmKhoNPL_DaXuatKho();
-                    ff.Show();
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            {
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                mbThemMoi = false;
+                miiD_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
+                KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
+                ff.Show();
             }
         }
 
@@ -165,7 +153,6 @@ namespace CtyTinLuong
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-
             if (e.Column == clSTT2)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
@@ -182,6 +169,8 @@ namespace CtyTinLuong
                 {
                     clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
                     cls1.iID_XuatKhoNPL = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
+
+
                     cls1.Delete();
                     clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
                     cls2.iID_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
@@ -194,7 +183,15 @@ namespace CtyTinLuong
                     else HienThi_ALL();
                 }
 
+
             }
+        }
+
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+            mbThemMoi = true;
+            KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
+            ff.Show();
         }
     }
 }

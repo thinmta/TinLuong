@@ -205,8 +205,8 @@ namespace CtyTinLuong
 					m_fDonGia = (double)dtToReturn.Rows[0]["DonGia"];
 					m_bTonTai = (bool)dtToReturn.Rows[0]["TonTai"];
 					m_bNgungTheoDoi = (bool)dtToReturn.Rows[0]["NgungTheoDoi"];
-					m_sGhiChu = dtToReturn.Rows[0]["GhiChu"] == System.DBNull.Value ? SqlString.Null : (string)dtToReturn.Rows[0]["GhiChu"];
-					m_bDaXuatKho = dtToReturn.Rows[0]["DaXuatKho"] == System.DBNull.Value ? SqlBoolean.Null : (bool)dtToReturn.Rows[0]["DaXuatKho"];
+					m_sGhiChu = (string)dtToReturn.Rows[0]["GhiChu"];
+					m_bDaXuatKho = (bool)dtToReturn.Rows[0]["DaXuatKho"];
 				}
 				return dtToReturn;
 			}

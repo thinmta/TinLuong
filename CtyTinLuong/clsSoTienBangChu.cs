@@ -17,8 +17,8 @@ namespace CtyTinLuong
             double so;
             string KetQua = "", tmp = "";
             int[] ViTri = new int[6];
-            if (SoTien < 0) return "Số tiền âm !";
-            if (SoTien == 0) return "Không đồng !";
+            if (SoTien < 0) return "Số tiền âm.";
+            if (SoTien == 0) return "Không đồng.";
             if (SoTien > 0)
             {
                 so = SoTien;

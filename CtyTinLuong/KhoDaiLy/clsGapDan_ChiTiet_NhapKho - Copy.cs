@@ -7,7 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsGapDan_ChiTiet_NhapKho : clsDBInteractionBase
 	{
-        //pr_GapDan_ChiTiet_NhapKho_SelectAll_distinct
+   
         public DataTable SelectAll_distinct()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

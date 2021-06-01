@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
+
 namespace CtyTinLuong
 {
-    public partial class UCBanThanhPham_NhapKho_Khac : UserControl
+    public partial class UCBanThanhPham_DaNhapKho : UserControl
     {
-        public static int miID_NhapKho;
-        public static bool mbThemMoi_NhapKho;
-
+        public static int miD_NhapKho;
+      
         private void Load_LockUp()
         {
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -37,7 +36,7 @@ namespace CtyTinLuong
             cls2.iID_NhapKho = xxIID_NhapKho;
             DataTable dt3 = cls2.SelectAll_W_ID_NhapKho();
             DataTable dt2 = new DataTable();
-
+           
             dt2.Columns.Add("ID_VTHH");
             dt2.Columns.Add("SoLuong", typeof(float));
             dt2.Columns.Add("DonGia", typeof(decimal));
@@ -55,8 +54,8 @@ namespace CtyTinLuong
                 Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuongNhap"].ToString());
                 Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
                 DataRow _ravi = dt2.NewRow();
-
-                int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
+                
+               int ID_VTHHxx =Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = ID_VTHHxx;
                 DataTable dtvj = cls.SelectOne();
@@ -76,13 +75,14 @@ namespace CtyTinLuong
         }
         private void HienThi(DateTime xxtungay, DateTime xxdenngay)
         {
-            clsKhoBTP_tbNhapKho cls = new CtyTinLuong.clsKhoBTP_tbNhapKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=True";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
-            DataTable dt = dv.ToTable();
 
+
+            clsKhoBTP_tbNhapKho cls = new CtyTinLuong.clsKhoBTP_tbNhapKho();
+            DataTable dt2xx = cls.SelectAll();
+            dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=False";
+            DataView dv22xxx = dt2xx.DefaultView;
+            dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
+            DataTable dt = dv22xxx.ToTable();
 
             dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
             DataView dvxxx = dt.DefaultView;
@@ -94,26 +94,27 @@ namespace CtyTinLuong
 
             gridControl1.DataSource = dxxxx;
 
-
         }
         private void HienThi_ALL()
         {
+
             clsKhoBTP_tbNhapKho cls = new CtyTinLuong.clsKhoBTP_tbNhapKho();
             DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=True";
+            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=False";
             DataView dv = dt2.DefaultView;
-            dv.Sort = "DaNhapKho ASC, NgayChungTu DESC, ID_NhapKhoBTP DESC";
+            dv.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
             DataTable dxxxx = dv.ToTable();
             gridControl1.DataSource = dxxxx;
 
 
         }
-        public UCBanThanhPham_NhapKho_Khac()
+
+        public UCBanThanhPham_DaNhapKho()
         {
             InitializeComponent();
         }
 
-        private void UCBanThanhPham_NhapKho_Khac_Load(object sender, EventArgs e)
+        private void UCBanThanhPham_DaNhapKho_Load(object sender, EventArgs e)
         {
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
@@ -123,15 +124,7 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            UCBanThanhPham_NhapKho_Khac_Load(sender, e);
-        }
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            {
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
-            }
+            UCBanThanhPham_DaNhapKho_Load( sender,  e);
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -144,25 +137,37 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
+            try
             {
-                mbThemMoi_NhapKho = false;
-                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
-                KhoBTP_ChiTiet_NhapKho_Khac ff = new KhoBTP_ChiTiet_NhapKho_Khac();
-                ff.Show();
+                if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
+                {
+                    
+                    miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
+                    KhoBTP_ChiTiet_DaNhapKho ff = new KhoBTP_ChiTiet_DaNhapKho();
+                    ff.Show();
+                }
+            }
+            catch
+            {
+
             }
         }
 
-        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+            }
         }
 
-        private void btThemMoi_Click(object sender, EventArgs e)
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            mbThemMoi_NhapKho = true;
-            KhoBTP_ChiTiet_NhapKho_Khac ff = new KhoBTP_ChiTiet_NhapKho_Khac();
-            ff.Show();
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
+            {
+                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
+                HienThiGridControl_2(iiIDnhapKhp);
+            }
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -173,13 +178,33 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        private void btXoa1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString() != "")
             {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
-                HienThiGridControl_2(iiIDnhapKhp);
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
+                {
+                    clsKhoBTP_tbNhapKho cls1 = new clsKhoBTP_tbNhapKho();
+                    cls1.iID_NhapKhoBTP = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
+
+
+                    cls1.Delete();
+                    clsKhoBTP_tbChiTietNhapKho cls2 = new clsKhoBTP_tbChiTietNhapKho();
+                    cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
+                    cls2.Delete_ALL_W_ID_NhapKho();
+                    MessageBox.Show("Đã xóa");
+                    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                    {
+                        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                    }
+                    else HienThi_ALL();
+                }
+
+
             }
+
         }
     }
 }

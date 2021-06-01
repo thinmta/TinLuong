@@ -26,17 +26,7 @@ namespace CtyTinLuong
                 navNhapKho_TuMuaHang.Appearance.Font = new Font(navNhapKho_TuMuaHang.Appearance.Font, FontStyle.Bold);
             }
 
-            clsHUU_LenhSanXuat_ToGapDan cls2 = new clsHUU_LenhSanXuat_ToGapDan();
-            DataTable dt2 = cls2.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and GuiDuLieu=True and TrangThai_XuatKho_VatTuPhu=False";
-            DataView dv2 = dt2.DefaultView;
-            DataTable dxxxx2 = dv2.ToTable();
-            int k2 = dxxxx2.Rows.Count;
-            if (k2 > 0)
-            {
-                navXuatKho_GapDan.Caption = "Xuất kho Gấp dán, ĐK (" + k2.ToString() + ")";
-                navXuatKho_GapDan.Appearance.Font = new Font(navXuatKho_GapDan.Appearance.Font, FontStyle.Bold);
-            }
+          
 
             clsHUU_LenhSanXuat cls3 = new clsHUU_LenhSanXuat();
             DataTable dt3 = cls3.SelectAll_XuatkhoNPL();
@@ -50,17 +40,7 @@ namespace CtyTinLuong
                 navXuatKhoLSX_ICD.Appearance.Font = new Font(navXuatKhoLSX_ICD.Appearance.Font, FontStyle.Bold);
             }
 
-            clsGapDan_tbNhapKho cls4 = new clsGapDan_tbNhapKho();
-            DataTable dt4 = cls4.SelectAll_HienThi();
-            dt4.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and TrangThai_XuatKho_NPL=False";
-            DataView dv4 = dt4.DefaultView;
-            DataTable dxxxx4 = dv4.ToTable();
-            int k4 = dxxxx4.Rows.Count;
-            if (k4 > 0)
-            {
-                navXuatKho_GapDan.Caption = "Xuất kho Gấp dán (" + k4.ToString() + ")";
-                navXuatKho_GapDan.Appearance.Font = new Font(navXuatKho_GapDan.Appearance.Font, FontStyle.Bold);
-            }
+           
 
 
 
@@ -152,38 +132,27 @@ namespace CtyTinLuong
             uccc_XuatKho.BringToFront();
         }
 
-        private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww uccc_XuatKho = new UCNPL_XuatKho_ToGapDan_NEwwwwwwwwwwwwwww();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
-
-        private void navBarItem2_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            KhoNPL_frmNPL_Load( sender,  e);
-        }
-
+      
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
             ff.Show();
         }
 
-        private void navBarItem2_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCNPL_XuatKho_DongBao_DongKien uccc_XuatKho = new UCNPL_XuatKho_DongBao_DongKien();
-            uccc_XuatKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_XuatKho);
-            uccc_XuatKho.BringToFront();
-        }
-
+     
     
 
         private void navBarItem7_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             UCNPL_NhapKho_Khacccccccccccc ucc = new UCNPL_NhapKho_Khacccccccccccc();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+        }
+
+        private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UCNPL_XuatKho_Khacccccccccccccc ucc = new UCNPL_XuatKho_Khacccccccccccccc();
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

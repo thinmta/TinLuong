@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NPLChiTietNhapKho_DaiLy_ThemMoi));
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtTenThanhPhamQuyDoi = new System.Windows.Forms.TextBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -133,9 +134,7 @@
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btLuu_Copy = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.btLuu_Gui_Copy = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -1224,16 +1223,6 @@
             this.layoutControlItem28.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem28.TextVisible = false;
             // 
-            // btLuu_Copy
-            // 
-            this.btLuu_Copy.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu_Copy.Location = new System.Drawing.Point(669, 655);
-            this.btLuu_Copy.Name = "btLuu_Copy";
-            this.btLuu_Copy.Size = new System.Drawing.Size(107, 23);
-            this.btLuu_Copy.TabIndex = 93;
-            this.btLuu_Copy.Text = "Chỉ lưu + Copy";
-            this.btLuu_Copy.Click += new System.EventHandler(this.btLuu_Copy_Click);
-            // 
             // repositoryItemLookUpEdit1
             // 
             this.repositoryItemLookUpEdit1.AutoHeight = false;
@@ -1245,20 +1234,6 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenVTHH", "Tên VT", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
             // 
-            // btLuu_Gui_Copy
-            // 
-            this.btLuu_Gui_Copy.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLuu_Gui_Copy.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.btLuu_Gui_Copy.Appearance.Options.UseFont = true;
-            this.btLuu_Gui_Copy.Appearance.Options.UseForeColor = true;
-            this.btLuu_Gui_Copy.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Back;
-            this.btLuu_Gui_Copy.Location = new System.Drawing.Point(401, 655);
-            this.btLuu_Gui_Copy.Name = "btLuu_Gui_Copy";
-            this.btLuu_Gui_Copy.Size = new System.Drawing.Size(128, 23);
-            this.btLuu_Gui_Copy.TabIndex = 95;
-            this.btLuu_Gui_Copy.Text = "Lưu + Gửi + Copy";
-            this.btLuu_Gui_Copy.Click += new System.EventHandler(this.btLuu_Gui_Copy_Click);
-            // 
             // btLuu_Gui_Dong
             // 
             this.btLuu_Gui_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1266,21 +1241,23 @@
             this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
             this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
             this.btLuu_Gui_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Back;
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(535, 655);
+            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(718, 655);
             this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
-            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(128, 23);
+            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(87, 23);
             this.btLuu_Gui_Dong.TabIndex = 94;
-            this.btLuu_Gui_Dong.Text = "Lưu + Gửi + Đóng";
+            this.btLuu_Gui_Dong.Text = "Lưu + Gửi";
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
             // 
             // btLuu_Dong
             // 
+            this.btLuu_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuu_Dong.Appearance.Options.UseFont = true;
             this.btLuu_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu_Dong.Location = new System.Drawing.Point(782, 655);
+            this.btLuu_Dong.Location = new System.Drawing.Point(811, 655);
             this.btLuu_Dong.Name = "btLuu_Dong";
-            this.btLuu_Dong.Size = new System.Drawing.Size(107, 23);
+            this.btLuu_Dong.Size = new System.Drawing.Size(78, 23);
             this.btLuu_Dong.TabIndex = 92;
-            this.btLuu_Dong.Text = "Chỉ lưu + Đóng";
+            this.btLuu_Dong.Text = "Lưu";
             this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // groupBox3
@@ -1307,9 +1284,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions7.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1373,9 +1350,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions8.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -1594,20 +1571,20 @@
             // 
             // btPrint
             // 
-            this.btPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btPrint.Location = new System.Drawing.Point(17, 655);
+            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
+            this.btPrint.Location = new System.Drawing.Point(636, 656);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(173, 23);
+            this.btPrint.Size = new System.Drawing.Size(76, 23);
             this.btPrint.TabIndex = 90;
-            this.btPrint.Text = "In phiếu nhập kho Đại lý";
+            this.btPrint.Text = "Print";
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // txtID_thanhPham
             // 
-            this.txtID_thanhPham.Location = new System.Drawing.Point(206, 658);
+            this.txtID_thanhPham.Location = new System.Drawing.Point(20, 658);
             this.txtID_thanhPham.Name = "txtID_thanhPham";
             this.txtID_thanhPham.ReadOnly = true;
-            this.txtID_thanhPham.Size = new System.Drawing.Size(100, 20);
+            this.txtID_thanhPham.Size = new System.Drawing.Size(35, 20);
             this.txtID_thanhPham.TabIndex = 96;
             this.txtID_thanhPham.Visible = false;
             // 
@@ -1617,8 +1594,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 683);
             this.Controls.Add(this.txtID_thanhPham);
-            this.Controls.Add(this.btLuu_Copy);
-            this.Controls.Add(this.btLuu_Gui_Copy);
             this.Controls.Add(this.btLuu_Gui_Dong);
             this.Controls.Add(this.btLuu_Dong);
             this.Controls.Add(this.groupBox3);
@@ -1748,9 +1723,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Copy;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Copy;
         private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
         private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
         private System.Windows.Forms.GroupBox groupBox3;

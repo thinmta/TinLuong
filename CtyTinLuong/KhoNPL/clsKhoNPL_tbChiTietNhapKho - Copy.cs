@@ -15,7 +15,39 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsKhoNPL_tbChiTietNhapKho : clsDBInteractionBase
 	{
-        //pr_KhoNPL_tbChiTietNhapKho_Delete_ALL_W_ID_NhapKho
+        public DataTable SelectOne_W_ID_VTHH_w_Ten_VTHH()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_KhoNPL_tbChiTietNhapKho_SelectOne_W_ID_VTHH_w_Ten_VTHH]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_KhoNPL_tbChiTietNhapKho_SelectOne_W_ID_VTHH_w_Ten_VTHH");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MuaHang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MuaHang));
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_KhoNPL_tbChiTietNhapKho_SelectOne_W_ID_VTHH_w_Ten_VTHH", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public void Delete_ALL_W_ID_NhapKho()
         {
 

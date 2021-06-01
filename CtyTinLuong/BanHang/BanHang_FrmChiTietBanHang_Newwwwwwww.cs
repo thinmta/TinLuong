@@ -70,7 +70,7 @@ namespace CtyTinLuong
                     clsxx.iTrangThai_MuaHang1_BanHang2_VAT3 = 2;
                     clsxx.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
                     clsxx.sDienGiai = txtDienGiai.Text.ToString();
-
+                    
                     string expressionnhapkho;
                     expressionnhapkho = "ID_TaiKhoanKeToanCon=" + ID_TaiKhoanKeToanConxxxx1 + "";
                     DataRow[] foundRows;

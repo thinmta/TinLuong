@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhoNPL_ChiTiet_NhapKho_Khac));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -81,6 +81,8 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNguoiGiaoHang = new System.Windows.Forms.TextBox();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -103,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -119,6 +122,7 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.txtNguoiGiaoHang);
             this.layoutControl2.Controls.Add(this.txtThamChieu);
             this.layoutControl2.Controls.Add(this.txtTongTienHangCoVAT);
             this.layoutControl2.Controls.Add(this.gridNguoiLap);
@@ -147,9 +151,9 @@
             this.txtTongTienHangCoVAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTienHangCoVAT.Location = new System.Drawing.Point(121, 107);
             this.txtTongTienHangCoVAT.Name = "txtTongTienHangCoVAT";
-            this.txtTongTienHangCoVAT.ReadOnly = true;
-            this.txtTongTienHangCoVAT.Size = new System.Drawing.Size(840, 20);
+            this.txtTongTienHangCoVAT.Size = new System.Drawing.Size(358, 20);
             this.txtTongTienHangCoVAT.TabIndex = 7;
+            this.txtTongTienHangCoVAT.Text = "0";
             this.txtTongTienHangCoVAT.TextChanged += new System.EventHandler(this.txtTongTienHangCoVAT_TextChanged);
             // 
             // gridNguoiLap
@@ -252,7 +256,8 @@
             this.layoutControlItem15,
             this.layoutControlItem4,
             this.layoutControlItem21,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem5});
             this.layoutControlGroup2.Name = "layoutControlGroup1";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup2.Size = new System.Drawing.Size(963, 129);
@@ -314,7 +319,7 @@
             this.layoutControlItem21.CustomizationFormText = "Tổng tiền hàng";
             this.layoutControlItem21.Location = new System.Drawing.Point(0, 105);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(963, 24);
+            this.layoutControlItem21.Size = new System.Drawing.Size(481, 24);
             this.layoutControlItem21.Text = "Tổng tiền hàng (có VAT)";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(116, 13);
             // 
@@ -540,9 +545,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -598,11 +603,28 @@
             // btPrint
             // 
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(15, 626);
+            this.btPrint.Location = new System.Drawing.Point(680, 626);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(98, 23);
             this.btPrint.TabIndex = 92;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
+            // 
+            // txtNguoiGiaoHang
+            // 
+            this.txtNguoiGiaoHang.Location = new System.Drawing.Point(602, 107);
+            this.txtNguoiGiaoHang.Name = "txtNguoiGiaoHang";
+            this.txtNguoiGiaoHang.Size = new System.Drawing.Size(359, 20);
+            this.txtNguoiGiaoHang.TabIndex = 94;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtNguoiGiaoHang;
+            this.layoutControlItem5.Location = new System.Drawing.Point(481, 105);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(482, 24);
+            this.layoutControlItem5.Text = "Người giao hàng";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(116, 13);
             // 
             // KhoNPL_ChiTiet_NhapKho_Khac
             // 
@@ -640,6 +662,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,5 +715,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.SimpleButton btLuu;
         private DevExpress.XtraEditors.SimpleButton btPrint;
+        private System.Windows.Forms.TextBox txtNguoiGiaoHang;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
