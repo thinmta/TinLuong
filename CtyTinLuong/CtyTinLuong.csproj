@@ -202,6 +202,12 @@
     <Compile Include="frmPrint_Nhap_Xuat_Kho.Designer.cs">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.Designer.cs">
+      <DependentUpon>frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1625,6 +1631,12 @@
     <Compile Include="XtraDaiLy_ChiTietLuong.Designer.cs">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_BaoCaoSanLuong_TheoCongNhan.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1789,6 +1801,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.resx">
+      <DependentUpon>frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKho.resx">
       <DependentUpon>UCBanThanhPham_DaNhapKho.cs</DependentUpon>
@@ -2421,6 +2436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraDaiLy_ChiTietLuong.resx">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCaoSanLuong_TheoCongNhan.resx">
       <DependentUpon>Xtra_BaoCaoSanLuong_TheoCongNhan.cs</DependentUpon>
