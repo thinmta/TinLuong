@@ -710,7 +710,7 @@ namespace CtyTinLuong
                     {
                         dttttt2.Rows[i]["TienUSD"] = true;
                     }
-                    gridControl1.DataSource = dttttt2;
+                    gridControl2.DataSource = dttttt2;
                 }
             }
             catch
@@ -1167,7 +1167,7 @@ namespace CtyTinLuong
                     {
                         dttttt2.Rows[i]["TiGia"] = txtTiGia.Text.ToString();
                     }
-                    gridControl1.DataSource = dttttt2;
+                    gridControl2.DataSource = dttttt2;
                 }
             }
             catch
