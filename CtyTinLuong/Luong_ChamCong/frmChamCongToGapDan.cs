@@ -1,4 +1,5 @@
 ﻿using CtyTinLuong.Constants;
+using DevExpress.XtraGrid.Columns;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,14 +28,88 @@ namespace CtyTinLuong
         public string _tennhanvien = "", _ten_vthh;
         private DataTable _data;
         private bool isload = true;
+        private List<GridColumn> ds_grid = new List<GridColumn>();
+        public frmChamCongToGapDan()
+        {
+            InitializeComponent();
+            ds_grid = new List<GridColumn>();
+            ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
+            ds_grid.Add(Ngay6); ds_grid.Add(Ngay7); ds_grid.Add(Ngay8); ds_grid.Add(Ngay9); ds_grid.Add(Ngay10);
+            ds_grid.Add(Ngay11); ds_grid.Add(Ngay12); ds_grid.Add(Ngay13); ds_grid.Add(Ngay14); ds_grid.Add(Ngay15);
+            ds_grid.Add(Ngay16); ds_grid.Add(Ngay17); ds_grid.Add(Ngay18); ds_grid.Add(Ngay19); ds_grid.Add(Ngay20);
+            ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
+            ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
+            ds_grid.Add(Ngay31);
+        }
+
+        private string LayThu(DateTime date)
+        {
+            switch(date.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    return "T2";
+                case DayOfWeek.Tuesday:
+                    return "T3";
+                case DayOfWeek.Wednesday:
+                    return "T4";
+                case DayOfWeek.Thursday:
+                    return "T5";
+                case DayOfWeek.Friday:
+                    return "T6";
+                case DayOfWeek.Saturday:
+                    return "T7";
+                case DayOfWeek.Sunday:
+                    return "CN";
+            }
+            return "";
+        }
         public void LoadData(bool islandau)
         {
             isload = true;
             if (islandau)
             {
-                txtNam.Text = DateTime.Now.Year.ToString();
-                txtThang.Text = DateTime.Now.Month.ToString();
+                DateTime dtnow = DateTime.Now;
+                txtNam.Text = dtnow.Year.ToString();
+                txtThang.Text = dtnow.Month.ToString();
                 txtTimKiem.Text = "";
+                DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
+                int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+                if (ngaycuathang_ == 28)
+                {
+                    Ngay31.Visible = false;
+                    Ngay30.Visible = false;
+                    Ngay29.Visible = false;
+                }
+                else if (ngaycuathang_ == 29)
+                {
+                    Ngay31.Visible = false;
+                    Ngay30.Visible = false;
+                    Ngay29.Visible = true;
+                }
+                else if (ngaycuathang_ == 30)
+                {
+                    Ngay31.Visible = false;
+                    Ngay30.Visible = true;
+                    Ngay29.Visible = true;
+                }
+                else if (ngaycuathang_ == 31)
+                {
+                    Ngay31.Visible = true;
+                    Ngay30.Visible = true;
+                    Ngay29.Visible = true;
+                }
+                string thu_ = LayThu(date_);
+                for (int i = 0; i < ngaycuathang_; ++i)
+                {
+                    ds_grid[i].Caption = (i+1)+"\n" + LayThu(new DateTime(dtnow.Year, dtnow.Month, (i + 1)));
+                    if(ds_grid[i].Caption.Contains("CN"))
+                    {
+                        ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
+                        ds_grid[i].AppearanceHeader.BackColor = Color.LightGray;
+                        ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
+                        ds_grid[i].AppearanceCell.ForeColor = Color.Red;
+                    }
+                } 
 
                 using (clsThin clsThin_ = new clsThin())
                 {
@@ -54,11 +129,14 @@ namespace CtyTinLuong
                     cbLoaiHangSX.DataSource = dt2_;
 
                     cbLoaiHangSX.Enabled = true;
-
+                    try
+                    {
+                        _id_vthh = (int)cbLoaiHangSX.SelectedValue;
+                        _id_bophan = (int)cbBoPhan.SelectedValue;
+                        _ten_vthh = (string)cbLoaiHangSX.Text;
+                    }
+                    catch { }
                 }
-                _id_vthh = (int)cbLoaiHangSX.SelectedValue;
-                _id_bophan = (int)cbBoPhan.SelectedValue;
-                _ten_vthh = (string)cbLoaiHangSX.Text;
             }
             else
             {
@@ -66,10 +144,11 @@ namespace CtyTinLuong
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
             _tennhanvien = txtTimKiem.Text;
+            lbLoaiHang.Text = _ten_vthh;
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, _id_vthh);
+                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, _id_vthh,_tennhanvien);
                 int tong_tatca = 0;
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
@@ -257,16 +336,16 @@ namespace CtyTinLuong
                     Ngay7.OptionsColumn.AllowEdit = Ngay8.OptionsColumn.AllowEdit =
                     Ngay9.OptionsColumn.AllowEdit = Ngay10.OptionsColumn.AllowEdit =
                     Ngay11.OptionsColumn.AllowEdit = Ngay12.OptionsColumn.AllowEdit =
-                    gridColumn13.OptionsColumn.AllowEdit = gridColumn14.OptionsColumn.AllowEdit =
-                    gridColumn15.OptionsColumn.AllowEdit = gridColumn16.OptionsColumn.AllowEdit =
-                    gridColumn17.OptionsColumn.AllowEdit = gridColumn18.OptionsColumn.AllowEdit =
-                    gridColumn19.OptionsColumn.AllowEdit = gridColumn20.OptionsColumn.AllowEdit =
-                    gridColumn21.OptionsColumn.AllowEdit = gridColumn22.OptionsColumn.AllowEdit =
-                    gridColumn23.OptionsColumn.AllowEdit = gridColumn24.OptionsColumn.AllowEdit =
-                    gridColumn25.OptionsColumn.AllowEdit = gridColumn26.OptionsColumn.AllowEdit =
+                    Ngay13.OptionsColumn.AllowEdit = Ngay14.OptionsColumn.AllowEdit =
+                    Ngay15.OptionsColumn.AllowEdit = Ngay16.OptionsColumn.AllowEdit =
+                    Ngay17.OptionsColumn.AllowEdit = Ngay18.OptionsColumn.AllowEdit =
+                    Ngay19.OptionsColumn.AllowEdit = Ngay20.OptionsColumn.AllowEdit =
+                    Ngay21.OptionsColumn.AllowEdit = Ngay22.OptionsColumn.AllowEdit =
+                    Ngay23.OptionsColumn.AllowEdit = Ngay24.OptionsColumn.AllowEdit =
+                    Ngay25.OptionsColumn.AllowEdit = Ngay26.OptionsColumn.AllowEdit =
                     Ngay27.OptionsColumn.AllowEdit = Ngay28.OptionsColumn.AllowEdit =
-                    gridColumn29.OptionsColumn.AllowEdit = gridColumn30.OptionsColumn.AllowEdit =
-                    gridColumn31.OptionsColumn.AllowEdit = false;
+                    Ngay29.OptionsColumn.AllowEdit = Ngay30.OptionsColumn.AllowEdit =
+                    Ngay31.OptionsColumn.AllowEdit = false;
                 clSLTangCa.OptionsColumn.AllowEdit = false;
 
             }
@@ -355,72 +434,72 @@ namespace CtyTinLuong
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn13.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay13.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn14.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay14.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn15.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay15.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn16.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay16.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn17.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay17.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn18.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay18.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn19.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay19.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn20.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay20.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn21.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay21.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn22.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay22.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn23.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay23.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn24.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay24.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn25.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay25.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
             thutrongtuan = thutrongtuanxyz(intday);
-            gridColumn26.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+            Ngay26.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
             ngaydautien = ngaydautien.AddDays(1);
             intday = (int)ngaydautien.DayOfWeek;
@@ -434,49 +513,49 @@ namespace CtyTinLuong
 
             if (days == 28)
             {
-                gridColumn29.Visible = false;
-                gridColumn30.Visible = false;
-                gridColumn31.Visible = false;
+                Ngay29.Visible = false;
+                Ngay30.Visible = false;
+                Ngay31.Visible = false;
             }
             else if (days == 29)
             {
                 ngaydautien = ngaydautien.AddDays(1);
                 intday = (int)ngaydautien.DayOfWeek;
                 thutrongtuan = thutrongtuanxyz(intday);
-                gridColumn29.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
-                gridColumn30.Visible = false;
-                gridColumn31.Visible = false;
+                Ngay29.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+                Ngay30.Visible = false;
+                Ngay31.Visible = false;
             }
             else if (days == 30)
             {
                 ngaydautien = ngaydautien.AddDays(1);
                 intday = (int)ngaydautien.DayOfWeek;
                 thutrongtuan = thutrongtuanxyz(intday);
-                gridColumn29.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+                Ngay29.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
                 ngaydautien = ngaydautien.AddDays(1);
                 intday = (int)ngaydautien.DayOfWeek;
                 thutrongtuan = thutrongtuanxyz(intday);
-                gridColumn30.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+                Ngay30.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
-                gridColumn31.Visible = false;
+                Ngay31.Visible = false;
             }
             else if (days == 31)
             {
                 ngaydautien = ngaydautien.AddDays(1);
                 intday = (int)ngaydautien.DayOfWeek;
                 thutrongtuan = thutrongtuanxyz(intday);
-                gridColumn29.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+                Ngay29.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
                 ngaydautien = ngaydautien.AddDays(1);
                 intday = (int)ngaydautien.DayOfWeek;
                 thutrongtuan = thutrongtuanxyz(intday);
-                gridColumn30.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+                Ngay30.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
 
                 ngaydautien = ngaydautien.AddDays(1);
                 intday = (int)ngaydautien.DayOfWeek;
                 thutrongtuan = thutrongtuanxyz(intday);
-                gridColumn31.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
+                Ngay31.Caption = "" + ngaydautien.ToString("dd/MM/yyyy") + "\n " + thutrongtuan + "";
             }
 
 
@@ -506,11 +585,6 @@ namespace CtyTinLuong
 
             }
             // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
-        }
-
-        public frmChamCongToGapDan()
-        {
-            InitializeComponent();
         }
 
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -598,12 +672,16 @@ namespace CtyTinLuong
         
         private void LoadTimKiem()
         {
-            DataTable dt_ = new DataTable();
+            gridControl1.DataSource = null;
+          DataTable dt_ = _data;
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 if (CheckString.RemoveUnicode(_data.Rows[i]["TenNhanVien"].ToString().ToLower()).Contains(CheckString.RemoveUnicode(txtTimKiem.Text.ToLower())))
                 {
-                    dt_.Rows.Add(_data.Rows[i]);
+                }
+                else
+                {
+                    dt_.Rows.Remove(_data.Rows[i]);
                 }
             }
 
@@ -737,6 +815,30 @@ namespace CtyTinLuong
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void GuiDuLieuBangLuong()
+        {
+            using (clsThin clsThin_ = new clsThin())
+            {
+                for (int i = 0; i < _data.Rows.Count; ++i)
+                {
+                    float tong_ = 0;
+                    for (int j = 0; j < items[i].Ds_Ngay.Length; ++j)
+                    {
+                        tong_ += items[i].Ds_Ngay[j];
+                    }
+                    clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(items[i].ID_CongNhan,
+                        items[i].Thang, items[i].Nam, items[i].ID_VTHH, items[i].ID_DinhMuc_Luong_SanLuong,
+                        items[i].Ds_Ngay[0], items[i].Ds_Ngay[1], items[i].Ds_Ngay[2], items[i].Ds_Ngay[3], items[i].Ds_Ngay[4],
+                        items[i].Ds_Ngay[5], items[i].Ds_Ngay[6], items[i].Ds_Ngay[7], items[i].Ds_Ngay[8], items[i].Ds_Ngay[9],
+                        items[i].Ds_Ngay[10], items[i].Ds_Ngay[11], items[i].Ds_Ngay[12], items[i].Ds_Ngay[13], items[i].Ds_Ngay[14],
+                        items[i].Ds_Ngay[15], items[i].Ds_Ngay[16], items[i].Ds_Ngay[17], items[i].Ds_Ngay[18], items[i].Ds_Ngay[19],
+                        items[i].Ds_Ngay[20], items[i].Ds_Ngay[21], items[i].Ds_Ngay[22], items[i].Ds_Ngay[23], items[i].Ds_Ngay[24],
+                        items[i].Ds_Ngay[25], items[i].Ds_Ngay[26], items[i].Ds_Ngay[27], items[i].Ds_Ngay[28], items[i].Ds_Ngay[29],
+                        items[i].Ds_Ngay[30], tong_, items[i].GuiDuLieu);
+                }
+            }
+               
         }
     }
 }

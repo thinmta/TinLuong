@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,14 +43,14 @@ namespace CtyTinLuong
             DataView dvme = dtme.DefaultView;
             DataTable newdtme = dvme.ToTable();
 
-            gridTKCo.Properties.DataSource = newdtme;
-            gridTKCo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKCo.Properties.DisplayMember = "SoTaiKhoanCon";
+            //gridTKCo.Properties.DataSource = newdtme;
+            //gridTKCo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
+            //gridTKCo.Properties.DisplayMember = "SoTaiKhoanCon";
 
 
-            gridTKNo.Properties.DataSource = newdtme;
-            gridTKNo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKNo.Properties.DisplayMember = "SoTaiKhoanCon";
+            //gridTKNo.Properties.DataSource = newdtme;
+            //gridTKNo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
+            //gridTKNo.Properties.DisplayMember = "SoTaiKhoanCon";
 
 
         }
@@ -180,14 +181,14 @@ namespace CtyTinLuong
 
         private void txtTienCo_TextChanged_2(object sender, EventArgs e)
         {
-            try
-            {
-                decimal value = decimal.Parse(txtTienCo.Text);
-                txtTienCo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
+            //try
+            //{
+            //    decimal value = decimal.Parse(txtTienCo.Text);
+            //    txtTienCo.Text = String.Format("{0:#,##0.00}", value);
+            //}
+            //catch
+            //{
+            //}
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -196,28 +197,55 @@ namespace CtyTinLuong
             gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clSoLuongXuat, 0);
         }
 
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            DataTable dttttt2 = dv1212.ToTable();
+            string shienthi = "1";
+            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+            DataView dv = dttttt2.DefaultView;
+            mdtPrint = dv.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint = true;
+                mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                msNguoiGiaoHang = txtNguoiNhanHang.Text.ToString();
+                mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                msDienGiai = txtDienGiaiNPL.Text.ToString();
+                frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ff = new frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx();
+                ff.Show();
+
+            }
+           
+        }
+
         private void txtTienNo_TextAlignChanged(object sender, EventArgs e)
         {
-            try
-            {
-                decimal value = decimal.Parse(txtTienNo.Text);
-                txtTienNo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
+            //try
+            //{
+            //    decimal value = decimal.Parse(txtTienNo.Text);
+            //    txtTienNo.Text = String.Format("{0:#,##0.00}", value);
+            //}
+            //catch
+            //{
+            //}
         }
 
         private void txtTienNo_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                decimal value = decimal.Parse(txtTienNo.Text);
-                txtTienNo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
+            //try
+            //{
+            //    decimal value = decimal.Parse(txtTienNo.Text);
+            //    txtTienNo.Text = String.Format("{0:#,##0.00}", value);
+            //}
+            //catch
+            //{
+            //}
         }
     }
 }
