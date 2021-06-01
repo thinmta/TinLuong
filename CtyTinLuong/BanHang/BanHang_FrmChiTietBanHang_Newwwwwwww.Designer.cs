@@ -86,7 +86,6 @@
             this.clMaKH3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenKH3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTienVAT = new System.Windows.Forms.TextBox();
-            this.txtNguoiGiaoHang = new System.Windows.Forms.TextBox();
             this.txtTongTienHangCoVAT = new System.Windows.Forms.TextBox();
             this.txtTiGia = new System.Windows.Forms.TextBox();
             this.txtPhanTramVAT = new System.Windows.Forms.TextBox();
@@ -114,7 +113,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -147,9 +145,10 @@
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
-            this.txtThamChieu = new System.Windows.Forms.TextBox();
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
             this.linkKeHoachSanXuat = new System.Windows.Forms.LinkLabel();
+            this.txtThamChieu = new System.Windows.Forms.TextBox();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -185,7 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
@@ -199,6 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -599,11 +598,11 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtThamChieu);
             this.layoutControl1.Controls.Add(this.txtMaCongTennor);
             this.layoutControl1.Controls.Add(this.txtTenKH);
             this.layoutControl1.Controls.Add(this.gridKH);
             this.layoutControl1.Controls.Add(this.txtTienVAT);
-            this.layoutControl1.Controls.Add(this.txtNguoiGiaoHang);
             this.layoutControl1.Controls.Add(this.txtTongTienHangCoVAT);
             this.layoutControl1.Controls.Add(this.txtTiGia);
             this.layoutControl1.Controls.Add(this.txtPhanTramVAT);
@@ -626,9 +625,9 @@
             // 
             // txtMaCongTennor
             // 
-            this.txtMaCongTennor.Location = new System.Drawing.Point(571, 26);
+            this.txtMaCongTennor.Location = new System.Drawing.Point(126, 26);
             this.txtMaCongTennor.Name = "txtMaCongTennor";
-            this.txtMaCongTennor.Size = new System.Drawing.Size(390, 20);
+            this.txtMaCongTennor.Size = new System.Drawing.Size(353, 20);
             this.txtMaCongTennor.TabIndex = 119;
             // 
             // txtTenKH
@@ -698,13 +697,6 @@
             this.txtTienVAT.TabIndex = 97;
             this.txtTienVAT.Text = "0";
             this.txtTienVAT.TextChanged += new System.EventHandler(this.txtTienVAT_TextChanged);
-            // 
-            // txtNguoiGiaoHang
-            // 
-            this.txtNguoiGiaoHang.Location = new System.Drawing.Point(126, 26);
-            this.txtNguoiGiaoHang.Name = "txtNguoiGiaoHang";
-            this.txtNguoiGiaoHang.Size = new System.Drawing.Size(317, 20);
-            this.txtNguoiGiaoHang.TabIndex = 96;
             // 
             // txtTongTienHangCoVAT
             // 
@@ -880,13 +872,13 @@
             this.layoutControlItem3,
             this.layoutControlItem6,
             this.layoutControlItem19,
-            this.layoutControlItem10,
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem22,
             this.layoutControlItem4,
             this.layoutControlItem7,
-            this.layoutControlItem19332});
+            this.layoutControlItem19332,
+            this.layoutControlItem10});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(963, 183);
@@ -992,16 +984,6 @@
             this.layoutControlItem19.Text = "Số hóa đơn";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(121, 13);
             // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtNguoiGiaoHang;
-            this.layoutControlItem10.CustomizationFormText = "Người giao hàng";
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(445, 24);
-            this.layoutControlItem10.Text = "Người giao hàng";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(121, 13);
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtTiGia;
@@ -1055,9 +1037,9 @@
             // layoutControlItem19332
             // 
             this.layoutControlItem19332.Control = this.txtMaCongTennor;
-            this.layoutControlItem19332.Location = new System.Drawing.Point(445, 24);
+            this.layoutControlItem19332.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem19332.Name = "layoutControlItem19332";
-            this.layoutControlItem19332.Size = new System.Drawing.Size(518, 24);
+            this.layoutControlItem19332.Size = new System.Drawing.Size(481, 24);
             this.layoutControlItem19332.Text = "Mã Congtenor";
             this.layoutControlItem19332.TextSize = new System.Drawing.Size(121, 13);
             // 
@@ -1341,14 +1323,6 @@
             this.txtsochungtu_tbThuChi.Size = new System.Drawing.Size(25, 20);
             this.txtsochungtu_tbThuChi.TabIndex = 97;
             // 
-            // txtThamChieu
-            // 
-            this.txtThamChieu.Location = new System.Drawing.Point(236, 661);
-            this.txtThamChieu.Name = "txtThamChieu";
-            this.txtThamChieu.ReadOnly = true;
-            this.txtThamChieu.Size = new System.Drawing.Size(50, 20);
-            this.txtThamChieu.TabIndex = 118;
-            // 
             // checkBaoVe_LaiXe
             // 
             this.checkBaoVe_LaiXe.AutoSize = true;
@@ -1373,6 +1347,22 @@
             this.linkKeHoachSanXuat.Text = "Tham chiếu kế hoạch sản xuất";
             this.linkKeHoachSanXuat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkKeHoachSanXuat_LinkClicked);
             // 
+            // txtThamChieu
+            // 
+            this.txtThamChieu.Location = new System.Drawing.Point(607, 26);
+            this.txtThamChieu.Name = "txtThamChieu";
+            this.txtThamChieu.Size = new System.Drawing.Size(354, 20);
+            this.txtThamChieu.TabIndex = 120;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtThamChieu;
+            this.layoutControlItem10.Location = new System.Drawing.Point(481, 24);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(482, 24);
+            this.layoutControlItem10.Text = "Tham chiếu";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(121, 13);
+            // 
             // BanHang_FrmChiTietBanHang_Newwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1380,7 +1370,6 @@
             this.ClientSize = new System.Drawing.Size(984, 685);
             this.Controls.Add(this.linkKeHoachSanXuat);
             this.Controls.Add(this.checkBaoVe_LaiXe);
-            this.Controls.Add(this.txtThamChieu);
             this.Controls.Add(this.txtsochungtu_tbThuChi);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -1426,7 +1415,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
@@ -1440,6 +1428,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1486,7 +1475,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private System.Windows.Forms.TextBox txtTienVAT;
-        private System.Windows.Forms.TextBox txtNguoiGiaoHang;
         private System.Windows.Forms.TextBox txtTongTienHangCoVAT;
         private System.Windows.Forms.TextBox txtTiGia;
         private System.Windows.Forms.TextBox txtPhanTramVAT;
@@ -1514,7 +1502,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
@@ -1552,10 +1539,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private System.Windows.Forms.TextBox txtTenKH;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private System.Windows.Forms.TextBox txtThamChieu;
         private System.Windows.Forms.CheckBox checkBaoVe_LaiXe;
         private System.Windows.Forms.LinkLabel linkKeHoachSanXuat;
         private System.Windows.Forms.TextBox txtMaCongTennor;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19332;
+        private System.Windows.Forms.TextBox txtThamChieu;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }

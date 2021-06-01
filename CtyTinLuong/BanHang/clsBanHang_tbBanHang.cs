@@ -8,11 +8,11 @@ namespace CtyTinLuong
 	public partial class clsBanHang_tbBanHang : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bTrangThai_KhoThanhPham, m_bTrangThaiBanHang, m_bNgungTheoDoi, m_bTonTai, m_bCheck_BaoVe, m_bDaXong, m_bTienUSD, m_bCheck_LaiXe;
+			private SqlBoolean		m_bTrangThaiBanHang, m_bCheck_BaoVe, m_bTrangThai_KhoThanhPham, m_bNgungTheoDoi, m_bTonTai, m_bCheck_LaiXe, m_bTienUSD, m_bDaXong;
 			private SqlDateTime		m_daNgayChungTu;
-			private SqlDouble		m_fPhanTramVAT, m_fTienVAT, m_fTongTienHangChuaVAT, m_fTongTienHangCoVAT;
-			private SqlInt32		m_iID_KeHoachSanXuat, m_iID_NguoiBan, m_iID_KhachHang, m_iID_BanHang, m_iID_TKCo, m_iID_TKVAT, m_iID_TKNo;
-			private SqlString		m_sSoChungTu, m_sMaSoCongTeNo, m_sDienGiai, m_sSoHoaDon, m_sThamChieu;
+			private SqlDouble		m_fTienVAT, m_fPhanTramVAT, m_fTongTienHangChuaVAT, m_fTongTienHangCoVAT, m_fTiGia;
+			private SqlInt32		m_iID_BanHang, m_iID_KeHoachSanXuat, m_iID_NguoiBan, m_iID_KhachHang, m_iID_TKNo, m_iID_TKVAT, m_iID_TKCo;
+			private SqlString		m_sSoChungTu, m_sMaSoCongTeNo, m_sSoHoaDon, m_sDienGiai, m_sThamChieu;
 		#endregion
 
 
@@ -57,6 +57,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaXong", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaXong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_KeHoachSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_KeHoachSanXuat));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaSoCongTeNo", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMaSoCongTeNo));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@fTiGia", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fTiGia));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BanHang", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_BanHang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
@@ -126,6 +127,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaXong", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaXong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_KeHoachSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_KeHoachSanXuat));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaSoCongTeNo", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMaSoCongTeNo));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@fTiGia", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fTiGia));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
@@ -255,7 +257,8 @@ namespace CtyTinLuong
 					m_sThamChieu = (string)dtToReturn.Rows[0]["ThamChieu"];
 					m_bDaXong = (bool)dtToReturn.Rows[0]["DaXong"];
 					m_iID_KeHoachSanXuat = dtToReturn.Rows[0]["ID_KeHoachSanXuat"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["ID_KeHoachSanXuat"];
-					m_sMaSoCongTeNo = dtToReturn.Rows[0]["MaSoCongTeNo"] == System.DBNull.Value ? SqlString.Null : (string)dtToReturn.Rows[0]["MaSoCongTeNo"];
+					m_sMaSoCongTeNo = (string)dtToReturn.Rows[0]["MaSoCongTeNo"];
+					m_fTiGia = (double)dtToReturn.Rows[0]["TiGia"];
 				}
 				return dtToReturn;
 			}
@@ -766,6 +769,24 @@ namespace CtyTinLuong
 					throw new ArgumentOutOfRangeException("sMaSoCongTeNo", "sMaSoCongTeNo can't be NULL");
 				}
 				m_sMaSoCongTeNo = value;
+			}
+		}
+
+
+		public SqlDouble fTiGia
+		{
+			get
+			{
+				return m_fTiGia;
+			}
+			set
+			{
+				SqlDouble fTiGiaTmp = (SqlDouble)value;
+				if(fTiGiaTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("fTiGia", "fTiGia can't be NULL");
+				}
+				m_fTiGia = value;
 			}
 		}
 		#endregion

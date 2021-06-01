@@ -494,9 +494,7 @@ namespace CtyTinLuong
                 cls.bCheck_BaoVe = cls1.bCheck_BaoVe.Value;
                 cls.bCheck_LaiXe = cls1.bCheck_LaiXe.Value;
                 cls.sThamChieu = txtThamChieu.Text.ToString();
-                if (dt1.Rows[0]["DaXong"].ToString() != "")
-                    cls.bDaXong = cls.bDaXong.Value;
-                else cls.bDaXong = false;
+                cls.bDaXong = false;
                 cls.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
                 cls.bTrangThai_KhoThanhPham = true;
                 cls.Update();
@@ -529,8 +527,7 @@ namespace CtyTinLuong
             txtSoHoaDon.Text = cls.sSoHoaDon.Value.ToString();
             dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
             txtThamChieu.Text = cls.sThamChieu.Value;
-            gridNguoiLap.EditValue = cls.iID_NguoiBan.Value;
-            //gridKH.EditValue = cls.iIDNhaCungCap.Value;
+            gridNguoiLap.EditValue = cls.iID_NguoiBan.Value;            
             txtDienGiai.Text = cls.sDienGiai.Value.ToString();
             txtTongTienHangChuaVAT.Text = cls.fTongTienHangChuaVAT.Value.ToString();
             txtTongTienHangCoVAT.Text = cls.fTongTienHangCoVAT.Value.ToString();
