@@ -223,26 +223,26 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    clsDaiLy_tbChiTiet_TonDauKy cls = new clsDaiLy_tbChiTiet_TonDauKy();
-                    cls.iID_VTHH = iiiiiID_VTHH;
-                    DataTable dt = cls.SelectOne_SelectOne_W_ID_VTHH();
-                    SoLuong_TonDauKy = Convert.ToDouble(dt.Rows[0]["SoLuong"].ToString());
-                    double dongiatondauky = Convert.ToDouble(dt.Rows[0]["DonGia"].ToString());
-                    SoLuongTon_CuoiKy = SoLuong_TonDauKy + SoLuongNhap_TrongKy - SoLuongXuat_TrongKy;
+                    //clsDaiLy_tbChiTiet_TonDauKy cls = new clsDaiLy_tbChiTiet_TonDauKy();
+                    //cls.iID_VTHH = iiiiiID_VTHH;
+                    //DataTable dt = cls.SelectOne_SelectOne_W_ID_VTHH();
+                    //SoLuong_TonDauKy = Convert.ToDouble(dt.Rows[0]["SoLuong"].ToString());
+                    //double dongiatondauky = Convert.ToDouble(dt.Rows[0]["DonGia"].ToString());
+                    //SoLuongTon_CuoiKy = SoLuong_TonDauKy + SoLuongNhap_TrongKy - SoLuongXuat_TrongKy;
 
-                    DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_VTHH"] = iiiiiID_VTHH;
-                    clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-                    clsvt.iID_VTHH = iiiiiID_VTHH;
-                    DataTable dtvt = clsvt.SelectOne();
-                    _ravi["MaVT"] = clsvt.sMaVT.Value;
-                    _ravi["TenVTHH"] = clsvt.sTenVTHH.Value;
-                    _ravi["DonViTinh"] = clsvt.sDonViTinh.Value;
-                    _ravi["SoLuong_TonDauKy"] = SoLuong_TonDauKy;
-                    _ravi["SoLuongNhap_TrongKy"] = SoLuongNhap_TrongKy;
-                    _ravi["SoLuongXuat_TrongKy"] = SoLuongXuat_TrongKy;
-                    _ravi["SoLuongTon_CuoiKy"] = SoLuongTon_CuoiKy;
-                    dt2.Rows.Add(_ravi);
+                    //DataRow _ravi = dt2.NewRow();
+                    //_ravi["ID_VTHH"] = iiiiiID_VTHH;
+                    //clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
+                    //clsvt.iID_VTHH = iiiiiID_VTHH;
+                    //DataTable dtvt = clsvt.SelectOne();
+                    //_ravi["MaVT"] = clsvt.sMaVT.Value;
+                    //_ravi["TenVTHH"] = clsvt.sTenVTHH.Value;
+                    //_ravi["DonViTinh"] = clsvt.sDonViTinh.Value;
+                    //_ravi["SoLuong_TonDauKy"] = SoLuong_TonDauKy;
+                    //_ravi["SoLuongNhap_TrongKy"] = SoLuongNhap_TrongKy;
+                    //_ravi["SoLuongXuat_TrongKy"] = SoLuongXuat_TrongKy;
+                    //_ravi["SoLuongTon_CuoiKy"] = SoLuongTon_CuoiKy;
+                    //dt2.Rows.Add(_ravi);
                 }
             }
             for (int i = 0; i < dtTonDauKy.Rows.Count; i++)

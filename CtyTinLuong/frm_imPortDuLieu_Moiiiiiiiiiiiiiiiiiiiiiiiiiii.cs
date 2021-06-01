@@ -150,13 +150,8 @@ namespace CtyTinLuong
                 clschitietnhapkho_THANHPHAM.bBool_TonDauKy = true;
                 clschitietnhapkho_THANHPHAM.bDaNhapKho = true;
                 clschitietnhapkho_THANHPHAM.Insert();
-                // ton đâu kỳ
-                clstondauky.iID_VTHH = ID_VTHH;
-                clstondauky.fSoLuong = SoLuong;
-                clstondauky.fDonGia = DonGia;
-                clstondauky.bTonTai = true;
-                clstondauky.bNgungTheoDoi = false;
-                clstondauky.Insert();
+                
+             
             }
 
             MessageBox.Show("Đã xong kho thành phẩm");
