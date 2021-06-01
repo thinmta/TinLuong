@@ -13,7 +13,20 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
-
+        private void Print_KhoBTP_ChiTiet_DaNhapKho()
+        {
+            pTieuDeNguoiNhap_Giao.Value = "Người giao hàng";
+            pTieuDe.Value = "PHIẾU NHẬP KHO";
+            pKho.Value = "Nhập tại kho: Kho Bán Thành Phẩm";
+            pNguoiGiao_Nhan_TieuDe.Value = "Họ tên người giao hàng: " + KhoBTP_ChiTiet_DaNhapKho.msNguoiGiaoHang + "";
+            pDienGiai.Value = "Lý do nhập kho: " + KhoBTP_ChiTiet_DaNhapKho.msDienGiai + "";
+            pNguoiNhan_Giao.Value = KhoBTP_ChiTiet_DaNhapKho.msNguoiGiaoHang;
+            clsSoTienBangChu cls = new clsSoTienBangChu();
+            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTiet_DaNhapKho.mdbTongSotien), " đồng");
+            DateTime ngay = KhoBTP_ChiTiet_DaNhapKho.mdaNgayChungTu;
+            pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
+            pSoChungTu.Value = "Số: " + KhoBTP_ChiTiet_DaNhapKho.msSoChungTu + "";
+        }
         private void Print_KhoNPL_ChiTiet_XuatKho_Khac()
         {
             pTieuDeNguoiNhap_Giao.Value = "Người nhận hàng";
@@ -99,6 +112,9 @@ namespace CtyTinLuong
 
             if (KhoNPL_ChiTiet_XuatKho_Khac.mbPrint == true)
                 Print_KhoNPL_ChiTiet_XuatKho_Khac();
+
+            if (KhoBTP_ChiTiet_DaNhapKho.mbPrint == true)
+                Print_KhoBTP_ChiTiet_DaNhapKho();
         }
     }
 }
