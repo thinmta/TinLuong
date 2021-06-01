@@ -97,7 +97,7 @@
             this.clThamChieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btCopy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHoanThanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkHoanThanh = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -504,7 +504,7 @@
             this.clTrangThaiXuatNhap_Kho_NPL,
             this.clThamChieu,
             this.gridColumn1,
-            this.gridColumn2});
+            this.clHoanThanh});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -514,6 +514,7 @@
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clSTT
@@ -762,17 +763,17 @@
             this.btCopy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btCopy.Click += new System.EventHandler(this.btCopy_Click);
             // 
-            // gridColumn2
+            // clHoanThanh
             // 
-            this.gridColumn2.Caption = "Xong";
-            this.gridColumn2.ColumnEdit = this.checkHoanThanh;
-            this.gridColumn2.FieldName = "HoanThanh";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.FixedWidth = true;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 10;
-            this.gridColumn2.Width = 40;
+            this.clHoanThanh.Caption = "Xong";
+            this.clHoanThanh.ColumnEdit = this.checkHoanThanh;
+            this.clHoanThanh.FieldName = "HoanThanh";
+            this.clHoanThanh.Name = "clHoanThanh";
+            this.clHoanThanh.OptionsColumn.AllowEdit = false;
+            this.clHoanThanh.OptionsColumn.FixedWidth = true;
+            this.clHoanThanh.Visible = true;
+            this.clHoanThanh.VisibleIndex = 10;
+            this.clHoanThanh.Width = 40;
             // 
             // checkHoanThanh
             // 
@@ -991,7 +992,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoa2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit memodaily;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn clHoanThanh;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit checkHoanThanh;
     }
 }
