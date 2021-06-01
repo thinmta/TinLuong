@@ -885,7 +885,7 @@ namespace CtyTinLuong
                 cls1.iID_ThamChieuNhapKho = 0;
                 cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
 
-                if (UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.mbThemMoi_XuatKhohoDaiLy == true)
+                if (UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.mbSua == false)
                 {
                     cls1.Insert();
                     xxxxxiiiiID_XuatKhoDaiLy = cls1.iID_XuatKhoDaiLy.Value;
@@ -967,7 +967,7 @@ namespace CtyTinLuong
                 cls1.bDaXuatKho = false;
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
                 cls1.iID_ThamChieuNhapKho =0;
-                if (UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.mbThemMoi_XuatKhohoDaiLy == true)
+                if (UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.mbSua == false)
                 {
                     cls1.Insert();
                     iiiiID_XuatKhoDaiLy = cls1.iID_XuatKhoDaiLy.Value;
@@ -981,7 +981,7 @@ namespace CtyTinLuong
                 // chi tiet nhập kho
                 Luu_ChiTiet_XuatKho_DaiLy(iiiiID_XuatKhoDaiLy);
                 Luu_ThamCHieuTinhXuatKho(iiiiID_XuatKhoDaiLy);              
-                MessageBox.Show("Đã lưu");
+                MessageBox.Show("Đã lưu và gửi dữ liệu");
 
             }
         }

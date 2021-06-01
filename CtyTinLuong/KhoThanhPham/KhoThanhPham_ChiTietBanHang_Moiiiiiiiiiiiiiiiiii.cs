@@ -498,13 +498,12 @@ namespace CtyTinLuong
                 dt2_cu = cls2.SelectAll_W_ID_XuatKho_ThanhPham();
                 if (dt2_cu.Rows.Count > 0)
                 {
-                    for (int i = 0; i < dt2_cu.Rows.Count; i++)
-                    {
-                        int iiID_ChiTietXuatKho_ThanhPham = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietXuatKho_ThanhPham"].ToString());
-                        cls2.iID_ChiTietXuatKho_ThanhPham = iiID_ChiTietXuatKho_ThanhPham;
+                   
+                       
+                        cls2.iID_XuatKho_ThanhPham = xxxID_XuatKho_ThanhPham;
                         cls2.bTonTai = false;
-                        cls2.Update_W_TonTai();
-                    }
+                        cls2.Update_ALL_TonTai_W_ID_XuatKho();
+                    
 
                 }
 
@@ -664,13 +663,14 @@ namespace CtyTinLuong
                 cls1.sSoChungTu = Load_soChungTu_KhoThanhPham();
                 cls1.fTongTienHang = tongtienhang;
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.sThamChieu = txtSoChungTu_ThanhPham.Text.ToString();
+                cls1.sThamChieu = txtSoChungTu.Text.ToString();
                 cls1.bTonTai = true;
                 cls1.bDaXuatKho = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bCheck_XuatKho_Khac = false;
                 if (gridKH.EditValue.ToString() != "")
                     cls1.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
+                cls1.sNguoiNhanHang = txtTenKH.Text.ToString();
                 int iiiID_XuatKho_ThanhPham;
                 cls1.Insert();
                 iiiID_XuatKho_ThanhPham = cls1.iID_XuatKho_ThanhPham.Value;
@@ -682,8 +682,8 @@ namespace CtyTinLuong
                 Luu_TbThuChi(aaiixxID_banHang);
                 Luu_BienDongTaiKhoan(aaiixxID_banHang);
 
-                MessageBox.Show("Đã lưu");
-                this.Close();
+                MessageBox.Show("Đã lưu và gửi dữ liệu");
+               
             }
         }
 
@@ -794,9 +794,8 @@ namespace CtyTinLuong
 
                 if (cls.bTrangThai_KhoThanhPham.Value == true & UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbCopY == false)
                 {
-                    //btLuu_Copy.Enabled = false;
-                    btLuu_Dong.Enabled = false;
-                    //  btLuu_Gui_Copy.Enabled = false;
+                 
+                    btLuu_Dong.Enabled = false;                    
                     btLuu_Gui_Dong.Enabled = false;
 
                 }
@@ -1414,6 +1413,25 @@ namespace CtyTinLuong
 
             }
           
+        }
+
+        private void txtTiGia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dttttt2 = (DataTable)gridControl2.DataSource;
+                if (dttttt2.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dttttt2.Rows.Count; i++)
+                    {
+                        dttttt2.Rows[i]["TiGia"] = txtTiGia.Text.ToString() ;
+                    }
+                    gridControl1.DataSource = dttttt2;
+                }
+            }
+            catch
+            {
+            }
         }
     }
 }
