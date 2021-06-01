@@ -16,6 +16,42 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void NhapKho_ThanhPham(DataTable dt3)
+        {
+
+
+            Xtra_Nhap_XuatKho xtr111 = new Xtra_Nhap_XuatKho();
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbNhapKho_XuatKho.Clone();
+            ds.tbNhapKho_XuatKho.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbNhapKho_XuatKho.NewRow();
+                _ravi["STT"] = (i + 1).ToString();
+                int ID_VTHH = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = ID_VTHH;
+                DataTable dt = cls.SelectOne();
+                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap"].ToString());
+                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["MaVT"] = cls.sMaVT.Value;
+                _ravi["TenVTHH"] = cls.sTenVTHH.Value;
+                _ravi["DonViTinh"] = cls.sDonViTinh.Value;
+                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                ds.tbNhapKho_XuatKho.Rows.Add(_ravi);
+            }
+
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbNhapKho_XuatKho;
+            xtr111.DataMember = "tbNhapKho_XuatKho";
+            // xtr111.IntData(sgiamdoc);
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
+
         private void NhapKho_BanThanhPham(DataTable dt3)
         {
 
@@ -206,6 +242,8 @@ namespace CtyTinLuong
                 XuatKho_BanThanhPham(KhoBTP_ChiTietDaXuatKho.mdtPrint);
             if (KhoBTP_ChiTiet_XuatKho_Khac.mbPrint == true)
                 XuatKho_BanThanhPham(KhoBTP_ChiTiet_XuatKho_Khac.mdtPrint);
+            if (frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mbPrint == true)
+                NhapKho_ThanhPham(frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mdtPrint);
         }
 
         private void frmPrint_Nhap_Xuat_Kho_FormClosed(object sender, FormClosedEventArgs e)
@@ -218,6 +256,7 @@ namespace CtyTinLuong
             KhoBTP_ChiTiet_NhapKho_Khac.mbPrint = false;
             KhoBTP_ChiTietDaXuatKho.mbPrint = false;
             KhoBTP_ChiTiet_XuatKho_Khac.mbPrint = false;
+            frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mbPrint = false;
         }
     }
 }
