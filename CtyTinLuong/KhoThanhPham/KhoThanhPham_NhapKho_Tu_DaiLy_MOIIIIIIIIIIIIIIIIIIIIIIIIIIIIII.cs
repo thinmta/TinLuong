@@ -1005,7 +1005,17 @@ namespace CtyTinLuong
                 clsvattu.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 DataTable dtvattu = clsvattu.SelectAll_W_ID_DaiLy_hienThiLockUp();
              
-                dtvattu.DefaultView.RowFilter = " HoanThanh = False";
+                if(dteDenNgay.EditValue!=null & dteTuNgay.EditValue!=null)
+                {
+                    DateTime tungay = dteTuNgay.DateTime;
+                    DateTime denngay = dteDenNgay.DateTime.AddDays(1);
+                    dtvattu.DefaultView.RowFilter = " NgayChungTu <='"+dteDenNgay.DateTime+ "' and NgayChungTu >='" + dteTuNgay.DateTime+"' and HoanThanh = False";
+                }
+                else
+                {
+                    dtvattu.DefaultView.RowFilter = " HoanThanh = False";
+                }
+                
                 DataView dvvattu = dtvattu.DefaultView;
                 DataTable newdtvattu = dvvattu.ToTable();
                 gridMaHang.DataSource = newdtvattu;
