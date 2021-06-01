@@ -410,8 +410,7 @@ namespace CtyTinLuong
             dt2xx.Rows.Add(_ravi);
            
             gridControl2.DataSource = dt2xx;
-        }
-     
+        }     
 
         private bool KiemTraLuu()
         {
@@ -460,10 +459,10 @@ namespace CtyTinLuong
 
         }
 
-
-        private bool LuuDuLieu_Chi_Luu()
+        private void LuuDuLieu()
         {
-            if (!KiemTraLuu()) return false;
+
+            if (!KiemTraLuu()) return;
             else
             {
                 string shienthi = "1";
@@ -472,77 +471,41 @@ namespace CtyTinLuong
                 DataView dvmoi = dttttt2.DefaultView;
                 DataTable dtmoi = dvmoi.ToTable();
 
-                clsBanHang_tbBanHang clsbh = new clsBanHang_tbBanHang();
-                clsbh.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
-                clsbh.daNgayChungTu = dteNgayChungTu.DateTime;
-                clsbh.sSoChungTu = txtSoChungTu.Text.ToString();
-                clsbh.sSoHoaDon = txtSoHoaDon.Text.ToString();
-                clsbh.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
-                clsbh.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
-                clsbh.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                clsbh.sDienGiai = txtDienGiai.Text.ToString();
-                clsbh.bTonTai = true;
-                clsbh.bNgungTheoDoi = false;
-                clsbh.iID_NguoiBan = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                clsbh.bTienUSD = checkUSD.Checked;
-                clsbh.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
-                clsbh.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
-                clsbh.bTrangThaiBanHang = false;
-                clsbh.bTrangThai_KhoThanhPham = true;
-                clsbh.bCheck_BaoVe = false;
-                clsbh.bCheck_LaiXe = false;
-                clsbh.sThamChieu = txtSoChungTu.Text.ToString();
-                clsbh.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
-                clsbh.bDaXong = false;               
-                clsbh.Update();
-                int xxIDbanhangxx= UCBanHang_BanHang.miiiID_BanHang;
-                Luu_BienDongTaiKhoan(xxIDbanhangxx);
-                Luu_TbThuChi(xxIDbanhangxx);
-                Luu_Chitiet_BanHang(xxIDbanhangxx);
-                return true;
-            }
-        }
-        private bool LuuDuLieu_Va_GuiDuLieu()
-        {
+                clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+                cls1.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
+                DataTable dt1 = cls1.SelectOne();
 
-            if (!KiemTraLuu()) return false;
-            else
-            {
-                string shienthi = "1";
-                DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-                DataView dvmoi = dttttt2.DefaultView;
-                DataTable dtmoi = dvmoi.ToTable();
-
-                clsBanHang_tbBanHang clsbh = new clsBanHang_tbBanHang();
-                clsbh.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
-                clsbh.daNgayChungTu = dteNgayChungTu.DateTime;
-                clsbh.sSoChungTu = txtSoChungTu.Text.ToString();
-                clsbh.sSoHoaDon = txtSoHoaDon.Text.ToString();
-                clsbh.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
-                clsbh.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
-                clsbh.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                clsbh.sDienGiai = txtDienGiai.Text.ToString();
-                clsbh.bTonTai = true;
-                clsbh.bNgungTheoDoi = false;
-                clsbh.iID_NguoiBan = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                clsbh.bTienUSD = checkUSD.Checked;
-                clsbh.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
-                clsbh.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
-                clsbh.bTrangThaiBanHang = true;
-                clsbh.bCheck_BaoVe = false;
-                clsbh.bCheck_LaiXe = false;
-                clsbh.sThamChieu = txtSoChungTu.Text.ToString();
-                clsbh.bDaXong = false;
-                clsbh.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
-                clsbh.bTrangThai_KhoThanhPham = true;
-                clsbh.Update();
+                clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
+                cls.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
+                cls.daNgayChungTu = dteNgayChungTu.DateTime;
+                cls.sSoChungTu = txtSoChungTu.Text.ToString();
+                cls.sSoHoaDon = txtSoHoaDon.Text.ToString();
+                cls.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
+                cls.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                cls.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                cls.sDienGiai = txtDienGiai.Text.ToString();
+                cls.bTonTai = true;
+                cls.bNgungTheoDoi = false;
+                cls.iID_NguoiBan = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                cls.bTienUSD = checkUSD.Checked;
+                cls.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
+                cls.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                cls.bTrangThaiBanHang = true;
+                cls.bCheck_BaoVe = cls1.bCheck_BaoVe.Value;
+                cls.bCheck_LaiXe = cls1.bCheck_LaiXe.Value;
+                cls.sThamChieu = txtThamChieu.Text.ToString();
+                if (dt1.Rows[0]["DaXong"].ToString() != "")
+                    cls.bDaXong = cls.bDaXong.Value;
+                else cls.bDaXong = false;
+                cls.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
+                cls.bTrangThai_KhoThanhPham = true;
+                cls.Update();
                 int xxIDbanhangxx = UCBanHang_BanHang.miiiID_BanHang;
                 // Insert chi tietbanhang
                 Luu_BienDongTaiKhoan(xxIDbanhangxx);
                 Luu_TbThuChi(xxIDbanhangxx);
                 Luu_Chitiet_BanHang(xxIDbanhangxx);
-                return true;
+                MessageBox.Show("Đã lưu");
             }
         }
         
@@ -738,6 +701,21 @@ namespace CtyTinLuong
         {
             if (checkUSD.Checked == true)
                 checkVNĐ.Checked = false;
+            try
+            {
+                DataTable dttttt2 = (DataTable)gridControl2.DataSource;
+                if (dttttt2.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dttttt2.Rows.Count; i++)
+                    {
+                        dttttt2.Rows[i]["TienUSD"] = true;
+                    }
+                    gridControl1.DataSource = dttttt2;
+                }
+            }
+            catch
+            {
+            }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -1011,78 +989,9 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            if (!LuuDuLieu_Chi_Luu()) return;
-            else
-            {
-                MessageBox.Show("Đã lưu");
-                this.Close();
-            }
-           
+            LuuDuLieu();
         }
-
-        private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
-        {
-            if (!LuuDuLieu_Va_GuiDuLieu()) return;
-            else
-            {
-                MessageBox.Show("Đã lưu và gửi dữ liệu");
-                this.Close();
-            }
-
-        }
-
-        private void btLuu_Copy_Click(object sender, EventArgs e)
-        {
-            if (!LuuDuLieu_Chi_Luu()) return;
-            else
-            {
-                clsBanHang_tbBanHang cls2 = new clsBanHang_tbBanHang();
-                DataTable dt2xxx = cls2.SelectAll();
-                dt2xxx.DefaultView.RowFilter = "TonTai=True";
-                DataView dv2 = dt2xxx.DefaultView;
-
-                DataTable newdt2 = dv2.ToTable();
-                int k = newdt2.Rows.Count;
-                if (k == 0)
-                {
-                    txtSoChungTu.Text = "BH 1";
-                }
-                else
-                {
-                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;                   
-                    txtSoChungTu.Text = "BH " + xxx2 + "";
-                }
-
-                MessageBox.Show("Đã lưu");
-            }
-
-        }
-
-        private void btLuu_Gui_Copy_Click(object sender, EventArgs e)
-        {
-            LuuDuLieu_Va_GuiDuLieu();          
-            clsBanHang_tbBanHang cls2 = new clsBanHang_tbBanHang();
-            DataTable dt2xxx = cls2.SelectAll();
-            dt2xxx.DefaultView.RowFilter = "TonTai=True";
-            DataView dv2 = dt2xxx.DefaultView;
-
-            DataTable newdt2 = dv2.ToTable();
-            int k = newdt2.Rows.Count;
-            if (k == 0)
-            {
-                txtSoChungTu.Text = "BH 1";
-            }
-            else
-            {
-                string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;                   
-                    txtSoChungTu.Text = "BH " + xxx2 + "";
-            }
-
-            MessageBox.Show("Đã lưu");
-        }
-
+        
         private void checkPhieuThu_CheckedChanged(object sender, EventArgs e)
         {
             if (checkPhieuThu.Checked == true)
@@ -1245,6 +1154,25 @@ namespace CtyTinLuong
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTiGia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dttttt2 = (DataTable)gridControl2.DataSource;
+                if (dttttt2.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dttttt2.Rows.Count; i++)
+                    {
+                        dttttt2.Rows[i]["TiGia"] = txtTiGia.Text.ToString();
+                    }
+                    gridControl1.DataSource = dttttt2;
+                }
+            }
+            catch
+            {
+            }
         }
     }
 }
