@@ -41,7 +41,6 @@
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBanHang = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -126,7 +125,6 @@
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBanHang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
             this.navBarGroup1.Name = "navBarGroup1";
@@ -136,12 +134,6 @@
             this.navBanHang.Caption = "Bán hàng";
             this.navBanHang.Name = "navBanHang";
             this.navBanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBanHang_LinkClicked);
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Caption = "Công nợ Khách hàng";
-            this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // navBarItem2
             // 
@@ -177,7 +169,6 @@
             this.navBarItem8,
             this.navBarItem13,
             this.navBarItem14,
-            this.navBarItem1,
             this.navBarItem2,
             this.navBarItem16});
             this.navBarControl1.Location = new System.Drawing.Point(6, 14);
@@ -275,7 +266,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemDinhMucDOt;
         private DevExpress.XtraNavBar.NavBarItem navBarItemDinhMucNPL;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;

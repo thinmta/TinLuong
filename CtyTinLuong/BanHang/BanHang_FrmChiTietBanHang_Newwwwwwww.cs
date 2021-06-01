@@ -494,9 +494,10 @@ namespace CtyTinLuong
                 cls.bCheck_BaoVe = cls1.bCheck_BaoVe.Value;
                 cls.bCheck_LaiXe = cls1.bCheck_LaiXe.Value;
                 cls.sThamChieu = txtThamChieu.Text.ToString();
-                cls.bDaXong = false;
+                cls.bDaXong = cls1.bDaXong.Value;
                 cls.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
                 cls.bTrangThai_KhoThanhPham = true;
+                cls.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
                 cls.Update();
                 int xxIDbanhangxx = UCBanHang_BanHang.miiiID_BanHang;
                 // Insert chi tietbanhang
@@ -522,7 +523,7 @@ namespace CtyTinLuong
 
 
             txtSoChungTu.Text = cls.sSoChungTu.Value.ToString();
-            //}
+            txtTiGia.Text = cls.fTiGia.Value.ToString();
 
             txtSoHoaDon.Text = cls.sSoHoaDon.Value.ToString();
             dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;

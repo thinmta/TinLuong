@@ -585,6 +585,7 @@ namespace CtyTinLuong
                 clsbh.bCheck_LaiXe = false;
                 clsbh.sThamChieu = txtSoChungTu_ThanhPham.Text.ToString();
                 clsbh.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
+                clsbh.fTiGia= Convert.ToDouble(txtTiGia.Text.ToString());
                 clsbh.bDaXong = false;
                 if(UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbSua==true)
                 {
@@ -642,6 +643,7 @@ namespace CtyTinLuong
                 clsbh.sThamChieu = txtSoChungTu_ThanhPham.Text.ToString();
                 clsbh.bDaXong = false;
                 clsbh.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
+                Convert.ToDouble(txtTiGia.Text.ToString());
                 if (UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbSua == true)
                 {
                     clsbh.iID_BanHang = UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.miiiID_BanHang;
@@ -777,7 +779,7 @@ namespace CtyTinLuong
             else
             {
                 txtSoChungTu.Text = cls.sSoChungTu.Value.ToString();
-                //}
+                txtTiGia.Text = cls.fTiGia.Value.ToString();
 
                 txtSoHoaDon.Text = cls.sSoHoaDon.Value.ToString();
                 dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
