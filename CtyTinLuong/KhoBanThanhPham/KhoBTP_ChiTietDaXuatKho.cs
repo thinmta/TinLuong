@@ -36,21 +36,7 @@ namespace CtyTinLuong
             DataView dvcongnhan = dtNguoi.DefaultView;
             DataTable newdvcongnhan = dvcongnhan.ToTable();
 
-            clsNganHang_TaiKhoanKeToanCon clsme = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dtme = clsme.SelectAll();
-            dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-            DataView dvme = dtme.DefaultView;
-            DataTable newdtme = dvme.ToTable();
-
-            gridTKCo.Properties.DataSource = newdtme;
-            gridTKCo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKCo.Properties.DisplayMember = "SoTaiKhoanCon";
-
-
-            gridTKNo.Properties.DataSource = newdtme;
-            gridTKNo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKNo.Properties.DisplayMember = "SoTaiKhoanCon";
-
+         
 
         }
 
@@ -175,20 +161,7 @@ namespace CtyTinLuong
             {
             }
         }
-
-       
-
-        private void txtTienCo_TextChanged_2(object sender, EventArgs e)
-        {
-            try
-            {
-                decimal value = decimal.Parse(txtTienCo.Text);
-                txtTienCo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
-        }
+        
 
         private void btXoa_Click(object sender, EventArgs e)
         {
@@ -196,28 +169,6 @@ namespace CtyTinLuong
             gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clSoLuongXuat, 0);
         }
 
-        private void txtTienNo_TextAlignChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                decimal value = decimal.Parse(txtTienNo.Text);
-                txtTienNo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
-        }
 
-        private void txtTienNo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                decimal value = decimal.Parse(txtTienNo.Text);
-                txtTienNo.Text = String.Format("{0:#,##0.00}", value);
-            }
-            catch
-            {
-            }
-        }
     }
 }
