@@ -32,12 +32,12 @@ namespace CtyTinLuong
         private void HienThiGridControl_2(int xxIID_NhapKho)
         {
 
-            clsKhoNPL_tbChiTietNhapKho cls2 = new clsKhoNPL_tbChiTietNhapKho();
-            cls2.iID_NhapKho = xxIID_NhapKho;
-            DataTable dt3 = cls2.Select_W_ID_NhapKho_HienThi_SuaDonHang();
+            clsKhoThanhPham_tbChiTietNhapKho cls2 = new clsKhoThanhPham_tbChiTietNhapKho();
+            cls2.iID_NhapKho_ThanhPham = xxIID_NhapKho;
+            DataTable dt3 = cls2.SelectAll_W_ID_NhapKho_HienThiDaNhapKho();
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_ChiTietNhapKho"); // ID của tbChi tiet don hàng
-            dt2.Columns.Add("ID_NhapKho");
+            //dt2.Columns.Add("ID_ChiTietNhapKho"); // ID của tbChi tiet don hàng
+            //dt2.Columns.Add("ID_NhapKho");
             dt2.Columns.Add("ID_VTHH");
             dt2.Columns.Add("SoLuong", typeof(float));
             dt2.Columns.Add("DonGia", typeof(decimal));
@@ -49,27 +49,34 @@ namespace CtyTinLuong
 
             dt2.Columns.Add("ThanhTien", typeof(decimal));
             dt2.Columns.Add("HienThi", typeof(string));
-
-            for (int i = 0; i < dt3.Rows.Count; i++)
+            if (dt3.Rows.Count ==0)
             {
-                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuongNhap"].ToString());
-                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
-                DataRow _ravi = dt2.NewRow();
-                _ravi["ID_ChiTietNhapKho"] = dt3.Rows[i]["ID_ChiTietNhapKho"].ToString();
-                _ravi["ID_NhapKho"] = dt3.Rows[i]["ID_NhapKho"].ToString();
-                _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
-
-                _ravi["SoLuong"] = xxsoluong;
-                _ravi["DonGia"] = xxdongia;
-                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
-                _ravi["HienThi"] = "1";
-                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                dt2.Rows.Add(_ravi);
+                gridControl2.DataSource = null;
             }
+            else
+            {
 
+
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuongNhap"].ToString());
+                    Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
+                    DataRow _ravi = dt2.NewRow();
+                    //_ravi["ID_ChiTietNhapKho"] = dt3.Rows[i]["ID_ChiTietNhapKho"].ToString();
+                    //_ravi["ID_NhapKho"] = dt3.Rows[i]["ID_NhapKho"].ToString();
+                    _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
+
+                    _ravi["SoLuong"] = xxsoluong;
+                    _ravi["DonGia"] = xxdongia;
+                    _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+                    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                    _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                    _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+                    _ravi["HienThi"] = "1";
+                    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                    dt2.Rows.Add(_ravi);
+                }
+            }
             gridControl2.DataSource = dt2;
         }
         private void HienThi(DateTime xxtungay, DateTime xxdenngay)
