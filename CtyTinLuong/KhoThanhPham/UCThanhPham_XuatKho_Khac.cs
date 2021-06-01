@@ -60,7 +60,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
-                    Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuongNhap"].ToString());
+                    Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuongXuat"].ToString());
                     Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
                     DataRow _ravi = dt2.NewRow();
                     //_ravi["ID_ChiTietNhapKho"] = dt3.Rows[i]["ID_ChiTietNhapKho"].ToString();
