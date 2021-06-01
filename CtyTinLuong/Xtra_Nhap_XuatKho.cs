@@ -13,10 +13,27 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void Print_KhoThanhPham_ChiTiet_NhapKho_Khac()
+        {
+            pTieuDeNguoiNhap_Giao.Value = "Người giao hàng";
+            pTieuDe.Value = "PHIẾU NHẬP KHO";
+            pKho.Value = "Nhập tại kho: Kho Thành Phẩm";
+            pNguoiGiao_Nhan_TieuDe.Value = "Họ tên người giao hàng: " + KhoThanhPham_ChiTiet_NhapKho_Khac.msNguoiGiaoHang + "";
+            pDienGiai.Value = "Lý do nhập kho: " + KhoThanhPham_ChiTiet_NhapKho_Khac.msDienGiai + "";
+            pNguoiNhan_Giao.Value = KhoThanhPham_ChiTiet_NhapKho_Khac.msNguoiGiaoHang;
+            clsSoTienBangChu cls = new clsSoTienBangChu();
+            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoThanhPham_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
+            DateTime ngay = KhoThanhPham_ChiTiet_NhapKho_Khac.mdaNgayChungTu;
+            pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
+            pSoChungTu.Value = "Số: " + KhoThanhPham_ChiTiet_NhapKho_Khac.msSoChungTu + "";
+            if (KhoThanhPham_ChiTiet_NhapKho_Khac.msGhiChu.ToString() != "")
+                pGhiChu.Value = "Ghi chú: " + KhoThanhPham_ChiTiet_NhapKho_Khac.msGhiChu + "";
+        }
         private void Print_frmChiTietNhapKhoThanhPham_DaNhapKhoTP()
         {
             pTieuDeNguoiNhap_Giao.Value = "Người giao hàng";
-            pTieuDe.Value = "PHIẾU XUẤT KHO";
+            pTieuDe.Value = "PHIẾU NHẬP KHO";
             pKho.Value = "Nhập tại kho: Kho Thành Phẩm";
             pNguoiGiao_Nhan_TieuDe.Value = "Họ tên người giao hàng: " + frmChiTietNhapKhoThanhPham_DaNhapKhoTP.msNguoiGiaoHang + "";
             pDienGiai.Value = "Lý do nhập kho: " + frmChiTietNhapKhoThanhPham_DaNhapKhoTP.msDienGiai + "";
@@ -184,7 +201,10 @@ namespace CtyTinLuong
 
             if (frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mbPrint == true)
                 Print_frmChiTietNhapKhoThanhPham_DaNhapKhoTP();
-           
+
+            if (KhoThanhPham_ChiTiet_NhapKho_Khac.mbPrint == true)
+                Print_KhoThanhPham_ChiTiet_NhapKho_Khac();
+            //
         }
     }
 }

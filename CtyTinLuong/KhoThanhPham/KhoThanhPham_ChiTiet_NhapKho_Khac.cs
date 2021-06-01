@@ -445,7 +445,17 @@ namespace CtyTinLuong
             }
         }
 
-      
+        private void txtTongTienHang_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal value = decimal.Parse(txtTongTienHang.Text);
+                txtTongTienHang.Text = String.Format("{0:#,##0.00}", value);
+            }
+            catch
+            {
+            }
+        }
 
         private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
         {
