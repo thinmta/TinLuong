@@ -28,7 +28,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("ID_ChiTietNhapKho", typeof(int));
             dt2.Columns.Add("ID_NhapKho", typeof(int));
             dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("SoLuongNhap", typeof(float));
+            dt2.Columns.Add("SoLuong", typeof(float));
             dt2.Columns.Add("SoLuongTon", typeof(float));
             dt2.Columns.Add("DonGia", typeof(float));
 
@@ -38,7 +38,7 @@ namespace CtyTinLuong
             
             dt2.Columns.Add("ThanhTien", typeof(float));
             dt2.Columns.Add("HienThi", typeof(string));
-
+            dt2.Columns.Add("GhiChu", typeof(string));
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 Double xxsoluongNHAP = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap"].ToString());
@@ -49,7 +49,7 @@ namespace CtyTinLuong
                 _ravi["ID_NhapKho"] = dt3.Rows[i]["ID_NhapKho"].ToString();
                 _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
 
-                _ravi["SoLuongNhap"] = xxsoluongNHAP;
+                _ravi["SoLuong"] = xxsoluongNHAP;
                 _ravi["SoLuongTon"] = xxsoluongtON;
                 _ravi["DonGia"] = xxdongia;
                 _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
@@ -57,6 +57,7 @@ namespace CtyTinLuong
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
                 _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluongNHAP * xxdongia);
                 _ravi["HienThi"] = "1";
+                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
                 dt2.Rows.Add(_ravi);
             }
             gridControl1.DataSource = dt2;
@@ -285,6 +286,75 @@ namespace CtyTinLuong
                 e.Visible = false;
                 e.Handled = true;
             }
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            double fffsoluong = 0;
+            double ffdongia = 0;
+            double fffthanhtien = 0;
+            if (e.Column == clMaVT)
+            {
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                int kk = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+                if (dt != null)
+                {
+                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
+                    gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
+                    gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
+                    gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                    gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 1);
+                    gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
+
+                    if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                        ffdongia = 0;
+                    else
+                        ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                    if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                        fffsoluong = 0;
+                    else
+                        fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                    fffthanhtien = fffsoluong * ffdongia;
+                    gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+                }
+            }
+
+            if (e.Column == clSoLuong)
+            {
+                if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+            if (e.Column == clDonGia)
+            {
+                if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+            double deTOngtien;
+            DataTable dataTable = (DataTable)gridControl1.DataSource;
+            string shienthi = "1";
+            object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            if (xxxx.ToString() != "")
+                deTOngtien = Convert.ToDouble(xxxx);
+            else deTOngtien = 0;
+            txtTongTienHangCoVAT.Text = deTOngtien.ToString();
         }
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)

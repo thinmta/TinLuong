@@ -13,6 +13,35 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void Print_KhoBTP_ChiTiet_XuatKho_Khac()
+        {
+            pTieuDeNguoiNhap_Giao.Value = "Người giao hàng";
+            pTieuDe.Value = "PHIẾU XUẤT KHO";
+            pKho.Value = "Xuất tại kho: Kho Bán Thành Phẩm";
+            pNguoiGiao_Nhan_TieuDe.Value = "Họ tên người giao hàng: " + KhoBTP_ChiTiet_XuatKho_Khac.msNguoiGiaoHang + "";
+            pDienGiai.Value = "Lý do xuất kho: " + KhoBTP_ChiTiet_XuatKho_Khac.msDienGiai + "";
+            pNguoiNhan_Giao.Value = KhoBTP_ChiTiet_XuatKho_Khac.msNguoiGiaoHang;
+            clsSoTienBangChu cls = new clsSoTienBangChu();
+            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
+            DateTime ngay = KhoBTP_ChiTiet_XuatKho_Khac.mdaNgayChungTu;
+            pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
+            pSoChungTu.Value = "Số: " + KhoBTP_ChiTiet_XuatKho_Khac.msSoChungTu + "";
+        }
+        private void Print_KhoBTP_ChiTietDaXuatKho()
+        {
+            pTieuDeNguoiNhap_Giao.Value = "Người giao hàng";
+            pTieuDe.Value = "PHIẾU XUẤT KHO";
+            pKho.Value = "Xuất tại kho: Kho Bán Thành Phẩm";
+            pNguoiGiao_Nhan_TieuDe.Value = "Họ tên người giao hàng: " + KhoBTP_ChiTietDaXuatKho.msNguoiGiaoHang + "";
+            pDienGiai.Value = "Lý do xuất kho: " + KhoBTP_ChiTietDaXuatKho.msDienGiai + "";
+            pNguoiNhan_Giao.Value = KhoBTP_ChiTietDaXuatKho.msNguoiGiaoHang;
+            clsSoTienBangChu cls = new clsSoTienBangChu();
+            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTietDaXuatKho.mdbTongSotien), " đồng");
+            DateTime ngay = KhoBTP_ChiTiet_DaNhapKho.mdaNgayChungTu;
+            pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
+            pSoChungTu.Value = "Số: " + KhoBTP_ChiTietDaXuatKho.msSoChungTu + "";
+        }
         private void Print_KhoBTP_ChiTiet_DaNhapKho()
         {
             pTieuDeNguoiNhap_Giao.Value = "Người giao hàng";
@@ -131,6 +160,12 @@ namespace CtyTinLuong
                 Print_KhoBTP_ChiTiet_DaNhapKho();
             if (KhoBTP_ChiTiet_NhapKho_Khac.mbPrint == true)
                 Print_KhoBTP_ChiTiet_NhapKho_Khac();
+
+            if (KhoBTP_ChiTietDaXuatKho.mbPrint == true)
+                Print_KhoBTP_ChiTietDaXuatKho();
+
+            if (KhoBTP_ChiTiet_XuatKho_Khac.mbPrint == true)
+                Print_KhoBTP_ChiTiet_XuatKho_Khac();
         }
     }
 }

@@ -925,7 +925,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPrint_Nhap_Xuat_Kho";
-            this.Text = "Nhập kho";
+            this.Text = "Nhập - Xuất kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_Nhap_Xuat_Kho_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_NhapKho_Load);

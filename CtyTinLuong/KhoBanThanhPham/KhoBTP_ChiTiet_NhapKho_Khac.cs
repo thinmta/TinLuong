@@ -150,7 +150,7 @@ namespace CtyTinLuong
             cls1.bNgungTheoDoi = false;
             cls1.bDaNhapKho = true;
             cls1.bBool_TonDauKy = false;
-            cls1.bCheck_NhapKho_Khac = false;
+            cls1.bCheck_NhapKho_Khac = true;
             cls1.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
             int xxID_nhapkhobtp;
             if(UCBanThanhPham_NhapKho_Khac.mbThemMoi_NhapKho==true)
@@ -164,7 +164,7 @@ namespace CtyTinLuong
                 cls1.Update();
                 xxID_nhapkhobtp= UCBanThanhPham_NhapKho_Khac.miID_NhapKho;
             }
-            cls1.Update();
+           
             Luu_ChiTietNhapKho(xxID_nhapkhobtp);
             MessageBox.Show("Đã lưu");
         }
