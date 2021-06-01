@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CtyTinLuong.Constants;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,9 +24,9 @@ namespace CtyTinLuong
         public static string msTenNhanVien;
 
         private int _nam, _thang, _id_bophan, _id_vthh;
-        public string _tennhanvien = "",_ten_vthh;
+        public string _tennhanvien = "", _ten_vthh;
         private DataTable _data;
-        private bool isload = true; 
+        private bool isload = true;
         public void LoadData(bool islandau)
         {
             isload = true;
@@ -34,7 +35,7 @@ namespace CtyTinLuong
                 txtNam.Text = DateTime.Now.Year.ToString();
                 txtThang.Text = DateTime.Now.Month.ToString();
                 txtTimKiem.Text = "";
-                   
+
                 using (clsThin clsThin_ = new clsThin())
                 {
                     DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
@@ -60,15 +61,15 @@ namespace CtyTinLuong
                 _ten_vthh = (string)cbLoaiHangSX.Text;
             }
             else
-            { 
-            } 
+            {
+            }
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
             _tennhanvien = txtTimKiem.Text;
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam,_thang,_id_bophan,_id_vthh);
+                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, _id_vthh);
                 int tong_tatca = 0;
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
@@ -84,10 +85,10 @@ namespace CtyTinLuong
                     repositoryItemGridLookUpEdit1.ValueMember = "ID_DinhMucLuong_CongNhat";
                     repositoryItemGridLookUpEdit1.DisplayMember = "MaDinhMucLuongCongNhat";
                 } 
-                */  
+                */
             }
             gridControl1.DataSource = _data;
-             
+
             isload = false;
         }
         private void HienThi()
@@ -106,7 +107,7 @@ namespace CtyTinLuong
             }
             DataTable dt2 = new DataTable();
 
-           
+
             dt2.Columns.Add("TenNhanVien", typeof(string));
             dt2.Columns.Add("NoiDung", typeof(string));
             dt2.Columns.Add("TongCong", typeof(double));
@@ -171,18 +172,18 @@ namespace CtyTinLuong
                 int ithangxxx = UCBangLuong.miiThang;
                 int inamxxx = UCBangLuong.miiNam;
                 clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan clsmahang = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-                clsmahang.iID_CongNhan=ID_CongNhanxx;
-                clsmahang.iThang=ithangxxx;
-                clsmahang.iNam=inamxxx;
+                clsmahang.iID_CongNhan = ID_CongNhanxx;
+                clsmahang.iThang = ithangxxx;
+                clsmahang.iNam = inamxxx;
                 DataTable dtmahang = clsmahang.SelectAll_W_Thang_W_Nam_W_ID_CongNhan();
                 if (dtmahang.Rows.Count > 0)
                 {
-                   
+
 
                     for (int j = 0; j < dtmahang.Rows.Count; j++)
                     {
                         DataRow _ravi_hang1 = dt2.NewRow();
-                       
+
                         _ravi_hang1["TenNhanVien"] = dt3.Rows[i]["TenNhanVien"].ToString();
                         _ravi_hang1["NoiDung"] = dtmahang.Rows[j]["MaVT"].ToString();
                         _ravi_hang1["TongCong"] = Convert.ToDouble(dt3.Rows[i]["SLThuong"].ToString());
@@ -234,11 +235,11 @@ namespace CtyTinLuong
                         _ravi_hang1["HienThi"] = "1";
                         dt2.Rows.Add(_ravi_hang1);
                     }
-                    
-                }
-              
 
-             
+                }
+
+
+
 
             }
             gridControl1.DataSource = dt2;
@@ -249,7 +250,7 @@ namespace CtyTinLuong
             if (Convert.ToBoolean(dtxx.Rows[0]["GuiDuLieu"].ToString()) == true)
             {
                 btGuiDuLieu.Enabled = false;
-              
+
                 Ngay1.OptionsColumn.AllowEdit = Ngay2.OptionsColumn.AllowEdit =
                     Ngay3.OptionsColumn.AllowEdit = Ngay4.OptionsColumn.AllowEdit =
                     Ngay5.OptionsColumn.AllowEdit = Ngay6.OptionsColumn.AllowEdit =
@@ -482,9 +483,9 @@ namespace CtyTinLuong
         }
 
         private void frmChamCongToGapDan_Load(object sender, EventArgs e)
-        { 
+        {
         }
-         
+
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
         }
@@ -498,13 +499,13 @@ namespace CtyTinLuong
                 if (_data.Rows.Count > index_)
                 {
                     int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
-                    _data.Rows[index_]["Tong"] = temp_  + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
+                    _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
                     int tongcong_ = Convert.ToInt32(txtTongCong.Text);
                     txtTongCong.Text = (tongcong_ + temp_).ToString();
                 }
 
             }
-           // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+            // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
         }
 
         public frmChamCongToGapDan()
@@ -514,7 +515,7 @@ namespace CtyTinLuong
 
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
+
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -523,7 +524,7 @@ namespace CtyTinLuong
         }
 
         private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
-        { 
+        {
             if (isload)
                 return;
             if (e.KeyChar == (char)13)
@@ -587,12 +588,26 @@ namespace CtyTinLuong
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        { 
+        {
             if (isload)
                 return;
 
             _tennhanvien = txtTimKiem.Text;
             LoadData(false);
+        }
+        
+        private void LoadTimKiem()
+        {
+            DataTable dt_ = new DataTable();
+            for (int i = 0; i < _data.Rows.Count; ++i)
+            {
+                if (CheckString.RemoveUnicode(_data.Rows[i]["TenNhanVien"].ToString().ToLower()).Contains(CheckString.RemoveUnicode(txtTimKiem.Text.ToLower())))
+                {
+                    dt_.Rows.Add(_data.Rows[i]);
+                }
+            }
+
+            gridControl1.DataSource = dt_;
         }
 
         private int _id_dinhmuc_togapdan;

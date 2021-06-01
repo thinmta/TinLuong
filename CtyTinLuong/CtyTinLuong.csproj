@@ -151,6 +151,7 @@
     <Compile Include="clsTbKeHoachSanXuat.cs" />
     <Compile Include="clsTbKeHoachSanXuat_HinhAnh - Copy.cs" />
     <Compile Include="clsTbKeHoachSanXuat_HinhAnh.cs" />
+    <Compile Include="Constants\CheckString.cs" />
     <Compile Include="Copy of clsSoTienBangChu.cs" />
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.cs">
       <SubType>Form</SubType>

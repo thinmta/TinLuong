@@ -1094,6 +1094,7 @@
             this.Tong.MaxWidth = 40;
             this.Tong.MinWidth = 40;
             this.Tong.Name = "Tong";
+            this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 34;
             this.Tong.Width = 40;
