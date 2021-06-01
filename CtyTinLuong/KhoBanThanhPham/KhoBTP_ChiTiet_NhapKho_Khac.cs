@@ -137,14 +137,9 @@ namespace CtyTinLuong
         }
         private void Luu_NhapKho_BanThanhPham()
         {
-
             double tongtienhang;
-            tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());
-          
-           
-
-            clsKhoBTP_tbNhapKho cls1 = new clsKhoBTP_tbNhapKho();
-            
+            tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());          
+            clsKhoBTP_tbNhapKho cls1 = new clsKhoBTP_tbNhapKho();            
             cls1.sDienGiai = txtDienGiai.Text.ToString();
             cls1.daNgayChungTu = dteNgayChungTu.DateTime;
             cls1.sSoChungTu = txtSoChungTu.Text.ToString();
@@ -482,7 +477,6 @@ namespace CtyTinLuong
                 e.Handled = true;
             }
         }
-
-       
+               
     }
 }

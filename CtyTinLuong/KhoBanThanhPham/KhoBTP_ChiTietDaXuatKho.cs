@@ -12,6 +12,11 @@ namespace CtyTinLuong
 {
     public partial class KhoBTP_ChiTietDaXuatKho : Form
     {
+        public static bool mbPrint;
+        public static DateTime mdaNgayChungTu;
+        public static DataTable mdtPrint;
+        public static string msSoChungTu, msNguoiGiaoHang, msDienGiai;
+        public static double mdbTongSotien;
         private void Load_lockUP_EDIT()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
@@ -109,29 +114,9 @@ namespace CtyTinLuong
             txtTongTienHang.Text = cls.fTongTienHang.Value.ToString();
             dteNgayChungTuNPL.EditValue = cls.daNgayChungTu.Value;
             gridNguoiLap.EditValue = cls.iID_NguoiNhap.Value;
-            if (dt.Rows[0]["ID_TKCo"].ToString() != "")
-                gridTKCo.EditValue = cls.iID_TKCo.Value;
-            if (dt.Rows[0]["ID_TKNo"].ToString() != "")
-                gridTKNo.EditValue = cls.iID_TKNo.Value;
-
-            clsNganHang_ChiTietBienDongTaiKhoanKeToan clsnganhang = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            clsnganhang.iID_ChungTu = UCbanThanhPham_DaXuatKho.miiID_XuatKhoBTP;
-            clsnganhang.sSoChungTu = txtSoChungTu.Text.ToString();
-            clsnganhang.daNgayThang = dteNgayChungTuNPL.DateTime;
-            DataTable dtnganhang = clsnganhang.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
-            for (int i = 0; i < dtnganhang.Rows.Count; i++)
-            {
-                if (Convert.ToBoolean(dtnganhang.Rows[i]["BoolTK_Co"].ToString()) == true)
-                {
-                    txtTienNo.Text = dtnganhang.Rows[i]["Co"].ToString();
-                }
-                if (Convert.ToBoolean(dtnganhang.Rows[i]["BoolTK_No"].ToString()) == true)
-                {
-                    txtTienCo.Text = dtnganhang.Rows[i]["No"].ToString();
-                }
-
-            }
-
+            txtThamChieu.Text = cls.sThamChieu.Value.ToString();
+            txtNguoiNhanHang.Text = cls.sNguoiNhanHang.Value.ToString();
+            
         }
         public KhoBTP_ChiTietDaXuatKho()
         {
@@ -203,6 +188,12 @@ namespace CtyTinLuong
             catch
             {
             }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clHienThi, "0");
+            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clSoLuongXuat, 0);
         }
 
         private void txtTienNo_TextAlignChanged(object sender, EventArgs e)
