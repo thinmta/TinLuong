@@ -303,6 +303,7 @@ namespace CtyTinLuong
 
                 clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
                 DataTable dt2_cu = new DataTable();
+                cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls2.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                 dt2_cu = cls2.SelectAll_W_ID_XuatKhoDaiLy();
                 if (dt2_cu.Rows.Count > 0)
@@ -354,6 +355,7 @@ namespace CtyTinLuong
                 }
                 // xoa ton tai=false
                 DataTable dt2_moi11111 = new DataTable();
+                cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls2.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                 dt2_moi11111 = cls2.SelectAll_W_ID_XuatKhoDaiLy();
                 dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
@@ -383,6 +385,7 @@ namespace CtyTinLuong
                 DataTable dtthamchieu = dv2232xx.ToTable();
 
                 clsDaiLy_ThamChieu_TinhXuatKho cls3 = new clsDaiLy_ThamChieu_TinhXuatKho();
+                cls3.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                 DataTable dt3_cu = new DataTable();
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
@@ -430,6 +433,7 @@ namespace CtyTinLuong
                 }
                 // xoa ton tai=false
                 DataTable dt3moi = new DataTable();
+                cls3.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                 DataTable dt3hhshss = cls3.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT();
                 dt3hhshss.DefaultView.RowFilter = "TonTai=False";

@@ -1378,24 +1378,6 @@
     <Compile Include="KhoDaiLy\UCDaiLy_TongHopTonKho.Designer.cs">
       <DependentUpon>UCDaiLy_TongHopTonKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoThanhPham\UCThanhPham_ChiTiet_DaNhapKho_ALL.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoThanhPham\UCThanhPham_ChiTiet_DaNhapKho_ALL.Designer.cs">
-      <DependentUpon>UCThanhPham_ChiTiet_DaNhapKho_ALL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoThanhPham\UCThanhPham_ChiTiet_Da_XuatKho_ALL.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoThanhPham\UCThanhPham_ChiTiet_Da_XuatKho_ALL.Designer.cs">
-      <DependentUpon>UCThanhPham_ChiTiet_Da_XuatKho_ALL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoThanhPham\UCThanhPham_baoCaoTonKho.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoThanhPham\UCThanhPham_baoCaoTonKho.Designer.cs">
-      <DependentUpon>UCThanhPham_baoCaoTonKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="BanHang\UCBanHang_ChiTiet_ALL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2037,12 +2019,6 @@
     <EmbeddedResource Include="KhoNPL\NPLChiTietNhapKho_DaiLy_ThemMoi.resx">
       <DependentUpon>NPLChiTietNhapKho_DaiLy_ThemMoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoThanhPham\UCThanhPham_ChiTiet_DaNhapKho_ALL.resx">
-      <DependentUpon>UCThanhPham_ChiTiet_DaNhapKho_ALL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoThanhPham\UCThanhPham_ChiTiet_Da_XuatKho_ALL.resx">
-      <DependentUpon>UCThanhPham_ChiTiet_Da_XuatKho_ALL.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChiTietChamCong_Mot_CongNhan.resx">
       <DependentUpon>frmChiTietChamCong_Mot_CongNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -2403,9 +2379,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_ToGapDan.resx">
       <DependentUpon>SanXuat_frmChiTiet_LSX_ToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoThanhPham\UCThanhPham_baoCaoTonKho.resx">
-      <DependentUpon>UCThanhPham_baoCaoTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.cs</DependentUpon>

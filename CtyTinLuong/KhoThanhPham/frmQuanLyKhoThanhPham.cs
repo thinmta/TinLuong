@@ -42,28 +42,7 @@ namespace CtyTinLuong
                 navXuatKhoBanHang.Appearance.Font = new Font(navXuatKhoBanHang.Appearance.Font, FontStyle.Bold);
             }
 
-            //clsKhoBTP_tbNhapKho cls4 = new CtyTinLuong.clsKhoBTP_tbNhapKho();
-            //DataTable dxxxx3xx4 = cls4.SelectAll();
-            //dxxxx3xx4.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            //DataView dvdxxxx3xx4 = dxxxx3xx4.DefaultView;
-
-            //DataTable dxxxx4 = dvdxxxx3xx4.ToTable();
-            //int k4 = dxxxx4.Rows.Count;
-            //if (k4 > 0)
-            //{
-            //    navDaNhapKho.Caption = "Đã nhập kho (" + k4.ToString() + ")";
-            //}
-            //clsKhoBTP_tbNhapKho cls5 = new CtyTinLuong.clsKhoBTP_tbNhapKho();
-            //DataTable dxxxx3xx5 = cls5.SelectAll();
-            //dxxxx3xx5.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            //DataView dvdxxxx3xx5 = dxxxx3xx5.DefaultView;
-
-            //DataTable dxxxx5 = dvdxxxx3xx5.ToTable();
-            //int k5 = dxxxx5.Rows.Count;
-            //if (k5 > 0)
-            //{
-            //    navDaXuatKho.Caption = "Đã xuất kho (" + k5.ToString() + ")";
-            //}
+          
 
         }
         public frmQuanLyKhoThanhPham()
@@ -108,21 +87,8 @@ namespace CtyTinLuong
             uccc_NhapKho.BringToFront();
         }
 
-        private void navBarItem11_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCThanhPham_ChiTiet_DaNhapKho_ALL uccc_NhapKho = new UCThanhPham_ChiTiet_DaNhapKho_ALL();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-        }
-
-        private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCThanhPham_ChiTiet_Da_XuatKho_ALL uccc_NhapKho = new UCThanhPham_ChiTiet_Da_XuatKho_ALL();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-        }
+    
+      
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -130,23 +96,13 @@ namespace CtyTinLuong
             uccc_NhapKho.Show();
         }
 
-        private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCThanhPham_baoCaoTonKho uccc_NhapKho = new UCThanhPham_baoCaoTonKho();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-        }
 
         private void frmQuanLyKhoThanhPham_Load(object sender, EventArgs e)
         {
             HienThi_Caption();
         }
 
-        private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            HienThi_Caption();
-        }
+      
 
         private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
