@@ -48,18 +48,18 @@ namespace CtyTinLuong
 
         private void navBarItem11_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCCaiDatBanDau_Kho_DaiLy ucc = new UCCaiDatBanDau_Kho_DaiLy();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            //UCCaiDatBanDau_Kho_DaiLy ucc = new UCCaiDatBanDau_Kho_DaiLy();
+            //ucc.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(ucc);
+            //ucc.BringToFront();
         }
 
         private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCCaiDatBanDau_Kho_ThanhPham ucc = new UCCaiDatBanDau_Kho_ThanhPham();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            //UCCaiDatBanDau_Kho_ThanhPham ucc = new UCCaiDatBanDau_Kho_ThanhPham();
+            //ucc.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(ucc);
+            //ucc.BringToFront();
         }
     }
 }

@@ -210,7 +210,7 @@ namespace CtyTinLuong
         {
             Load_LockUp();
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
-            dteNgay.EditValue = null;
+            dteDenNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
            
@@ -276,9 +276,9 @@ namespace CtyTinLuong
                     cls2.iID_NhapKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy1).ToString());
                     cls2.Delete_W_ID_NhapKhoDaiLy();
                     MessageBox.Show("Đã xóa");
-                    if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
+                    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
-                        HienThi(dteTuNgay.DateTime, dteNgay.DateTime.AddDays(1));
+                        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
                     }
                     else HienThi_ALL();
                 }
@@ -315,9 +315,9 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi(dteTuNgay.DateTime, dteNgay.DateTime.AddDays(1));
+                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
             }
         }
 

@@ -129,7 +129,7 @@ namespace CtyTinLuong
         {
 
             clsKhoThanhPham_tbChiTietNhapKho clschitietnhapkho_THANHPHAM = new clsKhoThanhPham_tbChiTietNhapKho();
-            clsKhoThanhPham_tbChiTietTonDauKy clstondauky = new clsKhoThanhPham_tbChiTietTonDauKy();
+            
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
 
