@@ -78,7 +78,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.xlID_XuatKhoDaiLy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_XuatKhoDaiLy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -504,7 +504,7 @@
             this.gridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
-            this.xlID_XuatKhoDaiLy,
+            this.clID_XuatKhoDaiLy,
             this.clNgayChungTu,
             this.clSoChungTu,
             this.clDienGiai,
@@ -552,11 +552,11 @@
             this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 43;
             // 
-            // xlID_XuatKhoDaiLy
+            // clID_XuatKhoDaiLy
             // 
-            this.xlID_XuatKhoDaiLy.Caption = "ID_XuatKhoDaiLy";
-            this.xlID_XuatKhoDaiLy.FieldName = "ID_XuatKhoDaiLy";
-            this.xlID_XuatKhoDaiLy.Name = "xlID_XuatKhoDaiLy";
+            this.clID_XuatKhoDaiLy.Caption = "ID_XuatKhoDaiLy";
+            this.clID_XuatKhoDaiLy.FieldName = "ID_XuatKhoDaiLy";
+            this.clID_XuatKhoDaiLy.Name = "clID_XuatKhoDaiLy";
             // 
             // clNgayChungTu
             // 
@@ -1012,7 +1012,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
-        private DevExpress.XtraGrid.Columns.GridColumn xlID_XuatKhoDaiLy;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_XuatKhoDaiLy;
         private DevExpress.XtraGrid.Columns.GridColumn clNgayChungTu;
         private DevExpress.XtraGrid.Columns.GridColumn clSoChungTu;
         private DevExpress.XtraGrid.Columns.GridColumn clDienGiai;

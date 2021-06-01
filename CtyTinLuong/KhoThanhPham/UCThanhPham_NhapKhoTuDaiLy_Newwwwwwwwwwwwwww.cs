@@ -232,9 +232,9 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
-              int  xxxxmiID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString());
+              int  xxxxmiID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 HienThi_ChiTiet_XuatKho(xxxxmiID_XuatKhoDaiLy);
             }
         }
@@ -256,10 +256,10 @@ namespace CtyTinLuong
 
         private void btXoa1_Click(object sender, EventArgs e)
         {
-            clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
-            cls1.iID_NhapKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy1).ToString());
+            clsDaiLy_tbXuatKho cls1 = new clsDaiLy_tbXuatKho();
+            cls1.iID_XuatKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
             DataTable dt1 = cls1.SelectOne();
-            if (cls1.bTrangThaiXuatNhap_Kho_NPL.Value == true)
+            if (cls1.bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe.Value == true)
             {
                 MessageBox.Show("Đã nhập kho, không thể xoá");
                 return;
@@ -270,11 +270,11 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
-                    cls1.iID_NhapKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy1).ToString());
+                    cls1.iID_XuatKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                     cls1.Delete();
-                    clsDaiLy_tbChiTietNhapKho cls2 = new clsDaiLy_tbChiTietNhapKho();
-                    cls2.iID_NhapKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy1).ToString());
-                    cls2.Delete_W_ID_NhapKhoDaiLy();
+                    clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+                    cls2.iID_XuatKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                    cls2.Delete_ALL_W_ID_XuatKhoDaiLy();
                     MessageBox.Show("Đã xóa");
                     if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
@@ -293,13 +293,13 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString()!="")
+            if(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString()!="")
             {
                
                 mbThemMoi_XuatKhohoDaiLy = false;
                 mbCopy = false;
                 mbSua = true;
-                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString());
+                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
                 ff.Show();
             }
@@ -371,13 +371,13 @@ namespace CtyTinLuong
 
         private void btCopy_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
 
                 mbThemMoi_XuatKhohoDaiLy = false;
                 mbCopy = true;
                 mbSua = false;
-                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString());
+                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
                 ff.Show();
             }
