@@ -266,6 +266,7 @@
     <Compile Include="KhoThanhPham\KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.Designer.cs">
       <DependentUpon>KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\VTHH_DinhMuc_Model.cs" />
     <Compile Include="MuaHang\MuaHang_frmCongNo.cs">
       <SubType>Form</SubType>
     </Compile>

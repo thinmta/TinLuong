@@ -68,12 +68,6 @@
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridThin = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -114,15 +108,17 @@
             this.Ngay29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.gridThin = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -130,7 +126,6 @@
             this.lbChinhSuaDinhMuc = new System.Windows.Forms.Label();
             this.lbLoaiHang = new System.Windows.Forms.Label();
             this.lbChinhSua = new System.Windows.Forms.LinkLabel();
-            this.clID_VTHH_Thin = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -139,12 +134,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridThin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboThin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridThin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             this.SuspendLayout();
             // 
             // btGuiDuLieu
@@ -262,7 +257,7 @@
             this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 20);
-            this.txtThang.TabIndex = 128;
+            this.txtThang.TabIndex = 1;
             this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
@@ -273,7 +268,7 @@
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(78, 20);
-            this.txtNam.TabIndex = 129;
+            this.txtNam.TabIndex = 2;
             this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
             // 
@@ -428,13 +423,8 @@
             this.Ngay29,
             this.Ngay30,
             this.Ngay31,
-            this.clHienThi,
             this.clGuiDuLieu,
-            this.Tong,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.clID_VTHH_Thin});
+            this.Tong});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -445,10 +435,7 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
-            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clSTT
             // 
@@ -506,69 +493,15 @@
             // TenVTHH
             // 
             this.TenVTHH.Caption = "Nội dung";
-            this.TenVTHH.ColumnEdit = this.gridThin;
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.TenVTHH.MaxWidth = 185;
             this.TenVTHH.MinWidth = 185;
             this.TenVTHH.Name = "TenVTHH";
-            this.TenVTHH.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 2;
             this.TenVTHH.Width = 185;
-            // 
-            // gridThin
-            // 
-            this.gridThin.AutoHeight = false;
-            this.gridThin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridThin.Name = "gridThin";
-            this.gridThin.PopupView = this.repositoryItemGridLookUpEdit2View;
-            this.gridThin.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit4});
-            // 
-            // repositoryItemGridLookUpEdit2View
-            // 
-            this.repositoryItemGridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn5,
-            this.gridColumn6});
-            this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
-            this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit2View.OptionsView.AllowHtmlDrawHeaders = true;
-            this.repositoryItemGridLookUpEdit2View.OptionsView.RowAutoHeight = true;
-            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "ID";
-            this.gridColumn1.FieldName = "ID_VTHH";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 128;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Mã";
-            this.gridColumn5.FieldName = "MaVT";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 80;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Tên";
-            this.gridColumn6.ColumnEdit = this.repositoryItemMemoEdit4;
-            this.gridColumn6.FieldName = "TenVTHH";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 1;
-            this.gridColumn6.Width = 176;
-            // 
-            // repositoryItemMemoEdit4
-            // 
-            this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
             // clID_ChiTietChamCong
             // 
@@ -1421,14 +1354,6 @@
             this.Ngay31.VisibleIndex = 33;
             this.Ngay31.Width = 20;
             // 
-            // clHienThi
-            // 
-            this.clHienThi.Caption = "Hiển thị";
-            this.clHienThi.FieldName = "HienThi";
-            this.clHienThi.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.clHienThi.Name = "clHienThi";
-            this.clHienThi.Width = 29;
-            // 
             // clGuiDuLieu
             // 
             this.clGuiDuLieu.Caption = "GuiDuLieu";
@@ -1452,20 +1377,8 @@
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 35;
+            this.Tong.VisibleIndex = 34;
             this.Tong.Width = 44;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Name = "gridColumn3";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Name = "gridColumn4";
             // 
             // gridControl1
             // 
@@ -1488,7 +1401,6 @@
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -1503,6 +1415,59 @@
             this.comboThin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboThin.Name = "comboThin";
+            // 
+            // gridThin
+            // 
+            this.gridThin.AutoHeight = false;
+            this.gridThin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridThin.Name = "gridThin";
+            this.gridThin.PopupView = this.repositoryItemGridLookUpEdit2View;
+            this.gridThin.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit4});
+            // 
+            // repositoryItemGridLookUpEdit2View
+            // 
+            this.repositoryItemGridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn5,
+            this.gridColumn6});
+            this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
+            this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.AllowHtmlDrawHeaders = true;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.RowAutoHeight = true;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ID";
+            this.gridColumn1.FieldName = "ID_VTHH";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 128;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Mã";
+            this.gridColumn5.FieldName = "MaVT";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
+            this.gridColumn5.Width = 80;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Tên";
+            this.gridColumn6.ColumnEdit = this.repositoryItemMemoEdit4;
+            this.gridColumn6.FieldName = "TenVTHH";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.Width = 176;
+            // 
+            // repositoryItemMemoEdit4
+            // 
+            this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
             // label7
             // 
@@ -1520,7 +1485,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(170, 63);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(347, 20);
-            this.txtTimKiem.TabIndex = 129;
+            this.txtTimKiem.TabIndex = 3;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // label8
@@ -1574,14 +1539,6 @@
             this.lbChinhSua.Text = "Chỉnh sửa";
             this.lbChinhSua.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbChinhSua_LinkClicked);
             // 
-            // clID_VTHH_Thin
-            // 
-            this.clID_VTHH_Thin.Caption = "gridColumn7";
-            this.clID_VTHH_Thin.FieldName = "ID_VTHH";
-            this.clID_VTHH_Thin.Name = "clID_VTHH_Thin";
-            this.clID_VTHH_Thin.Visible = true;
-            this.clID_VTHH_Thin.VisibleIndex = 34;
-            // 
             // frmChamCongToGapDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1625,12 +1582,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridThin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboThin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridThin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1706,12 +1663,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Ngay29;
         private DevExpress.XtraGrid.Columns.GridColumn Ngay30;
         private DevExpress.XtraGrid.Columns.GridColumn Ngay31;
-        private DevExpress.XtraGrid.Columns.GridColumn clHienThi;
         private DevExpress.XtraGrid.Columns.GridColumn clGuiDuLieu;
         private DevExpress.XtraGrid.Columns.GridColumn Tong;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTimKiem;
@@ -1728,6 +1681,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH_Thin;
     }
 }

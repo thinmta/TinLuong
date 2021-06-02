@@ -1,7 +1,9 @@
 ﻿using CtyTinLuong.Constants;
+using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlTypes;
@@ -28,6 +30,8 @@ namespace CtyTinLuong
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
+
+        private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmChamCongToGapDan()
         {
             InitializeComponent();
@@ -122,17 +126,19 @@ namespace CtyTinLuong
                     cbBoPhan.Enabled = true;
 
 
-                    _dataLoaiHang = clsThin_.T_LoaiHangSX_SF(10);
+                    _dataLoaiHang = clsThin_.T_LoaiHangSX_SF(-1);
 
+                    DataRow row = _dataLoaiHang.NewRow();
+                    row["ID_VTHH"] = 0;
+                    row["TenVTHH"] = "-->Tất cả"; 
+                    _dataLoaiHang.Rows.InsertAt(row,0);
+                    cbLoaiHangSX.DataSource = _dataLoaiHang;
                     cbLoaiHangSX.DisplayMember = "TenVTHH";
                     cbLoaiHangSX.ValueMember = "ID_VTHH";
-                    cbLoaiHangSX.DataSource = _dataLoaiHang;
-
                     cbLoaiHangSX.Enabled = true;
 
-                    gridThin.DataSource = _dataLoaiHang;
-                    gridThin.DisplayMember = "TenVTHH";
-                    gridThin.ValueMember = "ID_VTHH";
+                    _id_dinhmuc_togapdan = 0;
+                    txtDinhMuc.Text = "";
 
                     try
                     {
@@ -170,19 +176,15 @@ namespace CtyTinLuong
                     {
                         int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                         _data.Rows[i]["ID_VTHH"] = id_vthh_;
-                      //  _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
-                        //đặt giá trị hàng thứ i của cột tên vật tư hàng hóa có giá trị id_vthh và hiển thị tại đây
-                        _data.Rows[i]["TenVTHH"] = _data.Rows[i]["ID_VTHH"].ToString();
+                        _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
                         //
                     }
                     else
                     {
                         _data.Rows[i]["ID_VTHH"] = _id_vthh;
                         _data.Rows[i]["TenVTHH"] = _id_vthh;
-                        //_data.Rows[i]["TenVTHH"] = _dataLoaiHang;
                     }
-                }
-                _data.Rows[2]["TenVTHH"] = "5";
+                } 
             }
              
             //
@@ -266,10 +268,7 @@ namespace CtyTinLuong
         private void frmChamCongToGapDan_Load(object sender, EventArgs e)
         {
         }
-
-        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-        }
+         
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             int index_ = e.RowHandle;
@@ -299,11 +298,6 @@ namespace CtyTinLuong
         }
 
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void gridControl1_Click(object sender, EventArgs e)
         {
 
         }
@@ -447,8 +441,19 @@ namespace CtyTinLuong
                 {
                     MessageBox.Show( "Năm không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
+                }  
+                if(_id_vthh==0)
+                {
+                    _id_dinhmuc_togapdan = 0;
+                    txtDinhMuc.Text = "-->Tất cả";
                 }
-                int id_vthh_ = (int)cbLoaiHangSX.SelectedValue;
+                else
+                {
+                    DataRow row_ = ((DataRowView)cbLoaiHangSX.SelectedItem).Row; 
+                    _id_dinhmuc_togapdan = Convert.ToInt32(row_["ID_DinhMuc_Luong_SanLuong"].ToString());
+                    txtDinhMuc.Text = row_["DienGiai"].ToString() + " (" + row_["MaDinhMuc"].ToString() + ")";
+                }
+                /*
                 DataTable dt_ = clsThin_.T_DinhMuc_DinhMuc_Luong_TheoSanLuong_SO(id_vthh_, thang_, nam_);
                  
                 if (dt_ != null && dt_.Rows.Count > 0)
@@ -473,7 +478,7 @@ namespace CtyTinLuong
                     lbChinhSua.Text = "Thêm mới";
                     txtDinhMuc.ForeColor = Color.Red;
                     _id_dinhmuc_togapdan = 0;
-                }
+                }*/
             }
             LoadData(false);
         }
@@ -509,18 +514,6 @@ namespace CtyTinLuong
             }
             return (float)result;
         }
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        { 
-        }
-
-        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
