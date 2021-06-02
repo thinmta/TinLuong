@@ -45,9 +45,9 @@ namespace CtyTinLuong
             else
             {
                 clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan cls1 = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-                cls1.iID_CongNhan = frmChamCongToGapDan.miID_congNhan;
-                cls1.iThang = frmChamCongToGapDan.miThang;
-                cls1.iNam = frmChamCongToGapDan.miNam;
+                cls1.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+                cls1.iThang = _frmChamCongToGapDan._thang;
+                cls1.iNam = _frmChamCongToGapDan._nam;
                 // xoá trước
                 cls1.Delete_ALL_W_Thang_W_Nam_W_ID_CongNhan();
                 string shienthi = "1";
@@ -58,9 +58,9 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dv3.Rows.Count; i++)
                 {
-                    cls1.iID_CongNhan = frmChamCongToGapDan.miID_congNhan;
-                    cls1.iThang = frmChamCongToGapDan.miThang;
-                    cls1.iNam = frmChamCongToGapDan.miNam;
+                    cls1.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+                    cls1.iThang = _frmChamCongToGapDan._thang;
+                    cls1.iNam = _frmChamCongToGapDan._nam;
                     cls1.iID_VTHH = Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString());
                     cls1.bDaCaiDat = false;
                     cls1.iID_DinhMuc_Luong_SanLuong = Convert.ToInt32(dv3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString());
@@ -105,9 +105,9 @@ namespace CtyTinLuong
             dt2.Columns.Add("DinhMuc_Tang", typeof(double));
 
             clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan cls = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-            cls.iID_CongNhan = frmChamCongToGapDan.miID_congNhan;
-            cls.iThang = frmChamCongToGapDan.miThang;
-            cls.iNam = frmChamCongToGapDan.miNam;
+            cls.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+            cls.iThang = _frmChamCongToGapDan._thang;
+            cls.iNam = _frmChamCongToGapDan._nam;
             DataTable dt3 = cls.SelectAll_W_Thang_W_Nam_W_ID_CongNhan();
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
@@ -132,9 +132,10 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
 
         }
-
-        public frmMaHang_ChamCong_ToGapDan()
+        private frmChamCongToGapDan _frmChamCongToGapDan;
+        public frmMaHang_ChamCong_ToGapDan(frmChamCongToGapDan frm)
         {
+            _frmChamCongToGapDan = frm;
             InitializeComponent();
         }
 
@@ -219,8 +220,8 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
 
            
-            int thang = frmChamCongToGapDan.miThang;
-            int nam = frmChamCongToGapDan.miNam;
+            int thang = _frmChamCongToGapDan._thang;
+            int nam = _frmChamCongToGapDan._nam;
             txtNam.Text = nam.ToString();
             txtThang.Text = thang.ToString();
 
@@ -247,9 +248,9 @@ namespace CtyTinLuong
             if (txtThang.Text.ToString()!="" & txtNam.Text.ToString()!="")
             {
                 clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan cls = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-                cls.iID_CongNhan = frmChamCongToGapDan.miID_congNhan;
-                cls.iThang = frmChamCongToGapDan.miThang;
-                cls.iNam = frmChamCongToGapDan.miNam;
+                cls.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+                cls.iThang = _frmChamCongToGapDan._thang;
+                cls.iNam = _frmChamCongToGapDan._nam;
                 DataTable dt3 = cls.SelectAll_W_Thang_W_Nam_W_ID_CongNhan();
                 if (dt3.Rows.Count == 0)
                     HienThi_themMoi();
