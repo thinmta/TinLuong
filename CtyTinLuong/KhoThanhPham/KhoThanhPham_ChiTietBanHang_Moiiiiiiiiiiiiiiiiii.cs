@@ -333,8 +333,50 @@ namespace CtyTinLuong
             _ravi["TenTaiKhoanCon"] = dtcon.Rows[0]["TenTaiKhoanCon"].ToString();
             _ravi["HienThi"] = "1";
             dt2xx.Rows.Add(_ravi);
-           
+
+            clsNganHang_TaiKhoanKeToanCon clscon2 = new clsNganHang_TaiKhoanKeToanCon();
+            clscon2.iID_TaiKhoanKeToanCon = 79;
+            DataTable dtcon2 = clscon2.SelectOne();
+
+            // Có VAT C3331
+            DataRow _ravi2 = dt2xx.NewRow();
+            _ravi2["ID_ChiTietBienDongTaiKhoan"] = 0;
+            _ravi2["ID_ChungTu"] = 0;
+            _ravi2["ID_TaiKhoanKeToanCon"] = 79;
+            _ravi2["No"] = 0;
+            _ravi2["Co"] = tienVAT;
+            _ravi2["TienUSD"] = checkUSD.Checked;
+            _ravi2["TiGia"] = txtTiGia.Text.ToString();
+            _ravi2["DaGhiSo"] = false;
+            _ravi2["GhiChu"] = "";
+            _ravi2["SoTaiKhoanCon"] = 79;
+            _ravi2["TenTaiKhoanCon"] = clscon2.sTenTaiKhoanCon.Value;
+            _ravi2["HienThi"] = "1";
+            dt2xx.Rows.Add(_ravi2);
+
+            clsNganHang_TaiKhoanKeToanCon clscon3 = new clsNganHang_TaiKhoanKeToanCon();
+            clscon3.iID_TaiKhoanKeToanCon = 132;
+            DataTable dtcon3 = clscon3.SelectOne();
+
+            // Có 511
+            DataRow _ravi3 = dt2xx.NewRow();
+            _ravi3["ID_ChiTietBienDongTaiKhoan"] = 0;
+            _ravi3["ID_ChungTu"] = 0;
+            _ravi3["ID_TaiKhoanKeToanCon"] = 132;
+            _ravi3["No"] = 0;
+            _ravi3["Co"] = tongtienhang_ChuaCoVAT;
+            _ravi3["TienUSD"] = checkUSD.Checked;
+            _ravi3["TiGia"] = txtTiGia.Text.ToString();
+            _ravi3["DaGhiSo"] = false;
+            _ravi3["GhiChu"] = "";
+            _ravi3["SoTaiKhoanCon"] = 132;
+            _ravi3["TenTaiKhoanCon"] = clscon3.sTenTaiKhoanCon.Value;
+            _ravi3["HienThi"] = "1";
+            dt2xx.Rows.Add(_ravi3);
+
             gridControl2.DataSource = dt2xx;
+
+            
         }
        
         private bool KiemTraLuu()
@@ -1206,13 +1248,15 @@ namespace CtyTinLuong
                 decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
                 txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
 
-                double sotienxxx = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-
-                gridView8.SetRowCellValue(0, clNo, 0);
-                gridView8.SetRowCellValue(0, clCo, sotienxxx);
-
-                gridView8.SetRowCellValue(1, clNo, sotienxxx);
-                gridView8.SetRowCellValue(1, clCo, 0);
+                double tienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                double tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                double tongtiencoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                gridView8.SetRowCellValue(0, clNo, tongtiencoVAT);
+                gridView8.SetRowCellValue(0, clCo, 0);
+                gridView8.SetRowCellValue(1, clNo, 0);
+                gridView8.SetRowCellValue(1, clCo, tienVAT);
+                gridView8.SetRowCellValue(2, clNo, 0);
+                gridView8.SetRowCellValue(2, clCo, tienchuaVAT);
 
 
 
