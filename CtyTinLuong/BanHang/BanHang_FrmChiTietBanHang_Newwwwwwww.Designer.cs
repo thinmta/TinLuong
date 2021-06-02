@@ -149,6 +149,7 @@
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
             this.linkKeHoachSanXuat = new System.Windows.Forms.LinkLabel();
             this.ntPrint_hoadon = new DevExpress.XtraEditors.SimpleButton();
+            this.clSoTaiKhoanMoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -264,7 +265,8 @@
             this.TienUSD,
             this.SoTaiKhoanCon,
             this.TenTaiKhoanCon,
-            this.HienThi});
+            this.HienThi,
+            this.clSoTaiKhoanMoi});
             this.gridView8.GridControl = this.gridControl2;
             this.gridView8.Name = "gridView8";
             this.gridView8.OptionsView.AllowHtmlDrawHeaders = true;
@@ -1373,6 +1375,14 @@
             this.ntPrint_hoadon.TabIndex = 121;
             this.ntPrint_hoadon.Text = "Print_Hoá đơn";
             // 
+            // clSoTaiKhoanMoi
+            // 
+            this.clSoTaiKhoanMoi.Caption = "SoTaiKhoanMoi";
+            this.clSoTaiKhoanMoi.FieldName = "SoTaiKhoanMoi";
+            this.clSoTaiKhoanMoi.Name = "clSoTaiKhoanMoi";
+            this.clSoTaiKhoanMoi.Visible = true;
+            this.clSoTaiKhoanMoi.VisibleIndex = 8;
+            // 
             // BanHang_FrmChiTietBanHang_Newwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1557,5 +1567,6 @@
         private System.Windows.Forms.TextBox txtThamChieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.SimpleButton ntPrint_hoadon;
+        private DevExpress.XtraGrid.Columns.GridColumn clSoTaiKhoanMoi;
     }
 }
