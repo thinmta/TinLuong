@@ -149,6 +149,7 @@
             this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
             this.linkKeHoachSanXuat = new System.Windows.Forms.LinkLabel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -1344,7 +1345,7 @@
             this.checkBaoVe_LaiXe.AutoSize = true;
             this.checkBaoVe_LaiXe.Checked = true;
             this.checkBaoVe_LaiXe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(584, 661);
+            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(401, 663);
             this.checkBaoVe_LaiXe.Name = "checkBaoVe_LaiXe";
             this.checkBaoVe_LaiXe.Size = new System.Drawing.Size(87, 17);
             this.checkBaoVe_LaiXe.TabIndex = 119;
@@ -1363,11 +1364,21 @@
             this.linkKeHoachSanXuat.Text = "Tham chiếu kế hoạch sản xuất";
             this.linkKeHoachSanXuat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkKeHoachSanXuat_LinkClicked);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(574, 655);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(98, 23);
+            this.simpleButton1.TabIndex = 121;
+            this.simpleButton1.Text = "Print";
+            // 
             // BanHang_FrmChiTietBanHang_Newwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 685);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.linkKeHoachSanXuat);
             this.Controls.Add(this.checkBaoVe_LaiXe);
             this.Controls.Add(this.txtsochungtu_tbThuChi);
@@ -1545,5 +1556,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19332;
         private System.Windows.Forms.TextBox txtThamChieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
