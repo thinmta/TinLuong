@@ -62,7 +62,7 @@ namespace CtyTinLuong
                 _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
                 _ravi["SoLuong"] = xxsoluong;
                 _ravi["DonGia"] = xxdongia;
-                _ravi["MaVT"] = cls.sMaVT.Value;
+                _ravi["MaVT"] = ID_VTHHxx;
                 _ravi["TenVTHH"] = cls.sTenVTHH.Value;
                 _ravi["DonViTinh"] = cls.sDonViTinh.Value;
                 _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);

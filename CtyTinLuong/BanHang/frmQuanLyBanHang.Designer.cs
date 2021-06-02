@@ -41,7 +41,6 @@
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBanHang = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -60,7 +59,7 @@
             // 
             this.btThooat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(903, 626);
+            this.btThooat.Location = new System.Drawing.Point(1070, 626);
             this.btThooat.Name = "btThooat";
             this.btThooat.Size = new System.Drawing.Size(75, 23);
             this.btThooat.TabIndex = 73;
@@ -126,7 +125,6 @@
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBanHang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
             this.navBarGroup1.Name = "navBarGroup1";
@@ -136,12 +134,6 @@
             this.navBanHang.Caption = "Bán hàng";
             this.navBanHang.Name = "navBanHang";
             this.navBanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBanHang_LinkClicked);
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Caption = "Công nợ Khách hàng";
-            this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // navBarItem2
             // 
@@ -177,7 +169,6 @@
             this.navBarItem8,
             this.navBarItem13,
             this.navBarItem14,
-            this.navBarItem1,
             this.navBarItem2,
             this.navBarItem16});
             this.navBarControl1.Location = new System.Drawing.Point(6, 14);
@@ -216,7 +207,7 @@
             // 
             this.panelControl1.Location = new System.Drawing.Point(251, 14);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(727, 606);
+            this.panelControl1.Size = new System.Drawing.Size(900, 606);
             this.panelControl1.TabIndex = 74;
             // 
             // linkLabel1
@@ -234,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 662);
+            this.ClientSize = new System.Drawing.Size(1157, 662);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
@@ -275,7 +266,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemDinhMucDOt;
         private DevExpress.XtraNavBar.NavBarItem navBarItemDinhMucNPL;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;

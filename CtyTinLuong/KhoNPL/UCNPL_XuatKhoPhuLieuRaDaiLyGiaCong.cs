@@ -202,6 +202,28 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            
+            if(e.Column==clHoanThanh)
+            {
+                try
+                {
+                    int iiDI_nhapkho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
+                    clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
+                    cls.iID_NhapKhoDaiLy = iiDI_nhapkho;
+                    cls.bHoanThanh = Convert.ToBoolean(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                    cls.Update_W_HoanThanh();
+
+                }
+                catch
+                {
+
+                }
+              
+            }
+        }
+
         private void btXoa_Click(object sender, EventArgs e)
         {
             clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();

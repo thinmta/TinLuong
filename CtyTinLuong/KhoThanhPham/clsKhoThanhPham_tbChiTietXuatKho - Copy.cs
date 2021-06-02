@@ -15,13 +15,12 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsKhoThanhPham_tbChiTietXuatKho : clsDBInteractionBase
 	{
-        //pr_KhoThanhPham_tbChiTietXuatKho_Update_W_TonTai
-
-        public void Update_W_TonTai()
+        //pr_KhoThanhPham_tbChiTietXuatKho_Update_ALL_TonTai_W_ID_XuatKho
+        public void Update_ALL_TonTai_W_ID_XuatKho()
         {
 
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_KhoThanhPham_tbChiTietXuatKho_Update_W_TonTai]";
+            scmCmdToExecute.CommandText = "dbo.[pr_KhoThanhPham_tbChiTietXuatKho_Update_ALL_TonTai_W_ID_XuatKho]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
             // Use base class' connection object
@@ -29,8 +28,8 @@ namespace CtyTinLuong
 
             try
             {
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietXuatKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietXuatKho_ThanhPham));
-                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_XuatKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_XuatKho_ThanhPham));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietXuatKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietXuatKho_ThanhPham));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_XuatKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_XuatKho_ThanhPham));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuongXuat", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuongXuat));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@fDonGia", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fDonGia));
@@ -50,7 +49,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_KhoThanhPham_tbChiTietXuatKho_Update_W_TonTai::Error occured.", ex);
+                throw new Exception("pr_KhoThanhPham_tbChiTietXuatKho_Update_ALL_TonTai_W_ID_XuatKho::Error occured.", ex);
             }
             finally
             {
@@ -59,6 +58,7 @@ namespace CtyTinLuong
                 scmCmdToExecute.Dispose();
             }
         }
+       
         public DataTable SelectAll_MaVT_TenVT_DVT_NXT()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
