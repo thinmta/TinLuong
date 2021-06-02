@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -74,7 +73,7 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.btPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.btPrint_XuatKho = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -149,7 +148,7 @@
             this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
             this.linkKeHoachSanXuat = new System.Windows.Forms.LinkLabel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.ntPrint_hoadon = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -566,14 +565,15 @@
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
-            // btPrint
+            // btPrint_XuatKho
             // 
-            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(678, 655);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(98, 23);
-            this.btPrint.TabIndex = 90;
-            this.btPrint.Text = "Print";
+            this.btPrint_XuatKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_XuatKho.ImageOptions.Image")));
+            this.btPrint_XuatKho.Location = new System.Drawing.Point(663, 655);
+            this.btPrint_XuatKho.Name = "btPrint_XuatKho";
+            this.btPrint_XuatKho.Size = new System.Drawing.Size(113, 23);
+            this.btPrint_XuatKho.TabIndex = 90;
+            this.btPrint_XuatKho.Text = "Print_Xuất kho";
+            this.btPrint_XuatKho.Click += new System.EventHandler(this.btPrint_XuatKho_Click);
             // 
             // btThoat
             // 
@@ -1345,7 +1345,7 @@
             this.checkBaoVe_LaiXe.AutoSize = true;
             this.checkBaoVe_LaiXe.Checked = true;
             this.checkBaoVe_LaiXe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(401, 663);
+            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(271, 664);
             this.checkBaoVe_LaiXe.Name = "checkBaoVe_LaiXe";
             this.checkBaoVe_LaiXe.Size = new System.Drawing.Size(87, 17);
             this.checkBaoVe_LaiXe.TabIndex = 119;
@@ -1364,28 +1364,28 @@
             this.linkKeHoachSanXuat.Text = "Tham chiếu kế hoạch sản xuất";
             this.linkKeHoachSanXuat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkKeHoachSanXuat_LinkClicked);
             // 
-            // simpleButton1
+            // ntPrint_hoadon
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(574, 655);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(98, 23);
-            this.simpleButton1.TabIndex = 121;
-            this.simpleButton1.Text = "Print";
+            this.ntPrint_hoadon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ntPrint_hoadon.ImageOptions.Image")));
+            this.ntPrint_hoadon.Location = new System.Drawing.Point(547, 656);
+            this.ntPrint_hoadon.Name = "ntPrint_hoadon";
+            this.ntPrint_hoadon.Size = new System.Drawing.Size(110, 23);
+            this.ntPrint_hoadon.TabIndex = 121;
+            this.ntPrint_hoadon.Text = "Print_Hoá đơn";
             // 
             // BanHang_FrmChiTietBanHang_Newwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 685);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.ntPrint_hoadon);
             this.Controls.Add(this.linkKeHoachSanXuat);
             this.Controls.Add(this.checkBaoVe_LaiXe);
             this.Controls.Add(this.txtsochungtu_tbThuChi);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btLuu);
-            this.Controls.Add(this.btPrint);
+            this.Controls.Add(this.btPrint_XuatKho);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.groupBox1);
             this.Name = "BanHang_FrmChiTietBanHang_Newwwwwwww";
@@ -1481,7 +1481,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraEditors.SimpleButton btLuu;
-        private DevExpress.XtraEditors.SimpleButton btPrint;
+        private DevExpress.XtraEditors.SimpleButton btPrint_XuatKho;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
@@ -1556,6 +1556,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19332;
         private System.Windows.Forms.TextBox txtThamChieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton ntPrint_hoadon;
     }
 }

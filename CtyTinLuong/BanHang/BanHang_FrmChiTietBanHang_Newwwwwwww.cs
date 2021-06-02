@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,10 @@ namespace CtyTinLuong
         //string sochungtu_tbThuChi;
         public static DateTime mdaNgayChungTu;
         public static double mdbSoLuongXuat;
-
+        public static bool mbPrint_XuatKho, mbPrint_HoaDon;
+        public static DataTable mdtPrint;
+        public static string msSoChungTu, msNguoinhanhang, msDienGiai;
+        public static double mdbTongSotien;
         private void Luu_BienDongTaiKhoan(int xxxxID_BanHang)
         {
             if (!KiemTraLuu()) return;
@@ -1170,6 +1174,33 @@ namespace CtyTinLuong
             }
             catch
             {
+            }
+        }
+
+        private void btPrint_XuatKho_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            DataTable dttttt2 = dv1212.ToTable();
+            string shienthi = "1";
+            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+            DataView dv = dttttt2.DefaultView;
+            mdtPrint = dv.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_HoaDon = false;
+                mbPrint_XuatKho = true;
+                mdaNgayChungTu = dteNgayChungTu.DateTime;
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                msNguoinhanhang = txtTenKH.Text.ToString();
+                mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                msDienGiai = txtDienGiai.Text.ToString();
+                frmPrint_BanHang ff = new frmPrint_BanHang();
+                ff.Show();
+
             }
         }
     }

@@ -192,6 +192,12 @@
     <Compile Include="BanHang\frmPrint_baoGia_BanHanag.Designer.cs">
       <DependentUpon>frmPrint_baoGia_BanHanag.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrint_BanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrint_BanHang.Designer.cs">
+      <DependentUpon>frmPrint_BanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrint_Nhap_Xuat_Kho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1603,6 +1609,12 @@
     <Compile Include="XtraReport1.Designer.cs">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_BanHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_BanHang.Designer.cs">
+      <DependentUpon>Xtra_BanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_BaoCaoSanLuong_TheoCongNhan.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1764,6 +1776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain\FormSystem.resx">
       <DependentUpon>FormSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint_BanHang.resx">
+      <DependentUpon>frmPrint_BanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
@@ -2390,6 +2405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_BanHang.resx">
+      <DependentUpon>Xtra_BanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCaoSanLuong_TheoCongNhan.resx">
       <DependentUpon>Xtra_BaoCaoSanLuong_TheoCongNhan.cs</DependentUpon>
