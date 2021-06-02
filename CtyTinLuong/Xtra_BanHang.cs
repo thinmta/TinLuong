@@ -23,18 +23,18 @@ namespace CtyTinLuong
             string nam = ngaychungtu.ToString("yyyy");
             pNgayThang.Value = "Ngày " + ngay.ToString() + " tháng " + thang.ToString() + " năm " + nam.ToString() + "";
 
-            pNguoiGiao.Value = frmChiTietMuaHang3333333333.msNguoiGiaoHang;
+            //pNguoiGiao.Value = frmChiTietMuaHang3333333333.msNguoiGiaoHang;
 
-            pTKNo.Value = frmChiTietMuaHang3333333333.msTKNo;
-            pTKVAT.Value = frmChiTietMuaHang3333333333.msTKVAT;
-            pTKCo.Value = frmChiTietMuaHang3333333333.msTKCo;
+            //pTKNo.Value = frmChiTietMuaHang3333333333.msTKNo;
+            //pTKVAT.Value = frmChiTietMuaHang3333333333.msTKVAT;
+            //pTKCo.Value = frmChiTietMuaHang3333333333.msTKCo;
 
-            pSoTienNo.Value = frmChiTietMuaHang3333333333.mdcSoTienNo;
-            pSoTienCo.Value = frmChiTietMuaHang3333333333.mdcSoTienCo;
-            if (frmChiTietMuaHang3333333333.mdcSoTienVAT > 0)
-                pSoTienVAT.Value = frmChiTietMuaHang3333333333.mdcSoTienVAT;
-            else pSoTienVAT.Value = "";
-            pTongTienCoVAT.Value = frmChiTietMuaHang3333333333.mdcTongTienCoVAT;
+            //pSoTienNo.Value = frmChiTietMuaHang3333333333.mdcSoTienNo;
+            //pSoTienCo.Value = frmChiTietMuaHang3333333333.mdcSoTienCo;
+            //if (frmChiTietMuaHang3333333333.mdcSoTienVAT > 0)
+            //    pSoTienVAT.Value = frmChiTietMuaHang3333333333.mdcSoTienVAT;
+            //else pSoTienVAT.Value = "";
+            //pTongTienCoVAT.Value = frmChiTietMuaHang3333333333.mdcTongTienCoVAT;
             
 
             clsSoTienBangChu cls = new clsSoTienBangChu();

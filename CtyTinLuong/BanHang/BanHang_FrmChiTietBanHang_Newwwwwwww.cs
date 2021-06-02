@@ -20,8 +20,8 @@ namespace CtyTinLuong
         public static double mdbSoLuongXuat;
         public static bool mbPrint_XuatKho, mbPrint_HoaDon;
         public static DataTable mdtPrint;
-        public static string msSoChungTu, msNguoinhanhang, msDienGiai;
-        public static double mdbTongSotien;
+        public static string msDiaChi,msDienGiai, msNguoiNhanHang, msSoChungTu, msSoTienBangChu, msSoTKCo, msSoTKNo;
+        public static double mdbGiaHanNo, mdbNoCu,mdbNoMoi, mdbSoTienCo,mdbSoTienNo, mdbTienChuaVAT,mdbTienVAT, mdbTongTienVAT, mdbTongNo ;
         private void Luu_BienDongTaiKhoan(int xxxxID_BanHang)
         {
             if (!KiemTraLuu()) return;
@@ -934,13 +934,24 @@ namespace CtyTinLuong
 
              
 
-                double sotienxxx = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-
-                gridView8.SetRowCellValue(0, clNo, 0);
-                gridView8.SetRowCellValue(0, clCo, sotienxxx);
-
-                gridView8.SetRowCellValue(1, clNo, sotienxxx);
-                gridView8.SetRowCellValue(1, clCo, 0);
+                double tienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                double tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                double tongtiencoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                gridView8.SetRowCellValue(0, clNo, tongtiencoVAT);
+                gridView8.SetRowCellValue(0, clCo, 0);
+                if (tienVAT > 0)
+                {
+                    gridView8.SetRowCellValue(1, clNo, 0);
+                    gridView8.SetRowCellValue(1, clCo, tienVAT);
+                    gridView8.SetRowCellValue(2, clNo, 0);
+                    gridView8.SetRowCellValue(2, clCo, tienchuaVAT);
+                }
+                else
+                {
+                    gridView8.SetRowCellValue(1, clNo, 0);
+                    gridView8.SetRowCellValue(1, clCo, tongtiencoVAT);
+                }
+               
 
             }
             catch
@@ -1191,13 +1202,44 @@ namespace CtyTinLuong
             mdtPrint = dv.ToTable();
             if (mdtPrint.Rows.Count > 0)
             {
+                clsTbKhachHang cls1 = new clsTbKhachHang();
+                cls1.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
+                DataTable dt1 = cls1.SelectOne();
+
+                mdaNgayChungTu = dteNgayChungTu.DateTime;
+                msDiaChi = cls1.sDiaChi.Value;
+                msDienGiai = txtDienGiai.Text.ToString();
+                msNguoiNhanHang = txtTenKH.Text.ToString();
+                msSoChungTu = txtSoChungTu.Text.ToString();
+
+                mdbTongTienVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                mdbTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                mdbTienChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                DataTable dttaikhoan = (DataTable)gridControl2.DataSource;
+                if (dttaikhoan.Rows.Count >= 2)
+                {
+                    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
+                    if (dttaikhoan.Rows.Count == 3)
+                    {
+                        int id_131 = Convert.ToInt32(dttaikhoan.Rows[0]["SoTaiKhoanCon"].ToString());
+                        int id_VAT = Convert.ToInt32(dttaikhoan.Rows[1]["SoTaiKhoanCon"].ToString());
+                        int id_511 = Convert.ToInt32(dttaikhoan.Rows[2]["SoTaiKhoanCon"].ToString());
+                    }
+                    else
+                    {
+                        int id_131 = Convert.ToInt32(dttaikhoan.Rows[0]["SoTaiKhoanCon"].ToString());                       
+                        int id_511 = Convert.ToInt32(dttaikhoan.Rows[1]["SoTaiKhoanCon"].ToString());
+                    }
+                }
+                //msSoTienBangChu, 
+                //msSoTKCo =
+                //msSoTKNo;
+                //public static double mdbGiaHanNo, mdbNoCu, mdbNoMoi, mdbSoTienCo, mdbSoTienNo, , , , mdbTongNo;
+
                 mbPrint_HoaDon = false;
                 mbPrint_XuatKho = true;
-                mdaNgayChungTu = dteNgayChungTu.DateTime;
-                msSoChungTu = txtSoChungTu.Text.ToString();
-                msNguoinhanhang = txtTenKH.Text.ToString();
-                mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                msDienGiai = txtDienGiai.Text.ToString();
+              
+             
                 frmPrint_BanHang ff = new frmPrint_BanHang();
                 ff.Show();
 
