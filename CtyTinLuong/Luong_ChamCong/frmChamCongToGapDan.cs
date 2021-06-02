@@ -129,6 +129,11 @@ namespace CtyTinLuong
                     cbLoaiHangSX.DataSource = _dataLoaiHang;
 
                     cbLoaiHangSX.Enabled = true;
+
+                    gridThin.DataSource = _dataLoaiHang;
+                    gridThin.DisplayMember = "TenVTHH";
+                    gridThin.ValueMember = "ID_VTHH";
+
                     try
                     {
                         _id_vthh = (int)cbLoaiHangSX.SelectedValue;
@@ -163,16 +168,21 @@ namespace CtyTinLuong
                       
                     if(_id_vthh==0)
                     {
-                        _data.Rows[i]["ID_VTHH"] = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
-                        _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
+                        int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
+                        _data.Rows[i]["ID_VTHH"] = id_vthh_;
+                      //  _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
+                        //đặt giá trị hàng thứ i của cột tên vật tư hàng hóa có giá trị id_vthh và hiển thị tại đây
+                        _data.Rows[i]["TenVTHH"] = _data.Rows[i]["ID_VTHH"].ToString();
+                        //
                     }
                     else
                     {
                         _data.Rows[i]["ID_VTHH"] = _id_vthh;
-                        //_data.Rows[i]["TenVTHH"] = _ten_vthh;
-                        _data.Rows[i]["TenVTHH"] = _dataLoaiHang;
+                        _data.Rows[i]["TenVTHH"] = _id_vthh;
+                        //_data.Rows[i]["TenVTHH"] = _dataLoaiHang;
                     }
-                } 
+                }
+                _data.Rows[2]["TenVTHH"] = "5";
             }
              
             //
@@ -230,6 +240,16 @@ namespace CtyTinLuong
                     }
                 }
             }
+            //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
+            //{
+            //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
+            //}
+            gridThin.EditValueChanged +=(o,e)=> {
+
+            };
+            // dat doan cuoi nay đi
+
+
             gridControl1.DataSource = _data;
         }
         private string thutrongtuanxyz(int ewwd)
@@ -243,7 +263,6 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
-
         private void frmChamCongToGapDan_Load(object sender, EventArgs e)
         {
         }
@@ -264,6 +283,17 @@ namespace CtyTinLuong
                     _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
                 }
 
+            }
+            else if (name_.Contains("TenVTHH"))
+            {
+                if (gridView1.GetFocusedRowCellValue(name_) == null)
+                {
+                    _data.Rows[index_][name_] = "";
+                }
+                else
+                {
+                    _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+                }
             }
             // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
         }
