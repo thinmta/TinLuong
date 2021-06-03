@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -65,6 +66,7 @@
             this.TenTaiKhoanCon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.HienThi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoTaiKhoanMoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.checkBaoCo = new System.Windows.Forms.CheckBox();
             this.checkPhieuThu = new System.Windows.Forms.CheckBox();
@@ -149,7 +151,6 @@
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
             this.linkKeHoachSanXuat = new System.Windows.Forms.LinkLabel();
             this.ntPrint_hoadon = new DevExpress.XtraEditors.SimpleButton();
-            this.clSoTaiKhoanMoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -204,7 +205,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 474);
+            this.groupBox1.Location = new System.Drawing.Point(13, 448);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.Size = new System.Drawing.Size(959, 175);
@@ -487,6 +488,12 @@
             this.HienThi.FieldName = "HienThi";
             this.HienThi.Name = "HienThi";
             // 
+            // clSoTaiKhoanMoi
+            // 
+            this.clSoTaiKhoanMoi.Caption = "SoTaiKhoanMoi";
+            this.clSoTaiKhoanMoi.FieldName = "SoTaiKhoanMoi";
+            this.clSoTaiKhoanMoi.Name = "clSoTaiKhoanMoi";
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -560,7 +567,7 @@
             // btLuu
             // 
             this.btLuu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu.Location = new System.Drawing.Point(782, 655);
+            this.btLuu.Location = new System.Drawing.Point(778, 629);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(107, 23);
             this.btLuu.TabIndex = 91;
@@ -570,7 +577,7 @@
             // btPrint_XuatKho
             // 
             this.btPrint_XuatKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_XuatKho.ImageOptions.Image")));
-            this.btPrint_XuatKho.Location = new System.Drawing.Point(663, 655);
+            this.btPrint_XuatKho.Location = new System.Drawing.Point(659, 629);
             this.btPrint_XuatKho.Name = "btPrint_XuatKho";
             this.btPrint_XuatKho.Size = new System.Drawing.Size(113, 23);
             this.btPrint_XuatKho.TabIndex = 90;
@@ -581,7 +588,7 @@
             // 
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(901, 655);
+            this.btThoat.Location = new System.Drawing.Point(897, 629);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(75, 23);
             this.btThoat.TabIndex = 89;
@@ -591,7 +598,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.layoutControl1);
-            this.groupBox3.Location = new System.Drawing.Point(13, 9);
+            this.groupBox3.Location = new System.Drawing.Point(13, -7);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
@@ -1065,7 +1072,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.gridControl1);
-            this.groupBox2.Location = new System.Drawing.Point(11, 218);
+            this.groupBox2.Location = new System.Drawing.Point(11, 198);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(963, 250);
             this.groupBox2.TabIndex = 96;
@@ -1336,7 +1343,7 @@
             // 
             // txtsochungtu_tbThuChi
             // 
-            this.txtsochungtu_tbThuChi.Location = new System.Drawing.Point(205, 661);
+            this.txtsochungtu_tbThuChi.Location = new System.Drawing.Point(212, 632);
             this.txtsochungtu_tbThuChi.Name = "txtsochungtu_tbThuChi";
             this.txtsochungtu_tbThuChi.ReadOnly = true;
             this.txtsochungtu_tbThuChi.Size = new System.Drawing.Size(25, 20);
@@ -1347,7 +1354,7 @@
             this.checkBaoVe_LaiXe.AutoSize = true;
             this.checkBaoVe_LaiXe.Checked = true;
             this.checkBaoVe_LaiXe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(271, 664);
+            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(267, 638);
             this.checkBaoVe_LaiXe.Name = "checkBaoVe_LaiXe";
             this.checkBaoVe_LaiXe.Size = new System.Drawing.Size(87, 17);
             this.checkBaoVe_LaiXe.TabIndex = 119;
@@ -1358,7 +1365,7 @@
             // linkKeHoachSanXuat
             // 
             this.linkKeHoachSanXuat.AutoSize = true;
-            this.linkKeHoachSanXuat.Location = new System.Drawing.Point(14, 661);
+            this.linkKeHoachSanXuat.Location = new System.Drawing.Point(14, 635);
             this.linkKeHoachSanXuat.Name = "linkKeHoachSanXuat";
             this.linkKeHoachSanXuat.Size = new System.Drawing.Size(154, 13);
             this.linkKeHoachSanXuat.TabIndex = 120;
@@ -1369,25 +1376,18 @@
             // ntPrint_hoadon
             // 
             this.ntPrint_hoadon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ntPrint_hoadon.ImageOptions.Image")));
-            this.ntPrint_hoadon.Location = new System.Drawing.Point(547, 656);
+            this.ntPrint_hoadon.Location = new System.Drawing.Point(543, 630);
             this.ntPrint_hoadon.Name = "ntPrint_hoadon";
             this.ntPrint_hoadon.Size = new System.Drawing.Size(110, 23);
             this.ntPrint_hoadon.TabIndex = 121;
             this.ntPrint_hoadon.Text = "Print_Hoá đơn";
-            // 
-            // clSoTaiKhoanMoi
-            // 
-            this.clSoTaiKhoanMoi.Caption = "SoTaiKhoanMoi";
-            this.clSoTaiKhoanMoi.FieldName = "SoTaiKhoanMoi";
-            this.clSoTaiKhoanMoi.Name = "clSoTaiKhoanMoi";
-            this.clSoTaiKhoanMoi.Visible = true;
-            this.clSoTaiKhoanMoi.VisibleIndex = 8;
+            this.ntPrint_hoadon.Click += new System.EventHandler(this.ntPrint_hoadon_Click);
             // 
             // BanHang_FrmChiTietBanHang_Newwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 685);
+            this.ClientSize = new System.Drawing.Size(984, 663);
             this.Controls.Add(this.ntPrint_hoadon);
             this.Controls.Add(this.linkKeHoachSanXuat);
             this.Controls.Add(this.checkBaoVe_LaiXe);

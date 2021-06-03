@@ -286,7 +286,12 @@ namespace CtyTinLuong
 
             if (KhoThanhPham_frmChiTiet_Da_XuatKho.mbPrint == true)
                 XuatKho_ThanhPham(KhoThanhPham_frmChiTiet_Da_XuatKho.mdtPrint);
-            //
+
+            if (BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_XuatKho == true)
+                XuatKho_ThanhPham(BanHang_FrmChiTietBanHang_Newwwwwwww.mdtPrint);
+
+            if (KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_XuatKho == true)
+                XuatKho_ThanhPham(KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdtPrint);
         }
 
         private void frmPrint_Nhap_Xuat_Kho_FormClosed(object sender, FormClosedEventArgs e)
@@ -303,6 +308,8 @@ namespace CtyTinLuong
             KhoThanhPham_ChiTiet_NhapKho_Khac.mbPrint = false;
             KhoThanhPham_ChiTiet_XuatKho_Khac.mbPrint = false;
             KhoThanhPham_frmChiTiet_Da_XuatKho.mbPrint = false;
+            BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_XuatKho = false;
+            KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_XuatKho = false;
         }
     }
 }

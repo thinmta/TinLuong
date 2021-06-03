@@ -53,13 +53,16 @@ namespace CtyTinLuong
 
         private void frmPrint_BanHang_Load(object sender, EventArgs e)
         {
-            if (BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_XuatKho == true)
+            if (BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_HoaDon == true)
                 XuatKho_ThanhPham_BanHang(BanHang_FrmChiTietBanHang_Newwwwwwww.mdtPrint);
+            if (KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_HoaDon == true)
+                XuatKho_ThanhPham_BanHang(KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdtPrint);
         }
 
         private void frmPrint_BanHang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_XuatKho = false;
+            BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_HoaDon = false;
+            KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_HoaDon = false;
         }
     }
 }

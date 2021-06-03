@@ -13,32 +13,65 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
-        public void printMuahang()
+        public void print_KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii()
         {
-            pSoChungTu.Value = "Số: " + frmChiTietMuaHang3333333333.mssochungtu + "";
+            pSoChungTu.Value = "Số: " + KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msSoChungTu + "";
 
-            DateTime ngaychungtu = frmChiTietMuaHang3333333333.mdangaythang;
+            DateTime ngaychungtu = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdaNgayChungTu;
             string ngay = ngaychungtu.ToString("dd");
             string thang = ngaychungtu.ToString("MM");
             string nam = ngaychungtu.ToString("yyyy");
             pNgayThang.Value = "Ngày " + ngay.ToString() + " tháng " + thang.ToString() + " năm " + nam.ToString() + "";
 
-            //pNguoiGiao.Value = frmChiTietMuaHang3333333333.msNguoiGiaoHang;
+            pDiaChi.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msDiaChi;
+            pDienGiai.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msDienGiai;
+            pNguoiNhanHang.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msNguoiNhanHang;
 
-            //pTKNo.Value = frmChiTietMuaHang3333333333.msTKNo;
-            //pTKVAT.Value = frmChiTietMuaHang3333333333.msTKVAT;
-            //pTKCo.Value = frmChiTietMuaHang3333333333.msTKCo;
+            pSoTKNo.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msSoTKNo;
+            pSoTKCo.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msSoTKCo;
+            pSoTienNo.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbSoTienNo;
+            pSoTienCo.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbSoTienCo;
 
-            //pSoTienNo.Value = frmChiTietMuaHang3333333333.mdcSoTienNo;
-            //pSoTienCo.Value = frmChiTietMuaHang3333333333.mdcSoTienCo;
-            //if (frmChiTietMuaHang3333333333.mdcSoTienVAT > 0)
-            //    pSoTienVAT.Value = frmChiTietMuaHang3333333333.mdcSoTienVAT;
-            //else pSoTienVAT.Value = "";
-            //pTongTienCoVAT.Value = frmChiTietMuaHang3333333333.mdcTongTienCoVAT;
-            
 
-            clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(frmChiTietMuaHang3333333333.mdcSoTienNo), "đồng.");
+            pTienChuaVAT.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbTienChuaVAT;
+            pTienVAT.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbTienVAT;
+            pTongTienCoVAT.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbTongTienVAT;
+            //  pSoTienCo.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbSoTienCo;
+            pNoCu.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbNoCu;
+            pNoMoi.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbNoMoi;
+            pTongNo.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbTongNo;
+
+            pSoTienBangChu.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msSoTienBangChu;
+        }
+        public void print_BanHang_FrmChiTietBanHang_Newwwwwwww()
+        {
+            pSoChungTu.Value = "Số: " + BanHang_FrmChiTietBanHang_Newwwwwwww.msSoChungTu + "";
+
+            DateTime ngaychungtu = BanHang_FrmChiTietBanHang_Newwwwwwww.mdaNgayChungTu;
+            string ngay = ngaychungtu.ToString("dd");
+            string thang = ngaychungtu.ToString("MM");
+            string nam = ngaychungtu.ToString("yyyy");
+            pNgayThang.Value = "Ngày " + ngay.ToString() + " tháng " + thang.ToString() + " năm " + nam.ToString() + "";
+
+          pDiaChi.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msDiaChi;
+           pDienGiai.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msDienGiai;
+            pNguoiNhanHang.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msNguoiNhanHang;
+
+            pSoTKNo.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msSoTKNo;
+            pSoTKCo.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msSoTKCo;
+            pSoTienNo.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbSoTienNo;
+            pSoTienCo.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbSoTienCo;
+
+
+            pTienChuaVAT.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbTienChuaVAT;
+            pTienVAT.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbTienVAT;
+            pTongTienCoVAT.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbTongTienVAT;
+            //  pSoTienCo.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbSoTienCo;
+            pNoCu.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbNoCu;
+            pNoMoi.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbNoMoi;
+            pTongNo.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbTongNo;
+
+            pSoTienBangChu.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msSoTienBangChu;
         }
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
@@ -58,8 +91,10 @@ namespace CtyTinLuong
             catch
             { }
 
-            if (frmChiTietMuaHang3333333333.mbPrint == true)
-                printMuahang();
+            if (BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_HoaDon == true)
+                print_BanHang_FrmChiTietBanHang_Newwwwwwww();
+            if (KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_HoaDon == true)
+                print_KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
         }
     }
 }
