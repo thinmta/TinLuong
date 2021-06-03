@@ -146,11 +146,7 @@ namespace CtyTinLuong
                 checkDaiLy.Checked = true;
             else checkDaiLy.Checked = false;
 
-            if (cls1.bTrangThai_XuatKho_DaiLy_GuiDuLieu == true)
-            {
-                btLuu_Dong.Enabled = false;
-                btLuu_Gui_Dong.Enabled = false;
-            }
+          
 
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             txtSoChungTu.Text = cls1.sSoChungTu.Value.ToString();
@@ -291,7 +287,7 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            Luu_ChiLuu();
+            Luu_Va_GuiDuLieu();
         }
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
@@ -313,10 +309,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
-        {
-            Luu_Va_GuiDuLieu();
-        }
+      
 
         private void btXoaGrid2_Click(object sender, EventArgs e)
         {

@@ -17,8 +17,7 @@ namespace CtyTinLuong
         public static int miID_XuatKhoDaiLy;
         private void HienThi()
         {
-            if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
-            {
+            
                 clsDaiLy_tbXuatKho cls = new clsDaiLy_tbXuatKho();
                 DataTable dtxx = cls.SelectAll_W_TenDaiLy();
                 dtxx.DefaultView.RowFilter = "TonTai = True and NgungTheoDoi = False and TrangThaiXuatNhap_ThanhPham_TuDaiLyVe =True";
@@ -26,7 +25,7 @@ namespace CtyTinLuong
                 DataTable dt = dvxxx.ToTable();
                 if (dtxx.Rows.Count > 0)
                 {
-                    DateTime denngay = dteNgay.DateTime;
+                    DateTime denngay = dteDenNgay.DateTime;
                     DateTime tungay = dteTuNgay.DateTime;
                     dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'";
                     DataView dv = dt.DefaultView;
@@ -38,7 +37,7 @@ namespace CtyTinLuong
                     gridControl1.DataSource = dxxxx;
 
                 }
-            }
+           
 
         }
         private void HienThi_ALL()
@@ -127,7 +126,7 @@ namespace CtyTinLuong
         {
             Load_LockUp();
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
-            dteNgay.EditValue = null;
+            dteDenNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();         
           
@@ -144,7 +143,7 @@ namespace CtyTinLuong
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             
-            miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString());
+            miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
             frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
             ff.Show();
         }
@@ -162,7 +161,7 @@ namespace CtyTinLuong
             {
 
                 clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
-                cls.iID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString());
+                cls.iID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                 cls.Update_NgungTheoDoi();
             }
@@ -174,7 +173,7 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 HienThi();
             }
@@ -198,9 +197,9 @@ namespace CtyTinLuong
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
 
-            if (gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
-                int xxxxmiID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(xlID_XuatKhoDaiLy).ToString());
+                int xxxxmiID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 HienThi_ChiTiet_XuatKho(xxxxmiID_XuatKhoDaiLy);
             }
         }
@@ -211,6 +210,31 @@ namespace CtyTinLuong
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void btXoa1_Click(object sender, EventArgs e)
+        {
+            clsDaiLy_tbXuatKho cls1 = new clsDaiLy_tbXuatKho();
+
+
+            DialogResult traloi;
+            traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (traloi == DialogResult.Yes)
+            {
+
+                cls1.iID_XuatKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                cls1.Delete();
+                clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+                cls2.iID_XuatKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                cls2.Delete_ALL_W_ID_XuatKhoDaiLy();
+                MessageBox.Show("Đã xóa");
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                }
+                else HienThi_ALL();
+            }
+
         }
     }
 }
