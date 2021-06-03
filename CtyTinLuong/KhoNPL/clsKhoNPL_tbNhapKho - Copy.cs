@@ -15,7 +15,38 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsKhoNPL_tbNhapKho : clsDBInteractionBase
 	{
-     
-        
-	}
+
+        public DataTable SelectOne_W_ThamChieu_NhapKho_DaiLy()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_KhoNPL_tbNhapKho_SelectOne_W_ThamChieu_NhapKho_DaiLy]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_KhoNPL_tbNhapKho_SelectOne_W_ThamChieu_NhapKho_DaiLy");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sThamChieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sThamChieu));
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_KhoNPL_tbNhapKho_SelectOne_W_ThamChieu_NhapKho_DaiLy", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+    }
 }
