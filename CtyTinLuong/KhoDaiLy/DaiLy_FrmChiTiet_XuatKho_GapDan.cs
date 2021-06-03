@@ -105,10 +105,8 @@ namespace CtyTinLuong
             else
             {
                 string xxx = dv3.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
-                if (xxx2 >= 10000)
-                    txtSoChungTu.Text = "XKGD 1";
-                else txtSoChungTu.Text = "XKGD " + xxx2 + "";
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;             
+                 txtSoChungTu.Text = "XKGD " + xxx2 + "";
 
             }
            

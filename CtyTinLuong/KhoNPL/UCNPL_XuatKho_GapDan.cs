@@ -266,6 +266,12 @@ namespace CtyTinLuong
             }
         }
 
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            if (dteDenNgay.DateTime != null & dteTuNgay.DateTime != null)
+                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+        }
+
         private void btXoa_Click(object sender, EventArgs e)
         {
 

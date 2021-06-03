@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,11 @@ namespace CtyTinLuong
 {
     public partial class KhoNPL_frmChiTiet_XuatKho_gapDan : Form
     {
+        public static bool mbPrint;
+        public static DateTime mdaNgayChungTu;
+        public static DataTable mdtPrint;
+        public static string msSoChungTu, msNguoiNhanHang, msDienGiai;
+        public static double mdbTongSotien;
         private void HienThi_ThemMoi_XuatKho()
         {
             gridNguoiLap.EditValue = 14;
@@ -99,6 +105,7 @@ namespace CtyTinLuong
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
             txtSoChungTu.Text = cls1.sThamChieu.Value;
+            txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
             double iisoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
 
             DataTable dt2 = new DataTable();
@@ -596,6 +603,7 @@ namespace CtyTinLuong
                 cls1.bDaNhapKho = false;
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
+                cls1.sNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
                 int iiID_Nhapkho_GapDan;
                 if (UCNPL_XuatKho_GapDan.mbSua == false)
                 {
@@ -883,6 +891,36 @@ namespace CtyTinLuong
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             double ffdongia, fffsoluong, fffthanhtien;
+            if (e.Column == clMaVT)
+            {
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                int kk = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+                if (dt != null)
+                {
+                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
+                    gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
+                    gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
+                    gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                    gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+                    gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
+                    gridView1.SetRowCellValue(e.RowHandle, clSoLuongTheoDinhMuc, 0);
+                    gridView1.SetRowCellValue(e.RowHandle, clDinhMuc, 0);
+                    gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
+
+                    if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                        ffdongia = 0;
+                    else
+                        ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                    if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                        fffsoluong = 0;
+                    else
+                        fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                    fffthanhtien = fffsoluong * ffdongia;
+                    gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+                }
+            }
             if (e.Column == clSoLuong)
             {
                 if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
@@ -1020,6 +1058,41 @@ namespace CtyTinLuong
             }
             catch
             {
+
+            }
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            DataTable dttttt2 = dv1212.ToTable();
+            string shienthi = "1";
+            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+            DataView dv = dttttt2.DefaultView;
+            //DataRow _ravi=mdtPrint.
+            //_ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
+            //_ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+            //_ravi["MaVT"] = cls.sMaVT.Value;
+            //_ravi["TenVTHH"] = cls.sTenVTHH.Value;
+            //_ravi["DonViTinh"] = cls.sDonViTinh.Value;
+            //_ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+            //_ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+
+            mdtPrint = dv.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint = true;
+                mdaNgayChungTu = dteNgayChungTu.DateTime;
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                msNguoiNhanHang = txtTenNguoiLap.Text.ToString();
+                mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                msDienGiai = txtDienGiai.Text.ToString();
+                frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
+                ff.Show();
 
             }
         }

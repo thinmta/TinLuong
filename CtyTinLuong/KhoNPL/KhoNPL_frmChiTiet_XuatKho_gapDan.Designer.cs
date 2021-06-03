@@ -110,6 +110,9 @@
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtID_ThanhPham = new System.Windows.Forms.TextBox();
             this.txtID_VatTuChinh = new System.Windows.Forms.TextBox();
+            this.txtNguoiNhanHang = new System.Windows.Forms.TextBox();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -145,6 +148,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -159,6 +164,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtNguoiNhanHang);
             this.layoutControl1.Controls.Add(this.txtSoLuongVTChinh);
             this.layoutControl1.Controls.Add(this.txtDVT_VT_CHinh);
             this.layoutControl1.Controls.Add(this.txtTenVatTu_Chinh);
@@ -277,7 +283,7 @@
             this.txtTongTienHang.Location = new System.Drawing.Point(97, 178);
             this.txtTongTienHang.Name = "txtTongTienHang";
             this.txtTongTienHang.ReadOnly = true;
-            this.txtTongTienHang.Size = new System.Drawing.Size(852, 20);
+            this.txtTongTienHang.Size = new System.Drawing.Size(173, 20);
             this.txtTongTienHang.TabIndex = 52;
             this.txtTongTienHang.Text = "0";
             this.txtTongTienHang.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
@@ -462,7 +468,9 @@
             this.layoutControlItem8,
             this.layoutControlItem11,
             this.layoutControlItem14,
-            this.layoutControlItem17});
+            this.layoutControlItem17,
+            this.layoutControlItem16,
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(951, 200);
@@ -578,7 +586,7 @@
             this.layoutControlItem23.CustomizationFormText = "Tổng tiền hàng";
             this.layoutControlItem23.Location = new System.Drawing.Point(0, 176);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(951, 24);
+            this.layoutControlItem23.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem23.Text = "Tổng tiền hàng";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(92, 13);
             // 
@@ -932,6 +940,7 @@
             this.btPrint.Size = new System.Drawing.Size(87, 23);
             this.btPrint.TabIndex = 114;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // btLuu_Gui_Dong
             // 
@@ -986,6 +995,30 @@
             this.txtID_VatTuChinh.TabIndex = 118;
             this.txtID_VatTuChinh.Visible = false;
             // 
+            // txtNguoiNhanHang
+            // 
+            this.txtNguoiNhanHang.Location = new System.Drawing.Point(369, 178);
+            this.txtNguoiNhanHang.Name = "txtNguoiNhanHang";
+            this.txtNguoiNhanHang.Size = new System.Drawing.Size(355, 20);
+            this.txtNguoiNhanHang.TabIndex = 108;
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.txtNguoiNhanHang;
+            this.layoutControlItem16.Location = new System.Drawing.Point(272, 176);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(454, 24);
+            this.layoutControlItem16.Text = "Người nhận hàng";
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(92, 13);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(726, 176);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(225, 24);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // KhoNPL_frmChiTiet_XuatKho_gapDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1037,6 +1070,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1119,5 +1154,8 @@
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.TextBox txtID_ThanhPham;
         private System.Windows.Forms.TextBox txtID_VatTuChinh;
+        private System.Windows.Forms.TextBox txtNguoiNhanHang;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

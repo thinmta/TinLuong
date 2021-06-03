@@ -5,14 +5,14 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public  partial class clsGapDan_tbNhapKho : clsDBInteractionBase
+	public partial class clsGapDan_tbNhapKho : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bBool_TonDauKy, m_bNgungTheoDoi, m_bDaNhapKho, m_bTrangThai_NhapKho_GapDan, m_bTrangThai_XuatKho_BTP, m_bTrangThai_XuatKho_NPL, m_bTonTai;
+			private SqlBoolean		m_bTrangThai_XuatKho_NPL, m_bTrangThai_XuatKho_BTP, m_bBool_TonDauKy, m_bTonTai, m_bNgungTheoDoi, m_bDaNhapKho, m_bTrangThai_NhapKho_GapDan;
 			private SqlDateTime		m_daNgayChungTu;
-			private SqlDouble		m_fDonGia_ThanhPham_QuyDoi, m_fSoLuongThanhPham_QuyDoi, m_fTongTienHang;
-			private SqlInt32		m_iID_TKCo, m_iID_NhapKho, m_iID_NguoiNhap, m_iID_VTHH_ThanhPham_QuyDoi, m_iID_DinhMuc_ToGapDan, m_iID_TKNo;
-			private SqlString		m_sSoChungTu, m_sThamChieu, m_sDienGiai;
+			private SqlDouble		m_fTongTienHang, m_fDonGia_ThanhPham_QuyDoi, m_fSoLuongThanhPham_QuyDoi;
+			private SqlInt32		m_iID_TKCo, m_iID_TKNo, m_iID_DinhMuc_ToGapDan, m_iID_VTHH_ThanhPham_QuyDoi, m_iID_NhapKho, m_iID_NguoiNhap;
+			private SqlString		m_sDienGiai, m_sNguoiNhanHang, m_sThamChieu, m_sSoChungTu;
 		#endregion
 
 
@@ -52,6 +52,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThai_XuatKho_BTP", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThai_XuatKho_BTP));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThai_NhapKho_GapDan", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThai_NhapKho_GapDan));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaNhapKho", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaNhapKho));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@sNguoiNhanHang", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNguoiNhanHang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
@@ -116,6 +117,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThai_XuatKho_BTP", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThai_XuatKho_BTP));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThai_NhapKho_GapDan", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThai_NhapKho_GapDan));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaNhapKho", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaNhapKho));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@sNguoiNhanHang", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNguoiNhanHang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
@@ -241,6 +243,7 @@ namespace CtyTinLuong
 					m_bTrangThai_XuatKho_BTP = (bool)dtToReturn.Rows[0]["TrangThai_XuatKho_BTP"];
 					m_bTrangThai_NhapKho_GapDan = (bool)dtToReturn.Rows[0]["TrangThai_NhapKho_GapDan"];
 					m_bDaNhapKho = (bool)dtToReturn.Rows[0]["DaNhapKho"];
+					m_sNguoiNhanHang = (string)dtToReturn.Rows[0]["NguoiNhanHang"];
 				}
 				return dtToReturn;
 			}
@@ -661,6 +664,24 @@ namespace CtyTinLuong
 					throw new ArgumentOutOfRangeException("bDaNhapKho", "bDaNhapKho can't be NULL");
 				}
 				m_bDaNhapKho = value;
+			}
+		}
+
+
+		public SqlString sNguoiNhanHang
+		{
+			get
+			{
+				return m_sNguoiNhanHang;
+			}
+			set
+			{
+				SqlString sNguoiNhanHangTmp = (SqlString)value;
+				if(sNguoiNhanHangTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("sNguoiNhanHang", "sNguoiNhanHang can't be NULL");
+				}
+				m_sNguoiNhanHang = value;
 			}
 		}
 		#endregion
