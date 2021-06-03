@@ -15,7 +15,7 @@ namespace CtyTinLuong
     {
      
         public static int miID_XuatKhoDaiLy;
-        private void HienThi()
+        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
         {
             
                 clsDaiLy_tbXuatKho cls = new clsDaiLy_tbXuatKho();
@@ -25,12 +25,11 @@ namespace CtyTinLuong
                 DataTable dt = dvxxx.ToTable();
                 if (dtxx.Rows.Count > 0)
                 {
-                    DateTime denngay = dteDenNgay.DateTime;
-                    DateTime tungay = dteTuNgay.DateTime;
-                    dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'";
+                   
+                    dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
                     DataView dv = dt.DefaultView;
                     DataTable dt22 = dv.ToTable();
-                    dt22.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
+                    dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
                     DataView dv2 = dt22.DefaultView;
                     dv2.Sort = "TrangThai_XuatKho_DaiLy_GuiDuLieu ASC, NgayChungTu DESC, ID_XuatKhoDaiLy DESC";
                     DataTable dxxxx = dv2.ToTable();
