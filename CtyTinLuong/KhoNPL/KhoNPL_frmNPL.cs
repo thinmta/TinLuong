@@ -157,5 +157,13 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
         }
+
+        private void navBarItem2_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UCNPL_XuatKho_GapDan ucc = new UCNPL_XuatKho_GapDan();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+        }
     }
 }

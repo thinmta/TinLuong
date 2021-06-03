@@ -617,6 +617,7 @@
             this.btLuu.Size = new System.Drawing.Size(98, 23);
             this.btLuu.TabIndex = 98;
             this.btLuu.Text = "Lưu";
+            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
             // btPrint
             // 

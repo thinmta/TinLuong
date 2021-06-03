@@ -254,6 +254,12 @@
     <Compile Include="KhoNPL\KhoNPL_ChiTiet_XuatKho_Khac.Designer.cs">
       <DependentUpon>KhoNPL_ChiTiet_XuatKho_Khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan.Designer.cs">
+      <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoThanhPham\KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1598,6 +1604,12 @@
     <Compile Include="KhoBanThanhPham\UCBanThanhPham_DaNhapKho.Designer.cs">
       <DependentUpon>UCBanThanhPham_DaNhapKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoNPL\UCNPL_XuatKho_GapDan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoNPL\UCNPL_XuatKho_GapDan.Designer.cs">
+      <DependentUpon>UCNPL_XuatKho_GapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1822,6 +1834,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_Khacccccccccccccc.resx">
       <DependentUpon>UCNPL_XuatKho_Khacccccccccccccc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan.resx">
+      <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\frmBaoCaoNXT_KhoThanhPham.resx">
       <DependentUpon>frmBaoCaoNXT_KhoThanhPham.cs</DependentUpon>
@@ -2400,6 +2415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_GapDan_baocao_NXT.resx">
       <DependentUpon>UCDaiLy_GapDan_baocao_NXT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_GapDan.resx">
+      <DependentUpon>UCNPL_XuatKho_GapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraDaiLy_ChiTietLuong.resx">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>

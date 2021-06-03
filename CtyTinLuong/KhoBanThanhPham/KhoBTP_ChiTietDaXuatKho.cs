@@ -224,6 +224,11 @@ namespace CtyTinLuong
            
         }
 
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtTienNo_TextAlignChanged(object sender, EventArgs e)
         {
             //try
