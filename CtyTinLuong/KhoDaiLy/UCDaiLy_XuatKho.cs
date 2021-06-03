@@ -174,7 +174,7 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi();
+                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
             }
         }
 
