@@ -217,18 +217,18 @@ namespace CtyTinLuong
 
         private void navBarItem14_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDaiLy_NhapKho_Khac uccc_NhapKho = new UCDaiLy_NhapKho_Khac();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
+            //UCDaiLy_NhapKho_Khac uccc_NhapKho = new UCDaiLy_NhapKho_Khac();
+            //uccc_NhapKho.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(uccc_NhapKho);
+            //uccc_NhapKho.BringToFront();
         }
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDaiLy_XuatKho_Khac uccc_NhapKho = new UCDaiLy_XuatKho_Khac();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
+            //UCDaiLy_XuatKho_Khac uccc_NhapKho = new UCDaiLy_XuatKho_Khac();
+            //uccc_NhapKho.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(uccc_NhapKho);
+            //uccc_NhapKho.BringToFront();
         }
 
         private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -252,5 +252,6 @@ namespace CtyTinLuong
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
             ff.Show();
         }
+       
     }
 }

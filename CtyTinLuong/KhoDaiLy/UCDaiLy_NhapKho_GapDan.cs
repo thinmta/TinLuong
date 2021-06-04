@@ -265,5 +265,27 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (traloi == DialogResult.Yes)
+            {
+
+                cls1.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                cls1.Delete();
+                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
+                cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                cls2.Delete_ALL_W_ID_NhapKho();
+                MessageBox.Show("Đã xóa");
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                }
+                else HienThi_ALL();
+            }
+        }
     }
 }
