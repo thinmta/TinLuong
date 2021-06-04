@@ -18,7 +18,7 @@ namespace CtyTinLuong
         public static string msTenSoPhieu;
        
         public static DateTime madaNgayPhieu;
-        //
+        
 
         public  DateTime _ngay_batdau;
         public  DateTime _ngay_ketthuc;
