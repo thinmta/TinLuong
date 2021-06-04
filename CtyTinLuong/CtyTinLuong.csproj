@@ -469,12 +469,6 @@
       <DependentUpon>KhoBTP_ChiTiet_XuatKho_Khac.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\clsGapDan_ChiTiet_XuatKho - Copy.cs" />
-    <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa.Designer.cs">
-      <DependentUpon>DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\clsGapDan_tbXuatKho - Copy.cs" />
     <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_XuatKho_GapDan.cs">
       <SubType>Form</SubType>
@@ -1899,9 +1893,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_FrmChiTiet_XuatKho_GapDan.resx">
       <DependentUpon>DaiLy_FrmChiTiet_XuatKho_GapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa.resx">
-      <DependentUpon>DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_Frm_TonKho_MotVatTu.resx">
       <DependentUpon>DaiLy_Frm_TonKho_MotVatTu.cs</DependentUpon>

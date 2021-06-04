@@ -753,12 +753,12 @@ namespace CtyTinLuong
                 string ahienthi = "1";
 
                 double dexxTongSoLuong, dexxTongtienhang;
-                DataTable adt1 = (DataTable)gridControl1.DataSource;
+                DataTable adt1 = (DataTable)gridControl2.DataSource;
                 adt1.DefaultView.RowFilter = "HienThi=" + ahienthi + "";
                 DataView adv1 = adt1.DefaultView;
                 DataTable dtaaaaa = adv1.ToTable();
 
-                object xxTongSoLuong = dtaaaaa.Compute("sum(SoLuongNhap)", "HienThi=" + ahienthi + "");
+                object xxTongSoLuong = dtaaaaa.Compute("sum(SoLuongXuat)", "HienThi=" + ahienthi + "");
                 if (xxTongSoLuong.ToString() != "")
                     dexxTongSoLuong = Convert.ToDouble(xxTongSoLuong);
                 else dexxTongSoLuong = 0;
@@ -789,8 +789,8 @@ namespace CtyTinLuong
                 {
                     cls5.iID_NhapKho = iiDI_nhapkho;
                     cls5.iID_VTHH = Convert.ToInt32(dtaaaaa.Rows[i]["ID_VTHH"].ToString());
-                    cls5.fSoLuongNhap = Convert.ToDouble(dtaaaaa.Rows[i]["SoLuongNhap"].ToString());
-                    cls5.fSoLuongTon = Convert.ToDouble(dtaaaaa.Rows[i]["SoLuongNhap"].ToString());
+                    cls5.fSoLuongNhap = Convert.ToDouble(dtaaaaa.Rows[i]["SoLuongXuat"].ToString());
+                    cls5.fSoLuongTon = Convert.ToDouble(dtaaaaa.Rows[i]["SoLuongXuat"].ToString());
                     cls5.fDonGia = Convert.ToDouble(dtaaaaa.Rows[i]["DonGia"].ToString());
                     cls5.bTonTai = true;
                     cls5.bNgungTheoDoi = false;                  
@@ -800,34 +800,7 @@ namespace CtyTinLuong
                     cls5.Insert();
                 }
 
-                DataTable DatatableABC222 = (DataTable)gridControl2.DataSource;
-                CriteriaOperator op222 = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
-                string filterString222 = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op222);
-                DataView dv222 = new DataView(DatatableABC222);
-                dv222.RowFilter = filterString222;
-                DataTable dt222 = dv222.ToTable();
-                //NhapKho_TP_1_BTP_2_NPL_3
-                string xx = "2";
-                dt222.DefaultView.RowFilter = "MaKho ='" + xx + "'";
-                DataView dvxxx222 = dt222.DefaultView;
-                DataTable mdtKhauTru = dvxxx222.ToTable();
-                if (mdtKhauTru.Rows.Count > 0)
-                {
-                    for (int i = 0; i < mdtKhauTru.Rows.Count; i++)
-                    {
-                        cls5.iID_NhapKho = iiDI_nhapkho;
-                        cls5.iID_VTHH = Convert.ToInt32(mdtKhauTru.Rows[i]["ID_VTHH"].ToString());
-                        cls5.fSoLuongNhap = Convert.ToDouble(mdtKhauTru.Rows[i]["SoLuongNhap"].ToString());
-                        cls5.fSoLuongTon = Convert.ToDouble(mdtKhauTru.Rows[i]["SoLuongNhap"].ToString());
-                        cls5.fDonGia = Convert.ToDouble(mdtKhauTru.Rows[i]["DonGia"].ToString());
-                        cls5.bTonTai = true;
-                        cls5.bNgungTheoDoi = false;
-                        cls5.bDaNhapKho = true;
-                        cls5.bBoolTonDauKy = false;
-                        cls5.sGhiChu = "";
-                        cls5.Insert();
-                    }
-                }
+               
             }
        
         }

@@ -130,6 +130,7 @@
             this.clHienThi2222 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -816,7 +817,8 @@
             this.clID_ChiTietXuatKho2,
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222,
             this.clHienThi2222,
-            this.clMaKho});
+            this.clMaKho,
+            this.gridColumn6});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.clThanhTien2, "")});
@@ -1044,13 +1046,21 @@
             this.btLuu.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btLuu.Appearance.Options.UseFont = true;
             this.btLuu.Appearance.Options.UseForeColor = true;
-            this.btLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btLuu.ImageOptions.Image")));
             this.btLuu.Location = new System.Drawing.Point(788, 499);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(103, 23);
             this.btLuu.TabIndex = 136;
             this.btLuu.Text = "Lưu ";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "HienThi";
+            this.gridColumn6.FieldName = "HienThi2";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 10;
             // 
             // DaiLy_FrmChiTiet_XuatKho_GapDan
             // 
@@ -1197,5 +1207,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clHienThi2222;
         private DevExpress.XtraGrid.Columns.GridColumn clMaKho;
         private DevExpress.XtraEditors.SimpleButton btLuu;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }
