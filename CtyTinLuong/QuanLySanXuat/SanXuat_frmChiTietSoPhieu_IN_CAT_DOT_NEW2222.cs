@@ -30,6 +30,7 @@ namespace CtyTinLuong
             
             if (UC_SanXuat_PhieuSanXuat.mb_ThemMoi_SoPhieu == true)
             {
+                btChuyen.Visible = false;
                 try
                 {
                    
@@ -47,19 +48,7 @@ namespace CtyTinLuong
             }
             if (UC_SanXuat_PhieuSanXuat.mb_Sua_SoPhieu == true)
             {
-                clsPhieu_tbPhieu clsphieu = new CtyTinLuong.clsPhieu_tbPhieu();
-                clsphieu.iID_SoPhieu = UC_SanXuat_PhieuSanXuat.mID_iD_SoPhieu;
-                DataTable dtphieuxx = clsphieu.SelectOne();
-                //if (clsphieu.bGuiDuLieu.Value == false)
-                //{
-
-                //}
-                //if (clsphieu.bGuiDuLieu.Value == true)
-                //{
-                //    btChiLuu.Enabled = false;
-                //    btLuu_VaGui.Enabled = false;
-
-                //}
+                btChuyen.Visible = true;
             }
 
 
@@ -132,6 +121,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu_Phieu()) return;
             else
             {
+                btChuyen.Visible = true;
                 clsPhieu_tbPhieu cls = new clsPhieu_tbPhieu();
                 cls.sMaPhieu = txtMaPhieu.Text.ToString();
                 cls.daNgayLapPhieu = dteNgayLap.DateTime;
@@ -1450,9 +1440,19 @@ namespace CtyTinLuong
             {
                 txtSoLuongNhap_May_CAT.Text = txtSanLuongTong_May_IN.Text;
             }
-
-            double SanluongHienCo = Convert.ToDouble(txtSanLuong_TrongNgay_IN.Text.ToString());
-            double SanLuongPhieu = Convert.ToDouble(txtSanLuongTong_May_IN.Text.ToString());
+            double SanluongHienCo, SanLuongPhieu;
+            SanLuongPhieu = Convert.ToDouble(txtSanLuongTong_May_IN.Text.ToString());
+            if (mbThemMoi_IN==true)
+            {
+                SanluongHienCo = Convert.ToDouble(txtSanLuong_TrongNgay_IN.Text.ToString());
+               
+            }
+            else
+            {
+                double SanluongHienCo_DaCong = Convert.ToDouble(txtSanLuong_TrongNgay_IN.Text.ToString());
+                SanluongHienCo = SanluongHienCo_DaCong - SanLuongPhieu;
+            }
+             
             double SanLuongDinhMuc;
             SanLuongDinhMuc = Convert.ToDouble(txtMax_DM_IN.Text.ToString());
             if (SanLuongDinhMuc == 0)
@@ -1490,6 +1490,11 @@ namespace CtyTinLuong
 
         }
 
+        private void txtSanLuong_TrongNgay_IN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void checkGiongNhau_CheckedChanged(object sender, EventArgs e)
         {
             if (checkGiongNhau.Checked == true)
@@ -1509,8 +1514,18 @@ namespace CtyTinLuong
 
         private void txtSanLuongTong_May_CAT_TextChanged(object sender, EventArgs e)
         {
-            double SanluongHienCo = Convert.ToDouble(txtSanLuong_TrongNgay_CAT.Text.ToString());
-            double SanLuongPhieu = Convert.ToDouble(txtSanLuongTong_May_CAT.Text.ToString());
+            double SanluongHienCo, SanLuongPhieu;
+            SanLuongPhieu = Convert.ToDouble(txtSanLuongTong_May_CAT.Text.ToString());
+            if (mbThemMoi_IN == true)
+            {
+                SanluongHienCo = Convert.ToDouble(txtSanLuong_TrongNgay_CAT.Text.ToString());
+
+            }
+            else
+            {
+                double SanluongHienCo_DaCong = Convert.ToDouble(txtSanLuong_TrongNgay_CAT.Text.ToString());
+                SanluongHienCo = SanluongHienCo_DaCong - SanLuongPhieu;
+            }
             double SanLuongDinhMuc;
             SanLuongDinhMuc = Convert.ToDouble(txtMax_DM_CAT.Text.ToString());
             if (SanLuongDinhMuc == 0)
