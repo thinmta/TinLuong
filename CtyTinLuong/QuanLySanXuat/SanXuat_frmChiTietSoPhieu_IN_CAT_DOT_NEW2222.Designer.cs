@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtMax_DM_IN = new System.Windows.Forms.TextBox();
             this.txtSanLuong_TrongNgay_IN = new System.Windows.Forms.TextBox();
             this.cbCaSanXuat_May_IN = new System.Windows.Forms.ComboBox();
             this.dteNgaySanXuat_May_IN = new DevExpress.XtraEditors.DateEdit();
@@ -109,8 +110,10 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtMax_DM_CAT = new System.Windows.Forms.TextBox();
             this.txtSanLuong_TrongNgay_CAT = new System.Windows.Forms.TextBox();
             this.cbCaSanXuat_May_CAT = new System.Windows.Forms.ComboBox();
             this.dteNgaySanXuat_May_CAT = new DevExpress.XtraEditors.DateEdit();
@@ -188,6 +191,7 @@
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem34 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btChiLuu = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -213,12 +217,8 @@
             this.layoutControlItem61 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem87 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem62 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtMax_DM_IN = new System.Windows.Forms.TextBox();
-            this.txtMax_DM_CAT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btChuyen = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -263,6 +263,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -307,6 +308,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
@@ -323,8 +325,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem61)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem87)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem62)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -374,6 +374,14 @@
             this.layoutControl2.Size = new System.Drawing.Size(1103, 170);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtMax_DM_IN
+            // 
+            this.txtMax_DM_IN.Location = new System.Drawing.Point(477, 99);
+            this.txtMax_DM_IN.Name = "txtMax_DM_IN";
+            this.txtMax_DM_IN.ReadOnly = true;
+            this.txtMax_DM_IN.Size = new System.Drawing.Size(69, 20);
+            this.txtMax_DM_IN.TabIndex = 111;
             // 
             // txtSanLuong_TrongNgay_IN
             // 
@@ -1166,6 +1174,17 @@
             this.layoutControlItem30.Text = "Ghi chú";
             this.layoutControlItem30.TextSize = new System.Drawing.Size(70, 13);
             // 
+            // layoutControlItem42
+            // 
+            this.layoutControlItem42.Control = this.txtMax_DM_IN;
+            this.layoutControlItem42.Location = new System.Drawing.Point(451, 97);
+            this.layoutControlItem42.Name = "layoutControlItem42";
+            this.layoutControlItem42.Size = new System.Drawing.Size(97, 24);
+            this.layoutControlItem42.Text = "ĐM ";
+            this.layoutControlItem42.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem42.TextSize = new System.Drawing.Size(19, 13);
+            this.layoutControlItem42.TextToControlDistance = 5;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl1);
@@ -1213,6 +1232,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(1105, 174);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtMax_DM_CAT
+            // 
+            this.txtMax_DM_CAT.Location = new System.Drawing.Point(470, 99);
+            this.txtMax_DM_CAT.Name = "txtMax_DM_CAT";
+            this.txtMax_DM_CAT.ReadOnly = true;
+            this.txtMax_DM_CAT.Size = new System.Drawing.Size(77, 20);
+            this.txtMax_DM_CAT.TabIndex = 112;
+            this.txtMax_DM_CAT.Text = "0";
+            this.txtMax_DM_CAT.TextChanged += new System.EventHandler(this.txtMax_DM_CAT_TextChanged);
             // 
             // txtSanLuong_TrongNgay_CAT
             // 
@@ -2010,6 +2039,17 @@
             this.layoutControlItem34.Text = "Ghi chú";
             this.layoutControlItem34.TextSize = new System.Drawing.Size(70, 13);
             // 
+            // layoutControlItem45
+            // 
+            this.layoutControlItem45.Control = this.txtMax_DM_CAT;
+            this.layoutControlItem45.Location = new System.Drawing.Point(447, 97);
+            this.layoutControlItem45.Name = "layoutControlItem45";
+            this.layoutControlItem45.Size = new System.Drawing.Size(102, 24);
+            this.layoutControlItem45.Text = "ĐM";
+            this.layoutControlItem45.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem45.TextSize = new System.Drawing.Size(16, 13);
+            this.layoutControlItem45.TextToControlDistance = 5;
+            // 
             // btThoat
             // 
             this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2286,23 +2326,6 @@
             this.layoutControlItem62.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem62.TextVisible = false;
             // 
-            // txtMax_DM_IN
-            // 
-            this.txtMax_DM_IN.Location = new System.Drawing.Point(477, 99);
-            this.txtMax_DM_IN.Name = "txtMax_DM_IN";
-            this.txtMax_DM_IN.ReadOnly = true;
-            this.txtMax_DM_IN.Size = new System.Drawing.Size(69, 20);
-            this.txtMax_DM_IN.TabIndex = 111;
-            // 
-            // txtMax_DM_CAT
-            // 
-            this.txtMax_DM_CAT.Location = new System.Drawing.Point(470, 99);
-            this.txtMax_DM_CAT.Name = "txtMax_DM_CAT";
-            this.txtMax_DM_CAT.ReadOnly = true;
-            this.txtMax_DM_CAT.Size = new System.Drawing.Size(77, 20);
-            this.txtMax_DM_CAT.TabIndex = 112;
-            this.txtMax_DM_CAT.TextChanged += new System.EventHandler(this.txtMax_DM_CAT_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -2326,28 +2349,6 @@
             this.btChuyen.StyleController = this.layoutControl2;
             this.btChuyen.TabIndex = 114;
             this.btChuyen.Text = "Đến máy Đột";
-            // 
-            // layoutControlItem42
-            // 
-            this.layoutControlItem42.Control = this.txtMax_DM_IN;
-            this.layoutControlItem42.Location = new System.Drawing.Point(451, 97);
-            this.layoutControlItem42.Name = "layoutControlItem42";
-            this.layoutControlItem42.Size = new System.Drawing.Size(97, 24);
-            this.layoutControlItem42.Text = "ĐM ";
-            this.layoutControlItem42.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem42.TextSize = new System.Drawing.Size(19, 13);
-            this.layoutControlItem42.TextToControlDistance = 5;
-            // 
-            // layoutControlItem45
-            // 
-            this.layoutControlItem45.Control = this.txtMax_DM_CAT;
-            this.layoutControlItem45.Location = new System.Drawing.Point(447, 97);
-            this.layoutControlItem45.Name = "layoutControlItem45";
-            this.layoutControlItem45.Size = new System.Drawing.Size(102, 24);
-            this.layoutControlItem45.Text = "ĐM";
-            this.layoutControlItem45.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem45.TextSize = new System.Drawing.Size(16, 13);
-            this.layoutControlItem45.TextToControlDistance = 5;
             // 
             // SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222
             // 
@@ -2408,6 +2409,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -2452,6 +2454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
@@ -2468,8 +2471,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem61)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem87)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem62)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
