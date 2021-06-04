@@ -570,12 +570,6 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New_BoSungCongNhan_MayDot - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New_BoSungCongNhan_MayDot.cs" />
-    <Compile Include="QuanLySanXuat\frmBoSungCongNhanMay_Dot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\frmBoSungCongNhanMay_Dot.Designer.cs">
-      <DependentUpon>frmBoSungCongNhanMay_Dot.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\frmChiTietLuong_DaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1390,6 +1384,12 @@
     <Compile Include="QuanLySanXuat\UCDinhMucHangNhu.Designer.cs">
       <DependentUpon>UCDinhMucHangNhu.cs</DependentUpon>
     </Compile>
+    <Compile Include="SanXuat_frmChiTietPhieu_MayDot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanXuat_frmChiTietPhieu_MayDot.Designer.cs">
+      <DependentUpon>SanXuat_frmChiTietPhieu_MayDot.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.cs">
       <SubType>UserControl</SubType>
@@ -1929,9 +1929,6 @@
     <EmbeddedResource Include="QuanLySanXuat\frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.resx">
       <DependentUpon>frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\frmBoSungCongNhanMay_Dot.resx">
-      <DependentUpon>frmBoSungCongNhanMay_Dot.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\frmGuiDuLieuLuongTheoSanLuong.resx">
       <DependentUpon>frmGuiDuLieuLuongTheoSanLuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -2136,6 +2133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_GapDan.resx">
       <DependentUpon>UCNPL_XuatKho_GapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanXuat_frmChiTietPhieu_MayDot.resx">
+      <DependentUpon>SanXuat_frmChiTietPhieu_MayDot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraDaiLy_ChiTietLuong.resx">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>
