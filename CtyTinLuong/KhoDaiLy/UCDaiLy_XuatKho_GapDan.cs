@@ -17,9 +17,9 @@ namespace CtyTinLuong
         public static bool mbthemmoi, mbsua, mbcopy;
         private void HienThi()
         {
-            if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
+            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
             {
-                DateTime denngay = dteNgay.DateTime;
+                DateTime denngay = dteDenNgay.DateTime;
                 DateTime tungay = dteTuNgay.DateTime;
                 DataTable dt2 = new DataTable();
                 dt2.Columns.Add("ID_XuatKho", typeof(int));
@@ -135,7 +135,7 @@ namespace CtyTinLuong
 
         private void UCDaiLy_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
-            dteNgay.EditValue = null;
+            dteDenNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
         }

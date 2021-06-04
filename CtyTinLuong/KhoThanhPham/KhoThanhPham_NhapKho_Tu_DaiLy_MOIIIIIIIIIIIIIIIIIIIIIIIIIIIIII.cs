@@ -530,7 +530,7 @@ namespace CtyTinLuong
                 cls3.sDienGiai = txtDienGiai.Text.ToString();
                 cls3.sSoChungTu = txtSoChungTu_KhoThanhPham.Text.ToString();
                 cls3.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls3.fTongTienHang = 0;
+                cls3.fTongTienHang = dexxTongtienhang;
                 cls3.bTonTai = true;
                 cls3.bNgungTheoDoi = false;
                 cls3.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());

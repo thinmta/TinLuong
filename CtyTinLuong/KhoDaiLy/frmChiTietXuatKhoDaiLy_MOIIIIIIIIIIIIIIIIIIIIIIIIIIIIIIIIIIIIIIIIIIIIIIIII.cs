@@ -1463,7 +1463,7 @@ namespace CtyTinLuong
                 Luu_ChiTiet_XuatKho_DaiLy(iiiiID_XuatKhoDaiLy, true);
                 Luu_ThamCHieuTinhXuatKho(iiiiID_XuatKhoDaiLy);
                 Luu_NhapKho_Khac(iiiiID_XuatKhoDaiLy);
-                    MessageBox.Show("Đã lưu");
+                    MessageBox.Show("Đã lưu và gửi");
 
             }
         }
