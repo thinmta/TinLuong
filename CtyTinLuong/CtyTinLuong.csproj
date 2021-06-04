@@ -512,8 +512,6 @@
       <DependentUpon>KhoThanhPham_ChiTiet_XuatKho_Khac.cs</DependentUpon>
     </Compile>
     <Compile Include="Nhom3So.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_DongBaoDongKien.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ToGapDan.cs" />
     <Compile Include="QuanLySanXuat\frmDinhMuc_ChiTietDinhMucToGapDan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -608,12 +606,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\clsDaiLy_TamUng - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDaiLy_TamUng.cs" />
-    <Compile Include="QuanLySanXuat\frmBaoCaoSanLuongToGapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\frmBaoCaoSanLuongToGapDan.Designer.cs">
-      <DependentUpon>frmBaoCaoSanLuongToGapDan.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLySanXuat\frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,13 +704,10 @@
       <DependentUpon>frmPrint_NguoiKy.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsHUU_CaiMacDinh_DinhMuc_SanXuat.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat_ToGapDan - Copy.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat_ToGapDan.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_CaTruong - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_CaTruong.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New.cs" />
-    <Compile Include="QuanLySanXuat\Class\Copy of clsHUU_LenhSanXuat_ToGapDan.cs" />
-    <Compile Include="QuanLySanXuat\Class\Copy of clsPhieu_ChiTietPhieu_New.cs" />
+    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New - Copy.cs" />
     <Compile Include="QUANTRI\clsAaatbMacDinhNguoiKy.cs" />
     <Compile Include="QUANTRI\DinhMucLuong\clsHUU_DinhMucLuong_CongNhat.cs" />
     <Compile Include="NganHang_Quy\clsNganHang_tbThamChieuThuChi - Copy.cs" />
@@ -852,9 +841,6 @@
     <Compile Include="KhoBanThanhPham\clsKhoBTP_tbChiTietNhapKho.cs" />
     <Compile Include="KhoBanThanhPham\clsKhoBTP_tbNhapKho.cs" />
     <Compile Include="KhoBanThanhPham\clsKhoBTP_tbXuatKho.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_May_CAT - Copy.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_May_DOT - Copy.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_May_IN - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_tbPhieu - Copy.cs" />
     <Compile Include="QUANTRI\QuanLyVTHH\frmAnhLON.cs">
       <SubType>Form</SubType>
@@ -862,9 +848,6 @@
     <Compile Include="QUANTRI\QuanLyVTHH\frmAnhLON.Designer.cs">
       <DependentUpon>frmAnhLON.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_May_CAT.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_May_DOT.cs" />
-    <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_May_IN.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_tbPhieu.cs" />
     <Compile Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongTheoSanLuong.cs">
       <SubType>Form</SubType>
@@ -1131,54 +1114,6 @@
     <Compile Include="QuanLySanXuat\UC_SanXuat_PhieuSanXuat.Designer.cs">
       <DependentUpon>UC_SanXuat_PhieuSanXuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmThemMoi_SoPhieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmThemMoi_SoPhieu.Designer.cs">
-      <DependentUpon>SanXuat_frmThemMoi_SoPhieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_CAT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_CAT.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_CAT_DOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_CAT_DOT.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_CAT_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_DOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_DOT.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_IN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmXuatKho_NPL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmXuatKho_NPL.Designer.cs">
-      <DependentUpon>SanXuat_frmXuatKho_NPL.cs</DependentUpon>
-    </Compile>
     <Compile Include="MuaHang\UCMuaHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1245,24 +1180,6 @@
     <Compile Include="KhoBanThanhPham\UCbanThanhPham_DaXuatKho.Designer.cs">
       <DependentUpon>UCbanThanhPham_DaXuatKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuongTheoMay.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuongTheoMay.Designer.cs">
-      <DependentUpon>UCSanXuat_baoCaoSanLuongTheoMay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_CAT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_CAT.Designer.cs">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_May_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_DOT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_DOT.Designer.cs">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_May_DOT.cs</DependentUpon>
-    </Compile>
     <Compile Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1281,48 +1198,6 @@
     <Compile Include="KhoThanhPham\UCThanhPham_DaXuatKho.Designer.cs">
       <DependentUpon>UCThanhPham_DaXuatKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_CAT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_CAT.Designer.cs">
-      <DependentUpon>UCSanXuat_LuongCongNhanMay_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_DOT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_DOT.Designer.cs">
-      <DependentUpon>UCSanXuat_LuongCongNhanMay_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_IN.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_IN.Designer.cs">
-      <DependentUpon>UCSanXuat_LuongCongNhanMay_IN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang.Designer.cs">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT.Designer.cs">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.Designer.cs">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_ToGapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_ToGapDan.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTiet_LSX_ToGapDan.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1340,12 +1215,6 @@
     </Compile>
     <Compile Include="MuaHang\UCMuaHang_ChiTietTatCa.Designer.cs">
       <DependentUpon>UCMuaHang_ChiTietTatCa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_ToGapDan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_ToGapDan.Designer.cs">
-      <DependentUpon>UCSanXuat_LenhSanXuat_ToGapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\UCSanXuat_CaiDatMacDinh.cs">
       <SubType>UserControl</SubType>
@@ -1382,42 +1251,6 @@
     </Compile>
     <Compile Include="BanHang\UCBanHang_ChiTiet_ALL.Designer.cs">
       <DependentUpon>UCBanHang_ChiTiet_ALL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_IN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_IN.Designer.cs">
-      <DependentUpon>Thin_SanXuat_APP_May_IN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\UCThin_May_In.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\UCThin_May_In.Designer.cs">
-      <DependentUpon>UCThin_May_In.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\UCThin_May_CAT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\UCThin_May_CAT.Designer.cs">
-      <DependentUpon>UCThin_May_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\UCThin_May_Dot.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\UCThin_May_Dot.Designer.cs">
-      <DependentUpon>UCThin_May_Dot.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_CAT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_CAT.Designer.cs">
-      <DependentUpon>Thin_SanXuat_APP_May_CAT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_DOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_DOT.Designer.cs">
-      <DependentUpon>Thin_SanXuat_APP_May_DOT.cs</DependentUpon>
     </Compile>
     <Compile Include="MuaHang\XtraMuaHang.cs">
       <SubType>Component</SubType>
@@ -1490,18 +1323,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_XuatKho_GapDan.Designer.cs">
       <DependentUpon>UCDaiLy_XuatKho_GapDan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.Designer.cs">
-      <DependentUpon>UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_DongBao_DongKien_Newwwwwww.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_DongBao_DongKien_Newwwwwww.Designer.cs">
-      <DependentUpon>SanXuat_frmChiTiet_LSX_DongBao_DongKien_Newwwwwww.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoBanThanhPham\UCBanThanhPham_NhapKho_Khac.cs">
       <SubType>UserControl</SubType>
@@ -2108,9 +1929,6 @@
     <EmbeddedResource Include="QuanLySanXuat\frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.resx">
       <DependentUpon>frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\frmBaoCaoSanLuongToGapDan.resx">
-      <DependentUpon>frmBaoCaoSanLuongToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\frmBoSungCongNhanMay_Dot.resx">
       <DependentUpon>frmBoSungCongNhanMay_Dot.cs</DependentUpon>
     </EmbeddedResource>
@@ -2120,50 +1938,14 @@
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_RutGon.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_RutGon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_DongBao_DongKien_Newwwwwww.resx">
-      <DependentUpon>SanXuat_frmChiTiet_LSX_DongBao_DongKien_Newwwwwww.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_CAT.resx">
-      <DependentUpon>Thin_SanXuat_APP_May_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_DOT.resx">
-      <DependentUpon>Thin_SanXuat_APP_May_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\Thin\Thin_SanXuat_APP_May_IN.resx">
-      <DependentUpon>Thin_SanXuat_APP_May_IN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\Thin\UCThin_May_In.resx">
-      <DependentUpon>UCThin_May_In.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCDinhMucHangNhu.resx">
       <DependentUpon>UCDinhMucHangNhu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT.resx">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.resx">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_CaiDatMacDinh.resx">
       <DependentUpon>UCSanXuat_CaiDatMacDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.resx">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.resx">
-      <DependentUpon>UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_LenhSanXuat_ToGapDan.resx">
-      <DependentUpon>UCSanXuat_LenhSanXuat_ToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_CAT.resx">
-      <DependentUpon>UCSanXuat_LuongCongNhanMay_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_DOT.resx">
-      <DependentUpon>UCSanXuat_LuongCongNhanMay_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_LuongCongNhanMay_IN.resx">
-      <DependentUpon>UCSanXuat_LuongCongNhanMay_IN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.resx">
       <DependentUpon>frmChiTietDinhMucLuongCongNhat_New.cs</DependentUpon>
@@ -2182,24 +1964,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\frmMuaHang2222.resx">
       <DependentUpon>frmMuaHang2222.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_CAT.resx">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_CAT_DOT.resx">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_CAT_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_DOT.resx">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_DOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN.resx">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_IN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT.resx">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT.resx">
-      <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT_DOT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongTheoSanLuong.resx">
       <DependentUpon>frmChiTietDinhMucLuongTheoSanLuong.cs</DependentUpon>
@@ -2322,12 +2086,6 @@
     <EmbeddedResource Include="QuanLySanXuat\UC_SanXuat_PhieuSanXuat.resx">
       <DependentUpon>UC_SanXuat_PhieuSanXuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmThemMoi_SoPhieu.resx">
-      <DependentUpon>SanXuat_frmThemMoi_SoPhieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmXuatKho_NPL.resx">
-      <DependentUpon>SanXuat_frmXuatKho_NPL.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\UCMuaHang.resx">
       <DependentUpon>UCMuaHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -2358,26 +2116,11 @@
     <EmbeddedResource Include="KhoBanThanhPham\UCbanThanhPham_DaXuatKho.resx">
       <DependentUpon>UCbanThanhPham_DaXuatKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuongTheoMay.resx">
-      <DependentUpon>UCSanXuat_baoCaoSanLuongTheoMay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_CAT.resx">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_May_CAT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_May_DOT.resx">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_May_DOT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.resx">
       <DependentUpon>UCCaiDatBanDau_Kho_BTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.resx">
       <DependentUpon>UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_baoCaoSanLuong_Theo_MaHang.resx">
-      <DependentUpon>UCSanXuat_baoCaoSanLuong_Theo_MaHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTiet_LSX_ToGapDan.resx">
-      <DependentUpon>SanXuat_frmChiTiet_LSX_ToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.cs</DependentUpon>

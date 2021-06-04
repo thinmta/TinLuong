@@ -76,20 +76,7 @@ namespace CtyTinLuong
         {
             this.Close();
         }
-
-        private void navBarItemCongNhat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //UC_SanXuat_frmChamCongNhat ucc = new UC_SanXuat_frmChamCongNhat();
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
-        }
-
-        private void navBarChamCongSanLuong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-
-        }
-
+        
         private void navBarItemDinhMucDOt_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             UCDinhMucDot ucc = new UCDinhMucDot();
@@ -108,87 +95,17 @@ namespace CtyTinLuong
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            //UCSanXuat_baoCaoSanLuongTheoMay ucc = new UCSanXuat_baoCaoSanLuongTheoMay();
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
+          
             SanXuat_frmChiTietSoPhieu_RutGon ff = new SanXuat_frmChiTietSoPhieu_RutGon();
             ff.Show();
         }
-
-        private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_baoCaoSanLuong_May_CAT ucc = new UCSanXuat_baoCaoSanLuong_May_CAT();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem14_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_baoCaoSanLuong_May_DOT ucc = new UCSanXuat_baoCaoSanLuong_May_DOT();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_LuongCongNhanMay_IN ucc = new UCSanXuat_LuongCongNhanMay_IN();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_LuongCongNhanMay_CAT ucc = new UCSanXuat_LuongCongNhanMay_CAT();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_LuongCongNhanMay_DOT ucc = new UCSanXuat_LuongCongNhanMay_DOT();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem17_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_baoCaoSanLuong_Theo_MaHang ucc = new UCSanXuat_baoCaoSanLuong_Theo_MaHang();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem18_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT ucc = new UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_CAT();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem19_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT ucc = new UCSanXuat_baoCaoSanLuong_Theo_MaHang_May_DOT();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
+        
         private void SanXuat_frmQuanLySanXuat_FormClosed(object sender, FormClosedEventArgs e)
         {
             
         }
 
-        private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            
-        }
+     
 
         private void navBarItem20_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -211,11 +128,7 @@ namespace CtyTinLuong
             ucc.Show();
         }
 
-        private void navBarItem14_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-           
-        }
-
+     
         private void navBarItem2_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT ucc = new frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT();
@@ -234,20 +147,7 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
         }
-
-        private void navBarItem15_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww ucc = new UCSanXuat_LenhSanXuat_DongBao_DongKien_Newwwwwwww();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-        }
-
-        private void navBarItem16_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmBaoCaoSanLuongToGapDan ucc = new frmBaoCaoSanLuongToGapDan();
-            ucc.Show();
-        }
+        
 
         private void navBarItem14_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {

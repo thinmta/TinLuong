@@ -307,9 +307,7 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            mb_ThemMoi_SoPhieu = true;
-            SanXuat_frmThemMoi_SoPhieu ff = new SanXuat_frmThemMoi_SoPhieu();
-            ff.Show();
+           
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -330,8 +328,7 @@ namespace CtyTinLuong
 
         private void btAPP_Click(object sender, EventArgs e)
         {
-            Thin_SanXuat_APP_May_IN ff = new Thin_SanXuat_APP_May_IN();
-            ff.Show();
+            
         }
 
         private void btChiTiet_Click(object sender, EventArgs e)

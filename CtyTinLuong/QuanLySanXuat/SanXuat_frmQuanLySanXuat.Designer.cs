@@ -42,7 +42,6 @@
             this.navBarItemPhieuSanXuat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemLenhSanXuat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem20 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemDinhMucDOt = new DevExpress.XtraNavBar.NavBarItem();
@@ -131,8 +130,7 @@
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemPhieuSanXuat),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemLenhSanXuat),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem20),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem20)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarItemPhieuSanXuat
@@ -152,12 +150,6 @@
             this.navBarItem20.Caption = "Cài đặt mặc định";
             this.navBarItem20.Name = "navBarItem20";
             this.navBarItem20.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem20_LinkClicked);
-            // 
-            // navBarItem15
-            // 
-            this.navBarItem15.Caption = "LSX Đóng Bao- Kiện";
-            this.navBarItem15.Name = "navBarItem15";
-            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked_1);
             // 
             // navBarControl1
             // 
@@ -186,7 +178,6 @@
             this.navBarItem1,
             this.navBarItem2,
             this.navBarItem13,
-            this.navBarItem15,
             this.navBarItem14,
             this.navBarItem16});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
@@ -400,7 +391,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;
