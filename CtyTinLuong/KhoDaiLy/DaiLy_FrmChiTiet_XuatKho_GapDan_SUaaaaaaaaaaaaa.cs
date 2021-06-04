@@ -12,6 +12,45 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa : Form
     {
+        private void HienThi_ThemMoi_XuatKho()
+        {
+            gridNguoiLap.EditValue = 11;
+            txtSoLuongXuat.Text = "1";
+            dteNgayChungTu.EditValue = DateTime.Today;
+            clsGapDan_tbXuatKho cls3 = new clsGapDan_tbXuatKho();
+            DataTable dt1 = cls3.SelectAll();
+            dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            DataView dv = dt1.DefaultView;
+            DataTable dv3 = dv.ToTable();
+            int k = dv3.Rows.Count;
+            if (k == 0)
+                txtSoChungTu.Text = "XKGD 1";
+            else
+            {
+                string xxx = dv3.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
+                txtSoChungTu.Text = "XKGD " + xxx2 + "";
+
+            }
+
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_VTHH", typeof(int));
+            dt2.Columns.Add("MaVT", typeof(string));
+            dt2.Columns.Add("TenVTHH", typeof(string));
+            dt2.Columns.Add("DonViTinh", typeof(string));
+            dt2.Columns.Add("DinhMuc", typeof(float));
+            dt2.Columns.Add("SoLuongTheoDinhMuc", typeof(float));
+            dt2.Columns.Add("SoLuong", typeof(float));
+            dt2.Columns.Add("SoLuongTon", typeof(float));
+            dt2.Columns.Add("DonGia", typeof(double));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            dt2.Columns.Add("HienThi", typeof(string));
+            dt2.Columns.Add("ThanhTien", typeof(double));
+            dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
+            gridControl1.DataSource = dt2;
+
+
+        }
         private void HienThi_Sua_XuatKho()
         {
 
@@ -277,7 +316,9 @@ namespace CtyTinLuong
         private void DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa_Load(object sender, EventArgs e)
         {
             Load_LockUp();
-            HienThi_Sua_XuatKho();
+            if (UCDaiLy_XuatKho_GapDan.mbthemmoi == true)
+                HienThi_ThemMoi_XuatKho();
+            else HienThi_Sua_XuatKho();
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

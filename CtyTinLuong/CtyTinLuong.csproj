@@ -210,6 +210,7 @@
     <Compile Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.Designer.cs">
       <DependentUpon>frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\clsGapDan_ThamChieuTinhXuatKho.cs" />
     <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>

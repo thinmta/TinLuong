@@ -14,7 +14,7 @@ namespace CtyTinLuong
     public partial class UCDaiLy_XuatKho_GapDan : UserControl
     {
         public static int miID_XuatKho_GapDan;
-        public static bool mbThemMoi_XuatKho_GapDan;
+        public static bool mbthemmoi, mbsua, mbcopy;
         private void HienThi()
         {
             if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
@@ -155,10 +155,16 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-
-            miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
-            DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa ff = new DaiLy_FrmChiTiet_XuatKho_GapDan_SUaaaaaaaaaaaaa();
-            ff.Show();
+            if(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString()!="")
+            {
+                mbthemmoi = false;
+                mbsua = true;
+                mbcopy = false;
+                miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
+                DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
+                ff.Show();
+            }
+           
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -177,8 +183,10 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            //miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-            mbThemMoi_XuatKho_GapDan = true;
+           
+            mbthemmoi = true;
+            mbsua = false;
+            mbcopy = false;
             DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
             ff.Show();
         }
