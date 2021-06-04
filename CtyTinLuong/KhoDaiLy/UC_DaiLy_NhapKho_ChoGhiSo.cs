@@ -78,7 +78,7 @@ namespace CtyTinLuong
 
             clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
             DataTable dtxx = cls.SelectAll_W_TenDaiLy_W_DinhMuc();
-            dtxx.DefaultView.RowFilter = "TrangThaiXuatNhap_Kho_BTP = True and TrangThaiXuatNhap_Kho_NPL = True";
+            dtxx.DefaultView.RowFilter = "TrangThaiXuatNhap_Kho_NPL = True";
             DataView dvxxx = dtxx.DefaultView;
             DataTable dt = dvxxx.ToTable();
             if (dtxx.Rows.Count > 0)
@@ -102,7 +102,7 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectAll_W_TenDaiLy_W_DinhMuc();            
             if (dt.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = "TrangThaiXuatNhap_Kho_BTP = True and TrangThaiXuatNhap_Kho_NPL = True";
+                dt.DefaultView.RowFilter = "TrangThaiXuatNhap_Kho_NPL = True";
                 DataView dv = dt.DefaultView;
                 dv.Sort = "TrangThaiXuatNhap_KhoDaiLy ASC, NgayChungTu DESC, ID_NhapKhoDaiLy DESC";
                 DataTable dxxxx = dv.ToTable();

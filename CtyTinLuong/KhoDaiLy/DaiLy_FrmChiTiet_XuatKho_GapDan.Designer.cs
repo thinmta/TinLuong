@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_FrmChiTiet_XuatKho_GapDan));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -45,7 +44,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.btPrint = new DevExpress.XtraEditors.SimpleButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_FrmChiTiet_XuatKho_GapDan));
             this.txtID_ThanhPham = new System.Windows.Forms.TextBox();
             this.txtID_VatTuChinh = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -129,8 +128,8 @@
             this.cbKho = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.clHienThi2222 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaKho = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -168,15 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoaGrid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKho)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btPrint
-            // 
-            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(586, 499);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(87, 23);
-            this.btPrint.TabIndex = 128;
-            this.btPrint.Text = "Print";
             // 
             // txtID_ThanhPham
             // 
@@ -952,7 +942,7 @@
             this.clXoa2.OptionsColumn.FixedWidth = true;
             this.clXoa2.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa2.Visible = true;
-            this.clXoa2.VisibleIndex = 9;
+            this.clXoa2.VisibleIndex = 8;
             this.clXoa2.Width = 40;
             // 
             // btXoaGrid2
@@ -1013,8 +1003,6 @@
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222.Name = "clNhapKho_TP_1_BTP_2_NPL_3_22222";
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222.OptionsColumn.FixedWidth = true;
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.clNhapKho_TP_1_BTP_2_NPL_3_22222.Visible = true;
-            this.clNhapKho_TP_1_BTP_2_NPL_3_22222.VisibleIndex = 8;
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222.Width = 80;
             // 
             // cbKho
@@ -1040,6 +1028,14 @@
             this.clMaKho.FieldName = "MaKho";
             this.clMaKho.Name = "clMaKho";
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "HienThi";
+            this.gridColumn6.FieldName = "HienThi2";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 9;
+            // 
             // btLuu
             // 
             this.btLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1054,14 +1050,6 @@
             this.btLuu.Text = "Lưu ";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "HienThi";
-            this.gridColumn6.FieldName = "HienThi2";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 10;
-            // 
             // DaiLy_FrmChiTiet_XuatKho_GapDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1071,7 +1059,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btLayDuLieu);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btPrint);
             this.Controls.Add(this.txtID_ThanhPham);
             this.Controls.Add(this.txtID_VatTuChinh);
             this.Controls.Add(this.groupBox3);
@@ -1122,7 +1109,6 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton btPrint;
         private System.Windows.Forms.TextBox txtID_ThanhPham;
         private System.Windows.Forms.TextBox txtID_VatTuChinh;
         private System.Windows.Forms.GroupBox groupBox3;
