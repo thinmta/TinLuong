@@ -274,6 +274,18 @@
     <Compile Include="KhoThanhPham\KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.Designer.cs">
       <DependentUpon>KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\T_PrintChamCongToGapDan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\T_PrintChamCongToGapDan.Designer.cs">
+      <DependentUpon>T_PrintChamCongToGapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\VTHH_DinhMuc_Model.cs" />
     <Compile Include="MuaHang\MuaHang_frmCongNo.cs">
       <SubType>Form</SubType>
@@ -1747,6 +1759,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\UCThanhPham_XuatKho_Khac.resx">
       <DependentUpon>UCThanhPham_XuatKho_Khac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\T_PrintChamCongToGapDan.resx">
+      <DependentUpon>T_PrintChamCongToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\MuaHang_frmChiTietCongNo_MuaHang.resx">
       <DependentUpon>MuaHang_frmChiTietCongNo_MuaHang.cs</DependentUpon>

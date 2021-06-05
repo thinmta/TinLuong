@@ -11,7 +11,6 @@ namespace CtyTinLuong
     {
         private void Print_N_X_T_DaiLy_TheoTung_DaiLy()
         {
-           
             clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
             cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
             DataTable dt = cls.SelectAll_ID_DangNhap();

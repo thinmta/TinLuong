@@ -452,5 +452,16 @@ namespace CtyTinLuong
             frmBaoCaoNXT ff = new frmBaoCaoNXT();
             ff.Show();
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Form1 ff = new CtyTinLuong.Luong_ChamCong.Form1();
+            ff.Show();
+        }
     }
 }
