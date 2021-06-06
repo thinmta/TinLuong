@@ -1,5 +1,4 @@
-﻿using DevExpress.Data.Filtering;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class SanXuat_frmChiTietSoPhieu_RutGon : Form
+    public partial class SanLuong_To_May_IN : Form
     {
-        public static DataTable mdtPrint_tbChiTietPhieu;
+
         public static string xxsotrang;
         public static DateTime mdatungay, mdadenngay;
 
@@ -22,7 +21,7 @@ namespace CtyTinLuong
         public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
             gridControl1.DataSource = null;
-            isload = true;          
+            isload = true;
             _SoTrang = sotrang;
 
             DataTable dt2 = new DataTable();
@@ -98,10 +97,10 @@ namespace CtyTinLuong
                     _ravi["MaPhieu"] = dtphieu.Rows[i]["MaPhieu"].ToString();
 
                     cls.iID_SoPhieu = ID_SoPhieu;
-                   
-                    
+
+
                     DataTable dtmaycat = cls.SelectAll_W_iID_SoPhieu_May_CAT();
-                    DataTable dtmaydot = cls.SelectAll_W_iID_SoPhieu_May_DOT(); 
+                    DataTable dtmaydot = cls.SelectAll_W_iID_SoPhieu_May_DOT();
                     DataTable dtmayin = cls.SelectAll_W_iID_SoPhieu_May_IN();
                     if (dtmayin.Rows.Count > 0)
                     {
@@ -263,7 +262,7 @@ namespace CtyTinLuong
         }
         public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
         {
-            
+
             btnTrangSau.Visible = true;
             btnTrangTiep.Visible = true;
             lbTongSoTrang.Visible = true;
@@ -292,66 +291,17 @@ namespace CtyTinLuong
                 btnTrangTiep.LinkColor = Color.Black;
             }
         }
-      
-        public SanXuat_frmChiTietSoPhieu_RutGon()
+
+        public static DateTime GetFistDayInMonth(int year, int month)
+        {
+            DateTime aDateTime = new DateTime(year, month, 1);
+            return aDateTime;
+        }
+        public SanLuong_To_May_IN()
         {
             InitializeComponent();
         }
 
-        private void SanXuat_frmChiTietSoPhieu_RutGon_Load(object sender, EventArgs e)
-        {
-            dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
-            dteDenNgay.EditValue = DateTime.Now;            
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-        }
-
-        private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-
-        private void btTImKiem_Click(object sender, EventArgs e)
-        {
-            bandedGridView1.OptionsFind.AlwaysVisible = true;
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            SanXuat_frmChiTietSoPhieu_RutGon_Load(sender, e);
-        }
-
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btPrint_Click(object sender, EventArgs e)
-        {
-
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint_tbChiTietPhieu = dv1212.ToTable();
-            if(mdtPrint_tbChiTietPhieu.Rows.Count>0)
-            {
-                xxsotrang = "Số trang: " + txtSoTrang.Text.ToString() + "" + lbTongSoTrang.Text + "";
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
-                ff.Show();
-            }
-          
-            
-            
-        }
-        
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (isload)
@@ -419,62 +369,31 @@ namespace CtyTinLuong
             }
         }
 
-        private void txtSoTrang_Leave(object sender, EventArgs e)
+        private void txtSoTrang_TextChanged(object sender, EventArgs e)
         {
             if (isload)
                 return;
             Load_PhieuSX(false);
         }
 
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-        
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            LoadData(1, false, dteTuNgay.DateTime, dteDenNgay.DateTime);
-        }
-
-        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
-        {
-            //ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //LoadData(1, false);
-            //if (isload)
-            //    return;
-
-            //try
-            //{
-            //    //  _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
-            //    ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //    LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //}
-            //catch
-            //{ }
-        }
-
-        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
-        {
-            //ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-
-            //if (isload)
-            //    return;
-            //try
-            //{
-            //    _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
-            //    ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //    LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //}
-            //catch
-            //{ }
-        }
-
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        private void SanLuong_To_May_IN_Load(object sender, EventArgs e)
+        {
+            DateTime ngayhomnay = DateTime.Today;
+            int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
+            int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
+
+            dteDenNgay.DateTime = DateTime.Today;
+            dteTuNgay.DateTime= GetFistDayInMonth(nam, thang);
+
+            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }

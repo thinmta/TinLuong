@@ -286,7 +286,7 @@ namespace CtyTinLuong
                 double DonGia_Vao = Convert.ToDouble(txtDonGiaNhap_May_IN.Text.ToString());
                 int ID_VTHH_Ra = Convert.ToInt32(gridHangHoaXuat_May_IN.EditValue.ToString());
                 double SanLuong_Thuong = Convert.ToDouble(txtSanLuong_Thuong_may_IN.Text.ToString());
-                double SanLuong_TangCa = Convert.ToDouble(txtSanLuong_tangca_May_IN.Text.ToString());
+                double SanLuong_TangCa = SanLuong_Thuong+ SanLuong_TangCa;
                 double SanLuong_Tong = Convert.ToDouble(txtSanLuongTong_May_IN.Text.ToString());
                 double DonGia_Xuat = Convert.ToDouble(txtDonGiaXuat_May_IN.Text.ToString());
                 double PhePham = Convert.ToDouble(txtPhePham_May_IN.Text.ToString());

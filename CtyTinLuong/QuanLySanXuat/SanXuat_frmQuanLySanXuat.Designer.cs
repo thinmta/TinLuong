@@ -48,6 +48,7 @@
             this.navBarItemDinhMucNPL = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
@@ -61,7 +62,7 @@
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSanLuongMayIn = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -181,7 +182,8 @@
             this.navBarItem13,
             this.navBarItem14,
             this.navBarItem16,
-            this.navBarItem15});
+            this.navBarItem15,
+            this.navSanLuongMayIn});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -226,6 +228,12 @@
             this.navBarItem16.Name = "navBarItem16";
             this.navBarItem16.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked_2);
             // 
+            // navBarItem15
+            // 
+            this.navBarItem15.Caption = "BB Ktra ĐM HH";
+            this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Báo cáo tổng hợp";
@@ -234,7 +242,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayIn)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem8
@@ -338,11 +347,11 @@
             this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
             this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
             // 
-            // navBarItem15
+            // navSanLuongMayIn
             // 
-            this.navBarItem15.Caption = "BB Ktra ĐM HH";
-            this.navBarItem15.Name = "navBarItem15";
-            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            this.navSanLuongMayIn.Caption = "Sản lượng tổ máy IN";
+            this.navSanLuongMayIn.Name = "navSanLuongMayIn";
+            this.navSanLuongMayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayIn_LinkClicked);
             // 
             // SanXuat_frmQuanLySanXuat
             // 
@@ -408,5 +417,6 @@
         private System.Windows.Forms.Label lbTongSoTrang;
         private System.Windows.Forms.TextBox txtSoTrang;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
+        private DevExpress.XtraNavBar.NavBarItem navSanLuongMayIn;
     }
 }

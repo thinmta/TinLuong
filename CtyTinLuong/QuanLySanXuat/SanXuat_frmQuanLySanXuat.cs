@@ -268,5 +268,11 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
         }
+
+        private void navSanLuongMayIn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
+            ucc.Show();
+        }
     }
 }
