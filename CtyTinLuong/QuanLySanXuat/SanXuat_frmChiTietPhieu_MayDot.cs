@@ -496,7 +496,7 @@ namespace CtyTinLuong
 
         private void SanXuat_frmChiTietPhieu_MayDot_Load(object sender, EventArgs e)
         {
-            txtmidsohieu.Text = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu.ToString();
+            //txtmidsohieu.Text = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu.ToString();
             HienThi_CongNhan();
             Load_lockUP_EDIT_May_DOT();
             HienThi_May_DOT();
@@ -629,7 +629,7 @@ namespace CtyTinLuong
 
         private void gridMaCongNhan_May_DOT_EditValueChanged(object sender, EventArgs e)
         {
-            txtIDcongnhan.Text = gridMaCongNhan_May_DOT.EditValue.ToString();
+            //txtIDcongnhan.Text = gridMaCongNhan_May_DOT.EditValue.ToString();
             try
             {
                 clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
@@ -749,7 +749,7 @@ namespace CtyTinLuong
 
         private void gridMaCaTruong_May_DOT_EditValueChanged(object sender, EventArgs e)
         {
-            txtidcatruong.Text = gridMaCaTruong_May_DOT.EditValue.ToString();
+            //txtidcatruong.Text = gridMaCaTruong_May_DOT.EditValue.ToString();
             try
             {
                 clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();

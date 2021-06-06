@@ -267,7 +267,7 @@
             // 
             this.panelControl1.Location = new System.Drawing.Point(251, 13);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(727, 606);
+            this.panelControl1.Size = new System.Drawing.Size(900, 606);
             this.panelControl1.TabIndex = 68;
             // 
             // simpleButton1
@@ -339,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1161, 661);
             this.Controls.Add(this.txtSoTrang);
             this.Controls.Add(this.lbTongSoTrang);
             this.Controls.Add(this.btnTrangSau);
