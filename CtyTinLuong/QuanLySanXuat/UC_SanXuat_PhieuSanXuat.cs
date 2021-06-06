@@ -199,39 +199,46 @@ namespace CtyTinLuong
         private void btXoa_Click(object sender, EventArgs e)
         {
             clsPhieu_tbPhieu cls1 = new clsPhieu_tbPhieu();
-            cls1.iID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-            DataTable dt1 = cls1.SelectOne();
-            if (cls1.bGuiDuLieu == true)
+            DialogResult traloi;
+            traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (traloi == DialogResult.Yes)
             {
-                MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
-                return;
-
-            }
-            else
-            {
-                DialogResult traloi;
-                traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (traloi == DialogResult.Yes)
+                int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+                cls1.iID_SoPhieu = xxiID_SoPhieu;
+                cls1.Delete();
+                clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
+                cls2.iID_SoPhieu = xxiID_SoPhieu;
+                cls2.Delete_All_W_ID_SoPhieu();
+                // xoá chi tiet lenh sản xuất
+                clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls3 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
+                cls3.iID_SoPhieu = xxiID_SoPhieu;
+                cls3.Delete_ALL_W_ID_SoPhieu();
+                // xoá lenh san xuat
+                cls3.iID_SoPhieu = xxiID_SoPhieu;
+                DataTable dt4 = cls3.SelectAll_W_ID_SoPhieu();
+                if(dt4.Rows.Count>0)
                 {
-
-                    cls1.iID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-                    cls1.Delete();
-                    clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
-                    cls2.iID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-                    cls2.Delete_All_W_ID_SoPhieu();
-                    MessageBox.Show("Đã xóa");
-                    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                    for(int i=0; i<=dt4.Rows.Count; i++)
                     {
-                        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                        int ID_LenhSanXuatxx = Convert.ToInt32(dt4.Rows[i]["ID_LenhSanXuat"].ToString());
+                        clsHUU_LenhSanXuat cls4 = new clsHUU_LenhSanXuat();
+                        cls4.iID_LenhSanXuat = ID_LenhSanXuatxx;
+                        cls4.Delete();
                     }
-                    else
-                    {
-                        //  HienThi_ALL();ien
-                        LoadData(_SoTrang, false);
-                    }
-
                 }
+                MessageBox.Show("Đã xóa");
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                }
+                else
+                {
+                    //  HienThi_ALL();ien
+                    LoadData(_SoTrang, false);
+                }
+
             }
+
 
 
             //clsPhieu_tbPhieu cls1 = new clsPhieu_tbPhieu();
