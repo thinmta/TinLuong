@@ -7,7 +7,101 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
-        //pr_Phieu_ChiTietPhieu_New_SUM_TinhSanLuong_W_ID_CongNHan_NgayThang_ID_VTHH_Ra
+        //pr_Phieu_ChiTietPhieu_New_SelectAll_Load_DaTa_NgayThang_may_CAT
+        public DataTable SelectAll_W_iID_SoPhieu_May_IN()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_IN]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_IN");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_SoPhieu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_SoPhieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_Phieu_ChiTietPhieu_New_SelectAll_Load_DaTa_NgayThang_may_IN", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataTable SelectAll_W_iID_SoPhieu_May_CAT()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_CAT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_CAT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_SoPhieu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_SoPhieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_CAT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable SelectAll_W_iID_SoPhieu_May_DOT()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_DOT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_DOT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_SoPhieu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_SoPhieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_Phieu_ChiTietPhieu_New_SelectAll_W_iID_SoPhieu_May_DOT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SUM_TinhSanLuong_W_ID_CongNHan_NgayThang_ID_VTHH_Ra(int iID_CongNhan__, DateTime daNgaySanXuat__, int iID_VTHH_Ra____)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
