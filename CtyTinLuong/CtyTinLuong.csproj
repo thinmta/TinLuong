@@ -1384,10 +1384,10 @@
     <Compile Include="QuanLySanXuat\UCDinhMucHangNhu.Designer.cs">
       <DependentUpon>UCDinhMucHangNhu.cs</DependentUpon>
     </Compile>
-    <Compile Include="SanXuat_frmChiTietPhieu_MayDot.cs">
+    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietPhieu_MayDot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SanXuat_frmChiTietPhieu_MayDot.Designer.cs">
+    <Compile Include="QuanLySanXuat\SanXuat_frmChiTietPhieu_MayDot.Designer.cs">
       <DependentUpon>SanXuat_frmChiTietPhieu_MayDot.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemeColor.cs" />
@@ -2134,7 +2134,7 @@
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_GapDan.resx">
       <DependentUpon>UCNPL_XuatKho_GapDan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SanXuat_frmChiTietPhieu_MayDot.resx">
+    <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietPhieu_MayDot.resx">
       <DependentUpon>SanXuat_frmChiTietPhieu_MayDot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraDaiLy_ChiTietLuong.resx">
