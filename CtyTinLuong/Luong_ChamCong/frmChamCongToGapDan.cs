@@ -186,9 +186,9 @@ namespace CtyTinLuong
                     }
                 } 
             }
-             
+
             //
-            LoadCongNhanVaoBang(_id_bophan); 
+            LoadCongNhanVaoBang(_id_bophan);
 
             isload = false;
         }

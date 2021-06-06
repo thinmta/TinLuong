@@ -4,6 +4,11 @@
 
     public partial class DataSet_TinLuong
     {
+        partial class tbCongNhatChamCongToGapDanDataTable
+        {
+
+        }
+
         partial class tbKeHoachSanXuatDataTable
         {
 
