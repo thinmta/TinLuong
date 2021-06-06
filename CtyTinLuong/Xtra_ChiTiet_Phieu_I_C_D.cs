@@ -23,7 +23,7 @@ namespace CtyTinLuong
             if (dt.Rows.Count > 0)
             {
                 pKeToanTruong.Value = dt.Rows[5]["HoTen"].ToString();
-                pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
+                pGiamDoc.Value = dt.Rows[7]["HoTen"].ToString();
                 pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                 pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
                 //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
@@ -42,8 +42,11 @@ namespace CtyTinLuong
                 //pGiamDoc.Value = frmMain.msGiamDoc;
                 //pTruongPhong.Value = frmMain.msTruongPhongTH;
             }
-           
-
+            DateTime xxtungay, xxdenngay;
+            xxtungay = SanXuat_frmChiTietSoPhieu_RutGon.mdatungay;
+            xxdenngay = SanXuat_frmChiTietSoPhieu_RutGon.mdadenngay;
+            pNgayThang.Value = "Từ ngày "+xxtungay.ToString("dd/MM/yyyy")+ " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
+            pSoTrang.Value = SanXuat_frmChiTietSoPhieu_RutGon.xxsotrang;
         }
 
     }

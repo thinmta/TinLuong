@@ -15,11 +15,13 @@ namespace CtyTinLuong
     {
         public static DataTable mdtPrint_tbChiTietPhieu;
 
-     
-        private int _SoTrang = 1;
+        public static string xxsotrang;
+        public static DateTime mdatungay, mdadenngay;
+           private int _SoTrang = 1;
         private bool isload = false;
         public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
+            gridControl1.DataSource = null;
             isload = true;          
             _SoTrang = sotrang;
 
@@ -337,9 +339,15 @@ namespace CtyTinLuong
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
             mdtPrint_tbChiTietPhieu = dv1212.ToTable();
-
-            frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
-            ff.Show();
+            if(mdtPrint_tbChiTietPhieu.Rows.Count>0)
+            {
+                xxsotrang = "Số trang: " + txtSoTrang.Text.ToString() + "" + lbTongSoTrang.Text + "";
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
+                ff.Show();
+            }
+          
             
             
         }
@@ -431,34 +439,44 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-           
+            //ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
             //ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
             //LoadData(1, false);
             //if (isload)
             //    return;
 
-            try
-            {
-              //  _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
-                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-            catch
-            { }
+            //try
+            //{
+            //    //  _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
+            //    ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
+            //catch
+            //{ }
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
-            if (isload)
-                return;
-            try
-            {
-                //_ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
-                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-            catch
-            { }
+            //ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            //if (isload)
+            //    return;
+            //try
+            //{
+            //    _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
+            //    ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
+            //catch
+            //{ }
+        }
+
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
