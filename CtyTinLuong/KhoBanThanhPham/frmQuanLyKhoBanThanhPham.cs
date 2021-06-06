@@ -87,5 +87,13 @@ namespace CtyTinLuong
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
             ff.Show();
         }
+
+        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UCBTP_XuatKho_LSX_I_C_D uccc_DaNhapKho = new UCBTP_XuatKho_LSX_I_C_D();
+            uccc_DaNhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_DaNhapKho);
+            uccc_DaNhapKho.BringToFront();
+        }
     }
 }

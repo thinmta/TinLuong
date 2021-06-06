@@ -44,6 +44,7 @@
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +102,8 @@
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navDaXuatKho),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navDaXuatKho
@@ -153,7 +155,8 @@
             this.navDaXuatKho,
             this.navBarItem12,
             this.navBarItem2,
-            this.navBarItem3});
+            this.navBarItem3,
+            this.navBarItem1});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 180;
@@ -178,6 +181,12 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Xuất kho LSX ICĐ";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // frmQuanLyKhoBanThanhPham
             // 
@@ -220,5 +229,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
     }
 }
