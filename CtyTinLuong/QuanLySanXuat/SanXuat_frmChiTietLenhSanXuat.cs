@@ -116,14 +116,14 @@ namespace CtyTinLuong
                     cls1.bBoolMayCat = false;
                     cls1.bBoolMayDot = true;
                 }
-                if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat==true)
-                {
-                    cls1.Insert();
-                }
-                else
-                {
+                //if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat==true)
+                //{
+                //    cls1.Insert();
+                //}
+                //else
+                //{
                     cls1.iID_LenhSanXuat = UC_SanXuat_LenhSanXuat.mID_iD_LenhSanXuat;
-                }
+                //}
              
                
                int  miID_LenhSX = cls1.iID_LenhSanXuat.Value;
@@ -421,10 +421,10 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             if (cls.bGuiDuLieu.Value == true)
             {
-                btLuu_ChiLuu.Enabled = false;
+                //btLuu_ChiLuu.Enabled = false;
                 btLuu_Dong.Enabled = false;
                 btLuu_Gui_Dong.Enabled = false;
-                btLuu_Va_Gui_Copy.Enabled = false;
+                //btLuu_Va_Gui_Copy.Enabled = false;
             }
             txtLenhSX.Text = cls.sMaLenhSanXuat.Value.ToString();
             dteNgaySX.EditValue = cls.daNgayThangSanXuat.Value;
@@ -482,52 +482,38 @@ namespace CtyTinLuong
 
         private void SanXuat_frmChiTietLenhSanXuat_Load(object sender, EventArgs e)
         {
-           // textBox4.Text = "" + UC_SanXuat_LenhSanXuat.mID_iD_LenhSanXuat.ToString() + "; " + UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat.ToString() + "";
+            // textBox4.Text = "" + UC_SanXuat_LenhSanXuat.mID_iD_LenhSanXuat.ToString() + "; " + UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat.ToString() + "";
             clSanLuong_TangCa.Caption = "SL\n tăng ca";
             clSanLuong_Thuong.Caption = "Sản\n lượng";
-            if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat == true)
-            {
-                
-                //miID_LenhSX = UC_SanXuat_LenhSanXuat.mID_iD_LenhSanXuat;
-              
-               
-                //LoadCombobox();
-                Load_lockUP_EDIT();
-                cbCaSX.Text = "Ca 1";
-                HienThi_ThemMoi_LenhSanXuat();
-            }
+            //LoadCombobox();
+            Load_lockUP_EDIT();
+            DataTable dt2 = new DataTable();
 
-            else if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat == false)
-            {
-                //LoadCombobox();
-                Load_lockUP_EDIT();
-                DataTable dt2 = new DataTable();
-               
-                dt2.Columns.Add("ID_SoPhieu", typeof(int));
-                dt2.Columns.Add("MaPhieu", typeof(string));
-                dt2.Columns.Add("ID_VTHH_Vao", typeof(int));
-                dt2.Columns.Add("ID_VTHH_Ra", typeof(int));
-                dt2.Columns.Add("MaVT_Vao", typeof(string));
-                dt2.Columns.Add("MaVT_Ra", typeof(string));
-                dt2.Columns.Add("DonViTinh_Vao", typeof(string));
-                dt2.Columns.Add("DonViTinh_Ra", typeof(string));
-                dt2.Columns.Add("TenVatTu_Vao", typeof(string));
-                dt2.Columns.Add("TenVatTu_Ra", typeof(string));
-                dt2.Columns.Add("SoLuongNhap_May", typeof(float));
-                dt2.Columns.Add("SanLuongThuong_May", typeof(float));
-                dt2.Columns.Add("SanLuongTangCa_May", typeof(float));
-                dt2.Columns.Add("PhePham_May", typeof(float));            //
-                dt2.Columns.Add("HienThi", typeof(string));
-                dt2.Columns.Add("DonGia_Vao", typeof(float));
-                dt2.Columns.Add("DonGia_Ra", typeof(float));
-                gridControl1.DataSource = dt2;
-                HienThi_SUa_LenhSanXuat();
-              
-                
-            }
+            dt2.Columns.Add("ID_SoPhieu", typeof(int));
+            dt2.Columns.Add("MaPhieu", typeof(string));
+            dt2.Columns.Add("ID_VTHH_Vao", typeof(int));
+            dt2.Columns.Add("ID_VTHH_Ra", typeof(int));
+            dt2.Columns.Add("MaVT_Vao", typeof(string));
+            dt2.Columns.Add("MaVT_Ra", typeof(string));
+            dt2.Columns.Add("DonViTinh_Vao", typeof(string));
+            dt2.Columns.Add("DonViTinh_Ra", typeof(string));
+            dt2.Columns.Add("TenVatTu_Vao", typeof(string));
+            dt2.Columns.Add("TenVatTu_Ra", typeof(string));
+            dt2.Columns.Add("SoLuongNhap_May", typeof(float));
+            dt2.Columns.Add("SanLuongThuong_May", typeof(float));
+            dt2.Columns.Add("SanLuongTangCa_May", typeof(float));
+            dt2.Columns.Add("PhePham_May", typeof(float));            //
+            dt2.Columns.Add("HienThi", typeof(string));
+            dt2.Columns.Add("DonGia_Vao", typeof(float));
+            dt2.Columns.Add("DonGia_Ra", typeof(float));
+            gridControl1.DataSource = dt2;
+            HienThi_SUa_LenhSanXuat();
+
+
+
 
         }
-    
+
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT)
@@ -549,21 +535,21 @@ namespace CtyTinLuong
                     txtTenCaTruong.Text = dt.Rows[0]["TenNhanVien"].ToString();
 
                 }
-                if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat == true)
-                {
-                    if (gridMaCaTruong.EditValue != null & dteNgaySX.EditValue != null)
-                    {
-                        clsPhieu_ChiTietPhieu_New clsin = new clsPhieu_ChiTietPhieu_New();
-                        clsin.iID_CaTruong = Convert.ToInt32(gridMaCaTruong.EditValue.ToString());
-                        clsin.daNgaySanXuat = dteNgaySX.DateTime;
-                        clsin.sCaSanXuat = cbCaSX.Text.ToString();
-                        DataTable dtxx_DISTINCT = clsin.SelectAll_TaoLenhSX_W_CaTruong_CongNhan_Ngay_CaSX_DISTINCT();
+                //if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat == true)
+                //{
+                //    if (gridMaCaTruong.EditValue != null & dteNgaySX.EditValue != null)
+                //    {
+                //        clsPhieu_ChiTietPhieu_New clsin = new clsPhieu_ChiTietPhieu_New();
+                //        clsin.iID_CaTruong = Convert.ToInt32(gridMaCaTruong.EditValue.ToString());
+                //        clsin.daNgaySanXuat = dteNgaySX.DateTime;
+                //        clsin.sCaSanXuat = cbCaSX.Text.ToString();
+                //        DataTable dtxx_DISTINCT = clsin.SelectAll_TaoLenhSX_W_CaTruong_CongNhan_Ngay_CaSX_DISTINCT();
 
-                        gridMaCN.Properties.DataSource = dtxx_DISTINCT;
-                        gridMaCN.Properties.ValueMember = "ID_NhanSu";
-                        gridMaCN.Properties.DisplayMember = "MaNhanVien";
-                    }
-                }
+                //        gridMaCN.Properties.DataSource = dtxx_DISTINCT;
+                //        gridMaCN.Properties.ValueMember = "ID_NhanSu";
+                //        gridMaCN.Properties.DisplayMember = "MaNhanVien";
+                //    }
+                //}
 
 
 
@@ -596,11 +582,11 @@ namespace CtyTinLuong
             }
             try
             {
-                if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat == true)
-                {
+                //if (UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat == true)
+                //{
                   
-                        hienthiGridControl222222222();
-                }
+                //        hienthiGridControl222222222();
+                //}
 
             }
             catch
@@ -632,7 +618,7 @@ namespace CtyTinLuong
         private void btLuu_Va_Gui_Click(object sender, EventArgs e)
         {
 
-            UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
+            //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_Va_Gui_DuLieu();
             HienThi_ThemMoi_LenhSanXuat();
         }
@@ -670,14 +656,14 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
+            //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_ChiLuu();
             this.Close();
         }
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
-            UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
+            //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_Va_Gui_DuLieu();
             this.Close();
         }
@@ -723,7 +709,7 @@ namespace CtyTinLuong
 
         private void btLuu_ChiLuu_Click(object sender, EventArgs e)
         {
-            UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat =true;
+            //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat =true;
             Luu_ChiLuu();
             HienThi_ThemMoi_LenhSanXuat();
         }
