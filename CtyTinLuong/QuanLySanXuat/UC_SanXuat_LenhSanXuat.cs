@@ -205,5 +205,13 @@ namespace CtyTinLuong
                 HienThi_Gridcontrol_2(xxxmclID_LenhSanXuat);
             }
         }
+
+        private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
     }
 }
