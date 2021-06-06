@@ -28,17 +28,17 @@ namespace CtyTinLuong
 
           
 
-            clsHUU_LenhSanXuat cls3 = new clsHUU_LenhSanXuat();
-            DataTable dt3 = cls3.SelectAll_XuatkhoNPL();
-            //dt3.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and GuiDuLieu=True and TrangThai_XuatKho_VatTuPhu=False";
-            DataView dv3 = dt3.DefaultView;
-            DataTable dxxxx3 = dv3.ToTable();
-            int k3 = dxxxx3.Rows.Count;
-            if (k3 > 0)
-            {
-                navXuatKhoLSX_ICD.Caption = "Xuất kho LSX I-C-Đ (" + k3.ToString() + ")";
-                navXuatKhoLSX_ICD.Appearance.Font = new Font(navXuatKhoLSX_ICD.Appearance.Font, FontStyle.Bold);
-            }
+            //clsHUU_LenhSanXuat cls3 = new clsHUU_LenhSanXuat();
+            //DataTable dt3 = cls3.SelectAll_XuatkhoNPL();
+            ////dt3.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and GuiDuLieu=True and TrangThai_XuatKho_VatTuPhu=False";
+            //DataView dv3 = dt3.DefaultView;
+            //DataTable dxxxx3 = dv3.ToTable();
+            //int k3 = dxxxx3.Rows.Count;
+            //if (k3 > 0)
+            //{
+            //    navXuatKhoLSX_ICD.Caption = "Xuất kho LSX I-C-Đ (" + k3.ToString() + ")";
+            //    navXuatKhoLSX_ICD.Appearance.Font = new Font(navXuatKhoLSX_ICD.Appearance.Font, FontStyle.Bold);
+            //}
 
            
 

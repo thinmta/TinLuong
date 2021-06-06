@@ -88,7 +88,7 @@ namespace CtyTinLuong
         {
             clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
             DataTable dt = cls.SelectAll_W_TenCoNhan();
-            dt.DefaultView.RowFilter = " TonTai= True";
+         //   dt.DefaultView.RowFilter = " TonTai= True";
             DataView dv = dt.DefaultView;
             dv.Sort = "NgayThangSanXuat DESC, CaSanXuat DESC, ID_LenhSanXuat DESC";
             DataTable dxxxx = dv.ToTable();
@@ -180,21 +180,29 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            //GridView View = sender as GridView;
-            //if (e.RowHandle >= 0)
-            //{
-            //    bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["GuiDuLieu"]));
-            //    if (category == false)
-            //    {
-            //        e.Appearance.BackColor = Color.Bisque;
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["GuiDuLieu"]));
+                if (category == false)
+                {
+                    e.Appearance.BackColor = Color.Bisque;
 
-            //    }
-            //}
+                }
+            }
         }
 
         private void btGui_Click(object sender, EventArgs e)
         {
-
+            if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
+            {
+                int xxxmclID_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
+                clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
+                cls.iID_LenhSanXuat = xxxmclID_LenhSanXuat;
+                cls.bGuiDuLieu = true;
+                cls.Update_W_GuiDuLieu();
+                MessageBox.Show("Đã gửi dữ liệu nhập xuất kho");
+            }
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)

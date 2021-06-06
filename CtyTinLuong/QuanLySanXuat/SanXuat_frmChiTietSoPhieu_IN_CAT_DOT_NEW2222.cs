@@ -15,9 +15,7 @@ namespace CtyTinLuong
         public static int MIiiiid_SoPhieu;
      
         bool mbThemMoi_IN, mbThemMoi_CAT;
-        //public static int mi_ID_COngNhanh_MayDot_ToTruong, mi_ID_Catruong;
-        //public static DateTime mdaNgaySanXuatDot;
-        //public static string msCaSXDot;
+     
         private void Load_khoiDong()
         {
             mbThemMoi_IN = mbThemMoi_CAT = true;

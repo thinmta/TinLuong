@@ -14,10 +14,10 @@ namespace CtyTinLuong
     public partial class SanXuat_frmChiTietSoPhieu_RutGon : Form
     {
         public static DataTable mdtPrint_tbChiTietPhieu;
-
         public static string xxsotrang;
         public static DateTime mdatungay, mdadenngay;
-           private int _SoTrang = 1;
+
+        private int _SoTrang = 1;
         private bool isload = false;
         public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {

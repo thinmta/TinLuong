@@ -692,7 +692,7 @@
             this.gridBand2.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 574;
+            this.gridBand2.Width = 530;
             // 
             // clSoLuongTon
             // 
@@ -701,7 +701,6 @@
             this.clSoLuongTon.Name = "clSoLuongTon";
             this.clSoLuongTon.OptionsColumn.AllowEdit = false;
             this.clSoLuongTon.OptionsColumn.FixedWidth = true;
-            this.clSoLuongTon.Visible = true;
             this.clSoLuongTon.Width = 44;
             // 
             // clThanhTien

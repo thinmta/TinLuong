@@ -62,7 +62,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
-              
+                cls1.bCheckXuatKho_Khac = false;
                 cls1.Insert();
                 // insert tbChiTietNhapKho
                 string shienthi = "1";
@@ -101,12 +101,10 @@ namespace CtyTinLuong
                 clsxxx.iID_LenhSanXuat = UCNPL_XuatKho_TheoLenhSanXuat_mayIN.mID_iD_LenhSanXuat;
                 clsxxx.Update_TrangThai_XuatKho_NPL_may_IN();
                 
-                
                 MessageBox.Show("Đã xuất kho");
                 this.Close();
             }
-        }
-       
+        }       
         private void Load_lockUP_EDIT()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
@@ -205,10 +203,10 @@ namespace CtyTinLuong
                 dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaVao"].ToString());
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
-                clsnhapkho.iID_VTHH = iiDI_Vthh_vao;
-                DataTable dtnhapkho = new DataTable();
-                dtnhapkho= clsnhapkho.Select_W_ID_VTHH();
-                _ravi["SoLuongTon"] = Convert.ToDouble(dtnhapkho.Rows[0]["SoLuongTon"].ToString());
+               // clsnhapkho.iID_VTHH = iiDI_Vthh_vao;
+               // DataTable dtnhapkho = new DataTable();
+               // dtnhapkho= clsnhapkho.Select_W_ID_VTHH();
+               //// _ravi["SoLuongTon"] = Convert.ToDouble(dtnhapkho.Rows[0]["SoLuongTon"].ToString());
                 dt2.Rows.Add(_ravi);
 
             }
@@ -422,10 +420,7 @@ namespace CtyTinLuong
             {
             }
         }
-
-       
-
-
+        
         private void btXuatKho_Click(object sender, EventArgs e)
         {
             Luu_XuatKho_NPL();
