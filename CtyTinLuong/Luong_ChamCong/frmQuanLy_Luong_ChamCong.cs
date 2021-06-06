@@ -39,7 +39,7 @@ namespace CtyTinLuong
 
         private void btThooat_Click(object sender, EventArgs e)
         {
-            _frmMain.Show();
+           // _frmMain.Show();
             this.Close();
         }
 
@@ -85,7 +85,7 @@ namespace CtyTinLuong
 
         private void frmQuanLy_Luong_ChamCong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _frmMain.Show();
+          //  _frmMain.Show();
             this.Close();
         }
     }

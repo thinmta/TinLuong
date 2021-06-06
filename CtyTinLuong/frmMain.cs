@@ -374,7 +374,7 @@ namespace CtyTinLuong
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
             _frmQuanLy_Luong_ChamCong = new CtyTinLuong.frmQuanLy_Luong_ChamCong(this);
-            this.Hide();
+            //this.Hide();hide
             _frmQuanLy_Luong_ChamCong.Show();
         }
 
@@ -450,6 +450,17 @@ namespace CtyTinLuong
         private void btnBaoCaoNXT_Click(object sender, EventArgs e)
         {
             frmBaoCaoNXT ff = new frmBaoCaoNXT();
+            ff.Show();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Form1 ff = new CtyTinLuong.Luong_ChamCong.Form1();
             ff.Show();
         }
     }
