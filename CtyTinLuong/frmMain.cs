@@ -460,7 +460,7 @@ namespace CtyTinLuong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Form1 ff = new CtyTinLuong.Luong_ChamCong.Form1();
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan();
             ff.Show();
         }
     }

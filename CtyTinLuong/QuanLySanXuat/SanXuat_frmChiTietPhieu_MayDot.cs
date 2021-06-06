@@ -789,7 +789,7 @@ namespace CtyTinLuong
         private void btChiLuu_Click(object sender, EventArgs e)
         {
             Luu_Va_GuiDuLieu_May_DOT();
-            LuuDuLieu_BoSungCongNhan();
+            //LuuDuLieu_BoSungCongNhan();
         }
     }
 }
