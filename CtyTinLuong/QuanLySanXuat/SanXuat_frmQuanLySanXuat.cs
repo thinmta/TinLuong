@@ -66,7 +66,8 @@ namespace CtyTinLuong
 
         private void navBarItemLenhSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UC_SanXuat_LenhSanXuat ucc = new UC_SanXuat_LenhSanXuat();
+            UC_SanXuat_LenhSanXuat ucc = new UC_SanXuat_LenhSanXuat();         
+
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

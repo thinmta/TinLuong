@@ -68,7 +68,7 @@
             // btThooat
             // 
             this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(903, 625);
+            this.btThooat.Location = new System.Drawing.Point(1076, 625);
             this.btThooat.Name = "btThooat";
             this.btThooat.Size = new System.Drawing.Size(75, 23);
             this.btThooat.TabIndex = 67;
@@ -267,13 +267,13 @@
             // 
             this.panelControl1.Location = new System.Drawing.Point(251, 13);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(727, 606);
+            this.panelControl1.Size = new System.Drawing.Size(900, 606);
             this.panelControl1.TabIndex = 68;
             // 
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.simpleButton1.Location = new System.Drawing.Point(692, 626);
+            this.simpleButton1.Location = new System.Drawing.Point(865, 625);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(205, 23);
             this.simpleButton1.TabIndex = 69;
@@ -294,7 +294,7 @@
             // btnTrangTiep
             // 
             this.btnTrangTiep.AutoSize = true;
-            this.btnTrangTiep.Location = new System.Drawing.Point(385, 635);
+            this.btnTrangTiep.Location = new System.Drawing.Point(370, 636);
             this.btnTrangTiep.Name = "btnTrangTiep";
             this.btnTrangTiep.Size = new System.Drawing.Size(55, 13);
             this.btnTrangTiep.TabIndex = 79;
@@ -339,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1161, 661);
             this.Controls.Add(this.txtSoTrang);
             this.Controls.Add(this.lbTongSoTrang);
             this.Controls.Add(this.btnTrangSau);

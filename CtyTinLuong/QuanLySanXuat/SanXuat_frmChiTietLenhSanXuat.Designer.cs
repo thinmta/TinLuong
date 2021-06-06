@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmChiTietLenhSanXuat));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridMaNguoiLap = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -96,11 +102,9 @@
             this.repositoryItemLookUpEdit_maPhieu = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btThoat2222 = new DevExpress.XtraEditors.SimpleButton();
-            this.btLuu_Va_Gui_Copy = new DevExpress.XtraEditors.SimpleButton();
-            this.btLuu_ChiLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
+            this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -169,7 +173,7 @@
             this.gridMaNguoiLap.Name = "gridMaNguoiLap";
             this.gridMaNguoiLap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaNguoiLap.Properties.View = this.gridLookUpEdit3View;
+            this.gridMaNguoiLap.Properties.PopupView = this.gridLookUpEdit3View;
             this.gridMaNguoiLap.Size = new System.Drawing.Size(332, 20);
             this.gridMaNguoiLap.StyleController = this.layoutControl1;
             this.gridMaNguoiLap.TabIndex = 18;
@@ -231,7 +235,7 @@
             this.gridMaCN.Name = "gridMaCN";
             this.gridMaCN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaCN.Properties.View = this.gridLookUpEdit1View;
+            this.gridMaCN.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridMaCN.Size = new System.Drawing.Size(332, 20);
             this.gridMaCN.StyleController = this.layoutControl1;
             this.gridMaCN.TabIndex = 13;
@@ -294,7 +298,7 @@
             this.gridMaCaTruong.Name = "gridMaCaTruong";
             this.gridMaCaTruong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaCaTruong.Properties.View = this.gridLookUpEdit4View;
+            this.gridMaCaTruong.Properties.PopupView = this.gridLookUpEdit4View;
             this.gridMaCaTruong.Size = new System.Drawing.Size(332, 20);
             this.gridMaCaTruong.StyleController = this.layoutControl1;
             this.gridMaCaTruong.TabIndex = 10;
@@ -356,8 +360,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteNgaySX.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteNgaySX.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
-            this.dteNgaySX.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
             this.dteNgaySX.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.dteNgaySX.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgaySX.Properties.EditFormat.FormatString = "dd/MM/yyyy";
@@ -391,11 +393,9 @@
             this.layoutControlItem7,
             this.layoutControlItem9,
             this.layoutControlItem10});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1126, 135);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -586,7 +586,7 @@
             this.gridBand2.Columns.Add(this.clSoLuong_Vao);
             this.gridBand2.Columns.Add(this.clDonGia_Xuat);
             this.gridBand2.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridBand2.ImageAlignment = System.Drawing.StringAlignment.Center;
+            this.gridBand2.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 0;
             this.gridBand2.Width = 434;
@@ -843,8 +843,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::CtyTinLuong.Properties.Resources.ico_Delete, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -861,12 +862,12 @@
             this.repositoryItemLookUpEdit_maPhieu.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit_maPhieu.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_SoPhieu", "ID_SoPhieu", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPhieu", 40, "Mã phiếu"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ngay_May_IN", 80, "Ngày"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ca_May_IN", 40, "Ca"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_NhanSu", "ID_NhanSu", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNhanVien", 120, "Tên CN")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_SoPhieu", "ID_SoPhieu", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPhieu", "Mã phiếu", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ngay_May_IN", "Ngày", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ca_May_IN", "Ca", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_NhanSu", "ID_NhanSu", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNhanVien", "Tên CN", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEdit_maPhieu.Name = "repositoryItemLookUpEdit_maPhieu";
             // 
             // gridView1
@@ -877,7 +878,7 @@
             // btThoat2222
             // 
             this.btThoat2222.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThoat2222.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
+            this.btThoat2222.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
             this.btThoat2222.Location = new System.Drawing.Point(1069, 627);
             this.btThoat2222.Name = "btThoat2222";
             this.btThoat2222.Size = new System.Drawing.Size(75, 23);
@@ -885,52 +886,15 @@
             this.btThoat2222.Text = "Thoát";
             this.btThoat2222.Click += new System.EventHandler(this.btThoat2222_Click);
             // 
-            // btLuu_Va_Gui_Copy
-            // 
-            this.btLuu_Va_Gui_Copy.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLuu_Va_Gui_Copy.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.btLuu_Va_Gui_Copy.Appearance.Options.UseFont = true;
-            this.btLuu_Va_Gui_Copy.Appearance.Options.UseForeColor = true;
-            this.btLuu_Va_Gui_Copy.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btLuu_Va_Gui_Copy.Location = new System.Drawing.Point(337, 627);
-            this.btLuu_Va_Gui_Copy.Name = "btLuu_Va_Gui_Copy";
-            this.btLuu_Va_Gui_Copy.Size = new System.Drawing.Size(132, 23);
-            this.btLuu_Va_Gui_Copy.TabIndex = 87;
-            this.btLuu_Va_Gui_Copy.Text = "Lưu và gửi Dữ liệu";
-            this.btLuu_Va_Gui_Copy.Visible = false;
-            this.btLuu_Va_Gui_Copy.Click += new System.EventHandler(this.btLuu_Va_Gui_Click);
-            // 
-            // btLuu_ChiLuu
-            // 
-            this.btLuu_ChiLuu.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu_ChiLuu.Location = new System.Drawing.Point(663, 627);
-            this.btLuu_ChiLuu.Name = "btLuu_ChiLuu";
-            this.btLuu_ChiLuu.Size = new System.Drawing.Size(120, 23);
-            this.btLuu_ChiLuu.TabIndex = 88;
-            this.btLuu_ChiLuu.Text = "Chỉ Lưu và Copy";
-            this.btLuu_ChiLuu.Visible = false;
-            this.btLuu_ChiLuu.Click += new System.EventHandler(this.btLuu_ChiLuu_Click);
-            // 
             // btPrint
             // 
-            this.btPrint.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btPrint.Location = new System.Drawing.Point(948, 627);
+            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
+            this.btPrint.Location = new System.Drawing.Point(734, 627);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(115, 23);
             this.btPrint.TabIndex = 89;
-            this.btPrint.Text = "In Lệnh sản xuất";
+            this.btPrint.Text = "Print";
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
-            // 
-            // btLuu_Dong
-            // 
-            this.btLuu_Dong.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu_Dong.Location = new System.Drawing.Point(789, 627);
-            this.btLuu_Dong.Name = "btLuu_Dong";
-            this.btLuu_Dong.Size = new System.Drawing.Size(114, 23);
-            this.btLuu_Dong.TabIndex = 90;
-            this.btLuu_Dong.Text = "Chỉ Lưu và Đóng";
-            this.btLuu_Dong.Visible = false;
-            this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // btLuu_Gui_Dong
             // 
@@ -938,14 +902,23 @@
             this.btLuu_Gui_Dong.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
             this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
-            this.btLuu_Gui_Dong.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(475, 627);
+            this.btLuu_Gui_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
+            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(855, 627);
             this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
-            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(182, 23);
+            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(104, 23);
             this.btLuu_Gui_Dong.TabIndex = 91;
-            this.btLuu_Gui_Dong.Text = "Lưu và gửi Dữ liệu + Đóng";
-            this.btLuu_Gui_Dong.Visible = false;
+            this.btLuu_Gui_Dong.Text = "Lưu + Gửi";
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
+            // 
+            // btLuu_Dong
+            // 
+            this.btLuu_Dong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btLuu_Dong.ImageOptions.Image")));
+            this.btLuu_Dong.Location = new System.Drawing.Point(965, 627);
+            this.btLuu_Dong.Name = "btLuu_Dong";
+            this.btLuu_Dong.Size = new System.Drawing.Size(98, 23);
+            this.btLuu_Dong.TabIndex = 90;
+            this.btLuu_Dong.Text = "Lưu";
+            this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // SanXuat_frmChiTietLenhSanXuat
             // 
@@ -955,8 +928,6 @@
             this.Controls.Add(this.btLuu_Gui_Dong);
             this.Controls.Add(this.btLuu_Dong);
             this.Controls.Add(this.btPrint);
-            this.Controls.Add(this.btLuu_ChiLuu);
-            this.Controls.Add(this.btLuu_Va_Gui_Copy);
             this.Controls.Add(this.btThoat2222);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -1069,10 +1040,8 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clLoaiMay;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Va_Gui_Copy;
-        private DevExpress.XtraEditors.SimpleButton btLuu_ChiLuu;
         private DevExpress.XtraEditors.SimpleButton btPrint;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
         private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
+        private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
     }
 }
