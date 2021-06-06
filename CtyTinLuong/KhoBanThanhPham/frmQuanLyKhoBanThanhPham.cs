@@ -96,5 +96,14 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
         }
+
+        private void navBarItem7_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            mbNhapKhoTuLenhSXICD = true;
+            UCBTP_NhapKho_LSX_I_C_D uccc_DaNhapKho = new UCBTP_NhapKho_LSX_I_C_D();
+            uccc_DaNhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_DaNhapKho);
+            uccc_DaNhapKho.BringToFront();
+        }
     }
 }

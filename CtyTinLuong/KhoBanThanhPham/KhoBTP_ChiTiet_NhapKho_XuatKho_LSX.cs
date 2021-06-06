@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,7 +64,8 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaNhapKho = true;
                 cls1.bCheck_NhapKho_Khac = false;
-                cls1.sNguoiGiaoHang = "";
+                cls1.sNguoiGiaoHang = txtNguoiGiao_Nhan.Text.ToString();
+                cls1.bBool_TonDauKy = false;
                 cls1.Insert();
                 // insert tbChiTietNhapKho
                 string shienthi = "1";
@@ -93,13 +95,13 @@ namespace CtyTinLuong
                 /// Update trang thai nhap lenh san xuất
 
                 clsHUU_LenhSanXuat clsxxx = new CtyTinLuong.clsHUU_LenhSanXuat();
-                clsxxx.iID_LenhSanXuat = UCBTP_XuatKho_LSX_I_C_D.mID_iD_LenhSanXuat;
-                if (UCBTP_XuatKho_LSX_I_C_D.miID_loaiMay == 1)
+                clsxxx.iID_LenhSanXuat = UCBTP_NhapKho_LSX_I_C_D.mID_iD_LenhSanXuat;
+                if (UCBTP_NhapKho_LSX_I_C_D.miID_loaiMay == 1)
                     clsxxx.Update_TrangThai_NHap_KHO_KhoBTP_may_IN();
-                if (UCBTP_XuatKho_LSX_I_C_D.miID_loaiMay == 2)
-                    clsxxx.Update_TrangThai_XuatKHO_KhoBTP_may_CAT();
-                else if (UCBTP_XuatKho_LSX_I_C_D.miID_loaiMay == 3)
-                    clsxxx.Update_TrangThai_XuatKHO_KhoBTP_may_DOT();
+                if (UCBTP_NhapKho_LSX_I_C_D.miID_loaiMay == 2)
+                    clsxxx.Update_TrangThai_NHap_KHO_KhoBTP_may_CAT();
+                else if (UCBTP_NhapKho_LSX_I_C_D.miID_loaiMay == 3)
+                    clsxxx.Update_TrangThai_NHap_KHO_KhoBTP_may_DOT();
                
                 MessageBox.Show("Đã lưu");
                 this.Close();
@@ -124,7 +126,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
                 cls1.bCheck_XuatKho_Khac = false;
-                cls1.sNguoiNhanHang = "";
+                cls1.sNguoiNhanHang = txtNguoiGiao_Nhan.Text.ToString();
                 cls1.Insert();
                 // insert tbChiTietNhapKho
                 string shienthi = "1";
@@ -235,13 +237,13 @@ namespace CtyTinLuong
             }
             
         }
-        private void HienThi_SUa_LenhSanXuat()
+        private void HienThi_SUa_LenhSanXuat(int iiID_lenhSanXuat, string smalenhsanxuat)
         {
             gridNguoiLap.EditValue = 12;
-            txtThamChieu.Text = UCBTP_XuatKho_LSX_I_C_D.msMaLenhSanxuat;
+            txtThamChieu.Text = smalenhsanxuat;
             DataTable dt2 = new DataTable();
             clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
-            cls2.iID_LenhSanXuat = UCBTP_XuatKho_LSX_I_C_D.mID_iD_LenhSanXuat;
+            cls2.iID_LenhSanXuat = iiID_lenhSanXuat;
             DataTable dtxxxx = cls2.SelectAll_w_iID_LenhSanXuat();
 
             dt2.Columns.Add("ID_SoPhieu", typeof(int));
@@ -330,10 +332,19 @@ namespace CtyTinLuong
         private void KhoBTP_ChiTiet_NhapKho_XuatKho_LSX_Load(object sender, EventArgs e)
         {
             Load_lockUP_EDIT();
-            if(frmQuanLyKhoBanThanhPham.mbNhapKhoTuLenhSXICD==true)
-            Load_SoChungTu_BTP(true);
-            else Load_SoChungTu_BTP(false);
-            HienThi_SUa_LenhSanXuat();
+            if (frmQuanLyKhoBanThanhPham.mbNhapKhoTuLenhSXICD == true)
+            {
+                layoutnguoigianhan.Text = "Người giao hàng";
+                Load_SoChungTu_BTP(true);
+                HienThi_SUa_LenhSanXuat(UCBTP_NhapKho_LSX_I_C_D.mID_iD_LenhSanXuat, UCBTP_NhapKho_LSX_I_C_D.msMaLenhSanxuat);
+            }
+            else
+            {
+                layoutnguoigianhan.Text = "Người nhận hàng";
+                Load_SoChungTu_BTP(false);
+                HienThi_SUa_LenhSanXuat(UCBTP_XuatKho_LSX_I_C_D.mID_iD_LenhSanXuat, UCBTP_XuatKho_LSX_I_C_D.msMaLenhSanxuat);
+            }
+            
 
         }
 
@@ -442,10 +453,16 @@ namespace CtyTinLuong
 
         private void btNhapXuatKho_Click(object sender, EventArgs e)
         {
-            if (frmQuanLyKhoBanThanhPham.mbNhapKhoTuLenhSXICD)
+            if (frmQuanLyKhoBanThanhPham.mbNhapKhoTuLenhSXICD==true)
                 Luu_NhapKho_banThanhPham();
             else
                 Luu_XuatKho_banThanhPham();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }
