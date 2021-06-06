@@ -1408,6 +1408,12 @@
     <Compile Include="QuanLySanXuat\SanXuat_frmChiTietPhieu_MayDot.Designer.cs">
       <DependentUpon>SanXuat_frmChiTietPhieu_MayDot.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\SanXuat_UC_BB_Ktra_DM_HH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\SanXuat_UC_BB_Ktra_DM_HH.Designer.cs">
+      <DependentUpon>SanXuat_UC_BB_Ktra_DM_HH.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.cs">
       <SubType>UserControl</SubType>
@@ -2181,6 +2187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\UCBTP_NhapKho_LSX_I_C_D.resx">
       <DependentUpon>UCBTP_NhapKho_LSX_I_C_D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\SanXuat_UC_BB_Ktra_DM_HH.resx">
+      <DependentUpon>SanXuat_UC_BB_Ktra_DM_HH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraDaiLy_ChiTietLuong.resx">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>

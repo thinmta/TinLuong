@@ -540,7 +540,7 @@
             this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(453, 24);
-            this.layoutControlItem23.Text = "Mã VT";
+            this.layoutControlItem23.Text = "Loại hàng";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(116, 13);
             // 
             // emptySpaceItem7
@@ -687,16 +687,16 @@
             // 
             // txtDonViQuyDoi
             // 
-            this.txtDonViQuyDoi.Location = new System.Drawing.Point(362, 2);
+            this.txtDonViQuyDoi.Location = new System.Drawing.Point(380, 2);
             this.txtDonViQuyDoi.Name = "txtDonViQuyDoi";
-            this.txtDonViQuyDoi.Size = new System.Drawing.Size(87, 20);
+            this.txtDonViQuyDoi.Size = new System.Drawing.Size(69, 20);
             this.txtDonViQuyDoi.TabIndex = 4;
             // 
             // txtSoLuongQuyDoi
             // 
             this.txtSoLuongQuyDoi.Location = new System.Drawing.Point(137, 2);
             this.txtSoLuongQuyDoi.Name = "txtSoLuongQuyDoi";
-            this.txtSoLuongQuyDoi.Size = new System.Drawing.Size(86, 20);
+            this.txtSoLuongQuyDoi.Size = new System.Drawing.Size(104, 20);
             this.txtSoLuongQuyDoi.TabIndex = 0;
             // 
             // layoutControlGroup3
@@ -732,7 +732,7 @@
             this.layoutControlItem10.CustomizationFormText = "Số lượng quy đổi";
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(225, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(243, 24);
             this.layoutControlItem10.Text = "(3) Số lượng quy đổi";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(132, 13);
             // 
@@ -760,9 +760,9 @@
             // 
             this.layoutControlItem11.Control = this.txtDonViQuyDoi;
             this.layoutControlItem11.CustomizationFormText = "Đơn vị quy đổi";
-            this.layoutControlItem11.Location = new System.Drawing.Point(225, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(243, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(226, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(208, 24);
             this.layoutControlItem11.Text = "Đơn vị quy đổi";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(132, 13);
             // 

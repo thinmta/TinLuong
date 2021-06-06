@@ -260,5 +260,13 @@ namespace CtyTinLuong
             } 
             ucc.LoadData(sotrang_, islandau); 
         }
+
+        private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            SanXuat_UC_BB_Ktra_DM_HH ucc = new SanXuat_UC_BB_Ktra_DM_HH();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+        }
     }
 }

@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,12 +59,12 @@
             this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkTheoDoi = new DevExpress.XtraEditors.CheckEdit();
             this.checkNgungTheoDoi = new DevExpress.XtraEditors.CheckEdit();
             this.checked_ALL = new DevExpress.XtraEditors.CheckEdit();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -78,7 +82,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa,
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(716, 571);
+            this.gridControl1.Size = new System.Drawing.Size(877, 571);
             this.gridControl1.TabIndex = 66;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -340,8 +344,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::CtyTinLuong.Properties.Resources.ico_Exit, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -359,9 +364,15 @@
             this.clID_VTHH.FieldName = "ID_VTHH";
             this.clID_VTHH.Name = "clID_VTHH";
             // 
+            // clKhoa
+            // 
+            this.clKhoa.Caption = "Khoá";
+            this.clKhoa.FieldName = "Khoa";
+            this.clKhoa.Name = "clKhoa";
+            // 
             // checkTheoDoi
             // 
-            this.checkTheoDoi.Location = new System.Drawing.Point(523, 3);
+            this.checkTheoDoi.Location = new System.Drawing.Point(684, 5);
             this.checkTheoDoi.Name = "checkTheoDoi";
             this.checkTheoDoi.Properties.Caption = "Đang theo dõi";
             this.checkTheoDoi.Size = new System.Drawing.Size(90, 19);
@@ -370,7 +381,7 @@
             // 
             // checkNgungTheoDoi
             // 
-            this.checkNgungTheoDoi.Location = new System.Drawing.Point(619, 3);
+            this.checkNgungTheoDoi.Location = new System.Drawing.Point(780, 7);
             this.checkNgungTheoDoi.Name = "checkNgungTheoDoi";
             this.checkNgungTheoDoi.Properties.Caption = "Ngừng theo dõi";
             this.checkNgungTheoDoi.Size = new System.Drawing.Size(100, 19);
@@ -379,7 +390,7 @@
             // 
             // checked_ALL
             // 
-            this.checked_ALL.Location = new System.Drawing.Point(461, 3);
+            this.checked_ALL.Location = new System.Drawing.Point(622, 5);
             this.checked_ALL.Name = "checked_ALL";
             this.checked_ALL.Properties.Caption = "Tất cả";
             this.checked_ALL.Size = new System.Drawing.Size(56, 19);
@@ -388,8 +399,8 @@
             // 
             // btThemMoi
             // 
-            this.btThemMoi.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
-            this.btThemMoi.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btThemMoi.Location = new System.Drawing.Point(3, 3);
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(39, 23);
@@ -399,20 +410,14 @@
             // 
             // btRefresh
             // 
-            this.btRefresh.Image = global::CtyTinLuong.Properties.Resources.ico_Update;
-            this.btRefresh.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btRefresh.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Update;
+            this.btRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btRefresh.Location = new System.Drawing.Point(48, 3);
             this.btRefresh.Name = "btRefresh";
             this.btRefresh.Size = new System.Drawing.Size(39, 23);
             this.btRefresh.TabIndex = 75;
             this.btRefresh.ToolTip = "Refesh";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
-            // 
-            // clKhoa
-            // 
-            this.clKhoa.Caption = "Khoá";
-            this.clKhoa.FieldName = "Khoa";
-            this.clKhoa.Name = "clKhoa";
             // 
             // UCDinhMucDot
             // 
@@ -425,7 +430,7 @@
             this.Controls.Add(this.checked_ALL);
             this.Controls.Add(this.gridControl1);
             this.Name = "UCDinhMucDot";
-            this.Size = new System.Drawing.Size(727, 606);
+            this.Size = new System.Drawing.Size(900, 606);
             this.Load += new System.EventHandler(this.UCDinhMucDot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

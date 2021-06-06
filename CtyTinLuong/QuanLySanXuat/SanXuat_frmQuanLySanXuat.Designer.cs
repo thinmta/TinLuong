@@ -61,6 +61,7 @@
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -179,7 +180,8 @@
             this.navBarItem2,
             this.navBarItem13,
             this.navBarItem14,
-            this.navBarItem16});
+            this.navBarItem16,
+            this.navBarItem15});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -196,7 +198,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDinhMucDOt),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDinhMucNPL),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navBarItemDinhMucDOt
@@ -335,6 +338,12 @@
             this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
             this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
             // 
+            // navBarItem15
+            // 
+            this.navBarItem15.Caption = "BB Ktra ĐM HH";
+            this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            // 
             // SanXuat_frmQuanLySanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,5 +407,6 @@
         private System.Windows.Forms.LinkLabel btnTrangSau;
         private System.Windows.Forms.Label lbTongSoTrang;
         private System.Windows.Forms.TextBox txtSoTrang;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem15;
     }
 }
