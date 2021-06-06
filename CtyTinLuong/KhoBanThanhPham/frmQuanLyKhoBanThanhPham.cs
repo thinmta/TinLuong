@@ -12,8 +12,8 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyKhoBanThanhPham : Form
     {
-        
-       
+
+        public static bool mbNhapKhoTuLenhSXICD;
         public frmQuanLyKhoBanThanhPham()
         {
             InitializeComponent();
@@ -90,6 +90,7 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            mbNhapKhoTuLenhSXICD = false;
             UCBTP_XuatKho_LSX_I_C_D uccc_DaNhapKho = new UCBTP_XuatKho_LSX_I_C_D();
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);

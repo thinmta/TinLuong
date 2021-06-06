@@ -12,7 +12,8 @@ namespace CtyTinLuong
 {
     public partial class UCBTP_XuatKho_LSX_I_C_D : UserControl
     {
-        public static int mID_iD_LenhSanXuat;
+        public static int mID_iD_LenhSanXuat, miID_loaiMay;
+        public static string msMaLenhSanxuat;
 
         private int _SoTrang = 1;
         private bool isload = false;
@@ -138,7 +139,7 @@ namespace CtyTinLuong
         private void UCBTP_XuatKho_LSX_I_C_D_Load(object sender, EventArgs e)
         {
             Load_LockUp();
-            dteTuNgay.EditValue = DateTime.Now.AddDays(-10);
+            dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Now;
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
@@ -165,9 +166,10 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
                 {
-
+                    miID_loaiMay = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LoaiMay).ToString());
+                    msMaLenhSanxuat = gridView1.GetFocusedRowCellValue(clMaLenhSanXuat).ToString();
                     mID_iD_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
-                    NPL_ChiTietLenhSanXuat ff = new NPL_ChiTietLenhSanXuat();
+                    KhoBTP_ChiTiet_NhapKho_XuatKho_LSX ff = new KhoBTP_ChiTiet_NhapKho_XuatKho_LSX();
                     ff.Show();
                 }
             }

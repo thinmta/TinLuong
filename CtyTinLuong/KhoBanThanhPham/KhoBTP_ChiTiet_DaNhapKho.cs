@@ -87,8 +87,6 @@ namespace CtyTinLuong
             }
             for (int i = 0; i < dt_gridcontrol.Rows.Count; i++)
             {
-
-
                 int ID_VTHHxxx = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_VTHH"].ToString());
                 cls.iID_VTHH = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_VTHH"].ToString());
                 cls.iID_NhapKho = iiIDINhapKho;
