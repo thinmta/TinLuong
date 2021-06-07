@@ -134,5 +134,15 @@ namespace CtyTinLuong
             this.panelControl1.Controls.Add(frm);
             frm.Show();
         }
+
+        private void navBTTL_TGD_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            frmBTTL_TGD_TQ frm = new frmBTTL_TGD_TQ() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
     }
 }

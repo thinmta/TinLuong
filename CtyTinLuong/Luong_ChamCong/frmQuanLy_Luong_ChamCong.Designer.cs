@@ -56,6 +56,7 @@
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.navBTTL_TGD_TD = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,7 +216,8 @@
             this.navBarItem15,
             this.navBarItem16,
             this.navBarItem18,
-            this.navTTL_TGD});
+            this.navTTL_TGD,
+            this.navBTTL_TGD_TD});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
@@ -264,7 +266,8 @@
             this.navBarGroup3.Caption = "THANH TOÁN LƯƠNG";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD_TD)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -277,7 +280,7 @@
             this.navTTL_TGD.AppearanceHotTracked.Options.UseForeColor = true;
             this.navTTL_TGD.AppearancePressed.ForeColor = System.Drawing.Color.Blue;
             this.navTTL_TGD.AppearancePressed.Options.UseForeColor = true;
-            this.navTTL_TGD.Caption = "Tổ Gấp dán";
+            this.navTTL_TGD.Caption = "Tổ Gấp dán - Chi tiết";
             this.navTTL_TGD.Name = "navTTL_TGD";
             this.navTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTTL_TGD_LinkClicked);
             // 
@@ -290,6 +293,12 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(971, 621);
             this.panelControl1.TabIndex = 70;
+            // 
+            // navBTTL_TGD_TD
+            // 
+            this.navBTTL_TGD_TD.Caption = "Tổ Gấp dán - Tổng quan";
+            this.navBTTL_TGD_TD.Name = "navBTTL_TGD_TD";
+            this.navBTTL_TGD_TD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TGD_TD_LinkClicked);
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -339,5 +348,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navTTL_TGD;
         private DevExpress.XtraEditors.XtraScrollableControl panelControl1;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TGD_TD;
     }
 }

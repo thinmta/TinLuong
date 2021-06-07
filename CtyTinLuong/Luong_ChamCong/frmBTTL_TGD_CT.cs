@@ -51,7 +51,14 @@ namespace CtyTinLuong
             {
             }
             _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month; 
+            _thang = DateTime.Now.Month;
+
+            int tongluong_ = 0;
+            int songayan_ = 0;
+            int trutiencom_ = 0;
+            int tongtien_ = 0;
+            int tamung_ = 0;
+            int thucnhan_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -61,8 +68,56 @@ namespace CtyTinLuong
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
-                } 
-            } 
+
+                    tongluong_ += Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString());
+                    songayan_ += Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString());
+                    trutiencom_ += Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString());
+                    tongtien_ += Convert.ToInt32(_data.Rows[i]["TongTien"].ToString());
+                    tamung_ += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
+                    thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString()); 
+                    // 
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["SoNgayAn"] = Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString()).ToString("N0");
+                    _data.Rows[i]["SoNgayAn"] = Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString()).ToString("N0");
+                    _data.Rows[i]["TruTienCom"] = Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongTien"] = Convert.ToInt32(_data.Rows[i]["TongTien"].ToString()).ToString("N0");
+                    _data.Rows[i]["TamUng"] = Convert.ToInt32(_data.Rows[i]["TamUng"].ToString()).ToString("N0");
+                    _data.Rows[i]["ThucNhan"] = Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString()).ToString("N0");
+
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+
+                }
+            }
+
+            DataRow _ravi = _data.NewRow();
+            _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
+            _ravi["ID_CongNhan"] = 0;
+            _ravi["Thang"] = _thang;
+            _ravi["Nam"] = _nam;
+            _ravi["TenNhanVien"] = "TỔNG";
+            _ravi["TongLuong"] = tongluong_.ToString("N0");
+            _ravi["SoNgayAn"] = songayan_.ToString("N0");
+            _ravi["TruTienCom"] = trutiencom_.ToString("N0");
+            _ravi["TongTien"] = tongtien_.ToString("N0");
+            _ravi["TamUng"] = tamung_.ToString("N0");
+            _ravi["ThucNhan"] = thucnhan_.ToString("N0");
+
+            _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;
             //  
             isload = false;
