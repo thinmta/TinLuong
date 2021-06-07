@@ -292,6 +292,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TGD_CT.Designer.cs">
       <DependentUpon>frmBTTL_TGD_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCom_TGD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCom_TGD.Designer.cs">
+      <DependentUpon>frmChamCom_TGD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\T_frmPrintChamCongToGapDan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1813,6 +1819,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TGD_CT.resx">
       <DependentUpon>frmBTTL_TGD_CT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCom_TGD.resx">
+      <DependentUpon>frmChamCom_TGD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\T_frmPrintChamCongToGapDan.resx">
       <DependentUpon>T_frmPrintChamCongToGapDan.cs</DependentUpon>
