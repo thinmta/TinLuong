@@ -149,6 +149,7 @@
             this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btGuiDuLieu.Appearance.Options.UseFont = true;
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
+            this.btGuiDuLieu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
             this.btGuiDuLieu.Location = new System.Drawing.Point(1008, 609);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
@@ -449,6 +450,7 @@
             this.clSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSTT.Caption = "STT";
+            this.clSTT.FieldName = "STT";
             this.clSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
@@ -1545,6 +1547,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1264, 642);
+            this.ControlBox = false;
             this.Controls.Add(this.lbChinhSua);
             this.Controls.Add(this.lbLoaiHang);
             this.Controls.Add(this.lbChinhSuaDinhMuc);
@@ -1567,10 +1570,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmChamCongToGapDan";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chấm công tổ gấp dán";
             this.Load += new System.EventHandler(this.frmChamCongToGapDan_Load);

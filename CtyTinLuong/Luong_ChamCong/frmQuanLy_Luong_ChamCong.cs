@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraNavBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,12 @@ namespace CtyTinLuong
     public partial class frmQuanLy_Luong_ChamCong : Form
     {
         frmMain _frmMain;
-        frmChamCongToGapDan _frmChamCongToGapDan;
         public frmQuanLy_Luong_ChamCong(frmMain frm)
         {
             _frmMain = frm;
             InitializeComponent();
-            _frmChamCongToGapDan = new frmChamCongToGapDan();
+
+           
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -39,7 +40,7 @@ namespace CtyTinLuong
 
         private void btThooat_Click(object sender, EventArgs e)
         {
-           // _frmMain.Show();
+            // _frmMain.Show();
             this.Close();
         }
 
@@ -61,8 +62,10 @@ namespace CtyTinLuong
 
         private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmChamCongToGapDan ff = new frmChamCongToGapDan();
-            ff.Show();
+            frmChamCongToGapDan frm = new frmChamCongToGapDan() { TopLevel = false, TopMost = true };
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            this.panelControl1.Controls.Add(frm);
+            frm.Show();
         }
 
         private void navBarItem17_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -73,9 +76,11 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            _frmChamCongToGapDan = new frmChamCongToGapDan();
-            _frmChamCongToGapDan.LoadData(true);
-            _frmChamCongToGapDan.Show();
+            frmChamCongToGapDan frm = new frmChamCongToGapDan() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+
+            ShowWinform(frm,  sender);
         }
 
         private void frmQuanLy_Luong_ChamCong_Load(object sender, EventArgs e)
@@ -85,8 +90,49 @@ namespace CtyTinLuong
 
         private void frmQuanLy_Luong_ChamCong_FormClosed(object sender, FormClosedEventArgs e)
         {
-          //  _frmMain.Show();
+            //  _frmMain.Show();
             this.Close();
+        }
+
+        private void navTTL_TGD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        { 
+            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
+        private void ShowWinform(Form frm, object sender)
+        {
+
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            foreach (Control child in panelControl1.Controls)
+            {
+                Form form = child as Form;
+                if (form == null)
+                {
+
+                }
+                else
+                {
+                    form.Close(); 
+                }
+            }
+
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex; 
+            //frm.Anchor = ((AnchorStyles)((AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Left)));
+             
+            this.panelControl1.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

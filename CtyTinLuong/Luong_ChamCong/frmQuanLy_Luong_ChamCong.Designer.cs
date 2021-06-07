@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLy_Luong_ChamCong));
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
@@ -54,19 +53,11 @@
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
+            this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Location = new System.Drawing.Point(173, 12);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(971, 606);
-            this.panelControl1.TabIndex = 68;
             // 
             // navBarItem25
             // 
@@ -143,12 +134,16 @@
             // 
             // navNhapKho_TuMuaHang
             // 
+            this.navNhapKho_TuMuaHang.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navNhapKho_TuMuaHang.Appearance.Options.UseForeColor = true;
             this.navNhapKho_TuMuaHang.Caption = "Chi tiết ALL";
             this.navNhapKho_TuMuaHang.Name = "navNhapKho_TuMuaHang";
             this.navNhapKho_TuMuaHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNhapKho_TuMuaHang_LinkClicked);
             // 
             // navBarItem1
             // 
+            this.navBarItem1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem1.Appearance.Options.UseForeColor = true;
             this.navBarItem1.Caption = "Bảng Lương";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.Tag = "Ban Giám đốc";
@@ -156,6 +151,8 @@
             // 
             // navBarGroup1
             // 
+            this.navBarGroup1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup1.Appearance.Options.UseFont = true;
             this.navBarGroup1.Caption = "Lương";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -168,18 +165,24 @@
             // 
             // navBarItem9
             // 
+            this.navBarItem9.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem9.Appearance.Options.UseForeColor = true;
             this.navBarItem9.Caption = "Tạm ứng";
             this.navBarItem9.Name = "navBarItem9";
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarItem14
             // 
+            this.navBarItem14.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem14.Appearance.Options.UseForeColor = true;
             this.navBarItem14.Caption = "Trả lương";
             this.navBarItem14.Name = "navBarItem14";
             this.navBarItem14.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem14_LinkClicked);
             // 
             // navBarItem17
             // 
+            this.navBarItem17.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem17.Appearance.Options.UseForeColor = true;
             this.navBarItem17.Caption = "Mã hàng tổ GD";
             this.navBarItem17.Name = "navBarItem17";
             this.navBarItem17.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem17_LinkClicked);
@@ -189,7 +192,8 @@
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
-            this.navBarGroup2});
+            this.navBarGroup2,
+            this.navBarGroup3});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem1,
             this.navBarItem4,
@@ -210,7 +214,8 @@
             this.navBarItem17,
             this.navBarItem15,
             this.navBarItem16,
-            this.navBarItem18});
+            this.navBarItem18,
+            this.navTTL_TGD});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
@@ -220,6 +225,8 @@
             // 
             // navBarGroup2
             // 
+            this.navBarGroup2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup2.Appearance.Options.UseFont = true;
             this.navBarGroup2.Caption = "Chấm công";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -230,28 +237,59 @@
             // 
             // navBarItem15
             // 
+            this.navBarItem15.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem15.Appearance.Options.UseForeColor = true;
             this.navBarItem15.Caption = "Chấm công tổ gấp dán";
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
             // navBarItem16
             // 
+            this.navBarItem16.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem16.Appearance.Options.UseForeColor = true;
             this.navBarItem16.Caption = "navBarItem16";
             this.navBarItem16.Name = "navBarItem16";
             // 
             // navBarItem18
             // 
+            this.navBarItem18.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBarItem18.Appearance.Options.UseForeColor = true;
             this.navBarItem18.Caption = "navBarItem18";
             this.navBarItem18.Name = "navBarItem18";
             // 
-            // label1
+            // navBarGroup3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 621);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 13);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Lưu ý: Nên cài mã hàng tổ gấp dán trong tháng trước khi tạo bảng lương mới";
+            this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup3.Appearance.Options.UseFont = true;
+            this.navBarGroup3.Caption = "THANH TOÁN LƯƠNG";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD)});
+            this.navBarGroup3.Name = "navBarGroup3";
+            // 
+            // navTTL_TGD
+            // 
+            this.navTTL_TGD.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navTTL_TGD.Appearance.Options.UseForeColor = true;
+            this.navTTL_TGD.AppearanceDisabled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.navTTL_TGD.AppearanceDisabled.Options.UseForeColor = true;
+            this.navTTL_TGD.AppearanceHotTracked.ForeColor = System.Drawing.Color.Blue;
+            this.navTTL_TGD.AppearanceHotTracked.Options.UseForeColor = true;
+            this.navTTL_TGD.AppearancePressed.ForeColor = System.Drawing.Color.Blue;
+            this.navTTL_TGD.AppearancePressed.Options.UseForeColor = true;
+            this.navTTL_TGD.Caption = "Tổ Gấp dán";
+            this.navTTL_TGD.Name = "navTTL_TGD";
+            this.navTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTTL_TGD_LinkClicked);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Location = new System.Drawing.Point(173, 12);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(971, 621);
+            this.panelControl1.TabIndex = 70;
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -259,7 +297,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1156, 636);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
@@ -269,16 +306,12 @@
             this.Text = "Chấm công";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmQuanLy_Luong_ChamCong_FormClosed);
             this.Load += new System.EventHandler(this.frmQuanLy_Luong_ChamCong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem25;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
@@ -299,10 +332,12 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem17;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private DevExpress.XtraNavBar.NavBarItem navBarItem18;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
+        private DevExpress.XtraNavBar.NavBarItem navTTL_TGD;
+        private DevExpress.XtraEditors.XtraScrollableControl panelControl1;
     }
 }

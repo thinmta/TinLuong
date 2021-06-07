@@ -195,6 +195,13 @@ namespace CtyTinLuong
         private List<int> ds_id_congnhan = new List<int>();
         private void LoadCongNhanVaoBang(int id_bophan)
         {
+            int stt_ = 0;
+            if (_data != null && _data.Rows.Count > 0)
+            {
+                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString());
+
+            }
+            //
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_SF(_id_bophan + ",");
@@ -236,8 +243,10 @@ namespace CtyTinLuong
                         _ravi["ID_DinhMuc_Luong_SanLuong"] = _id_dinhmuc_togapdan;
                         _ravi["MaDinhMuc"] = "";
                         _ravi["DinhMuc_KhongTang"] = 0;
-                        _ravi["DinhMuc_Tang"] = 0; 
+                        _ravi["DinhMuc_Tang"] = 0;
 
+                        ++stt_;
+                        _ravi["STT"] = (stt_);
                         _data.Rows.Add(_ravi);
                     }
                 }
