@@ -119,12 +119,8 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDinhMuc = new System.Windows.Forms.TextBox();
-            this.lbChinhSuaDinhMuc = new System.Windows.Forms.Label();
-            this.lbLoaiHang = new System.Windows.Forms.Label();
             this.lbChinhSua = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
@@ -1387,7 +1383,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(10, 100);
+            this.gridControl1.Location = new System.Drawing.Point(10, 61);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1399,7 +1395,7 @@
             this.repositoryItemLookUpEdit1,
             this.comboThin,
             this.gridThin});
-            this.gridControl1.Size = new System.Drawing.Size(1245, 506);
+            this.gridControl1.Size = new System.Drawing.Size(1245, 545);
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1471,25 +1467,6 @@
             // 
             this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 13);
-            this.label7.TabIndex = 126;
-            this.label7.Text = "Tìm kiếm nhân viên :";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(170, 63);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(347, 20);
-            this.txtTimKiem.TabIndex = 3;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1509,31 +1486,11 @@
             this.txtDinhMuc.Size = new System.Drawing.Size(204, 20);
             this.txtDinhMuc.TabIndex = 132;
             // 
-            // lbChinhSuaDinhMuc
-            // 
-            this.lbChinhSuaDinhMuc.AutoSize = true;
-            this.lbChinhSuaDinhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChinhSuaDinhMuc.Location = new System.Drawing.Point(710, 66);
-            this.lbChinhSuaDinhMuc.Name = "lbChinhSuaDinhMuc";
-            this.lbChinhSuaDinhMuc.Size = new System.Drawing.Size(125, 13);
-            this.lbChinhSuaDinhMuc.TabIndex = 133;
-            this.lbChinhSuaDinhMuc.Text = "Định mức của loại hàng :";
-            // 
-            // lbLoaiHang
-            // 
-            this.lbLoaiHang.AutoSize = true;
-            this.lbLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiHang.Location = new System.Drawing.Point(843, 66);
-            this.lbLoaiHang.Name = "lbLoaiHang";
-            this.lbLoaiHang.Size = new System.Drawing.Size(48, 13);
-            this.lbLoaiHang.TabIndex = 134;
-            this.lbLoaiHang.Text = "label10";
-            // 
             // lbChinhSua
             // 
             this.lbChinhSua.AutoSize = true;
             this.lbChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChinhSua.Location = new System.Drawing.Point(630, 64);
+            this.lbChinhSua.Location = new System.Drawing.Point(844, 37);
             this.lbChinhSua.Name = "lbChinhSua";
             this.lbChinhSua.Size = new System.Drawing.Size(75, 16);
             this.lbChinhSua.TabIndex = 135;
@@ -1549,13 +1506,9 @@
             this.ClientSize = new System.Drawing.Size(1264, 642);
             this.ControlBox = false;
             this.Controls.Add(this.lbChinhSua);
-            this.Controls.Add(this.lbLoaiHang);
-            this.Controls.Add(this.lbChinhSuaDinhMuc);
             this.Controls.Add(this.txtDinhMuc);
             this.Controls.Add(this.cbBoPhan);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbLoaiHangSX);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -1674,12 +1627,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn clGuiDuLieu;
         private DevExpress.XtraGrid.Columns.GridColumn Tong;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDinhMuc;
-        private System.Windows.Forms.Label lbChinhSuaDinhMuc;
-        private System.Windows.Forms.Label lbLoaiHang;
         private System.Windows.Forms.LinkLabel lbChinhSua;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox comboThin;

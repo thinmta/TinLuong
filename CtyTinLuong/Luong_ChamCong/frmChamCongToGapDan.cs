@@ -26,7 +26,7 @@ namespace CtyTinLuong
         public string msTenNhanVien;
 
         public int _nam, _thang, _id_bophan, _id_vthh;
-        public string _tennhanvien = "", _ten_vthh;
+        public string _ten_vthh;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -107,8 +107,7 @@ namespace CtyTinLuong
             {
                 DateTime dtnow = DateTime.Now;
                 txtNam.Text = dtnow.Year.ToString();
-                txtThang.Text = dtnow.Month.ToString();
-                txtTimKiem.Text = "";
+                txtThang.Text = dtnow.Month.ToString(); 
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
                 if (ngaycuathang_ == 28)
@@ -193,13 +192,11 @@ namespace CtyTinLuong
             {
             }
             _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
-            _tennhanvien = txtTimKiem.Text;
-            lbLoaiHang.Text = _ten_vthh;
+            _thang = DateTime.Now.Month; 
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, _id_vthh, _tennhanvien);
+                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, _id_vthh, "");
                 ds_id_congnhan = new List<int>();
 
                 int Ngay1 = 0;
@@ -588,34 +585,7 @@ namespace CtyTinLuong
             frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(this);
             ff.Show();
         }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-
-            _tennhanvien = txtTimKiem.Text;
-            LoadData(false);
-        }
-        
-        private void LoadTimKiem()
-        {
-            gridControl1.DataSource = null;
-            DataTable dt_ = _data;
-            for (int i = 0; i < _data.Rows.Count; ++i)
-            {
-                if (CheckString.RemoveUnicode(_data.Rows[i]["TenNhanVien"].ToString().ToLower()).Contains(CheckString.RemoveUnicode(txtTimKiem.Text.ToLower())))
-                {
-                }
-                else
-                {
-                    dt_.Rows.Remove(_data.Rows[i]);
-                }
-            }
-
-            gridControl1.DataSource = dt_;
-        }
-
+          
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
             GuiDuLieuBangLuong();

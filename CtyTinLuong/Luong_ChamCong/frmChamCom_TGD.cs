@@ -358,9 +358,9 @@ namespace CtyTinLuong
         {
             int stt_ = 0;
             //
-            if (_data != null && _data.Rows.Count > 0)
+            if (_data != null && _data.Rows.Count > 1)
             {
-                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString()); 
+                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 2]["STT"].ToString()); 
             }
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
