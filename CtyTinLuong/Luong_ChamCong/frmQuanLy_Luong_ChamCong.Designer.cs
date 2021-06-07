@@ -55,8 +55,10 @@
             this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
-            this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.navBTTL_TGD_TD = new DevExpress.XtraNavBar.NavBarItem();
+            this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,7 +196,8 @@
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
             this.navBarGroup2,
-            this.navBarGroup3});
+            this.navBarGroup3,
+            this.navBarGroup4});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem1,
             this.navBarItem4,
@@ -217,7 +220,8 @@
             this.navBarItem16,
             this.navBarItem18,
             this.navTTL_TGD,
-            this.navBTTL_TGD_TD});
+            this.navBTTL_TGD_TD,
+            this.navChamCom_TGD});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
@@ -284,6 +288,12 @@
             this.navTTL_TGD.Name = "navTTL_TGD";
             this.navTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTTL_TGD_LinkClicked);
             // 
+            // navBTTL_TGD_TD
+            // 
+            this.navBTTL_TGD_TD.Caption = "Tổ Gấp dán - Tổng quan";
+            this.navBTTL_TGD_TD.Name = "navBTTL_TGD_TD";
+            this.navBTTL_TGD_TD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TGD_TD_LinkClicked);
+            // 
             // panelControl1
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -294,11 +304,21 @@
             this.panelControl1.Size = new System.Drawing.Size(971, 621);
             this.panelControl1.TabIndex = 70;
             // 
-            // navBTTL_TGD_TD
+            // navBarGroup4
             // 
-            this.navBTTL_TGD_TD.Caption = "Tổ Gấp dán - Tổng quan";
-            this.navBTTL_TGD_TD.Name = "navBTTL_TGD_TD";
-            this.navBTTL_TGD_TD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TGD_TD_LinkClicked);
+            this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup4.Appearance.Options.UseFont = true;
+            this.navBarGroup4.Caption = "Chấm cơm";
+            this.navBarGroup4.Expanded = true;
+            this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCom_TGD)});
+            this.navBarGroup4.Name = "navBarGroup4";
+            // 
+            // navChamCom_TGD
+            // 
+            this.navChamCom_TGD.Caption = "Tổ Gấn dán";
+            this.navChamCom_TGD.Name = "navChamCom_TGD";
+            this.navChamCom_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCom_TGD_LinkClicked);
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -349,5 +369,7 @@
         private DevExpress.XtraNavBar.NavBarItem navTTL_TGD;
         private DevExpress.XtraEditors.XtraScrollableControl panelControl1;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TGD_TD;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
+        private DevExpress.XtraNavBar.NavBarItem navChamCom_TGD;
     }
 }

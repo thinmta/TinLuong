@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong
 {
-    partial class frmChamCongToGapDan
+    partial class frmChamCom_TGD
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCongToGapDan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCom_TGD));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -51,9 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtThang = new System.Windows.Forms.TextBox();
             this.txtNam = new System.Windows.Forms.TextBox();
-            this.cbLoaiHangSX = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -120,8 +117,9 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDinhMuc = new System.Windows.Forms.TextBox();
-            this.lbChinhSua = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnThemNhanVien = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -222,16 +220,17 @@
             // 
             this.cbBoPhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBoPhan.FormattingEnabled = true;
-            this.cbBoPhan.Location = new System.Drawing.Point(170, 7);
+            this.cbBoPhan.Location = new System.Drawing.Point(160, 31);
             this.cbBoPhan.Name = "cbBoPhan";
-            this.cbBoPhan.Size = new System.Drawing.Size(347, 21);
+            this.cbBoPhan.Size = new System.Drawing.Size(205, 21);
             this.cbBoPhan.TabIndex = 125;
+            this.cbBoPhan.SelectedIndexChanged += new System.EventHandler(this.cbBoPhan_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(555, 11);
+            this.label3.Location = new System.Drawing.Point(113, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 126;
@@ -241,7 +240,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(701, 11);
+            this.label4.Location = new System.Drawing.Point(249, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 127;
@@ -250,7 +249,7 @@
             // txtThang
             // 
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(631, 7);
+            this.txtThang.Location = new System.Drawing.Point(161, 4);
             this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 20);
@@ -261,43 +260,13 @@
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(757, 8);
+            this.txtNam.Location = new System.Drawing.Point(287, 5);
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(78, 20);
             this.txtNam.TabIndex = 2;
             this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
-            // 
-            // cbLoaiHangSX
-            // 
-            this.cbLoaiHangSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLoaiHangSX.FormattingEnabled = true;
-            this.cbLoaiHangSX.Location = new System.Drawing.Point(170, 34);
-            this.cbLoaiHangSX.Name = "cbLoaiHangSX";
-            this.cbLoaiHangSX.Size = new System.Drawing.Size(347, 21);
-            this.cbLoaiHangSX.TabIndex = 125;
-            this.cbLoaiHangSX.SelectedIndexChanged += new System.EventHandler(this.cbLoaiHangSX_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 13);
-            this.label5.TabIndex = 126;
-            this.label5.Text = "Loại hàng sản xuất :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(555, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 126;
-            this.label6.Text = "Định mức :";
             // 
             // btXoa
             // 
@@ -1383,7 +1352,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(10, 61);
+            this.gridControl1.Location = new System.Drawing.Point(10, 64);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1472,46 +1441,54 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(20, 11);
+            this.label8.Location = new System.Drawing.Point(10, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(157, 13);
             this.label8.TabIndex = 131;
             this.label8.Text = "Chấm công cho bộ phận : ";
             // 
-            // txtDinhMuc
+            // label7
             // 
-            this.txtDinhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDinhMuc.Location = new System.Drawing.Point(631, 35);
-            this.txtDinhMuc.Name = "txtDinhMuc";
-            this.txtDinhMuc.Size = new System.Drawing.Size(204, 20);
-            this.txtDinhMuc.TabIndex = 132;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(385, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.TabIndex = 133;
+            this.label7.Text = "Thêm nhân viên :";
             // 
-            // lbChinhSua
+            // btnThemNhanVien
             // 
-            this.lbChinhSua.AutoSize = true;
-            this.lbChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChinhSua.Location = new System.Drawing.Point(844, 37);
-            this.lbChinhSua.Name = "lbChinhSua";
-            this.lbChinhSua.Size = new System.Drawing.Size(75, 16);
-            this.lbChinhSua.TabIndex = 135;
-            this.lbChinhSua.TabStop = true;
-            this.lbChinhSua.Text = "Chỉnh sửa";
-            this.lbChinhSua.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbChinhSua_LinkClicked);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(715, 31);
+            this.btnThemNhanVien.Name = "btnThemNhanVien";
+            this.btnThemNhanVien.Size = new System.Drawing.Size(130, 23);
+            this.btnThemNhanVien.TabIndex = 134;
+            this.btnThemNhanVien.Text = "Thêm nhân viên";
+            this.btnThemNhanVien.UseVisualStyleBackColor = true;
+            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
             // 
-            // frmChamCongToGapDan
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.FormattingEnabled = true;
+            this.txtTimKiem.Location = new System.Drawing.Point(493, 31);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(207, 21);
+            this.txtTimKiem.TabIndex = 135;
+            this.txtTimKiem.SelectedIndexChanged += new System.EventHandler(this.txtTimKiem_SelectedIndexChanged);
+            // 
+            // frmChamCom_TGD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1264, 642);
             this.ControlBox = false;
-            this.Controls.Add(this.lbChinhSua);
-            this.Controls.Add(this.txtDinhMuc);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.btnThemNhanVien);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbBoPhan);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.cbLoaiHangSX);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label4);
@@ -1528,13 +1505,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmChamCongToGapDan";
+            this.Name = "frmChamCom_TGD";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chấm công tổ gấp dán";
-            this.Load += new System.EventHandler(this.frmChamCongToGapDan_Load);
+            this.Load += new System.EventHandler(this.frmChamCom_TGD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
@@ -1567,9 +1544,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtThang;
         private System.Windows.Forms.TextBox txtNam;
-        private System.Windows.Forms.ComboBox cbLoaiHangSX;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
@@ -1628,8 +1602,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Tong;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDinhMuc;
-        private System.Windows.Forms.LinkLabel lbChinhSua;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox comboThin;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gridThin;
@@ -1638,5 +1610,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnThemNhanVien;
+        private System.Windows.Forms.ComboBox txtTimKiem;
     }
 }
