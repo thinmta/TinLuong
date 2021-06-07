@@ -1577,6 +1577,12 @@
     <Compile Include="Xtra_N_X_T_DaiLy_TheoTung_DaiLy.Designer.cs">
       <DependentUpon>Xtra_N_X_T_DaiLy_TheoTung_DaiLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_SanLuongToMay_IN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_SanLuongToMay_IN.Designer.cs">
+      <DependentUpon>Xtra_SanLuongToMay_IN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2265,6 +2271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_N_X_T_DaiLy_TheoTung_DaiLy.resx">
       <DependentUpon>Xtra_N_X_T_DaiLy_TheoTung_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_SanLuongToMay_IN.resx">
+      <DependentUpon>Xtra_SanLuongToMay_IN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_TraLuong.resx">
       <DependentUpon>Xtra_TraLuong.cs</DependentUpon>

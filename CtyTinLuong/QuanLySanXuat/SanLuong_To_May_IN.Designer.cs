@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_To_May_IN));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -158,6 +157,7 @@
             this.btprint2.StyleController = this.dataLayoutControl1;
             this.btprint2.TabIndex = 111;
             this.btprint2.Text = "Print_ALL";
+            this.btprint2.Click += new System.EventHandler(this.btprint2_Click);
             // 
             // txtSoDong
             // 
