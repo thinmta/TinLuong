@@ -14,8 +14,8 @@ namespace  CtyTinLuong
 	/// Purpose: Data Access class for the table 'Phieu_tbPhieu'.
 	/// </summary>
 	public partial class clsPhieu_tbPhieu : clsDBInteractionBase
-    {//pr_Phieu_tbPhieu_SelectAll_Tinh_SoPhieu_new
-
+    {//pr_Phieu_ChiTietPhieu_New_Select_SUM_SanLuong_W_IDVTHH_NgayThang
+       
         public DataTable SelectAll_Tinh_SoPhieu_new(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
