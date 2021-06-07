@@ -17,6 +17,8 @@ namespace CtyTinLuong.Luong_ChamCong
             InitializeComponent();
         }
 
+
+
         private void T_frmPrintChamCongToGapDan_Load(object sender, EventArgs e)
         {
             T_PrintChamCongToGapDan xtr111 = new T_PrintChamCongToGapDan();
