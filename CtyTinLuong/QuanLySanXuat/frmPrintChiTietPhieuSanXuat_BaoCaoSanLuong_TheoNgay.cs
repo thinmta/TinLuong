@@ -80,7 +80,7 @@ namespace CtyTinLuong
         {
             Xtra_BaoCaoSanLuong_ToMay_IN xtr111 = new Xtra_BaoCaoSanLuong_ToMay_IN();
             DataTable dt3 = new DataTable();
-            dt3 = frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mdtPrint_tbChiTietPhieu_baoCaoSanLuongTheoNgay;
+            //dt3 = frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mdtPrint_tbChiTietPhieu_baoCaoSanLuongTheoNgay;
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbChiTietPhieuSanXuat.Clone();
@@ -138,7 +138,7 @@ namespace CtyTinLuong
         {
             Xtra_BaoCaoSanLuong_ToMay_IN xtr111 = new Xtra_BaoCaoSanLuong_ToMay_IN();
             DataTable dt3 = new DataTable();
-            dt3 = frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mdtPrint_tbChiTietPhieu_baoCaoSanLuongTheoNgay;
+            //dt3 = frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mdtPrint_tbChiTietPhieu_baoCaoSanLuongTheoNgay;
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbChiTietPhieuSanXuat.Clone();
@@ -183,19 +183,19 @@ namespace CtyTinLuong
 
         private void frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay_Load(object sender, EventArgs e)
         {
-            if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbPrint == true)
-                Printxxxxxxxx_frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT();
+            //if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbPrint == true)
+            //    Printxxxxxxxx_frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT();
          
-            if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbPrint == true)
-                Printxxxxxxxx_frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT();
+            //if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbPrint == true)
+            //    Printxxxxxxxx_frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT();
             if (frmBaoCaoSanLuong_Theo_CongNhan.mbPrint == true)
                 Printxxxxxxxx_frmBaoCaoSanLuong_Theo_CongNhan();
         }
 
         private void frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbPrint = false;
-            frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbPrint = false;
+            //frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbPrint = false;
+            //frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbPrint = false;
             frmBaoCaoSanLuong_Theo_CongNhan.mbPrint = false;
         }
     }

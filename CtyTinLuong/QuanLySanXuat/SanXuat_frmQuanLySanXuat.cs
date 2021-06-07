@@ -14,7 +14,7 @@ namespace CtyTinLuong
     {
         private bool isload = true;
         UC_SanXuat_PhieuSanXuat ucc;
-
+        public static int imay_in_1_Cat_2_dot_3;
         public SanXuat_frmQuanLySanXuat()
         {
             isload = true;
@@ -125,16 +125,11 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT ucc = new frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT();
-            ucc.Show();
+            //frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT ucc = new frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT();
+            //ucc.Show();
         }
 
-     
-        private void navBarItem2_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT ucc = new frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT();
-            ucc.Show();
-        }
+    
 
         private void navBarControl1_Click(object sender, EventArgs e)
         {
@@ -269,8 +264,23 @@ namespace CtyTinLuong
             ucc.BringToFront();
         }
 
+        private void navSanLuongMayDOT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            imay_in_1_Cat_2_dot_3 = 3;
+            //SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
+            //ucc.Show();
+        }
+
         private void navSanLuongMayIn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            imay_in_1_Cat_2_dot_3 = 1;
+            SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
+            ucc.Show();
+        }
+
+        private void navSanLuongMayCAT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            imay_in_1_Cat_2_dot_3 = 2;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
             ucc.Show();
         }

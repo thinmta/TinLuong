@@ -33,36 +33,36 @@ namespace CtyTinLuong
                 //pGiamDoc.Value = frmMain.msGiamDoc;
                 //pTruongPhong.Value = frmMain.msTruongPhongTH;
             }
-            if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbPrint == true)
-            {
-                if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 0)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN - CẮT - ĐỘT";
-                if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 1)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN";
-                if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 2)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY CẮT";
-                if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 3)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY ĐỘT";
-                if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbNgayThang_null == true)
-                    pNgayThang.Value = "Từ ngày " + frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mdaTuNgay.ToString("dd/MM/yyyy") + " đến ngày " + frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mdaDenNgay.ToString("dd/MM/yyyy") + "";
-                else pNgayThang.Value = "Ngày " + DateTime.Today.ToString("dd/MM/yyyy") + "";
-            }
+            //if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbPrint == true)
+            //{
+            //    if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 0)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN - CẮT - ĐỘT";
+            //    if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 1)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN";
+            //    if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 2)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY CẮT";
+            //    if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 3)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY ĐỘT";
+            //    if (frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mbNgayThang_null == true)
+            //        pNgayThang.Value = "Từ ngày " + frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mdaTuNgay.ToString("dd/MM/yyyy") + " đến ngày " + frmBaoCaoSanLuongTheoNhomMay_IN_CAT_DOT.mdaDenNgay.ToString("dd/MM/yyyy") + "";
+            //    else pNgayThang.Value = "Ngày " + DateTime.Today.ToString("dd/MM/yyyy") + "";
+            //}
 
 
-            if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbPrint == true)
-            {
-                if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 0)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN - CẮT - ĐỘT";
-                if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 1)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN";
-                if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 2)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY CẮT";
-                if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 3)
-                    pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY ĐỘT";
-                if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbNgayThang_null == true)
-                    pNgayThang.Value = "Từ ngày " + frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mdaTuNgay.ToString("dd/MM/yyyy") + " đến ngày " + frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mdaDenNgay.ToString("dd/MM/yyyy") + "";
-                else pNgayThang.Value = "Ngày " + DateTime.Today.ToString("dd/MM/yyyy") + "";
-            }
+            //if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbPrint == true)
+            //{
+            //    if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 0)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN - CẮT - ĐỘT";
+            //    if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 1)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN";
+            //    if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 2)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY CẮT";
+            //    if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.miPrtint_ALL_0_IN_1_CAT_2_Dot_3 == 3)
+            //        pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY ĐỘT";
+            //    if (frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mbNgayThang_null == true)
+            //        pNgayThang.Value = "Từ ngày " + frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mdaTuNgay.ToString("dd/MM/yyyy") + " đến ngày " + frmBaoCaoSanLuongTheoMaHang_IN_CAT_DOT.mdaDenNgay.ToString("dd/MM/yyyy") + "";
+            //    else pNgayThang.Value = "Ngày " + DateTime.Today.ToString("dd/MM/yyyy") + "";
+            //}
             
 
         }
