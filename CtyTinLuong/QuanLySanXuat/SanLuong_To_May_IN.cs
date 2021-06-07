@@ -51,22 +51,26 @@ namespace CtyTinLuong
                     DataTable dt_IN = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(ID_VTHH_Raxx, xxtungay, xxdenngay);
                     if(dt_IN.Rows.Count>0)
                     {
-                        DataRow _ravi = dt2.NewRow();
-                        clsvt.iID_VTHH = ID_VTHH_Raxx;
-                        DataTable dtvt_Ra = clsvt.SelectOne();
-                        string MaVT_Ra = clsvt.sMaVT.Value;
-                        string DonViTinh_Ra = clsvt.sDonViTinh.Value;
-                        string TenVatTu_Ra = clsvt.sTenVTHH.Value;
-                      
-                        _ravi["ID_VTHH_Ra"] = ID_VTHH_Raxx;
-                        _ravi["MaVT_Ra"] = MaVT_Ra;
-                        _ravi["DonViTinh_Ra"] = DonViTinh_Ra;
-                        _ravi["TenVatTu_Ra"] = TenVatTu_Ra;
-                        _ravi["SanLuong_Tong"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Tong"].ToString());
-                        _ravi["SanLuong_Thuong"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Thuong"].ToString());
-                        _ravi["SanLuong_TangCa"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_TangCa"].ToString());
-                        _ravi["PhePham"] = Convert.ToDouble(dt_IN.Rows[0]["PhePham"].ToString());
-                        dt2.Rows.Add(_ravi);
+                        if(Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Tong"].ToString())>0)
+                        {
+                            DataRow _ravi = dt2.NewRow();
+                            clsvt.iID_VTHH = ID_VTHH_Raxx;
+                            DataTable dtvt_Ra = clsvt.SelectOne();
+                            string MaVT_Ra = clsvt.sMaVT.Value;
+                            string DonViTinh_Ra = clsvt.sDonViTinh.Value;
+                            string TenVatTu_Ra = clsvt.sTenVTHH.Value;
+
+                            _ravi["ID_VTHH_Ra"] = ID_VTHH_Raxx;
+                            _ravi["MaVT_Ra"] = MaVT_Ra;
+                            _ravi["DonViTinh_Ra"] = DonViTinh_Ra;
+                            _ravi["TenVatTu_Ra"] = TenVatTu_Ra;
+                            _ravi["SanLuong_Tong"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Tong"].ToString());
+                            _ravi["SanLuong_Thuong"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Thuong"].ToString());
+                            _ravi["SanLuong_TangCa"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_TangCa"].ToString());
+                            _ravi["PhePham"] = Convert.ToDouble(dt_IN.Rows[0]["PhePham"].ToString());
+                            dt2.Rows.Add(_ravi);
+                        }
+                        
                     }
                    
                 }
@@ -209,6 +213,11 @@ namespace CtyTinLuong
         {
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void SanLuong_To_May_IN_Load(object sender, EventArgs e)
