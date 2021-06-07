@@ -51,9 +51,7 @@
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSanLuongMayIn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -62,7 +60,8 @@
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
-            this.navSanLuongMayIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSanLuongMayCAT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSanLuongMayDOT = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -177,13 +176,12 @@
             this.navBarItemDinhMucNPL,
             this.navBarItem8,
             this.navBarItem20,
-            this.navBarItem1,
-            this.navBarItem2,
             this.navBarItem13,
-            this.navBarItem14,
             this.navBarItem16,
             this.navBarItem15,
-            this.navSanLuongMayIn});
+            this.navSanLuongMayIn,
+            this.navSanLuongMayCAT,
+            this.navSanLuongMayDOT});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -240,10 +238,9 @@
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayIn)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayIn),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayCAT),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayDOT)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem8
@@ -252,23 +249,11 @@
             this.navBarItem8.Name = "navBarItem8";
             this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
             // 
-            // navBarItem1
+            // navSanLuongMayIn
             // 
-            this.navBarItem1.Caption = "Sản lượng theo mã hàng";
-            this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Caption = "Sản lượng theo nhóm máy";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked_1);
-            // 
-            // navBarItem14
-            // 
-            this.navBarItem14.Caption = "Sản lượng theo công nhân";
-            this.navBarItem14.Name = "navBarItem14";
-            this.navBarItem14.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem14_LinkClicked_2);
+            this.navSanLuongMayIn.Caption = "Sản lượng tổ máy IN";
+            this.navSanLuongMayIn.Name = "navSanLuongMayIn";
+            this.navSanLuongMayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayIn_LinkClicked);
             // 
             // navBarItem25
             // 
@@ -347,11 +332,17 @@
             this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
             this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
             // 
-            // navSanLuongMayIn
+            // navSanLuongMayCAT
             // 
-            this.navSanLuongMayIn.Caption = "Sản lượng tổ máy IN";
-            this.navSanLuongMayIn.Name = "navSanLuongMayIn";
-            this.navSanLuongMayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayIn_LinkClicked);
+            this.navSanLuongMayCAT.Caption = "Sản lượng tổ máy CẮT";
+            this.navSanLuongMayCAT.Name = "navSanLuongMayCAT";
+            this.navSanLuongMayCAT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayCAT_LinkClicked);
+            // 
+            // navSanLuongMayDOT
+            // 
+            this.navSanLuongMayDOT.Caption = "Sản lượng tổ máy ĐỘT";
+            this.navSanLuongMayDOT.Name = "navSanLuongMayDOT";
+            this.navSanLuongMayDOT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayDOT_LinkClicked);
             // 
             // SanXuat_frmQuanLySanXuat
             // 
@@ -406,10 +397,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem20;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel btnTrangTiep;
@@ -418,5 +406,7 @@
         private System.Windows.Forms.TextBox txtSoTrang;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayIn;
+        private DevExpress.XtraNavBar.NavBarItem navSanLuongMayCAT;
+        private DevExpress.XtraNavBar.NavBarItem navSanLuongMayDOT;
     }
 }

@@ -7,7 +7,119 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
+<<<<<<< Updated upstream
         public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+=======
+        //pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_CAT
+        public DataTable SelectAll_Tinh_So_ChiTietPhieu_May_CAT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_CAT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_CAT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiiIDVTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang_));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_CAT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable SelectAll_Tinh_So_ChiTietPhieu_May_DOT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_DOT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_DOT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiiIDVTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang_));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_DOT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataTable SelectAll_Tinh_So_ChiTietPhieu_May_IN(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_IN]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_IN");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiiIDVTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang_));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_IN", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT( int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+>>>>>>> Stashed changes
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT]";
@@ -42,7 +154,11 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+<<<<<<< Updated upstream
         public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+=======
+        public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT( int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
+>>>>>>> Stashed changes
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT]";

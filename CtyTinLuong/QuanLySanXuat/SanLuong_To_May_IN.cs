@@ -12,10 +12,10 @@ namespace CtyTinLuong
 {
     public partial class SanLuong_To_May_IN : Form
     {
-
+        int xxximay_in_1_Cat_2_dot_3=0;
         public static string xxsotrang;
         public static DateTime mdatungay, mdadenngay;
-
+        public static int miID_VTHH_Ra;
         private int _SoTrang = 1;
         private bool isload = false;
         public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
@@ -48,10 +48,14 @@ namespace CtyTinLuong
                 {
                     int ID_VTHH_Raxx = Convert.ToInt32(dtID_VTHH_Ra.Rows[i]["ID_VTHH_Ra"].ToString());
                     cls.iID_VTHH_Ra = ID_VTHH_Raxx;
-                    DataTable dt_IN = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(ID_VTHH_Raxx, xxtungay, xxdenngay);
-                    if(dt_IN.Rows.Count>0)
+                    DataTable dtxxxx = new DataTable();
+                    if(xxximay_in_1_Cat_2_dot_3==1)
+                    dtxxxx = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(ID_VTHH_Raxx, xxtungay, xxdenngay);
+                    else if (xxximay_in_1_Cat_2_dot_3 == 2)
+                        dtxxxx = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(ID_VTHH_Raxx, xxtungay, xxdenngay);
+                    if (dtxxxx.Rows.Count>0)
                     {
-                        if(Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Tong"].ToString())>0)
+                        if(Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_Tong"].ToString())>0)
                         {
                             DataRow _ravi = dt2.NewRow();
                             clsvt.iID_VTHH = ID_VTHH_Raxx;
@@ -64,10 +68,10 @@ namespace CtyTinLuong
                             _ravi["MaVT_Ra"] = MaVT_Ra;
                             _ravi["DonViTinh_Ra"] = DonViTinh_Ra;
                             _ravi["TenVatTu_Ra"] = TenVatTu_Ra;
-                            _ravi["SanLuong_Tong"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Tong"].ToString());
-                            _ravi["SanLuong_Thuong"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_Thuong"].ToString());
-                            _ravi["SanLuong_TangCa"] = Convert.ToDouble(dt_IN.Rows[0]["SanLuong_TangCa"].ToString());
-                            _ravi["PhePham"] = Convert.ToDouble(dt_IN.Rows[0]["PhePham"].ToString());
+                            _ravi["SanLuong_Tong"] = Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_Tong"].ToString());
+                            _ravi["SanLuong_Thuong"] = Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_Thuong"].ToString());
+                            _ravi["SanLuong_TangCa"] = Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_TangCa"].ToString());
+                            _ravi["PhePham"] = Convert.ToDouble(dtxxxx.Rows[0]["PhePham"].ToString());
                             dt2.Rows.Add(_ravi);
                         }
                         
@@ -220,6 +224,25 @@ namespace CtyTinLuong
             this.Close();
         }
 
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            if(gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString()!="")
+            {
+                miID_VTHH_Ra = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                SanLuong_ToMay_ChiTiet ff = new SanLuong_ToMay_ChiTiet();
+                ff.Show();
+
+            }
+        }
+
+        private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
         private void SanLuong_To_May_IN_Load(object sender, EventArgs e)
         {
             DateTime ngayhomnay = DateTime.Today;
@@ -230,7 +253,7 @@ namespace CtyTinLuong
             dteTuNgay.DateTime= GetFistDayInMonth(nam, thang);
 
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-
+            xxximay_in_1_Cat_2_dot_3 = SanXuat_frmQuanLySanXuat.imay_in_1_Cat_2_dot_3;
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
