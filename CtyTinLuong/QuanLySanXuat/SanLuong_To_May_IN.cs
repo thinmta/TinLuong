@@ -260,6 +260,8 @@ namespace CtyTinLuong
             if (mdtPrint.Rows.Count > 0)
             {
                 mbPrint_ALL = true;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
                 //mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
                 //msSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
                 //msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();

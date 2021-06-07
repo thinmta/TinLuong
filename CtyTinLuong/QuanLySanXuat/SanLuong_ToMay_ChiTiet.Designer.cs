@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_ToMay_ChiTiet));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,6 +53,7 @@
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgaySanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenMay = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -78,7 +78,7 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.clMaPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clCaSanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -280,7 +280,8 @@
             this.clTenNhanVien,
             this.clNgaySanXuat,
             this.clTenMay,
-            this.clMaPhieu});
+            this.clMaPhieu,
+            this.clCaSanXuat});
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao_CAT", this.clSanLuong_Tong, ""),
@@ -318,7 +319,7 @@
             this.clPhePham.OptionsColumn.AllowEdit = false;
             this.clPhePham.OptionsColumn.FixedWidth = true;
             this.clPhePham.Visible = true;
-            this.clPhePham.VisibleIndex = 8;
+            this.clPhePham.VisibleIndex = 9;
             this.clPhePham.Width = 120;
             // 
             // clSanLuong_Tong
@@ -341,7 +342,7 @@
             this.clSanLuong_Tong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.clSanLuong_Tong.Visible = true;
-            this.clSanLuong_Tong.VisibleIndex = 7;
+            this.clSanLuong_Tong.VisibleIndex = 8;
             this.clSanLuong_Tong.Width = 120;
             // 
             // clSanLuong_Thuong
@@ -362,7 +363,7 @@
             this.clSanLuong_Thuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.clSanLuong_Thuong.Visible = true;
-            this.clSanLuong_Thuong.VisibleIndex = 5;
+            this.clSanLuong_Thuong.VisibleIndex = 6;
             this.clSanLuong_Thuong.Width = 120;
             // 
             // clSanLuong_TangCa
@@ -381,7 +382,7 @@
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
             this.clSanLuong_TangCa.Visible = true;
-            this.clSanLuong_TangCa.VisibleIndex = 6;
+            this.clSanLuong_TangCa.VisibleIndex = 7;
             this.clSanLuong_TangCa.Width = 120;
             // 
             // clID_VTHH_Ra
@@ -405,8 +406,8 @@
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 3;
-            this.clTenNhanVien.Width = 172;
+            this.clTenNhanVien.VisibleIndex = 4;
+            this.clTenNhanVien.Width = 143;
             // 
             // clNgaySanXuat
             // 
@@ -420,7 +421,7 @@
             this.clNgaySanXuat.OptionsColumn.AllowEdit = false;
             this.clNgaySanXuat.Visible = true;
             this.clNgaySanXuat.VisibleIndex = 1;
-            this.clNgaySanXuat.Width = 102;
+            this.clNgaySanXuat.Width = 84;
             // 
             // clTenMay
             // 
@@ -429,8 +430,18 @@
             this.clTenMay.Name = "clTenMay";
             this.clTenMay.OptionsColumn.AllowEdit = false;
             this.clTenMay.Visible = true;
-            this.clTenMay.VisibleIndex = 4;
-            this.clTenMay.Width = 93;
+            this.clTenMay.VisibleIndex = 5;
+            this.clTenMay.Width = 79;
+            // 
+            // clMaPhieu
+            // 
+            this.clMaPhieu.Caption = "Mã phiếu";
+            this.clMaPhieu.FieldName = "MaPhieu";
+            this.clMaPhieu.Name = "clMaPhieu";
+            this.clMaPhieu.OptionsColumn.AllowEdit = false;
+            this.clMaPhieu.Visible = true;
+            this.clMaPhieu.VisibleIndex = 3;
+            this.clMaPhieu.Width = 66;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -652,15 +663,16 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(138, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // clMaPhieu
+            // clCaSanXuat
             // 
-            this.clMaPhieu.Caption = "Mã phiếu";
-            this.clMaPhieu.FieldName = "MaPhieu";
-            this.clMaPhieu.Name = "clMaPhieu";
-            this.clMaPhieu.OptionsColumn.AllowEdit = false;
-            this.clMaPhieu.Visible = true;
-            this.clMaPhieu.VisibleIndex = 2;
-            this.clMaPhieu.Width = 80;
+            this.clCaSanXuat.Caption = "Ca";
+            this.clCaSanXuat.FieldName = "CaSanXuat";
+            this.clCaSanXuat.Name = "clCaSanXuat";
+            this.clCaSanXuat.OptionsColumn.AllowEdit = false;
+            this.clCaSanXuat.OptionsColumn.FixedWidth = true;
+            this.clCaSanXuat.Visible = true;
+            this.clCaSanXuat.VisibleIndex = 2;
+            this.clCaSanXuat.Width = 50;
             // 
             // SanLuong_ToMay_ChiTiet
             // 
@@ -756,5 +768,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clTenMay;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraGrid.Columns.GridColumn clMaPhieu;
+        private DevExpress.XtraGrid.Columns.GridColumn clCaSanXuat;
     }
 }

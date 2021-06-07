@@ -14,32 +14,55 @@ namespace CtyTinLuong
     {
         private void Print_SanLuong_To_May_IN(DataTable dt3)
         {
-            Xtra_SanLuongToMay_IN xtr111 = new Xtra_SanLuongToMay_IN();
-
+            Xtra_SanLuongToMay_IN xtr111 = new Xtra_SanLuongToMay_IN();           
             DataSet_TinLuong ds = new DataSet_TinLuong();
-            ds.tbNhapKho_XuatKho.Clone();
-            ds.tbNhapKho_XuatKho.Clear();
+            ds.tbChiTietPhieuSanXuat.Clone();
+            ds.tbChiTietPhieuSanXuat.Clear();
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                DataRow _ravi = ds.tbNhapKho_XuatKho.NewRow();
-                _ravi["STT"] = (i + 1).ToString();
-                int ID_VTHH = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = ID_VTHH;
-                DataTable dt = cls.SelectOne();
-                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["MaVT"] = cls.sMaVT.Value;
-                _ravi["TenVTHH"] = cls.sTenVTHH.Value;
-                _ravi["DonViTinh"] = cls.sDonViTinh.Value;
-                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                ds.tbNhapKho_XuatKho.Rows.Add(_ravi);
+
+                int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH_Ra"].ToString());
+                clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
+                clsxx.iID_VTHH = ID_VTHHxx;
+                DataTable dtxx = clsxx.SelectOne();
+                string xxmavt, xxtenvt, xxdvt;
+                xxmavt= clsxx.sMaVT.Value; 
+                xxtenvt= clsxx.sTenVTHH.Value;
+                xxdvt= clsxx.sDonViTinh.Value;
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+
+                DataTable dtchitiet = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_IN(ID_VTHHxx, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
+                if (dtchitiet.Rows.Count > 0)
+                {
+                    for (int k = 0; k < dtchitiet.Rows.Count; k++)
+                    {
+                        DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
+                        _ravi["MaVT_Ra_IN"] = xxmavt;
+                        _ravi["DonViTinh_Ra_IN"] = xxdvt;
+                        _ravi["TenVatTu_Ra_IN"] = xxtenvt;
+
+                        _ravi["MaPhieu"] = dtchitiet.Rows[k]["MaPhieu"].ToString();
+
+                        _ravi["SanLuong_Thuong_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SanLuong_Thuong"].ToString());
+                        _ravi["SanLuong_TangCa_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SanLuong_TangCa"].ToString());
+                        _ravi["SoLuong_Ra_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SanLuong_Tong"].ToString());
+                        _ravi["PhePham_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["PhePham"].ToString());
+                        _ravi["NgaySanXuat_IN"] = Convert.ToDateTime(dtchitiet.Rows[k]["NgaySanXuat"].ToString());
+                        _ravi["CaSanXuat_IN"] = dtchitiet.Rows[k]["CaSanXuat"].ToString();
+                        _ravi["CongNhan_IN"] = dtchitiet.Rows[k]["TenNhanVien"].ToString();
+                        _ravi["MaMay_IN"] = dtchitiet.Rows[k]["TenMay"].ToString();
+                        ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
+                    }
+                   
+                
+                }
+              
+              
             }
 
             xtr111.DataSource = null;
-            xtr111.DataSource = ds.tbNhapKho_XuatKho;
-            xtr111.DataMember = "tbNhapKho_XuatKho";
+            xtr111.DataSource = ds.tbChiTietPhieuSanXuat;
+            xtr111.DataMember = "tbChiTietPhieuSanXuat";
             // xtr111.IntData(sgiamdoc);
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
