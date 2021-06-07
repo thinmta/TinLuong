@@ -7,10 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
-<<<<<<< Updated upstream
-        public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
-=======
-        //pr_Phieu_ChiTietPhieu_New_SelectAll_Tinh_So_ChiTietPhieu_May_CAT
+      
         public DataTable SelectAll_Tinh_So_ChiTietPhieu_May_CAT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -119,7 +116,7 @@ namespace CtyTinLuong
         }
 
         public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT( int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
->>>>>>> Stashed changes
+
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT]";
@@ -154,11 +151,11 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-<<<<<<< Updated upstream
-        public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT(int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
-=======
+
+     
+
         public DataTable SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT( int iiiIDVTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
->>>>>>> Stashed changes
+
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_Phieu_ChiTietPhieu_New_SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT]";
