@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmPrint_SanLuongToMayIn : Form
     {
-        private void Print_SanLuong_To_May_IN(DataTable dt3)
+        private void Print_SanLuong_To_May_IN(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
         {
             Xtra_SanLuongToMay_IN xtr111 = new Xtra_SanLuongToMay_IN();           
             DataSet_TinLuong ds = new DataSet_TinLuong();
@@ -31,7 +31,7 @@ namespace CtyTinLuong
                 xxdvt= clsxx.sDonViTinh.Value;
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
 
-                DataTable dtchitiet = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_IN(ID_VTHHxx, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
+                DataTable dtchitiet = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_IN(ID_VTHHxx, xxtungay, xxdenngay);
                 if (dtchitiet.Rows.Count > 0)
                 {
                     for (int k = 0; k < dtchitiet.Rows.Count; k++)
@@ -42,7 +42,6 @@ namespace CtyTinLuong
                         _ravi["TenVatTu_Ra_IN"] = xxtenvt;
 
                         _ravi["MaPhieu"] = dtchitiet.Rows[k]["MaPhieu"].ToString();
-
                         _ravi["SanLuong_Thuong_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SanLuong_Thuong"].ToString());
                         _ravi["SanLuong_TangCa_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SanLuong_TangCa"].ToString());
                         _ravi["SoLuong_Ra_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SanLuong_Tong"].ToString());
@@ -50,7 +49,7 @@ namespace CtyTinLuong
                         _ravi["NgaySanXuat_IN"] = Convert.ToDateTime(dtchitiet.Rows[k]["NgaySanXuat"].ToString());
                         _ravi["CaSanXuat_IN"] = dtchitiet.Rows[k]["CaSanXuat"].ToString();
                         _ravi["CongNhan_IN"] = dtchitiet.Rows[k]["TenNhanVien"].ToString();
-                        _ravi["MaMay_IN"] = dtchitiet.Rows[k]["TenMay"].ToString();
+                        _ravi["MaMay_IN"] = dtchitiet.Rows[k]["MaMay"].ToString();
                         ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
                     }
                    
@@ -75,7 +74,7 @@ namespace CtyTinLuong
         private void frmPrint_SanLuongToMayIn_Load(object sender, EventArgs e)
         {
             if (SanLuong_To_May_IN.mbPrint_ALL == true)
-                Print_SanLuong_To_May_IN(SanLuong_To_May_IN.mdtPrint);
+                Print_SanLuong_To_May_IN(SanLuong_To_May_IN.mdtPrint, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
         }
 
         private void frmPrint_SanLuongToMayIn_FormClosed(object sender, FormClosedEventArgs e)
