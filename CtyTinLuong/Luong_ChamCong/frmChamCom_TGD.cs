@@ -680,21 +680,12 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
-                    if (id_vthh_ == 0)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        isGuiThanhCong = true;
-                    }
-                    clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                    int ID_ChamCom_ = Convert.ToInt32(_data.Rows[i]["ID_ChamCom"].ToString());
+
+                    clsThin_.T_BTTL_TGD_I(
                         Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
                         _thang,
                         _nam,
-                        id_vthh_,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString()),
@@ -726,15 +717,15 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true);
+                        true);
                 }
-                if (isGuiThanhCong)
+                if (_data.Rows.Count>1)
                 {
-                    MessageBox.Show("Gửi dữ liệu chấm công thành công!");
+                    MessageBox.Show("Gửi dữ liệu chấm cơm thành công!");
                 }
                 else
                 {
-                    MessageBox.Show( "Chưa chọn loại hàng hóa","Lỗi",
+                    MessageBox.Show( "Chưa chọn công nhân","Lỗi",
        MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 }
             }
