@@ -24,7 +24,7 @@ namespace CtyTinLuong
                 if (dt.Rows.Count > 0)
                 {
                     pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                    pTruongPhong.Value = dt.Rows[6]["HoTen"].ToString();
+                    pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                     
                 }
             }
