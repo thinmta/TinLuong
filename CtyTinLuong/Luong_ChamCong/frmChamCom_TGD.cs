@@ -681,9 +681,11 @@ namespace CtyTinLuong
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
                     int ID_ChamCom_ = Convert.ToInt32(_data.Rows[i]["ID_ChamCom"].ToString());
+                    if (ID_ChamCom_ == -1)
+                        continue;
 
-                    clsThin_.T_BTTL_TGD_I(
-                        Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
+                    clsThin_.T_BTTL_TGD_I(ID_ChamCom_,
+                        Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()),
                         _thang,
                         _nam,
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),

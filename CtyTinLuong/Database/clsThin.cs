@@ -387,14 +387,14 @@ namespace CtyTinLuong
             }
         }
 
-        public void T_BTTL_TGD_I(int iID_CongNhan, int iThang, int iNam
+        public void T_BTTL_TGD_I(int iID_ChamCom, int iID_CongNhan, int iThang, int iNam
             , float fNgay1, float fNgay2, float fNgay3, float fNgay4
             , float fNgay5, float fNgay6, float fNgay7, float fNgay8, float fNgay9
             , float fNgay10, float fNgay11, float fNgay12, float fNgay13
             , float fNgay14, float fNgay15, float fNgay16, float fNgay17, float fNgay18, float fNgay19
             , float fNgay20, float fNgay21, float fNgay22, float fNgay23, float fNgay24, float fNgay25
             , float fNgay26, float fNgay27, float fNgay28, float fNgay29, float fNgay30, float fNgay31
-            , float fSanLuong, bool bGuiDuLieu)
+            , bool bGuiDuLieu)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[T_BTTL_TGD_I]";
@@ -406,6 +406,7 @@ namespace CtyTinLuong
 
             try
             {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChamCom", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_ChamCom));
 
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_CongNhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_CongNhan));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iThang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iThang));
