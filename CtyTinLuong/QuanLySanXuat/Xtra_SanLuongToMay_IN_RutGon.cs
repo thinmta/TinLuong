@@ -32,7 +32,10 @@ namespace CtyTinLuong
             { }
             DateTime xxtungay = SanLuong_To_May_IN.mdatungay;
             DateTime xxdenngay = SanLuong_To_May_IN.mdadenngay;
-            pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN THÁNG " + xxtungay.ToString("MM/yyyy") + "";
+            if (SanLuong_To_May_IN.xxximay_in_1_Cat_2_dot_3 == 1)
+                pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN THÁNG " + xxtungay.ToString("MM/yyyy") + "";
+            else if (SanLuong_To_May_IN.xxximay_in_1_Cat_2_dot_3 == 2)
+                pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY CẮT THÁNG " + xxtungay.ToString("MM/yyyy") + "";
             pNgayThang.Value = "Từ ngày " + xxtungay.ToString("dd/MM/yyyy") + " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
         }
     }
