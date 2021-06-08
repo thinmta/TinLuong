@@ -52,6 +52,8 @@
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navSanLuongMayIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSanLuongMayCAT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navSanLuongMayDOT = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -60,8 +62,6 @@
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
-            this.navSanLuongMayCAT = new DevExpress.XtraNavBar.NavBarItem();
-            this.navSanLuongMayDOT = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -255,6 +255,18 @@
             this.navSanLuongMayIn.Name = "navSanLuongMayIn";
             this.navSanLuongMayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayIn_LinkClicked);
             // 
+            // navSanLuongMayCAT
+            // 
+            this.navSanLuongMayCAT.Caption = "Sản lượng tổ máy CẮT";
+            this.navSanLuongMayCAT.Name = "navSanLuongMayCAT";
+            this.navSanLuongMayCAT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayCAT_LinkClicked);
+            // 
+            // navSanLuongMayDOT
+            // 
+            this.navSanLuongMayDOT.Caption = "Sản lượng tổ ĐỘT DẬP";
+            this.navSanLuongMayDOT.Name = "navSanLuongMayDOT";
+            this.navSanLuongMayDOT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayDOT_LinkClicked);
+            // 
             // navBarItem25
             // 
             this.navBarItem25.Caption = "* Tất cả";
@@ -331,18 +343,6 @@
             this.txtSoTrang.Visible = false;
             this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
             this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
-            // 
-            // navSanLuongMayCAT
-            // 
-            this.navSanLuongMayCAT.Caption = "Sản lượng tổ máy CẮT";
-            this.navSanLuongMayCAT.Name = "navSanLuongMayCAT";
-            this.navSanLuongMayCAT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayCAT_LinkClicked);
-            // 
-            // navSanLuongMayDOT
-            // 
-            this.navSanLuongMayDOT.Caption = "Sản lượng tổ máy ĐỘT";
-            this.navSanLuongMayDOT.Name = "navSanLuongMayDOT";
-            this.navSanLuongMayDOT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayDOT_LinkClicked);
             // 
             // SanXuat_frmQuanLySanXuat
             // 

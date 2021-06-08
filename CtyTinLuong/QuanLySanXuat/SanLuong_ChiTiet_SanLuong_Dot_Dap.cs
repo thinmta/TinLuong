@@ -11,26 +11,18 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class SanLuong_ToMay_ChiTiet : Form
+    public partial class SanLuong_ChiTiet_SanLuong_Dot_Dap : Form
     {
         public static DataTable mdtPrint;
-        public static bool mbPrint;
-        public static string msMaVT, msTenVT, msDVT;
-        public static int xxximay_in_1_Cat_2_dot_3 = 0;
-        public static int miID_VThh = 0;
-        public static double sanluongthuowng, sanluongtangca, sanluongtong, phepham;
-        
         public static DateTime mdatungay, mdadenngay;
+        public static bool mbPrint;
+        public static string msMaVT, msTenVT, msDVT;      
+        public static int miID_VThh = 0;
+    //    public static double sanluongthuowng, sanluongtangca, sanluongtong, phepham;
         private void Load_lockup()
         {
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            DataTable dt = new DataTable();
-            if (xxximay_in_1_Cat_2_dot_3 == 1)
-                 dt = cls.SelectAll_distinct_W_ID_VTHH_Ra_May_IN();
-            else if (xxximay_in_1_Cat_2_dot_3 == 2)
-                 dt = cls.SelectAll_distinct_W_ID_VTHH_Ra_May_CAT();
-
-           
+            DataTable dt = cls.SelectAll_distinct_W_ID_VTHH_Ra_May_DOT();
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("ID_VTHH", typeof(int));
             dt2xx.Columns.Add("MaVT", typeof(string));
@@ -61,34 +53,26 @@ namespace CtyTinLuong
             gridControl1.DataSource = null;
             DataTable dt = new DataTable();
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            if (xxximay_in_1_Cat_2_dot_3 == 1)
-                 dt = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_IN(ID_VTHHxx, xxtungay, xxdenngay);
-            else if (xxximay_in_1_Cat_2_dot_3 == 2)
-                 dt = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_CAT(ID_VTHHxx, xxtungay, xxdenngay);
+            dt = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT(ID_VTHHxx, xxtungay, xxdenngay);
             if (dt.Rows.Count > 0)
                 gridControl1.DataSource = dt;
 
         }
-       
-       
-
-        public SanLuong_ToMay_ChiTiet()
+        public SanLuong_ChiTiet_SanLuong_Dot_Dap()
         {
             InitializeComponent();
         }
 
-        private void SanLuong_ToMay_ChiTiet_Load(object sender, EventArgs e)
+        private void SanLuong_ChiTiet_SanLuong_Dot_Dap_Load(object sender, EventArgs e)
         {
-            xxximay_in_1_Cat_2_dot_3 = SanXuat_frmQuanLySanXuat.imay_in_1_Cat_2_dot_3;
+            clSoKG_MotBao_May_Dot.Caption = "Số KG/\nBao_Sọt";
+            clQuyRaKG.Caption = "Tổng số\nKg";
             Load_lockup();
-            dteTuNgay.EditValue = SanLuong_To_May_IN.mdatungay;
-            dteDenNgay.EditValue = SanLuong_To_May_IN.mdadenngay;
-            GridMaVT.EditValue = SanLuong_To_May_IN.miID_VTHH_Ra;
-            int xxID = Convert.ToInt32(GridMaVT.EditValue.ToString());            
-            LoadData( xxID,dteTuNgay.DateTime, dteDenNgay.DateTime);
-
-
-
+            dteTuNgay.EditValue = SanLuong_To_DOT_DAP.mdatungay;
+            dteDenNgay.EditValue = SanLuong_To_DOT_DAP.mdadenngay;
+            GridMaVT.EditValue = SanLuong_To_DOT_DAP.miID_VTHH_Ra;
+           
+            LoadData(SanLuong_To_DOT_DAP.miID_VTHH_Ra, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
         }
 
         private void GridMaVT_EditValueChanged(object sender, EventArgs e)
@@ -119,13 +103,11 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                int xxID = Convert.ToInt32(GridMaVT.EditValue.ToString());               
-                 LoadData(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
-                
+                int xxID = Convert.ToInt32(GridMaVT.EditValue.ToString());
+                LoadData(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
             }
         }
-
-    
 
         private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
@@ -146,7 +128,7 @@ namespace CtyTinLuong
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
             mdtPrint = dv1212.ToTable();
-           
+
             if (mdtPrint.Rows.Count > 0)
             {
                 mbPrint = true;
@@ -158,15 +140,15 @@ namespace CtyTinLuong
                 msDVT = txtDVT.Text;
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
                 DataTable dt3 = new DataTable();
-                if (xxximay_in_1_Cat_2_dot_3 == 1)
-                    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(miID_VThh, mdatungay, mdadenngay);
-                else if (xxximay_in_1_Cat_2_dot_3 == 2)
-                    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(miID_VThh, mdatungay, mdadenngay);
+                //if (xxximay_in_1_Cat_2_dot_3 == 1)
+                //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(miID_VThh, mdatungay, mdadenngay);
+                //else if (xxximay_in_1_Cat_2_dot_3 == 2)
+                //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(miID_VThh, mdatungay, mdadenngay);
 
-                 sanluongthuowng = Convert.ToDouble(dt3.Rows[0]["SanLuong_Thuong"].ToString());
-                 sanluongtangca = Convert.ToDouble(dt3.Rows[0]["SanLuong_TangCa"].ToString());
-                 sanluongtong = Convert.ToDouble(dt3.Rows[0]["SanLuong_Tong"].ToString());
-                 phepham = Convert.ToDouble(dt3.Rows[0]["PhePham"].ToString());
+                //sanluongthuowng = Convert.ToDouble(dt3.Rows[0]["SanLuong_Thuong"].ToString());
+                //sanluongtangca = Convert.ToDouble(dt3.Rows[0]["SanLuong_TangCa"].ToString());
+                //sanluongtong = Convert.ToDouble(dt3.Rows[0]["SanLuong_Tong"].ToString());
+                //phepham = Convert.ToDouble(dt3.Rows[0]["PhePham"].ToString());
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
                 ff.Show();
 

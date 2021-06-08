@@ -1438,6 +1438,18 @@
     <Compile Include="QuanLySanXuat\SanLuong_ToMay_ChiTiet.Designer.cs">
       <DependentUpon>SanLuong_ToMay_ChiTiet.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\SanLuong_To_DOT_DAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\SanLuong_To_DOT_DAP.Designer.cs">
+      <DependentUpon>SanLuong_To_DOT_DAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanXuat\SanLuong_ChiTiet_SanLuong_Dot_Dap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\SanLuong_ChiTiet_SanLuong_Dot_Dap.Designer.cs">
+      <DependentUpon>SanLuong_ChiTiet_SanLuong_Dot_Dap.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.cs">
       <SubType>UserControl</SubType>
@@ -1594,6 +1606,18 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN.Designer.cs">
       <DependentUpon>Xtra_SanLuongToMay_IN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.Designer.cs">
+      <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.Designer.cs">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP.cs</DependentUpon>
     </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
@@ -2016,8 +2040,14 @@
     <EmbeddedResource Include="QuanLySanXuat\frmGuiDuLieuLuongTheoSanLuong.resx">
       <DependentUpon>frmGuiDuLieuLuongTheoSanLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\SanLuong_ChiTiet_SanLuong_Dot_Dap.resx">
+      <DependentUpon>SanLuong_ChiTiet_SanLuong_Dot_Dap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanLuong_ToMay_ChiTiet.resx">
       <DependentUpon>SanLuong_ToMay_ChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\SanLuong_To_DOT_DAP.resx">
+      <DependentUpon>SanLuong_To_DOT_DAP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_RutGon.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_RutGon.cs</DependentUpon>
@@ -2030,6 +2060,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.resx">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.resx">
+      <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.resx">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.resx">
       <DependentUpon>frmChiTietDinhMucLuongCongNhat_New.cs</DependentUpon>

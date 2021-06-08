@@ -252,7 +252,7 @@
             this.xrLine1,
             this.xrLabel7,
             this.xrLabel12});
-            this.ReportHeader.HeightF = 138.9583F;
+            this.ReportHeader.HeightF = 113.9583F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
             // 
@@ -612,10 +612,10 @@
             // xrLabel23
             // 
             this.xrLabel23.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(549.0835F, 10.00001F);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(549.0835F, 22.50001F);
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel23.SizeF = new System.Drawing.SizeF(185.9166F, 28.04166F);
+            this.xrLabel23.SizeF = new System.Drawing.SizeF(185.9166F, 15.54165F);
             this.xrLabel23.StylePriority.UseFont = false;
             this.xrLabel23.StylePriority.UseTextAlignment = false;
             this.xrLabel23.Text = "Ngày ....... tháng....... năm ........";
