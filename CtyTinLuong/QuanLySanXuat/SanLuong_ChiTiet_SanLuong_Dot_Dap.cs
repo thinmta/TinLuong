@@ -22,7 +22,7 @@ namespace CtyTinLuong
         private void Load_lockup()
         {
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            DataTable dt = cls.SelectAll_distinct_W_ID_VTHH_Ra();
+            DataTable dt = cls.SelectAll_distinct_W_ID_VTHH_Ra_May_DOT();
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("ID_VTHH", typeof(int));
             dt2xx.Columns.Add("MaVT", typeof(string));
@@ -53,7 +53,6 @@ namespace CtyTinLuong
             gridControl1.DataSource = null;
             DataTable dt = new DataTable();
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-
             dt = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT(ID_VTHHxx, xxtungay, xxdenngay);
             if (dt.Rows.Count > 0)
                 gridControl1.DataSource = dt;
@@ -66,12 +65,14 @@ namespace CtyTinLuong
 
         private void SanLuong_ChiTiet_SanLuong_Dot_Dap_Load(object sender, EventArgs e)
         {
+            clSoKG_MotBao_May_Dot.Caption = "Số KG/\nBao_Sọt";
+            clQuyRaKG.Caption = "Tổng số\nKg";
             Load_lockup();
-            dteTuNgay.EditValue = SanLuong_To_May_IN.mdatungay;
-            dteDenNgay.EditValue = SanLuong_To_May_IN.mdadenngay;
-            GridMaVT.EditValue = SanLuong_To_May_IN.miID_VTHH_Ra;
-            int xxID = Convert.ToInt32(GridMaVT.EditValue.ToString());
-            LoadData(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            dteTuNgay.EditValue = SanLuong_To_DOT_DAP.mdatungay;
+            dteDenNgay.EditValue = SanLuong_To_DOT_DAP.mdadenngay;
+            GridMaVT.EditValue = SanLuong_To_DOT_DAP.miID_VTHH_Ra;
+           
+            LoadData(SanLuong_To_DOT_DAP.miID_VTHH_Ra, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
         }
 
         private void GridMaVT_EditValueChanged(object sender, EventArgs e)

@@ -152,7 +152,7 @@
             // 
             this.txtDVT.Location = new System.Drawing.Point(667, 28);
             this.txtDVT.Name = "txtDVT";
-            this.txtDVT.Size = new System.Drawing.Size(187, 20);
+            this.txtDVT.Size = new System.Drawing.Size(176, 20);
             this.txtDVT.TabIndex = 122;
             // 
             // GridMaVT
@@ -267,6 +267,9 @@
             // 
             // gridView2
             // 
+            this.gridView2.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupFooter.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
@@ -323,14 +326,12 @@
             this.clPhePham.Name = "clPhePham";
             this.clPhePham.OptionsColumn.AllowEdit = false;
             this.clPhePham.OptionsColumn.FixedWidth = true;
-            this.clPhePham.Visible = true;
-            this.clPhePham.VisibleIndex = 5;
             this.clPhePham.Width = 120;
             // 
             // clSanLuong_Tong
             // 
-            this.clSanLuong_Tong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSanLuong_Tong.AppearanceCell.ForeColor = System.Drawing.Color.Red;
+            this.clSanLuong_Tong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clSanLuong_Tong.AppearanceCell.ForeColor = System.Drawing.Color.Black;
             this.clSanLuong_Tong.AppearanceCell.Options.UseFont = true;
             this.clSanLuong_Tong.AppearanceCell.Options.UseForeColor = true;
             this.clSanLuong_Tong.AppearanceCell.Options.UseTextOptions = true;
@@ -345,7 +346,7 @@
             this.clSanLuong_Tong.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Tong.OptionsColumn.FixedWidth = true;
             this.clSanLuong_Tong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SanLuong_Tong", "{0:N}")});
             this.clSanLuong_Tong.Visible = true;
             this.clSanLuong_Tong.VisibleIndex = 4;
             this.clSanLuong_Tong.Width = 120;
@@ -417,35 +418,53 @@
             // 
             // clSoLuongVao
             // 
+            this.clSoLuongVao.AppearanceCell.Options.UseTextOptions = true;
+            this.clSoLuongVao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuongVao.Caption = "Số Thanh";
-            this.clSoLuongVao.FieldName = "SoLuongVao";
+            this.clSoLuongVao.FieldName = "SoLuong_Vao";
             this.clSoLuongVao.Name = "clSoLuongVao";
+            this.clSoLuongVao.OptionsColumn.AllowEdit = false;
+            this.clSoLuongVao.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao", "{0:N}")});
             this.clSoLuongVao.Visible = true;
-            this.clSoLuongVao.VisibleIndex = 6;
+            this.clSoLuongVao.VisibleIndex = 5;
             // 
             // clSoKG_MotBao_May_Dot
             // 
-            this.clSoKG_MotBao_May_Dot.Caption = "SoKG_MotBao_May_Dot";
+            this.clSoKG_MotBao_May_Dot.AppearanceCell.Options.UseTextOptions = true;
+            this.clSoKG_MotBao_May_Dot.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSoKG_MotBao_May_Dot.Caption = "Kg/ Bao_Sọt";
             this.clSoKG_MotBao_May_Dot.FieldName = "SoKG_MotBao_May_Dot";
             this.clSoKG_MotBao_May_Dot.Name = "clSoKG_MotBao_May_Dot";
+            this.clSoKG_MotBao_May_Dot.OptionsColumn.AllowEdit = false;
+            this.clSoKG_MotBao_May_Dot.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoKG_MotBao_May_Dot", "{0:N}")});
             this.clSoKG_MotBao_May_Dot.Visible = true;
-            this.clSoKG_MotBao_May_Dot.VisibleIndex = 7;
+            this.clSoKG_MotBao_May_Dot.VisibleIndex = 6;
             // 
             // clDoCao_Dot
             // 
-            this.clDoCao_Dot.Caption = "DoCao_Dot";
+            this.clDoCao_Dot.AppearanceCell.Options.UseTextOptions = true;
+            this.clDoCao_Dot.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clDoCao_Dot.Caption = "Độ cao";
             this.clDoCao_Dot.FieldName = "DoCao_Dot";
             this.clDoCao_Dot.Name = "clDoCao_Dot";
+            this.clDoCao_Dot.OptionsColumn.AllowEdit = false;
             this.clDoCao_Dot.Visible = true;
-            this.clDoCao_Dot.VisibleIndex = 8;
+            this.clDoCao_Dot.VisibleIndex = 7;
             // 
             // clQuyRaKG
             // 
+            this.clQuyRaKG.AppearanceCell.Options.UseTextOptions = true;
+            this.clQuyRaKG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clQuyRaKG.Caption = "QuyRaKG";
             this.clQuyRaKG.FieldName = "QuyRaKG";
             this.clQuyRaKG.Name = "clQuyRaKG";
+            this.clQuyRaKG.OptionsColumn.AllowEdit = false;
+            this.clQuyRaKG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QuyRaKG", "{0:N}")});
             this.clQuyRaKG.Visible = true;
-            this.clQuyRaKG.VisibleIndex = 9;
+            this.clQuyRaKG.VisibleIndex = 8;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -655,16 +674,16 @@
             this.layoutControlItem16.Control = this.txtDVT;
             this.layoutControlItem16.Location = new System.Drawing.Point(615, 26);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(241, 24);
+            this.layoutControlItem16.Size = new System.Drawing.Size(230, 24);
             this.layoutControlItem16.Text = "ĐVT";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(47, 13);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(856, 26);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(845, 26);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(135, 24);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(146, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // SanLuong_ChiTiet_SanLuong_Dot_Dap

@@ -24,7 +24,13 @@ namespace CtyTinLuong
         private void Load_lockup()
         {
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            DataTable dt = cls.SelectAll_distinct_W_ID_VTHH_Ra();
+            DataTable dt = new DataTable();
+            if (xxximay_in_1_Cat_2_dot_3 == 1)
+                 dt = cls.SelectAll_distinct_W_ID_VTHH_Ra_May_IN();
+            else if (xxximay_in_1_Cat_2_dot_3 == 2)
+                 dt = cls.SelectAll_distinct_W_ID_VTHH_Ra_May_CAT();
+
+           
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("ID_VTHH", typeof(int));
             dt2xx.Columns.Add("MaVT", typeof(string));

@@ -12,6 +12,8 @@ namespace CtyTinLuong
 {
     public partial class SanLuong_To_DOT_DAP : Form
     {
+        public static DateTime mdatungay, mdadenngay;
+        public static int miID_VTHH_Ra;
         public static DateTime GetFistDayInMonth(int year, int month)
         {
             DateTime aDateTime = new DateTime(year, month, 1);
@@ -85,7 +87,8 @@ namespace CtyTinLuong
 
         private void SanLuong_To_DOT_DAP_Load(object sender, EventArgs e)
         {
-           
+            clTongSoBao_Sot.Caption = "Số KG/\nBao_Sọt";
+            clTongSoKg.Caption = "Tổng số\nKg";
             DateTime ngayhomnay = DateTime.Today;
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
             int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
@@ -112,6 +115,19 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString() != "")
+            {
+                miID_VTHH_Ra = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                SanLuong_ChiTiet_SanLuong_Dot_Dap ff = new SanLuong_ChiTiet_SanLuong_Dot_Dap();
+                ff.Show();
+
+            }
         }
     }
 }
