@@ -1595,6 +1595,12 @@
     <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN.Designer.cs">
       <DependentUpon>Xtra_SanLuongToMay_IN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_SanLuongToMay_IN_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_SanLuongToMay_IN_RutGon.Designer.cs">
+      <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
