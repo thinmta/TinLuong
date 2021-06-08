@@ -189,6 +189,8 @@
             this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
             this.clID_CongNhan,
@@ -219,12 +221,13 @@
             this.clSTT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSTT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSTT.Caption = "STT";
+            this.clSTT.FieldName = "STT";
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.FixedWidth = true;
             this.clSTT.Visible = true;
             this.clSTT.VisibleIndex = 0;
-            this.clSTT.Width = 60;
+            this.clSTT.Width = 39;
             // 
             // clID_CongNhan
             // 
@@ -241,9 +244,10 @@
             this.clTenNhanVien.FieldName = "TenNhanVien";
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
+            this.clTenNhanVien.OptionsColumn.FixedWidth = true;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 4;
-            this.clTenNhanVien.Width = 135;
+            this.clTenNhanVien.Width = 137;
             // 
             // memohoten
             // 
@@ -266,7 +270,7 @@
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
             this.clTenVTHH.VisibleIndex = 2;
-            this.clTenVTHH.Width = 126;
+            this.clTenVTHH.Width = 128;
             // 
             // memoTenVTHH
             // 
@@ -274,23 +278,29 @@
             // 
             // clSanLuong_Thuong
             // 
+            this.clSanLuong_Thuong.AppearanceCell.Options.UseTextOptions = true;
+            this.clSanLuong_Thuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSanLuong_Thuong.Caption = "SL Thường";
             this.clSanLuong_Thuong.FieldName = "SanLuong_Thuong";
             this.clSanLuong_Thuong.Name = "clSanLuong_Thuong";
             this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
+            this.clSanLuong_Thuong.OptionsColumn.FixedWidth = true;
             this.clSanLuong_Thuong.Visible = true;
             this.clSanLuong_Thuong.VisibleIndex = 5;
-            this.clSanLuong_Thuong.Width = 135;
+            this.clSanLuong_Thuong.Width = 137;
             // 
             // clSanLuong_TangCa
             // 
+            this.clSanLuong_TangCa.AppearanceCell.Options.UseTextOptions = true;
+            this.clSanLuong_TangCa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSanLuong_TangCa.Caption = "SL Tăng";
             this.clSanLuong_TangCa.FieldName = "SanLuong_TangCa";
             this.clSanLuong_TangCa.Name = "clSanLuong_TangCa";
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
+            this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
             this.clSanLuong_TangCa.Visible = true;
             this.clSanLuong_TangCa.VisibleIndex = 6;
-            this.clSanLuong_TangCa.Width = 135;
+            this.clSanLuong_TangCa.Width = 137;
             // 
             // clID_DinhMuc_Luong
             // 
@@ -302,33 +312,42 @@
             // 
             // clDinhMuc_KhongTang
             // 
+            this.clDinhMuc_KhongTang.AppearanceCell.Options.UseTextOptions = true;
+            this.clDinhMuc_KhongTang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clDinhMuc_KhongTang.Caption = "Đơn giá";
             this.clDinhMuc_KhongTang.FieldName = "DinhMuc_KhongTang";
             this.clDinhMuc_KhongTang.Name = "clDinhMuc_KhongTang";
             this.clDinhMuc_KhongTang.OptionsColumn.AllowEdit = false;
+            this.clDinhMuc_KhongTang.OptionsColumn.FixedWidth = true;
             this.clDinhMuc_KhongTang.Visible = true;
             this.clDinhMuc_KhongTang.VisibleIndex = 7;
-            this.clDinhMuc_KhongTang.Width = 135;
+            this.clDinhMuc_KhongTang.Width = 137;
             // 
             // clDinhMuc_Tang
             // 
+            this.clDinhMuc_Tang.AppearanceCell.Options.UseTextOptions = true;
+            this.clDinhMuc_Tang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clDinhMuc_Tang.Caption = "Đơn giá tăng";
             this.clDinhMuc_Tang.FieldName = "DinhMuc_Tang";
             this.clDinhMuc_Tang.Name = "clDinhMuc_Tang";
             this.clDinhMuc_Tang.OptionsColumn.AllowEdit = false;
+            this.clDinhMuc_Tang.OptionsColumn.FixedWidth = true;
             this.clDinhMuc_Tang.Visible = true;
             this.clDinhMuc_Tang.VisibleIndex = 8;
-            this.clDinhMuc_Tang.Width = 135;
+            this.clDinhMuc_Tang.Width = 137;
             // 
             // clThanhTien
             // 
+            this.clThanhTien.AppearanceCell.Options.UseTextOptions = true;
+            this.clThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clThanhTien.Caption = "Thành tiền";
             this.clThanhTien.FieldName = "ThanhTien";
             this.clThanhTien.Name = "clThanhTien";
             this.clThanhTien.OptionsColumn.AllowEdit = false;
+            this.clThanhTien.OptionsColumn.FixedWidth = true;
             this.clThanhTien.Visible = true;
             this.clThanhTien.VisibleIndex = 9;
-            this.clThanhTien.Width = 152;
+            this.clThanhTien.Width = 159;
             // 
             // clMaVT
             // 
@@ -336,9 +355,10 @@
             this.clMaVT.FieldName = "MaVT";
             this.clMaVT.Name = "clMaVT";
             this.clMaVT.OptionsColumn.AllowEdit = false;
+            this.clMaVT.OptionsColumn.FixedWidth = true;
             this.clMaVT.Visible = true;
             this.clMaVT.VisibleIndex = 1;
-            this.clMaVT.Width = 83;
+            this.clMaVT.Width = 84;
             // 
             // clDonViTinh
             // 
@@ -346,9 +366,10 @@
             this.clDonViTinh.FieldName = "DonViTinh";
             this.clDonViTinh.Name = "clDonViTinh";
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
+            this.clDonViTinh.OptionsColumn.FixedWidth = true;
             this.clDonViTinh.Visible = true;
             this.clDonViTinh.VisibleIndex = 3;
-            this.clDonViTinh.Width = 69;
+            this.clDonViTinh.Width = 70;
             // 
             // btRefesh
             // 
