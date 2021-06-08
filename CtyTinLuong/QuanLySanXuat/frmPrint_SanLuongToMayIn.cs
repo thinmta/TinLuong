@@ -18,40 +18,45 @@ namespace CtyTinLuong
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbChiTietPhieuSanXuat.Clone();
             ds.tbChiTietPhieuSanXuat.Clear();
-
-
-            int ID_VTHHxx = SanLuong_ToMay_ChiTiet.miID_VThh;
-            string xxmavt, xxtenvt, xxdvt;
-            xxmavt = SanLuong_ToMay_ChiTiet.msMaVT;
-            xxtenvt = SanLuong_ToMay_ChiTiet.msTenVT;
-            xxdvt = SanLuong_ToMay_ChiTiet.msDVT;
-            double sanluongthuowng = SanLuong_ToMay_ChiTiet.sanluongthuowng;
-            double sanluongtangca = SanLuong_ToMay_ChiTiet.sanluongtangca;
-            double sanluongtong = SanLuong_ToMay_ChiTiet.sanluongtong;
-            double phepham = SanLuong_ToMay_ChiTiet.phepham;
-
-            for (int k = 0; k < dt3.Rows.Count; k++)
+            for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
-                _ravi["MaVT_Ra_IN"] = xxmavt;
-                _ravi["DonViTinh_Ra_IN"] = xxdvt;
-                _ravi["TenVatTu_Ra_IN"] = xxtenvt;
-                _ravi["STT"] = (k + 1).ToString();
-                _ravi["SanLuong_Thuong_CAT"] = sanluongthuowng;
-                _ravi["SanLuong_TangCa_CAT"] = sanluongtangca;
-                _ravi["SoLuong_Ra_CAT"] = sanluongtong;
-                _ravi["PhePham_CAT"] = phepham;
-                DateTime ngaysanxuat = Convert.ToDateTime(dt3.Rows[k]["NgaySanXuat"].ToString());
-                _ravi["MaPhieu"] = dt3.Rows[k]["MaPhieu"].ToString();
-                _ravi["SanLuong_Thuong_IN"] = Convert.ToDouble(dt3.Rows[k]["SanLuong_Thuong"].ToString());
-                _ravi["SanLuong_TangCa_IN"] = Convert.ToDouble(dt3.Rows[k]["SanLuong_TangCa"].ToString());
-                _ravi["SoLuong_Ra_IN"] = Convert.ToDouble(dt3.Rows[k]["SanLuong_Tong"].ToString());
-                _ravi["PhePham_IN"] = Convert.ToDouble(dt3.Rows[k]["PhePham"].ToString());
-                _ravi["NgaySanXuat_IN"] = ngaysanxuat.ToString("dd/MM/yyyy");
-                _ravi["CaSanXuat_IN"] = dt3.Rows[k]["CaSanXuat"].ToString();
-                _ravi["CongNhan_IN"] = dt3.Rows[k]["TenNhanVien"].ToString();
-                _ravi["MaMay_IN"] = dt3.Rows[k]["MaMay"].ToString();
-                ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
+
+                int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH_Ra"].ToString());               
+                string xxmavt, xxtenvt, xxdvt;
+                xxmavt = dt3.Rows[i]["MaVT_Ra"].ToString();
+                xxtenvt = dt3.Rows[i]["TenVatTu_Ra"].ToString();
+                xxdvt = dt3.Rows[i]["DonViTinh_Ra"].ToString();
+                double TongSoThanh = Convert.ToDouble(dt3.Rows[i]["TongSoThanh"].ToString());
+                double TongSoBao_Sot = Convert.ToDouble(dt3.Rows[i]["TongSoBao_Sot"].ToString());
+                double TongSoKg = Convert.ToDouble(dt3.Rows[i]["TongSoKg"].ToString());
+
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                DataTable dtchitiet = new DataTable();
+
+                dtchitiet = cls.SelectAll_W_ID_VTHH_Ra_TenCN_NgayThang_DOT(ID_VTHHxx, xxtungay, xxdenngay);
+
+                for (int k = 0; k < dtchitiet.Rows.Count; k++)
+                {
+                    DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
+                    
+                    _ravi["TenVatTu_Ra_IN"] = xxtenvt;
+                    _ravi["STT"] = (k + 1).ToString();
+                    _ravi["SoLuong_Vao_CAT"] = TongSoThanh;
+                    _ravi["SoLuong_Ra_CAT"] = TongSoBao_Sot;
+                    _ravi["PhePham_CAT"] = TongSoKg;                   
+                    DateTime ngaysanxuat = Convert.ToDateTime(dtchitiet.Rows[k]["NgaySanXuat"].ToString());
+                    _ravi["MaPhieu"] = dtchitiet.Rows[k]["MaPhieu"].ToString();
+                    _ravi["SoLuong_Vao_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SoLuong_Vao"].ToString());
+                    
+                    _ravi["SanLuong_TangCa_IN"] = Convert.ToDouble(dtchitiet.Rows[k]["SoKG_MotBao_May_Dot"].ToString());
+                    _ravi["DoCao_DOT"] = Convert.ToDouble(dtchitiet.Rows[k]["DoCao_Dot"].ToString());
+                    _ravi["TongSoKG_DOT"] = Convert.ToDouble(dtchitiet.Rows[k]["QuyRaKG"].ToString());
+                    _ravi["NgaySanXuat_IN"] = ngaysanxuat.ToString("dd/MM/yyyy");
+                    _ravi["CaSanXuat_IN"] = dtchitiet.Rows[k]["CaSanXuat"].ToString();
+                    //_ravi["CongNhan_IN"] = dtchitiet.Rows[k]["TenNhanVien"].ToString();
+                    //_ravi["MaMay_IN"] = dtchitiet.Rows[k]["MaMay"].ToString();
+                    ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
+                }
 
             }
 
