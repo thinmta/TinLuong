@@ -600,7 +600,8 @@ namespace CtyTinLuong
                 {
                     txtTenHangHoaRa_May_DOT.Text = dt.Rows[0]["TenVTHH"].ToString();
                     txtDVT_HangRa_MayDOT.Text = dt.Rows[0]["DonViTinh"].ToString();
-
+                    if (txtDoCao.Text == "0")
+                        txtDoCao.Text = clsncc.fDoCao_Dot.Value.ToString();
                 }
             }
             catch

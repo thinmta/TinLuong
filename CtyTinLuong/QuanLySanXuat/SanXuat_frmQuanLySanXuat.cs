@@ -284,5 +284,11 @@ namespace CtyTinLuong
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
             ucc.Show();
         }
+
+        private void navLuongSanLuong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
+            ucc.Show();
+        }
     }
 }
