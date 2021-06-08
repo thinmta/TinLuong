@@ -67,14 +67,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtSoTrang = new System.Windows.Forms.TextBox();
-            this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
-            this.btnTrangSau = new System.Windows.Forms.LinkLabel();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lbTongSoTrang = new System.Windows.Forms.Label();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -96,10 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -117,10 +105,6 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Controls.Add(this.lbTongSoTrang);
-            this.dataLayoutControl1.Controls.Add(this.btnTrangTiep);
-            this.dataLayoutControl1.Controls.Add(this.txtSoTrang);
-            this.dataLayoutControl1.Controls.Add(this.btnTrangSau);
             this.dataLayoutControl1.Controls.Add(this.btprint_ALL);
             this.dataLayoutControl1.Controls.Add(this.btPrint);
             this.dataLayoutControl1.Controls.Add(this.btThoat);
@@ -248,8 +232,6 @@
             this.clID_CongNhan.FieldName = "ID_CongNhan";
             this.clID_CongNhan.Name = "clID_CongNhan";
             this.clID_CongNhan.OptionsColumn.AllowEdit = false;
-            this.clID_CongNhan.Visible = true;
-            this.clID_CongNhan.VisibleIndex = 1;
             this.clID_CongNhan.Width = 92;
             // 
             // clTenNhanVien
@@ -260,8 +242,8 @@
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 7;
-            this.clTenNhanVien.Width = 98;
+            this.clTenNhanVien.VisibleIndex = 4;
+            this.clTenNhanVien.Width = 135;
             // 
             // memohoten
             // 
@@ -273,8 +255,6 @@
             this.clID_VTHH_Ra.FieldName = "ID_VTHH_Ra";
             this.clID_VTHH_Ra.Name = "clID_VTHH_Ra";
             this.clID_VTHH_Ra.OptionsColumn.AllowEdit = false;
-            this.clID_VTHH_Ra.Visible = true;
-            this.clID_VTHH_Ra.VisibleIndex = 2;
             this.clID_VTHH_Ra.Width = 92;
             // 
             // clTenVTHH
@@ -285,8 +265,8 @@
             this.clTenVTHH.Name = "clTenVTHH";
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 5;
-            this.clTenVTHH.Width = 92;
+            this.clTenVTHH.VisibleIndex = 2;
+            this.clTenVTHH.Width = 126;
             // 
             // memoTenVTHH
             // 
@@ -299,8 +279,8 @@
             this.clSanLuong_Thuong.Name = "clSanLuong_Thuong";
             this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Thuong.Visible = true;
-            this.clSanLuong_Thuong.VisibleIndex = 8;
-            this.clSanLuong_Thuong.Width = 98;
+            this.clSanLuong_Thuong.VisibleIndex = 5;
+            this.clSanLuong_Thuong.Width = 135;
             // 
             // clSanLuong_TangCa
             // 
@@ -309,8 +289,8 @@
             this.clSanLuong_TangCa.Name = "clSanLuong_TangCa";
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa.Visible = true;
-            this.clSanLuong_TangCa.VisibleIndex = 9;
-            this.clSanLuong_TangCa.Width = 98;
+            this.clSanLuong_TangCa.VisibleIndex = 6;
+            this.clSanLuong_TangCa.Width = 135;
             // 
             // clID_DinhMuc_Luong
             // 
@@ -318,8 +298,6 @@
             this.clID_DinhMuc_Luong.FieldName = "ID_DinhMuc_Luong";
             this.clID_DinhMuc_Luong.Name = "clID_DinhMuc_Luong";
             this.clID_DinhMuc_Luong.OptionsColumn.AllowEdit = false;
-            this.clID_DinhMuc_Luong.Visible = true;
-            this.clID_DinhMuc_Luong.VisibleIndex = 3;
             this.clID_DinhMuc_Luong.Width = 92;
             // 
             // clDinhMuc_KhongTang
@@ -329,8 +307,8 @@
             this.clDinhMuc_KhongTang.Name = "clDinhMuc_KhongTang";
             this.clDinhMuc_KhongTang.OptionsColumn.AllowEdit = false;
             this.clDinhMuc_KhongTang.Visible = true;
-            this.clDinhMuc_KhongTang.VisibleIndex = 10;
-            this.clDinhMuc_KhongTang.Width = 98;
+            this.clDinhMuc_KhongTang.VisibleIndex = 7;
+            this.clDinhMuc_KhongTang.Width = 135;
             // 
             // clDinhMuc_Tang
             // 
@@ -339,18 +317,18 @@
             this.clDinhMuc_Tang.Name = "clDinhMuc_Tang";
             this.clDinhMuc_Tang.OptionsColumn.AllowEdit = false;
             this.clDinhMuc_Tang.Visible = true;
-            this.clDinhMuc_Tang.VisibleIndex = 11;
-            this.clDinhMuc_Tang.Width = 98;
+            this.clDinhMuc_Tang.VisibleIndex = 8;
+            this.clDinhMuc_Tang.Width = 135;
             // 
             // clThanhTien
             // 
-            this.clThanhTien.Caption = "ThanhTien";
+            this.clThanhTien.Caption = "Thành tiền";
             this.clThanhTien.FieldName = "ThanhTien";
             this.clThanhTien.Name = "clThanhTien";
             this.clThanhTien.OptionsColumn.AllowEdit = false;
             this.clThanhTien.Visible = true;
-            this.clThanhTien.VisibleIndex = 12;
-            this.clThanhTien.Width = 104;
+            this.clThanhTien.VisibleIndex = 9;
+            this.clThanhTien.Width = 152;
             // 
             // clMaVT
             // 
@@ -359,8 +337,8 @@
             this.clMaVT.Name = "clMaVT";
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 4;
-            this.clMaVT.Width = 92;
+            this.clMaVT.VisibleIndex = 1;
+            this.clMaVT.Width = 83;
             // 
             // clDonViTinh
             // 
@@ -369,8 +347,8 @@
             this.clDonViTinh.Name = "clDonViTinh";
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
             this.clDonViTinh.Visible = true;
-            this.clDonViTinh.VisibleIndex = 6;
-            this.clDonViTinh.Width = 51;
+            this.clDonViTinh.VisibleIndex = 3;
+            this.clDonViTinh.Width = 69;
             // 
             // btRefesh
             // 
@@ -444,11 +422,7 @@
             this.layoutControlItem2,
             this.layoutControlItem7,
             this.emptySpaceItem1,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem8});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1187, 468);
@@ -525,9 +499,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(424, 442);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 442);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(271, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(695, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -539,82 +513,6 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // txtSoTrang
-            // 
-            this.txtSoTrang.Location = new System.Drawing.Point(63, 444);
-            this.txtSoTrang.Name = "txtSoTrang";
-            this.txtSoTrang.Size = new System.Drawing.Size(54, 20);
-            this.txtSoTrang.TabIndex = 93;
-            this.txtSoTrang.Visible = false;
-            this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
-            // 
-            // btnTrangTiep
-            // 
-            this.btnTrangTiep.Location = new System.Drawing.Point(180, 444);
-            this.btnTrangTiep.Name = "btnTrangTiep";
-            this.btnTrangTiep.Size = new System.Drawing.Size(242, 20);
-            this.btnTrangTiep.TabIndex = 91;
-            this.btnTrangTiep.TabStop = true;
-            this.btnTrangTiep.Text = "Trang tiếp";
-            this.btnTrangTiep.Visible = false;
-            this.btnTrangTiep.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangTiep_LinkClicked);
-            // 
-            // btnTrangSau
-            // 
-            this.btnTrangSau.Location = new System.Drawing.Point(2, 444);
-            this.btnTrangSau.Name = "btnTrangSau";
-            this.btnTrangSau.Size = new System.Drawing.Size(57, 20);
-            this.btnTrangSau.TabIndex = 92;
-            this.btnTrangSau.TabStop = true;
-            this.btnTrangSau.Text = "Trang sau";
-            this.btnTrangSau.Visible = false;
-            this.btnTrangSau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangSau_LinkClicked);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.btnTrangSau;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 442);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(61, 26);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtSoTrang;
-            this.layoutControlItem10.Location = new System.Drawing.Point(61, 442);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(58, 26);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.btnTrangTiep;
-            this.layoutControlItem11.Location = new System.Drawing.Point(178, 442);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(246, 26);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
-            // lbTongSoTrang
-            // 
-            this.lbTongSoTrang.Location = new System.Drawing.Point(121, 444);
-            this.lbTongSoTrang.Name = "lbTongSoTrang";
-            this.lbTongSoTrang.Size = new System.Drawing.Size(55, 22);
-            this.lbTongSoTrang.TabIndex = 90;
-            this.lbTongSoTrang.Text = "/";
-            this.lbTongSoTrang.Visible = false;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.lbTongSoTrang;
-            this.layoutControlItem12.Location = new System.Drawing.Point(119, 442);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(59, 26);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
-            // 
             // frmBaoCaoSanLuong_Theo_CongNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,7 +522,6 @@
             this.Name = "frmBaoCaoSanLuong_Theo_CongNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lương sản lượng";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBaoCaoSanLuong_Theo_CongNhan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
@@ -647,10 +544,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,13 +586,5 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit memoTenVTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clMaVT;
         private DevExpress.XtraGrid.Columns.GridColumn clDonViTinh;
-        private System.Windows.Forms.LinkLabel btnTrangTiep;
-        private System.Windows.Forms.TextBox txtSoTrang;
-        private System.Windows.Forms.LinkLabel btnTrangSau;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private System.Windows.Forms.Label lbTongSoTrang;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

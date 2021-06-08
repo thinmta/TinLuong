@@ -19,17 +19,15 @@ namespace CtyTinLuong
         public static DateTime mdatungay, mdadenngay;
         public static int miID_VTHH_Ra;
 
-        private int _SoTrang = 1;
-        private bool isload = false;
+       
         public static DateTime GetFistDayInMonth(int year, int month)
         {
             DateTime aDateTime = new DateTime(year, month, 1);
             return aDateTime;
         }
-        public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
+        public void LoadData( DateTime xxtungay, DateTime xxdenngay)
         {
-            isload = true;
-            _SoTrang = sotrang;
+           
             gridControl1.DataSource = null;
 
             DataTable dt2 = new DataTable();
@@ -114,58 +112,15 @@ namespace CtyTinLuong
             }
 
             gridControl1.DataSource = dt2;
-            isload = false;
+           
         }
-        private void Load_PhieuSX(bool islandau)
-        {
-            int sotrang_ = 1;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-            }
-            catch
-            {
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-            LoadData(sotrang_, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-        }
-        public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
-        {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-
-            using (clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat())
-            {
-                DataTable dt_ = cls.SelectAll_Tinh_SoLenh_SX(xxtungay, xxdenngay);
-                if (dt_ != null && dt_.Rows.Count > 0)
-                {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
-                }
-                else
-                {
-                    lbTongSoTrang.Text = "/1";
-                }
-            }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
-            }
-        }
+     
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                
+                LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
@@ -234,79 +189,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (isload)
-                return;
-            if (btnTrangTiep.LinkColor == Color.Black)
-                return;
-            if (btnTrangSau.LinkColor == Color.Black)
-                btnTrangSau.LinkColor = Color.Blue;
-
-            int sotrang_;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-                int max_ = Convert.ToInt32(lbTongSoTrang.Text.Replace(" ", "").Replace("/", ""));
-                if (sotrang_ < max_)
-                {
-                    txtSoTrang.Text = (sotrang_ + 1).ToString();
-
-                    Load_PhieuSX(false);
-                }
-                else
-                {
-                    txtSoTrang.Text = (max_).ToString();
-                    btnTrangTiep.LinkColor = Color.Black;
-                }
-            }
-            catch
-            {
-                btnTrangTiep.LinkColor = Color.Black;
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-        }
-
-        private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (isload)
-                return;
-            if (btnTrangSau.LinkColor == Color.Black)
-                return;
-            if (btnTrangTiep.LinkColor == Color.Black)
-                btnTrangTiep.LinkColor = Color.Blue;
-
-            int sotrang_;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-                if (sotrang_ <= 1)
-                {
-                    txtSoTrang.Text = "1";
-                    btnTrangSau.LinkColor = Color.Black;
-
-                }
-                else
-                {
-                    txtSoTrang.Text = (sotrang_ - 1).ToString();
-                    Load_PhieuSX(false);
-                }
-            }
-            catch
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-        }
-
-        private void txtSoTrang_TextChanged(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-            Load_PhieuSX(false);
-        }
+     
 
         public frmBaoCaoSanLuong_Theo_CongNhan()
         {
@@ -321,12 +204,9 @@ namespace CtyTinLuong
 
             dteDenNgay.DateTime = DateTime.Today;
             dteTuNgay.DateTime = GetFistDayInMonth(nam, thang);
-
-          
-
-         
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            
+            LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
+           
         }
 
       
