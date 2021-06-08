@@ -23,10 +23,10 @@ namespace CtyTinLuong
 
                 int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH_Ra"].ToString());
 
-                double sanluongthuowng = Convert.ToDouble(dt3.Rows[i]["SanLuong_Thuong"].ToString());
-                double sanluongtangca = Convert.ToDouble(dt3.Rows[i]["SanLuong_TangCa"].ToString());
-                double sanluongtong = Convert.ToDouble(dt3.Rows[i]["SanLuong_Tong"].ToString());
-                double phepham = Convert.ToDouble(dt3.Rows[i]["PhePham"].ToString());
+                double SoLuong_Vao = Convert.ToDouble(dt3.Rows[i]["SoLuong_Vao"].ToString()); // so thanh
+                double SanLuong_Tong = Convert.ToDouble(dt3.Rows[i]["SanLuong_Tong"].ToString()); // số bao
+                double QuyRaKG = Convert.ToDouble(dt3.Rows[i]["QuyRaKG"].ToString()); // tong so kg
+                double DoCao_Dot = Convert.ToDouble(dt3.Rows[i]["DoCao_Dot"].ToString());// độ cao
 
 
                 DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
@@ -35,10 +35,10 @@ namespace CtyTinLuong
                 _ravi["TenVatTu_Ra_IN"] = dt3.Rows[i]["TenVatTu_Ra"].ToString();
                 _ravi["STT"] = (i + 1).ToString();
 
-                _ravi["SanLuong_Thuong_IN"] = sanluongthuowng;
-                _ravi["SanLuong_TangCa_IN"] = sanluongtangca;
-                _ravi["SoLuong_Ra_IN"] = sanluongtong;
-                _ravi["PhePham_IN"] = phepham;
+                _ravi["SanLuong_Thuong_IN"] = SoLuong_Vao;
+                _ravi["SanLuong_TangCa_IN"] = SanLuong_Tong;
+                _ravi["SoLuong_Ra_IN"] = QuyRaKG;
+                _ravi["PhePham_IN"] = DoCao_Dot;
 
 
                 ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
@@ -269,6 +269,9 @@ namespace CtyTinLuong
                 Print_SanLuong_ToMay_ChiTiet(SanLuong_ToMay_ChiTiet.mdtPrint, SanLuong_ToMay_ChiTiet.mdatungay, SanLuong_ToMay_ChiTiet.mdadenngay);
             if (SanLuong_To_DOT_DAP.mbPrint_ALL == true)
                 Print_SanLuong_To_DOT_DAP_ALL(SanLuong_To_DOT_DAP.mdtPrint, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
+            //Print_SanLuong_To_DOT_DAP_RutGon
+            if (SanLuong_To_DOT_DAP.mbPrint_RutGon == true)
+                Print_SanLuong_To_DOT_DAP_RutGon(SanLuong_To_DOT_DAP.mdtPrint, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
         }
 
         private void frmPrint_SanLuongToMayIn_FormClosed(object sender, FormClosedEventArgs e)
@@ -277,7 +280,7 @@ namespace CtyTinLuong
             SanLuong_To_May_IN.mbPrint_RutGon = false;
             SanLuong_ToMay_ChiTiet.mbPrint = false;
             SanLuong_To_DOT_DAP.mbPrint_ALL = false;
-
+            SanLuong_To_DOT_DAP.mbPrint_RutGon = false;
         }
     }
 }
