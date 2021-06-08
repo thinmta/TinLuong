@@ -2034,6 +2034,9 @@
     <EmbeddedResource Include="QuanLySanXuat\frmGuiDuLieuLuongTheoSanLuong.resx">
       <DependentUpon>frmGuiDuLieuLuongTheoSanLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\SanLuong_ChiTiet_SanLuong_Dot_Dap.resx">
+      <DependentUpon>SanLuong_ChiTiet_SanLuong_Dot_Dap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanLuong_ToMay_ChiTiet.resx">
       <DependentUpon>SanLuong_ToMay_ChiTiet.cs</DependentUpon>
     </EmbeddedResource>
