@@ -12,6 +12,55 @@ namespace CtyTinLuong
 {
     public partial class frmPrint_SanLuongToMayIn : Form
     {
+        private void Print_SanLuong_To_DOT_DAP_ALL(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
+        {
+            Xtra_SanLuong_DOT_DAP xtr111 = new Xtra_SanLuong_DOT_DAP();
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbChiTietPhieuSanXuat.Clone();
+            ds.tbChiTietPhieuSanXuat.Clear();
+
+
+            int ID_VTHHxx = SanLuong_ToMay_ChiTiet.miID_VThh;
+            string xxmavt, xxtenvt, xxdvt;
+            xxmavt = SanLuong_ToMay_ChiTiet.msMaVT;
+            xxtenvt = SanLuong_ToMay_ChiTiet.msTenVT;
+            xxdvt = SanLuong_ToMay_ChiTiet.msDVT;
+            double sanluongthuowng = SanLuong_ToMay_ChiTiet.sanluongthuowng;
+            double sanluongtangca = SanLuong_ToMay_ChiTiet.sanluongtangca;
+            double sanluongtong = SanLuong_ToMay_ChiTiet.sanluongtong;
+            double phepham = SanLuong_ToMay_ChiTiet.phepham;
+
+            for (int k = 0; k < dt3.Rows.Count; k++)
+            {
+                DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
+                _ravi["MaVT_Ra_IN"] = xxmavt;
+                _ravi["DonViTinh_Ra_IN"] = xxdvt;
+                _ravi["TenVatTu_Ra_IN"] = xxtenvt;
+                _ravi["STT"] = (k + 1).ToString();
+                _ravi["SanLuong_Thuong_CAT"] = sanluongthuowng;
+                _ravi["SanLuong_TangCa_CAT"] = sanluongtangca;
+                _ravi["SoLuong_Ra_CAT"] = sanluongtong;
+                _ravi["PhePham_CAT"] = phepham;
+                DateTime ngaysanxuat = Convert.ToDateTime(dt3.Rows[k]["NgaySanXuat"].ToString());
+                _ravi["MaPhieu"] = dt3.Rows[k]["MaPhieu"].ToString();
+                _ravi["SanLuong_Thuong_IN"] = Convert.ToDouble(dt3.Rows[k]["SanLuong_Thuong"].ToString());
+                _ravi["SanLuong_TangCa_IN"] = Convert.ToDouble(dt3.Rows[k]["SanLuong_TangCa"].ToString());
+                _ravi["SoLuong_Ra_IN"] = Convert.ToDouble(dt3.Rows[k]["SanLuong_Tong"].ToString());
+                _ravi["PhePham_IN"] = Convert.ToDouble(dt3.Rows[k]["PhePham"].ToString());
+                _ravi["NgaySanXuat_IN"] = ngaysanxuat.ToString("dd/MM/yyyy");
+                _ravi["CaSanXuat_IN"] = dt3.Rows[k]["CaSanXuat"].ToString();
+                _ravi["CongNhan_IN"] = dt3.Rows[k]["TenNhanVien"].ToString();
+                _ravi["MaMay_IN"] = dt3.Rows[k]["MaMay"].ToString();
+                ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
+
+            }
+
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbChiTietPhieuSanXuat;
+            xtr111.DataMember = "tbChiTietPhieuSanXuat";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
         private void Print_SanLuong_ToMay_ChiTiet(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
         {
             Xtra_SanLuongToMay_IN xtr111 = new Xtra_SanLuongToMay_IN();
@@ -174,6 +223,8 @@ namespace CtyTinLuong
                 Print_SanLuong_To_May_IN_RutGon(SanLuong_To_May_IN.mdtPrint, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
             if (SanLuong_ToMay_ChiTiet.mbPrint == true)
                 Print_SanLuong_ToMay_ChiTiet(SanLuong_ToMay_ChiTiet.mdtPrint, SanLuong_ToMay_ChiTiet.mdatungay, SanLuong_ToMay_ChiTiet.mdadenngay);
+            if (SanLuong_To_DOT_DAP.mbPrint_ALL == true)
+                Print_SanLuong_To_DOT_DAP_ALL(SanLuong_To_DOT_DAP.mdtPrint, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
         }
 
         private void frmPrint_SanLuongToMayIn_FormClosed(object sender, FormClosedEventArgs e)
@@ -181,6 +232,7 @@ namespace CtyTinLuong
             SanLuong_To_May_IN.mbPrint_ALL = false;
             SanLuong_To_May_IN.mbPrint_RutGon = false;
             SanLuong_ToMay_ChiTiet.mbPrint = false;
+            SanLuong_To_DOT_DAP.mbPrint_ALL = false;
 
         }
     }
