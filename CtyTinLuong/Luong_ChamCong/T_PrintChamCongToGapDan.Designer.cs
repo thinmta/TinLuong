@@ -656,32 +656,32 @@
             // 
             // Ngay30
             // 
-            this.Ngay30.BorderWidth = 0F;
+            this.Ngay30.BorderWidth = 1F;
             this.Ngay30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay30]")});
             this.Ngay30.Font = new System.Drawing.Font("Times New Roman", 8.5F);
             this.Ngay30.Multiline = true;
             this.Ngay30.Name = "Ngay30";
-            this.Ngay30.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Ngay30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay30.RowSpan = 0;
             this.Ngay30.StylePriority.UseBorderWidth = false;
             this.Ngay30.StylePriority.UseFont = false;
             this.Ngay30.StylePriority.UsePadding = false;
-            this.Ngay30.Weight = 0.026850099644775468D;
+            this.Ngay30.Weight = 0.32596021890582427D;
             // 
             // Ngay31
             // 
-            this.Ngay31.BorderWidth = 0F;
+            this.Ngay31.BorderWidth = 1F;
             this.Ngay31.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay31]")});
             this.Ngay31.Font = new System.Drawing.Font("Times New Roman", 8.5F);
             this.Ngay31.Multiline = true;
             this.Ngay31.Name = "Ngay31";
-            this.Ngay31.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Ngay31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay31.StylePriority.UseBorderWidth = false;
             this.Ngay31.StylePriority.UseFont = false;
             this.Ngay31.StylePriority.UsePadding = false;
-            this.Ngay31.Weight = 0.026850099644775475D;
+            this.Ngay31.Weight = 0.32596021890582433D;
             // 
             // TongCel
             // 
@@ -692,7 +692,7 @@
             this.TongCel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.TongCel.StylePriority.UsePadding = false;
             this.TongCel.TextFormatString = "{0:n1}";
-            this.TongCel.Weight = 1.1673275804462118D;
+            this.TongCel.Weight = 0.56910734192411416D;
             // 
             // xrTableCell72
             // 
