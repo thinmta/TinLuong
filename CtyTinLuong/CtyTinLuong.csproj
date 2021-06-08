@@ -1619,6 +1619,12 @@
     <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.Designer.cs">
       <DependentUpon>Xtra_SanLuong_DOT_DAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_SanLuong_DOT_DAP_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_SanLuong_DOT_DAP_RutGon.Designer.cs">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP_RutGon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
