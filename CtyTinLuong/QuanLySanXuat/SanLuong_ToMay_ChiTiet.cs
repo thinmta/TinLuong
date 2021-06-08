@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,12 @@ namespace CtyTinLuong
 {
     public partial class SanLuong_ToMay_ChiTiet : Form
     {
-        int xxximay_in_1_Cat_2_dot_3;
+        public static DataTable mdtPrint;
+        public static bool mbPrint;
+        public static string msMaVT, msTenVT, msDVT;
+        public static int xxximay_in_1_Cat_2_dot_3 = 0;
+        public static int miID_VThh = 0;
+        public static DateTime mdatungay, mdadenngay;
         private void Load_lockup()
         {
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
@@ -124,7 +130,28 @@ namespace CtyTinLuong
             this.Close();
         }
 
-      
-        
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                miID_VThh= Convert.ToInt32(GridMaVT.EditValue.ToString());
+                msMaVT = GridMaVT.Text.ToString();
+                msTenVT = txtTenVTHH.Text;
+                msDVT = txtDVT.Text;
+
+                mbPrint = true;                
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                ff.Show();
+
+            }
+        }
     }
 }

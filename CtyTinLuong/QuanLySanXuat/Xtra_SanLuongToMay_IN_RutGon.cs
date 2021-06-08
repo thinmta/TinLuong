@@ -7,9 +7,9 @@ using System.Data;
 
 namespace CtyTinLuong
 {
-    public partial class Xtra_SanLuongToMay_IN : DevExpress.XtraReports.UI.XtraReport
+    public partial class Xtra_SanLuongToMay_IN_RutGon : DevExpress.XtraReports.UI.XtraReport
     {
-        public Xtra_SanLuongToMay_IN()
+        public Xtra_SanLuongToMay_IN_RutGon()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace CtyTinLuong
                 {
                     pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
                     pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
-                    
+
                 }
             }
             catch
@@ -36,7 +36,7 @@ namespace CtyTinLuong
                 pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN THÁNG " + xxtungay.ToString("MM/yyyy") + "";
             else if (SanLuong_To_May_IN.xxximay_in_1_Cat_2_dot_3 == 2)
                 pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY CẮT THÁNG " + xxtungay.ToString("MM/yyyy") + "";
-            pNgayThang.Value = "Từ ngày "+xxtungay.ToString("dd/MM/yyyy")+ " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
+            pNgayThang.Value = "Từ ngày " + xxtungay.ToString("dd/MM/yyyy") + " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
         }
     }
 }
