@@ -18,8 +18,6 @@ namespace CtyTinLuong
         public static string msMaVT, msTenVT, msDVT;
         public static int xxximay_in_1_Cat_2_dot_3 = 0;
         public static int miID_VThh = 0;
-        public static double sanluongthuowng, sanluongtangca, sanluongtong, phepham;
-        
         public static DateTime mdatungay, mdadenngay;
         private void Load_lockup()
         {
@@ -140,27 +138,16 @@ namespace CtyTinLuong
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
             mdtPrint = dv1212.ToTable();
-           
             if (mdtPrint.Rows.Count > 0)
             {
-                mbPrint = true;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                miID_VThh = Convert.ToInt32(GridMaVT.EditValue.ToString());
+                miID_VThh= Convert.ToInt32(GridMaVT.EditValue.ToString());
                 msMaVT = GridMaVT.Text.ToString();
                 msTenVT = txtTenVTHH.Text;
                 msDVT = txtDVT.Text;
-                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-                DataTable dt3 = new DataTable();
-                if (xxximay_in_1_Cat_2_dot_3 == 1)
-                    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(miID_VThh, mdatungay, mdadenngay);
-                else if (xxximay_in_1_Cat_2_dot_3 == 2)
-                    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(miID_VThh, mdatungay, mdadenngay);
 
-                 sanluongthuowng = Convert.ToDouble(dt3.Rows[0]["SanLuong_Thuong"].ToString());
-                 sanluongtangca = Convert.ToDouble(dt3.Rows[0]["SanLuong_TangCa"].ToString());
-                 sanluongtong = Convert.ToDouble(dt3.Rows[0]["SanLuong_Tong"].ToString());
-                 phepham = Convert.ToDouble(dt3.Rows[0]["PhePham"].ToString());
+                mbPrint = true;                
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
                 ff.Show();
 
