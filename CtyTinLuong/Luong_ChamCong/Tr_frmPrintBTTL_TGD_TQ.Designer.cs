@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong.Luong_ChamCong
 {
-    partial class T_frmPrintChamCongToGapDan
+    partial class Tr_frmPrintBTTL_TGD_TQ
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(T_frmPrintChamCongToGapDan));
-            this.Tr_dcvChamCongToGapDan = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmPrintBTTL_TGD_TQ));
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
             this.bbiDocumentMap = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -108,14 +108,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Tr_dcvChamCongToGapDan
+            // documentViewer1
             // 
-            this.Tr_dcvChamCongToGapDan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Tr_dcvChamCongToGapDan.IsMetric = false;
-            this.Tr_dcvChamCongToGapDan.Location = new System.Drawing.Point(0, 53);
-            this.Tr_dcvChamCongToGapDan.Name = "Tr_dcvChamCongToGapDan";
-            this.Tr_dcvChamCongToGapDan.Size = new System.Drawing.Size(1350, 650);
-            this.Tr_dcvChamCongToGapDan.TabIndex = 0;
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer1.IsMetric = false;
+            this.documentViewer1.Location = new System.Drawing.Point(0, 53);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(1350, 650);
+            this.documentViewer1.TabIndex = 0;
             // 
             // documentViewerBarManager1
             // 
@@ -127,7 +127,7 @@
             this.documentViewerBarManager1.DockControls.Add(this.barDockControlBottom);
             this.documentViewerBarManager1.DockControls.Add(this.barDockControlLeft);
             this.documentViewerBarManager1.DockControls.Add(this.barDockControlRight);
-            this.documentViewerBarManager1.DocumentViewer = this.Tr_dcvChamCongToGapDan;
+            this.documentViewerBarManager1.DocumentViewer = this.documentViewer1;
             this.documentViewerBarManager1.Form = this;
             this.documentViewerBarManager1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("documentViewerBarManager1.ImageStream")));
             this.documentViewerBarManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -914,21 +914,21 @@
             this.printPreviewBarCheckItem19.Id = 59;
             this.printPreviewBarCheckItem19.Name = "printPreviewBarCheckItem19";
             // 
-            // T_frmPrintChamCongToGapDan
+            // Tr_frmBTTL_TGD_TQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.Tr_dcvChamCongToGapDan);
+            this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "T_frmPrintChamCongToGapDan";
+            this.Name = "Tr_frmBTTL_TGD_TQ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "T_frmPrintChamCongToGapDan";
+            this.Text = "Tr_frmBTTL_TGD_TQ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.T_frmPrintChamCongToGapDan_Load);
+            this.Load += new System.EventHandler(this.Tr_frmBTTL_TGD_TQ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
@@ -940,7 +940,7 @@
 
         #endregion
 
-        private DevExpress.XtraPrinting.Preview.DocumentViewer Tr_dcvChamCongToGapDan;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
         private DevExpress.XtraPrinting.Preview.DocumentViewerBarManager documentViewerBarManager1;
         private DevExpress.XtraPrinting.Preview.PreviewBar previewBar1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem bbiDocumentMap;

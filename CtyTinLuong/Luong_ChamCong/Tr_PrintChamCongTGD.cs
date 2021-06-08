@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class T_PrintChamCongToGapDan : DevExpress.XtraReports.UI.XtraReport
+    public partial class Tr_PrintChamCongTGD : DevExpress.XtraReports.UI.XtraReport
     {
         private int _thang;
         private int _nam;
@@ -15,12 +15,13 @@ namespace CtyTinLuong.Luong_ChamCong
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
 
-        public T_PrintChamCongToGapDan(int nam, int thang)
+        public Tr_PrintChamCongTGD(int thang, int nam)
         {
             _thang = thang;
             _nam = nam;
-
             InitializeComponent();
+
+            //
             Ds_Ngay.Add(Ngay1);
             Ds_Ngay.Add(Ngay2);
             Ds_Ngay.Add(Ngay3);
@@ -117,10 +118,6 @@ namespace CtyTinLuong.Luong_ChamCong
             Ds_Ngay_Footer.Add(tg29);
             Ds_Ngay_Footer.Add(tg30);
             Ds_Ngay_Footer.Add(tg31);
-
-
-            //setThu();
-           // setMauTableDetail();
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -165,11 +162,9 @@ namespace CtyTinLuong.Luong_ChamCong
                                         + " năm " + d.Year;
                 }
             }
-
-            //lbNgayThangNam.Text = ng2.WidthF.ToString();
-
         }
 
+        //
         private string LayThu(DateTime date)
         {
             switch (date.DayOfWeek)
@@ -196,7 +191,6 @@ namespace CtyTinLuong.Luong_ChamCong
         private string _flag_30 = "undelete";
         private string _flag_31 = "undelete";
 
-
         public void setThu()
         {
             //DateTime dtnow = DateTime.Now;
@@ -209,31 +203,31 @@ namespace CtyTinLuong.Luong_ChamCong
             {
                 if (_flag_31 == "undelete")
                 {
-                    Tr_xrTbHeader.DeleteColumn(ng31);
+                    xrTable2.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable2.DeleteColumn(tg31);
+                    xrTable3.DeleteColumn(tg31);
                     _flag_31 = "deleted";
                 }
 
                 //
                 if (_flag_30 == "undelete")
                 {
-                    Tr_xrTbHeader.DeleteColumn(ng30);
+                    xrTable2.DeleteColumn(ng30);
                     xrTable1.DeleteColumn(Ngay30);
-                    xrTable2.DeleteColumn(tg30);
+                    xrTable3.DeleteColumn(tg30);
                     _flag_30 = "deleted";
                 }
 
                 //
                 if (_flag_29 == "undelete")
                 {
-                    Tr_xrTbHeader.DeleteColumn(ng29);
+                    xrTable2.DeleteColumn(ng29);
                     xrTable1.DeleteColumn(Ngay29);
-                    xrTable2.DeleteColumn(tg29);
+                    xrTable3.DeleteColumn(tg29);
                     _flag_29 = "deleted";
                 }
 
-                
+
                 //
                 hoTen.WidthF = (float)140.98;
                 cong.WidthF = (float)64.84;
@@ -304,18 +298,18 @@ namespace CtyTinLuong.Luong_ChamCong
             {
                 if (_flag_31 == "undelete")
                 {
-                    Tr_xrTbHeader.DeleteColumn(ng31);
+                    xrTable2.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable2.DeleteColumn(tg31);
+                    xrTable3.DeleteColumn(tg31);
                     _flag_31 = "deleted";
                 }
 
                 //
                 if (_flag_30 == "undelete")
                 {
-                    Tr_xrTbHeader.DeleteColumn(ng30);
+                    xrTable2.DeleteColumn(ng30);
                     xrTable1.DeleteColumn(Ngay30);
-                    xrTable2.DeleteColumn(tg30);
+                    xrTable3.DeleteColumn(tg30);
                     _flag_30 = "deleted";
                 }
 
@@ -391,9 +385,9 @@ namespace CtyTinLuong.Luong_ChamCong
             {
                 if (_flag_31 == "undelete")
                 {
-                    Tr_xrTbHeader.DeleteColumn(ng31);
+                    xrTable2.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable2.DeleteColumn(tg31);
+                    xrTable3.DeleteColumn(tg31);
 
                     _flag_31 = "deleted";
                 }
@@ -493,212 +487,5 @@ namespace CtyTinLuong.Luong_ChamCong
             }
         }
 
-        //set mau bang du lieu:
-        public void setMauTableDetail2()
-        {
-            DateTime date_ = new DateTime(_nam, _thang, 1);
-            int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
-            string thu_ = "";
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (1)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay1.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (2)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay2.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (3)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay3.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (4)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay4.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (5)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay5.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (6)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay6.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (7)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay7.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (8)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay8.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (9)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay9.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (10)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay10.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (11)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay11.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (12)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay12.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (13)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay13.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (14)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay14.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (15)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay15.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (16)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay16.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (17)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay17.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (18)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay18.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (19)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay19.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (20)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay20.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (21)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay21.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (22)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay22.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (23)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay23.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (24)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay24.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (25)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay25.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (26)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay26.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (27)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay27.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (28)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay28.BackColor = Color.LightGray;
-            }
-
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (29)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay29.BackColor = Color.LightGray;
-            }
-
-            thu_ = LayThu(new DateTime(_nam, _thang, (30)));
-            if (thu_.Contains("CN"))
-            {
-                Ngay30.BackColor = Color.LightGray;
-            }
-
-        }
     }
 }
