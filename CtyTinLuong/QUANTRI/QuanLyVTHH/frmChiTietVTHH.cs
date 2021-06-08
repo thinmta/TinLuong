@@ -65,7 +65,7 @@ namespace CtyTinLuong
                 cls.iBien_Vao_IN_1_Ra_IN_Vao_Cat_2_Ra_Cat_Vao_Dot_3_RaDot_4 = bienmacdinh;
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = checNgungTheoDoi.Checked;
-
+                cls.fDoCao_Dot = Convert.ToDouble(txtDoCao.Text);
                 if (frmVatTuHangHoa.mbSua == true)
                 {
                     cls.iID_VTHH = frmVatTuHangHoa.miID_Sua_VTHH;

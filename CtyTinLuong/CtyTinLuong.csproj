@@ -564,12 +564,6 @@
     <Compile Include="QuanLySanXuat\Class\clsDinhMuc_ChiTiet_DinhMuc_ToGapDan.cs" />
     <Compile Include="QuanLySanXuat\Class\clsDinhMuc_DinhMuc_ToGapDan - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsDinhMuc_DinhMuc_ToGapDan.cs" />
-    <Compile Include="QuanLySanXuat\frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay.Designer.cs">
-      <DependentUpon>frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLySanXuat\frmPrintChiTietPhieuSanXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1505,18 +1499,6 @@
     <Compile Include="Xtra_BanHang.Designer.cs">
       <DependentUpon>Xtra_BanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xtra_BaoCaoSanLuong_TheoCongNhan.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Xtra_BaoCaoSanLuong_TheoCongNhan.Designer.cs">
-      <DependentUpon>Xtra_BaoCaoSanLuong_TheoCongNhan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xtra_BaoCaoSanLuong_ToMay_IN.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Xtra_BaoCaoSanLuong_ToMay_IN.Designer.cs">
-      <DependentUpon>Xtra_BaoCaoSanLuong_ToMay_IN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1612,6 +1594,18 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.Designer.cs">
       <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.Designer.cs">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP_RutGon.Designer.cs">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP_RutGon.cs</DependentUpon>
     </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
@@ -1889,9 +1883,6 @@
     <EmbeddedResource Include="QuanLySanXuat\frmDinhMuc_ChiTietDinhMucToGapDan.resx">
       <DependentUpon>frmDinhMuc_ChiTietDinhMucToGapDan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay.resx">
-      <DependentUpon>frmPrintChiTietPhieuSanXuat_BaoCaoSanLuong_TheoNgay.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\frmPrintChiTietPhieuSanXuat.resx">
       <DependentUpon>frmPrintChiTietPhieuSanXuat.cs</DependentUpon>
     </EmbeddedResource>
@@ -2056,6 +2047,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.resx">
       <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP.resx">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP_RutGon.resx">
+      <DependentUpon>Xtra_SanLuong_DOT_DAP_RutGon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.resx">
       <DependentUpon>frmChiTietDinhMucLuongCongNhat_New.cs</DependentUpon>
@@ -2267,12 +2264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BanHang.resx">
       <DependentUpon>Xtra_BanHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xtra_BaoCaoSanLuong_TheoCongNhan.resx">
-      <DependentUpon>Xtra_BaoCaoSanLuong_TheoCongNhan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xtra_BaoCaoSanLuong_ToMay_IN.resx">
-      <DependentUpon>Xtra_BaoCaoSanLuong_ToMay_IN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.resx">
       <DependentUpon>Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.cs</DependentUpon>

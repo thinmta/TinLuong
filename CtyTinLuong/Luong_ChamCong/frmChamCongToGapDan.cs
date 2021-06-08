@@ -588,7 +588,10 @@ namespace CtyTinLuong
           
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            GuiDuLieuBangLuong();
+            //GuiDuLieuBangLuong();
+
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
+            ff.Show();
         }
 
         private int _id_dinhmuc_togapdan;

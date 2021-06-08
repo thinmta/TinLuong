@@ -62,6 +62,7 @@
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.navLuongSanLuong = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -181,7 +182,8 @@
             this.navBarItem15,
             this.navSanLuongMayIn,
             this.navSanLuongMayCAT,
-            this.navSanLuongMayDOT});
+            this.navSanLuongMayDOT,
+            this.navLuongSanLuong});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -240,7 +242,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayIn),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayCAT),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayDOT)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayDOT),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongSanLuong)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem8
@@ -344,6 +347,12 @@
             this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
             this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
             // 
+            // navLuongSanLuong
+            // 
+            this.navLuongSanLuong.Caption = "BC Lương sản lượng";
+            this.navLuongSanLuong.Name = "navLuongSanLuong";
+            this.navLuongSanLuong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongSanLuong_LinkClicked);
+            // 
             // SanXuat_frmQuanLySanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +417,6 @@
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayIn;
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayCAT;
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayDOT;
+        private DevExpress.XtraNavBar.NavBarItem navLuongSanLuong;
     }
 }

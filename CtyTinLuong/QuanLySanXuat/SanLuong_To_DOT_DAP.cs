@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,11 @@ namespace CtyTinLuong
 {
     public partial class SanLuong_To_DOT_DAP : Form
     {
+        public static DataTable mdtPrint;
+        public static bool mbPrint_ALL, mbPrint_RutGon;
+
+        public static DateTime mdatungay, mdadenngay;
+        public static int miID_VTHH_Ra;
         public static DateTime GetFistDayInMonth(int year, int month)
         {
             DateTime aDateTime = new DateTime(year, month, 1);
@@ -85,7 +91,8 @@ namespace CtyTinLuong
 
         private void SanLuong_To_DOT_DAP_Load(object sender, EventArgs e)
         {
-           
+            clTongSoBao_Sot.Caption = "Số KG/\nBao_Sọt";
+            clTongSoKg.Caption = "Tổng số\nKg";
             DateTime ngayhomnay = DateTime.Today;
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
             int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
@@ -112,6 +119,60 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_RutGon = true;
+                mbPrint_ALL = false;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                ff.Show();
+
+            }
+        }
+
+        private void btprint2_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_RutGon = false;
+                mbPrint_ALL = true;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                ff.Show();
+
+            }
+        }
+
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString() != "")
+            {
+                miID_VTHH_Ra = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                SanLuong_ChiTiet_SanLuong_Dot_Dap ff = new SanLuong_ChiTiet_SanLuong_Dot_Dap();
+                ff.Show();
+
+            }
         }
     }
 }
