@@ -374,7 +374,6 @@ namespace CtyTinLuong
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
             _frmQuanLy_Luong_ChamCong = new CtyTinLuong.frmQuanLy_Luong_ChamCong(this);
-            //this.Hide();hide
             _frmQuanLy_Luong_ChamCong.Show();
         }
 
@@ -460,8 +459,8 @@ namespace CtyTinLuong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan();
-            //ff.Show();
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(6, 2021);
+            ff.Show();
         }
     }
 }
