@@ -254,20 +254,13 @@ namespace CtyTinLuong
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
-
-            //mdtPrint = (DataTable)gridControl1.DataSource;
+            mdtPrint = dv1212.ToTable();          
             if (mdtPrint.Rows.Count > 0)
-            {
+            {              
                 mbPrint_RutGon = true;
                 mbPrint_ALL = false;
                 mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                //mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
-                //msSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
-                //msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
-                //mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                //msDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
+                mdadenngay = dteDenNgay.DateTime;               
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
                 ff.Show();
 
@@ -282,19 +275,13 @@ namespace CtyTinLuong
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
             mdtPrint = dv1212.ToTable();
-
-            //mdtPrint = (DataTable)gridControl1.DataSource;
+           
             if (mdtPrint.Rows.Count > 0)
             {
                 mbPrint_RutGon = false;
                 mbPrint_ALL = true;
                 mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                //mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
-                //msSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
-                //msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
-                //mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                //msDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
+                mdadenngay = dteDenNgay.DateTime;               
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
                 ff.Show();
 
@@ -304,15 +291,16 @@ namespace CtyTinLuong
 
         private void SanLuong_To_May_IN_Load(object sender, EventArgs e)
         {
+            xxximay_in_1_Cat_2_dot_3 = SanXuat_frmQuanLySanXuat.imay_in_1_Cat_2_dot_3;
             DateTime ngayhomnay = DateTime.Today;
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
             int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
 
             dteDenNgay.DateTime = DateTime.Today;
             dteTuNgay.DateTime= GetFistDayInMonth(nam, thang);
-
+            
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            xxximay_in_1_Cat_2_dot_3 = SanXuat_frmQuanLySanXuat.imay_in_1_Cat_2_dot_3;
+         
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }

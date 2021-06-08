@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_ToMay_ChiTiet));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,6 +55,7 @@
             this.clNgaySanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenMay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clCaSanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -78,7 +80,6 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.clCaSanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -221,6 +222,7 @@
             this.btPrint.StyleController = this.dataLayoutControl1;
             this.btPrint.TabIndex = 110;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // btThoat
             // 
@@ -443,6 +445,17 @@
             this.clMaPhieu.VisibleIndex = 3;
             this.clMaPhieu.Width = 66;
             // 
+            // clCaSanXuat
+            // 
+            this.clCaSanXuat.Caption = "Ca";
+            this.clCaSanXuat.FieldName = "CaSanXuat";
+            this.clCaSanXuat.Name = "clCaSanXuat";
+            this.clCaSanXuat.OptionsColumn.AllowEdit = false;
+            this.clCaSanXuat.OptionsColumn.FixedWidth = true;
+            this.clCaSanXuat.Visible = true;
+            this.clCaSanXuat.VisibleIndex = 2;
+            this.clCaSanXuat.Width = 50;
+            // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
@@ -662,17 +675,6 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(138, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // clCaSanXuat
-            // 
-            this.clCaSanXuat.Caption = "Ca";
-            this.clCaSanXuat.FieldName = "CaSanXuat";
-            this.clCaSanXuat.Name = "clCaSanXuat";
-            this.clCaSanXuat.OptionsColumn.AllowEdit = false;
-            this.clCaSanXuat.OptionsColumn.FixedWidth = true;
-            this.clCaSanXuat.Visible = true;
-            this.clCaSanXuat.VisibleIndex = 2;
-            this.clCaSanXuat.Width = 50;
             // 
             // SanLuong_ToMay_ChiTiet
             // 
