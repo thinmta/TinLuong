@@ -330,7 +330,7 @@
             this.xrLine1,
             this.xrLabel7,
             this.xrLabel12});
-            this.ReportHeader.HeightF = 183.3333F;
+            this.ReportHeader.HeightF = 126.0417F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
             // 
