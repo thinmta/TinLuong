@@ -124,7 +124,7 @@ namespace CtyTinLuong
 
         private void Print_SanLuong_To_May_IN_RutGon(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
         {
-            Xtra_SanLuongToMay_IN_RutGon xtr111 = new Xtra_SanLuongToMay_IN_RutGon();
+            //Xtra_SanLuongToMay_IN_RutGon xtr111 = new Xtra_SanLuongToMay_IN_RutGon();
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbChiTietPhieuSanXuat.Clone();
             ds.tbChiTietPhieuSanXuat.Clear();
@@ -155,11 +155,11 @@ namespace CtyTinLuong
 
             }
 
-            xtr111.DataSource = null;
-            xtr111.DataSource = ds.tbChiTietPhieuSanXuat;
-            xtr111.DataMember = "tbChiTietPhieuSanXuat";
-            xtr111.CreateDocument();
-            documentViewer1.DocumentSource = xtr111;
+            //xtr111.DataSource = null;
+           // xtr111.DataSource = ds.tbChiTietPhieuSanXuat;
+          //  xtr111.DataMember = "tbChiTietPhieuSanXuat";
+          //  xtr111.CreateDocument();
+           // documentViewer1.DocumentSource = xtr111;
         }
         public frmPrint_SanLuongToMayIn()
         {

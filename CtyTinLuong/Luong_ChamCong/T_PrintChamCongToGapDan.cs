@@ -9,8 +9,8 @@ namespace CtyTinLuong.Luong_ChamCong
 {
     public partial class T_PrintChamCongToGapDan : DevExpress.XtraReports.UI.XtraReport
     {
-        List<XRTableCell> Ds_Ngay;
-        List<XRTableCell> Ds_Ngay_Header;
+        List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
+        List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
         public T_PrintChamCongToGapDan()
         {
             InitializeComponent();
@@ -81,13 +81,13 @@ namespace CtyTinLuong.Luong_ChamCong
             if (DateTime.Now.Month <= 9) pMonth.Value = "0" + DateTime.Now.Month.ToString();
             else pMonth.Value = DateTime.Now.Month.ToString();
             pYear.Value = DateTime.Now.Year;
-            setThu();
+            //setThu();
            // setMauTableDetail();
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-
+            setThu();
             DateTime d = Convert.ToDateTime(pNgay.Value);
             if (d.Day > 9)
             {
@@ -145,15 +145,124 @@ namespace CtyTinLuong.Luong_ChamCong
             return "";
         }
 
+        private string _flag_28 = "undelete";
+        private string _flag_29 = "undelete";
+        private string _flag_30 = "undelete";
+        private string _flag_31 = "undelete";
+
+
         public void setThu()
         {
-            DateTime dtnow = DateTime.Now;
+            //DateTime dtnow = DateTime.Now;
             // 
-            int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+            int thang = Convert.ToInt32(pMonth.Value);
+            int nam = Convert.ToInt32(pYear.Value);
 
+            int ngaycuathang_ = (((new DateTime(nam, thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+
+            //
+            if (ngaycuathang_ == 28)
+            {
+
+            }
+            else if (ngaycuathang_ == 29)
+            {
+
+            }
+            else if (ngaycuathang_ == 30)
+            {
+                if (_flag_31 == "undelete")
+                {
+                    Tr_xrTbHeader.DeleteColumn(ng31);
+                    xrTable1.DeleteColumn(Ngay31);
+                    xrTable2.DeleteColumn(tg31); 
+
+                    _flag_31 = "deleted";
+                }
+
+                //
+                hoTen.WidthF = (float)140.98;
+                cong.WidthF = (float)64.84;
+                Ngay1.WidthF = (float)25.1;
+                Ngay2.WidthF = (float)25.1;
+                Ngay3.WidthF = (float)25.1;
+                Ngay4.WidthF = (float)25.1;
+                Ngay5.WidthF = (float)25.1;
+                Ngay6.WidthF = (float)25.1;
+                Ngay7.WidthF = (float)25.1;
+                Ngay8.WidthF = (float)25.1;
+                Ngay9.WidthF = (float)25.1;
+                Ngay10.WidthF = (float)25.1;
+                Ngay11.WidthF = (float)24.5;
+                Ngay12.WidthF = (float)25.1;
+                Ngay13.WidthF = (float)25.5;
+                Ngay14.WidthF = (float)25.1;
+                Ngay15.WidthF = (float)25.1;
+                Ngay16.WidthF = (float)25.1;
+                Ngay17.WidthF = (float)25.1;
+                Ngay18.WidthF = (float)25.1;
+                Ngay19.WidthF = (float)25.1;
+                Ngay20.WidthF = (float)25.1;
+                Ngay21.WidthF = (float)25.1;
+                Ngay22.WidthF = (float)25.1;
+                Ngay23.WidthF = (float)25.1;
+                Ngay24.WidthF = (float)25.1;
+                Ngay25.WidthF = (float)25.1;
+                Ngay26.WidthF = (float)25.1;
+                Ngay27.WidthF = (float)25.1;
+                Ngay28.WidthF = (float)25.1;
+                Ngay29.WidthF = (float)25.1;
+                Ngay30.WidthF = (float)25.1;
+                TongCel.WidthF = (float)42.89;
+
+                //
+                nameTong.WidthF = (float)140.98;
+                nameCong.WidthF = (float)64.84;
+                tg1.WidthF = (float)25.1;
+                tg2.WidthF = (float)25.1;
+                tg3.WidthF = (float)25.1;
+                tg4.WidthF = (float)25.1;
+                tg5.WidthF = (float)25.1;
+                tg6.WidthF = (float)25.1;
+                tg7.WidthF = (float)25.1;
+                tg8.WidthF = (float)25.1;
+                tg9.WidthF = (float)25.1;
+                tg10.WidthF = (float)25.1;
+                tg11.WidthF = (float)24.5;
+                tg12.WidthF = (float)25.1;
+                tg13.WidthF = (float)25.5;
+                tg14.WidthF = (float)25.1;
+                tg15.WidthF = (float)25.1;
+                tg16.WidthF = (float)25.1;
+                tg17.WidthF = (float)25.1;
+                tg18.WidthF = (float)25.1;
+                tg19.WidthF = (float)25.1;
+                tg20.WidthF = (float)25.1;
+                tg21.WidthF = (float)25.1;
+                tg22.WidthF = (float)25.1;
+                tg23.WidthF = (float)25.1;
+                tg24.WidthF = (float)25.1;
+                tg25.WidthF = (float)25.1;
+                tg26.WidthF = (float)25.1;
+                tg27.WidthF = (float)25.1;
+                tg28.WidthF = (float)25.1;
+                tg29.WidthF = (float)25.1;
+                tg30.WidthF = (float)25.1;
+                tgSum.WidthF = (float)42.89;
+
+            }
+            else if (ngaycuathang_ == 31)
+            {
+                if (_flag_31 == "deleted")
+                {
+                    _flag_31 = "undelete";
+                }
+            }
+
+            //Tô màu Chủ nhật:
             for (int i = 0; i < ngaycuathang_; ++i)
             {
-                Ds_Ngay_Header[i].Text = (i + 1) + "\n" + LayThu(new DateTime(dtnow.Year, dtnow.Month, (i + 1)));
+                Ds_Ngay_Header[i].Text = LayThu(new DateTime(nam, thang, (i + 1)));
                 if (Ds_Ngay_Header[i].Text.Contains("CN"))
                 {
                     Ds_Ngay_Header[i].BackColor = Color.LightGray;
@@ -162,17 +271,36 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_Ngay_Header[i].ForeColor = Color.Red;
                 }
             }
-            //
+
             for (int i = 0; i < ngaycuathang_; ++i)
             {
-                Ds_Ngay[i].Text = (i + 1) + "\n" + LayThu(new DateTime(dtnow.Year, dtnow.Month, (i + 1)));
-                if (Ds_Ngay[i].Text.Contains("CN"))
+                string thu_ = LayThu(new DateTime(nam, thang, (i + 1)));
+                if (thu_.Contains("CN"))
                 {
                     Ds_Ngay[i].BackColor = Color.LightGray;
-                    Ds_Ngay[i].BackColor = Color.LightGray;
-                    Ds_Ngay[i].ForeColor = Color.Red;
                     Ds_Ngay[i].ForeColor = Color.Red;
                 }
+            }
+
+            
+            //TongCel.WidthF = (float)42.39;
+            //KyNhan.WidthF = (float)54.22 + (float)24.28;
+
+            if (ngaycuathang_ == 28)
+            {
+            }
+            else if (ngaycuathang_ == 29)
+            {
+            }
+            else if (ngaycuathang_ == 30)
+            {
+            }
+            else if (ngaycuathang_ == 31)
+            {
+                //cong.WidthF = (float)64.84;
+                //hoTen.WidthF = (float)140.98;
+                //TongCel.WidthF = (float)42.39;
+                //TongCel.WidthF = (float)54.22;
             }
             ////
             //DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
