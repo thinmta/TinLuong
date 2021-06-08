@@ -396,6 +396,7 @@
             this.btRefesh.StyleController = this.dataLayoutControl1;
             this.btRefesh.TabIndex = 1;
             this.btRefesh.ToolTip = "Refesh";
+            this.btRefesh.Click += new System.EventHandler(this.btRefesh_Click);
             // 
             // dteTuNgay
             // 

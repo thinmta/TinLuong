@@ -204,7 +204,10 @@ namespace CtyTinLuong
             }
         }
 
-     
+        private void btRefesh_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoSanLuong_Theo_CongNhan_Load( sender,  e);
+        }
 
         public frmBaoCaoSanLuong_Theo_CongNhan()
         {
