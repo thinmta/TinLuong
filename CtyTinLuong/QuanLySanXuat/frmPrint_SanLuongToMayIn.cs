@@ -23,10 +23,10 @@ namespace CtyTinLuong
 
                 int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH_Ra"].ToString());
 
-                double SoLuong_Vao = Convert.ToDouble(dt3.Rows[i]["SoLuong_Vao"].ToString()); // so thanh
-                double SanLuong_Tong = Convert.ToDouble(dt3.Rows[i]["SanLuong_Tong"].ToString()); // số bao
-                double QuyRaKG = Convert.ToDouble(dt3.Rows[i]["QuyRaKG"].ToString()); // tong so kg
-                double DoCao_Dot = Convert.ToDouble(dt3.Rows[i]["DoCao_Dot"].ToString());// độ cao
+                double TongSoThanh = Convert.ToDouble(dt3.Rows[i]["TongSoThanh"].ToString()); // so thanh
+                double TongSoBao_Sot = Convert.ToDouble(dt3.Rows[i]["TongSoBao_Sot"].ToString()); // số bao
+                double TongSoKg = Convert.ToDouble(dt3.Rows[i]["TongSoKg"].ToString()); // tong so kg
+              //  double DoCao_Dot = Convert.ToDouble(dt3.Rows[i]["DoCao_Dot"].ToString());// độ cao
 
 
                 DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
@@ -35,10 +35,10 @@ namespace CtyTinLuong
                 _ravi["TenVatTu_Ra_IN"] = dt3.Rows[i]["TenVatTu_Ra"].ToString();
                 _ravi["STT"] = (i + 1).ToString();
 
-                _ravi["SanLuong_Thuong_IN"] = SoLuong_Vao;
-                _ravi["SanLuong_TangCa_IN"] = SanLuong_Tong;
-                _ravi["SoLuong_Ra_IN"] = QuyRaKG;
-                _ravi["PhePham_IN"] = DoCao_Dot;
+                _ravi["SanLuong_Thuong_IN"] = TongSoThanh;
+                _ravi["SanLuong_TangCa_IN"] = TongSoBao_Sot;
+                _ravi["SoLuong_Ra_IN"] = TongSoKg;
+             //   _ravi["PhePham_IN"] = DoCao_Dot;
 
 
                 ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
