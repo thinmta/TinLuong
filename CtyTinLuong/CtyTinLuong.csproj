@@ -1595,6 +1595,12 @@
     <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN.Designer.cs">
       <DependentUpon>Xtra_SanLuongToMay_IN.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.Designer.cs">
+      <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2030,6 +2036,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.resx">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.resx">
+      <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.resx">
       <DependentUpon>frmChiTietDinhMucLuongCongNhat_New.cs</DependentUpon>

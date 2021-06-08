@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmPrint_SanLuongToMayIn : Form
     {
-        private void Print_SanLuong_To_May_IN(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
+        private void Print_SanLuong_To_May_IN_ALL(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
         {
             Xtra_SanLuongToMay_IN xtr111 = new Xtra_SanLuongToMay_IN();
             DataSet_TinLuong ds = new DataSet_TinLuong();
@@ -22,13 +22,13 @@ namespace CtyTinLuong
             {
 
                 int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH_Ra"].ToString());
-                clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
-                clsxx.iID_VTHH = ID_VTHHxx;
-                DataTable dtxx = clsxx.SelectOne();
+                //clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
+                //clsxx.iID_VTHH = ID_VTHHxx;
+                //DataTable dtxx = clsxx.SelectOne();
                 string xxmavt, xxtenvt, xxdvt;
-                xxmavt = clsxx.sMaVT.Value;
-                xxtenvt = clsxx.sTenVTHH.Value;
-                xxdvt = clsxx.sDonViTinh.Value;
+                xxmavt = dt3.Rows[i]["MaVT_Ra"].ToString();
+                xxtenvt = dt3.Rows[i]["TenVatTu_Ra"].ToString();
+                xxdvt = dt3.Rows[i]["DonViTinh_Ra"].ToString();
                 double sanluongthuowng = Convert.ToDouble(dt3.Rows[i]["SanLuong_Thuong"].ToString());
                 double sanluongtangca = Convert.ToDouble(dt3.Rows[i]["SanLuong_TangCa"].ToString());
                 double sanluongtong = Convert.ToDouble(dt3.Rows[i]["SanLuong_Tong"].ToString());
@@ -69,6 +69,46 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
+
+        private void Print_SanLuong_To_May_IN_RutGon(DataTable dt3, DateTime xxtungay, DateTime xxdenngay)
+        {
+            Xtra_SanLuongToMay_IN_RutGon xtr111 = new Xtra_SanLuongToMay_IN_RutGon();
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbChiTietPhieuSanXuat.Clone();
+            ds.tbChiTietPhieuSanXuat.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+
+                int ID_VTHHxx = Convert.ToInt32(dt3.Rows[i]["ID_VTHH_Ra"].ToString());
+               
+                double sanluongthuowng = Convert.ToDouble(dt3.Rows[i]["SanLuong_Thuong"].ToString());
+                double sanluongtangca = Convert.ToDouble(dt3.Rows[i]["SanLuong_TangCa"].ToString());
+                double sanluongtong = Convert.ToDouble(dt3.Rows[i]["SanLuong_Tong"].ToString());
+                double phepham = Convert.ToDouble(dt3.Rows[i]["PhePham"].ToString());
+               
+
+                DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();
+                _ravi["MaVT_Ra_IN"] = dt3.Rows[i]["MaVT_Ra"].ToString();
+                _ravi["DonViTinh_Ra_IN"] = dt3.Rows[i]["DonViTinh_Ra"].ToString();
+                _ravi["TenVatTu_Ra_IN"] = dt3.Rows[i]["TenVatTu_Ra"].ToString();
+                _ravi["STT"] = (i + 1).ToString();             
+               
+                _ravi["SanLuong_Thuong_IN"] = sanluongthuowng;
+                _ravi["SanLuong_TangCa_IN"] = sanluongtangca;
+                _ravi["SoLuong_Ra_IN"] = sanluongtong;
+                _ravi["PhePham_IN"] = phepham;
+
+
+                ds.tbChiTietPhieuSanXuat.Rows.Add(_ravi);
+
+            }
+
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbChiTietPhieuSanXuat;
+            xtr111.DataMember = "tbChiTietPhieuSanXuat";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
         public frmPrint_SanLuongToMayIn()
         {
             InitializeComponent();
@@ -77,13 +117,16 @@ namespace CtyTinLuong
         private void frmPrint_SanLuongToMayIn_Load(object sender, EventArgs e)
         {
             if (SanLuong_To_May_IN.mbPrint_ALL == true)
-                Print_SanLuong_To_May_IN(SanLuong_To_May_IN.mdtPrint, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
+                Print_SanLuong_To_May_IN_ALL(SanLuong_To_May_IN.mdtPrint, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
+            if (SanLuong_To_May_IN.mbPrint_RutGon == true)
+                Print_SanLuong_To_May_IN_RutGon(SanLuong_To_May_IN.mdtPrint, SanLuong_To_May_IN.mdatungay, SanLuong_To_May_IN.mdadenngay);
         }
 
         private void frmPrint_SanLuongToMayIn_FormClosed(object sender, FormClosedEventArgs e)
         {
             SanLuong_To_May_IN.mbPrint_ALL = false;
-             
+            SanLuong_To_May_IN.mbPrint_RutGon = false;
+
         }
     }
 }
