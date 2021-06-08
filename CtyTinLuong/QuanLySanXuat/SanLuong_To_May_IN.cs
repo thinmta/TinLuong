@@ -14,9 +14,9 @@ namespace CtyTinLuong
     public partial class SanLuong_To_May_IN : Form
     {
         public static DataTable mdtPrint;
-        public static bool mbPrint_ALL;
+        public static bool mbPrint_ALL, mbPrint_RutGon;
 
-        int xxximay_in_1_Cat_2_dot_3=0;
+        public static int xxximay_in_1_Cat_2_dot_3=0;
         public static string xxsotrang;
         public static DateTime mdatungay, mdadenngay;
         public static int miID_VTHH_Ra;
@@ -247,18 +247,46 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
-        private void btprint2_Click(object sender, EventArgs e)
+        private void btPrint_Click(object sender, EventArgs e)
         {
-            //DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            //CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            //string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            //DataView dv1212 = new DataView(DatatableABC);
-            //dv1212.RowFilter = filterString;
-            //mdtPrint = dv1212.ToTable();
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
 
-            mdtPrint = (DataTable)gridControl1.DataSource;
+            //mdtPrint = (DataTable)gridControl1.DataSource;
             if (mdtPrint.Rows.Count > 0)
             {
+                mbPrint_RutGon = true;
+                mbPrint_ALL = false;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                //mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
+                //msSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
+                //msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                //mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                //msDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
+                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                ff.Show();
+
+            }
+        }
+
+        private void btprint2_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+
+            //mdtPrint = (DataTable)gridControl1.DataSource;
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_RutGon = false;
                 mbPrint_ALL = true;
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;

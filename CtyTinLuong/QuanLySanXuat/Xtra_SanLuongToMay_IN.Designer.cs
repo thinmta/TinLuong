@@ -373,8 +373,8 @@
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable3});
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("MaVT_Ra_IN", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
-            new DevExpress.XtraReports.UI.GroupField("TenVatTu_Ra_IN", DevExpress.XtraReports.UI.XRColumnSortOrder.None)});
+            new DevExpress.XtraReports.UI.GroupField("MaVT_Ra_IN", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending),
+            new DevExpress.XtraReports.UI.GroupField("TenVatTu_Ra_IN", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeader1.HeightF = 25F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
@@ -418,6 +418,7 @@
             this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.StylePriority.UsePadding = false;
             this.xrTableCell4.Text = "xrTableCell4";
+            this.xrTableCell4.TextFormatString = "Mã hàng: {0}";
             this.xrTableCell4.Weight = 3.87064906573331D;
             // 
             // xrTableCell8
