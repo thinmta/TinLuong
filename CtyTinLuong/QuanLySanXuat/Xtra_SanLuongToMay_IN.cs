@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
+using System.Data;
 
 namespace CtyTinLuong
 {
@@ -13,5 +14,26 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            try
+            {
+                clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
+                cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+                DataTable dt = cls.SelectAll_ID_DangNhap();
+                if (dt.Rows.Count > 0)
+                {
+                    pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                    pTruongPhong.Value = dt.Rows[6]["HoTen"].ToString();
+                    
+                }
+            }
+            catch
+            { }
+            DateTime xxtungay = SanLuong_To_May_IN.mdatungay;
+            DateTime xxdenngay = SanLuong_To_May_IN.mdadenngay;
+            pTieuDe.Value = "BÁO CÁO SẢN LƯỢNG TỔ MÁY IN THÁNG "+xxtungay.ToString("MM/yyyy")+"";
+            pNgayThang.Value = "Từ ngày "+xxtungay.ToString("dd/MM/yyyy")+ " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
+        }
     }
 }

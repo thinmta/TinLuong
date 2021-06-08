@@ -249,14 +249,14 @@ namespace CtyTinLuong
 
         private void btprint2_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
-          
-           
+            //DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            //CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            //string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            //DataView dv1212 = new DataView(DatatableABC);
+            //dv1212.RowFilter = filterString;
+            //mdtPrint = dv1212.ToTable();
+
+            mdtPrint = (DataTable)gridControl1.DataSource;
             if (mdtPrint.Rows.Count > 0)
             {
                 mbPrint_ALL = true;
