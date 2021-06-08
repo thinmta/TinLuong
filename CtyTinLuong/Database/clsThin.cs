@@ -266,7 +266,7 @@ namespace CtyTinLuong
         }
 
         public DataTable T_BTTL_TGD_SF(int nam
-            , int thang, int ID_VTHH, string ten_nhanvien)
+            , int thang)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[T_BTTL_TGD_SF]";
@@ -282,8 +282,8 @@ namespace CtyTinLuong
             {
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_VTHH));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@ten_nhanvien", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ten_nhanvien));
+              //  scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_VTHH));
+               // scmCmdToExecute.Parameters.Add(new SqlParameter("@ten_nhanvien", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ten_nhanvien));
 
                 // Open connection.
                 m_scoMainConnection.Open();

@@ -588,10 +588,10 @@ namespace CtyTinLuong
           
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            //GuiDuLieuBangLuong();
+            GuiDuLieuBangLuong();
 
-            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
-            ff.Show();
+            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
+            //ff.Show();
         }
 
         private int _id_dinhmuc_togapdan;
@@ -715,6 +715,9 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
+                    if (_data.Rows[i]["ID_VTHH"].ToString() == "")
+                        continue;
+
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     if (id_vthh_ == 0)
                     {

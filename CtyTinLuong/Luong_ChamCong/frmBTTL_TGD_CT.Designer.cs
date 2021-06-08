@@ -372,6 +372,7 @@
             this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
+            this.clTenNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
             this.clTenNhanVien.Width = 120;

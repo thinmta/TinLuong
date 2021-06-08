@@ -24,7 +24,7 @@ namespace CtyTinLuong
         public string msTenNhanVien;
 
         public int _nam, _thang;
-        public string _tennhanvien = "", _ten_vthh;
+        public string  _ten_vthh;
         private DataTable _data;
         private bool isload = true;
 
@@ -62,44 +62,85 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang , 0, _tennhanvien); 
+                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang);
+                double TongLuong_ = 0; 
+                int ID_CongNhan_Cu = 0;
+                if (_data != null && _data.Rows.Count > 0)
+                {
+                    ID_CongNhan_Cu = Convert.ToInt32(_data.Rows[0]["ID_CongNhan"].ToString());
+                }
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
+                    int ID_CongNhan_;
+                    if (i < _data.Rows.Count - 1)
+                    {
+                        ID_CongNhan_ = Convert.ToInt32(_data.Rows[i+1]["ID_CongNhan"].ToString());
+                    }
+                    else
+                    {
+                        ID_CongNhan_ = 0;
+                    }
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
-                    _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                     tongluong_ += Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString());
                     songayan_ += Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString());
                     trutiencom_ += Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString());
                     tongtien_ += Convert.ToInt32(_data.Rows[i]["TongTien"].ToString());
                     tamung_ += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
-                    thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString()); 
+                    thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     // 
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["SoNgayAn"] = Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString()).ToString("N0");
-                    _data.Rows[i]["SoNgayAn"] = Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString()).ToString("N0");
-                    _data.Rows[i]["TruTienCom"] = Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongTien"] = Convert.ToInt32(_data.Rows[i]["TongTien"].ToString()).ToString("N0");
-                    _data.Rows[i]["TamUng"] = Convert.ToInt32(_data.Rows[i]["TamUng"].ToString()).ToString("N0");
-                    _data.Rows[i]["ThucNhan"] = Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString()).ToString("N0");
 
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
-                    _data.Rows[i]["TongLuong"] = Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString()).ToString("N0");
+                    double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                    //_data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+                     
+
+                    
+
+                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+
+                    TongLuong_ += (dongia_ * sanluong_);
+
+                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    if (ID_CongNhan_ != ID_CongNhan_Cu)
+                    {
+                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                        _data.Rows[i]["TongLuong"] = TongLuong_.ToString("N0");
+                        
+                        ID_CongNhan_Cu = ID_CongNhan_;
+
+                        _data.Rows[i]["TongTien"] = (TongLuong_ - TruTienCom_).ToString("N0");
+                        _data.Rows[i]["ThucNhan"] = (TongLuong_ - TruTienCom_ - TamUng_).ToString("N0");
+
+                        if (TruTienCom_ == 0)
+                            _data.Rows[i]["TruTienCom"] = "";
+                        else
+                            _data.Rows[i]["TruTienCom"] = TruTienCom_.ToString("N0");
+
+                        if (SoNgayAn_ == 0)
+                            _data.Rows[i]["SoNgayAn"] = "";
+                        else
+                            _data.Rows[i]["SoNgayAn"] = SoNgayAn_.ToString("N0");
+
+                        if (TamUng_ == 0)
+                            _data.Rows[i]["TamUng"] = "";
+                        else
+                            _data.Rows[i]["TamUng"] = TruTienCom_.ToString("N0");
+
+                        TongLuong_ = 0;
+                    }
+                    else
+                    {
+                        _data.Rows[i]["TongLuong"] = "";
+                        _data.Rows[i]["TruTienCom"] = "";
+                        _data.Rows[i]["SoNgayAn"] = "";
+                        _data.Rows[i]["TongTien"] = "";
+                        _data.Rows[i]["TamUng"] = "";
+                    }
+                    _data.Rows[i]["ThanhTien"] = (dongia_ * sanluong_).ToString("N0");
+
 
                 }
             }
