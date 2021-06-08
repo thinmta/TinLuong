@@ -148,7 +148,7 @@ namespace CtyTinLuong
                 double SanLuong_Tong = Convert.ToDouble(dt.Rows[0]["SanLuong_Tong"].ToString());
                 double DonGia_Xuat = Convert.ToDouble(dt.Rows[0]["DonGia_Xuat"].ToString());
                 double PhePham = Convert.ToDouble(dt.Rows[0]["PhePham"].ToString());
-
+                double DoCao_Dot = Convert.ToDouble(dt.Rows[0]["DoCao_Dot"].ToString());
                 gridMaCaTruong_May_DOT.EditValue = ID_CaTruong;
                 dteNgaySanXuat_May_DOT.EditValue = NgaySanXuat;
                 cbCaSanXuat_May_DOT.Text = CaSanXuat;
@@ -171,7 +171,7 @@ namespace CtyTinLuong
                     txtSoKGMotBao.Text = dt.Rows[0]["SoKG_MotBao_May_Dot"].ToString();
                     txtQuyDoiRaKG.Text = (SanLuong_Thuong * SoKGMotBao).ToString();
                 }
-
+                txtDoCao.Text = DoCao_Dot.ToString();
                 gridHangHoaXuat_May_DOT.EditValue = ID_VTHH_Ra;
                 txtPhePham_May_DOT.Text = PhePham.ToString();
                 txtGhiChu_May_DOT.Text = GhiChu.ToString();
@@ -263,6 +263,7 @@ namespace CtyTinLuong
                 double DonGia_Xuat = Convert.ToDouble(txtDonGiaXuat_May_DOT.Text.ToString());
                 double PhePham = Convert.ToDouble(txtPhePham_May_DOT.Text.ToString());
                 double SOKGMOTBAO=Convert.ToDouble(txtSoKGMotBao.Text.ToString());
+                double docaodot= Convert.ToDouble(txtDoCao.Text.ToString());
                 int ID_DinhMuc_Luong = Convert.ToInt32(gridDinhMucSLMay_DOT.EditValue.ToString());
                 cls.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu; 
                 cls.iID_May = ID_May;
@@ -288,7 +289,7 @@ namespace CtyTinLuong
                 cls.bGuiDuLieu = true;
                 cls.bTrangThaiTaoLenhSanXuat = bbbbbTrangThaiTaoLenhSanXuat;
                 cls.fSoKG_MotBao_May_Dot = SOKGMOTBAO;
-               
+                cls.fDoCao_Dot = docaodot;
                 if (mbThemMoi_DOT == true)
                 {
                     cls.Insert();

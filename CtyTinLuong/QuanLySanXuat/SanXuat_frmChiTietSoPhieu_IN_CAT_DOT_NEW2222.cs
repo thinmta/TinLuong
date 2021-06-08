@@ -315,6 +315,7 @@ namespace CtyTinLuong
                 cls.bGuiDuLieu = true;
                 cls.bTrangThaiTaoLenhSanXuat = false;
                 cls.fSoKG_MotBao_May_Dot = 0;
+                cls.fDoCao_Dot = 0;
                 int iiiDID_ChiTietPhieuxxx;
                 if (mbThemMoi_IN == true) // them moi
                 {
@@ -839,6 +840,7 @@ namespace CtyTinLuong
                 cls.bTrangThaiXuatNhap = false;
                 cls.bGuiDuLieu = true;
                 cls.fSoKG_MotBao_May_Dot = 0;
+                cls.fDoCao_Dot = 0;
                 cls.bTrangThaiTaoLenhSanXuat = false;
                 int iiiDID_ChiTietPhieuxxx;
                 if (mbThemMoi_CAT == true) // them moi
