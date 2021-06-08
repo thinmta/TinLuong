@@ -1438,6 +1438,12 @@
     <Compile Include="QuanLySanXuat\SanLuong_ToMay_ChiTiet.Designer.cs">
       <DependentUpon>SanLuong_ToMay_ChiTiet.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\SanLuong_To_DOT_DAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\SanLuong_To_DOT_DAP.Designer.cs">
+      <DependentUpon>SanLuong_To_DOT_DAP.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.cs">
       <SubType>UserControl</SubType>
@@ -2024,6 +2030,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanLuong_ToMay_ChiTiet.resx">
       <DependentUpon>SanLuong_ToMay_ChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\SanLuong_To_DOT_DAP.resx">
+      <DependentUpon>SanLuong_To_DOT_DAP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_RutGon.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_RutGon.cs</DependentUpon>

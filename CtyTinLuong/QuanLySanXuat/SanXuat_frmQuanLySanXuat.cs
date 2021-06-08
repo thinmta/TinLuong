@@ -267,8 +267,8 @@ namespace CtyTinLuong
         private void navSanLuongMayDOT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             imay_in_1_Cat_2_dot_3 = 3;
-            //SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
-            //ucc.Show();
+            SanLuong_To_DOT_DAP ucc = new SanLuong_To_DOT_DAP();
+            ucc.Show();
         }
 
         private void navSanLuongMayIn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
