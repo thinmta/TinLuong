@@ -32,7 +32,7 @@ namespace CtyTinLuong
 
             DataTable dt2 = new DataTable();
             dt2 = new DataTable();
-
+            dt2.Columns.Add("STT", typeof(string));
             dt2.Columns.Add("ID_CongNhan", typeof(string));
             dt2.Columns.Add("TenNhanVien", typeof(string));
             dt2.Columns.Add("ID_VTHH_Ra", typeof(string));
@@ -42,9 +42,9 @@ namespace CtyTinLuong
             dt2.Columns.Add("ID_DinhMuc_Luong", typeof(string));
             dt2.Columns.Add("SanLuong_Thuong", typeof(string));
             dt2.Columns.Add("SanLuong_TangCa", typeof(string));
-            dt2.Columns.Add("DinhMuc_KhongTang", typeof(string));
-            dt2.Columns.Add("DinhMuc_Tang", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(string));
+            dt2.Columns.Add("DinhMuc_KhongTang", typeof(double));
+            dt2.Columns.Add("DinhMuc_Tang", typeof(double));
+            dt2.Columns.Add("ThanhTien", typeof(double));
 
 
 
@@ -57,12 +57,18 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < dtcongnhan.Rows.Count; i++)
                 {
-
-
                     int ID_CongNhanxxx = Convert.ToInt32(dtcongnhan.Rows[i]["ID_CongNhan"].ToString());
                     clsnhansu.iID_NhanSu = ID_CongNhanxxx;
                     DataTable dtns = clsnhansu.SelectOne();
                     string stencongnhan = clsnhansu.sTenNhanVien.Value;
+
+
+                    //DataRow _ravi1 = dt2.NewRow();
+                    //_ravi1["STT"] = "";
+                    //_ravi1["TenNhanVien"] = stencongnhan;
+                    //_ravi1["ThanhTien"] = deTOngtien;
+                    //dt2.Rows.Add(_ravi1);
+
 
                     DataTable dtxxxx = new DataTable();
                     dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(ID_CongNhanxxx, xxtungay, xxdenngay);
@@ -81,10 +87,7 @@ namespace CtyTinLuong
                             if (xxxx.ToString() != "")
                                 deTOngtien = Convert.ToDouble(xxxx);
                             else deTOngtien = 0;
-                            DataRow _ravi1 = dt2.NewRow();
-                            _ravi1["TenNhanVien"] = stencongnhan;
-                            _ravi1["ThanhTien"] = deTOngtien;
-                            dt2.Rows.Add(_ravi1);
+                           
                             if (dtdinhmuc.Rows.Count > 0)
                             {
                                 double dongia = Convert.ToDouble(dtdinhmuc.Rows[0]["DinhMuc_KhongTang"].ToString());
@@ -97,8 +100,9 @@ namespace CtyTinLuong
                                 string MaVT_Ra = clsvt.sMaVT.Value;
                                 string DonViTinh_Ra = clsvt.sDonViTinh.Value;
                                 string TenVatTu_Ra = clsvt.sTenVTHH.Value;
-                                //_ravi["TenNhanVien"] = stencongnhan;
+                                _ravi["STT"] = k+1;
                                 _ravi["ID_CongNhan"] = ID_CongNhanxxx;
+                                _ravi["TenNhanVien"] = stencongnhan;
                                 _ravi["ID_VTHH_Ra"] = xxID_VTHH_Ra;
                                 _ravi["MaVT"] = MaVT_Ra;
                                 _ravi["TenVTHH"] = TenVatTu_Ra;
@@ -142,8 +146,8 @@ namespace CtyTinLuong
 
         private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-                e.DisplayText = (e.RowHandle + 1).ToString();
+            //if (e.Column == clSTT)
+            //    e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
         private void gridView2_DoubleClick(object sender, EventArgs e)
@@ -217,7 +221,7 @@ namespace CtyTinLuong
             dteTuNgay.DateTime = GetFistDayInMonth(nam, thang);
             
             LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
-           
+            gridView2.ExpandAllGroups();
         }
 
       
