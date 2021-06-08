@@ -241,7 +241,7 @@
             this.txtDoCao.Name = "txtDoCao";
             this.txtDoCao.Size = new System.Drawing.Size(133, 20);
             this.txtDoCao.TabIndex = 117;
-            this.txtDoCao.Text = "1";
+            this.txtDoCao.Text = "0";
             // 
             // txtMaPhieu
             // 
