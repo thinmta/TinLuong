@@ -1511,12 +1511,6 @@
     <Compile Include="Xtra_BaoCaoSanLuong_TheoCongNhan.Designer.cs">
       <DependentUpon>Xtra_BaoCaoSanLuong_TheoCongNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xtra_BaoCaoSanLuong_ToMay_IN.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Xtra_BaoCaoSanLuong_ToMay_IN.Designer.cs">
-      <DependentUpon>Xtra_BaoCaoSanLuong_ToMay_IN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2289,9 +2283,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCaoSanLuong_TheoCongNhan.resx">
       <DependentUpon>Xtra_BaoCaoSanLuong_TheoCongNhan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xtra_BaoCaoSanLuong_ToMay_IN.resx">
-      <DependentUpon>Xtra_BaoCaoSanLuong_ToMay_IN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.resx">
       <DependentUpon>Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.cs</DependentUpon>
