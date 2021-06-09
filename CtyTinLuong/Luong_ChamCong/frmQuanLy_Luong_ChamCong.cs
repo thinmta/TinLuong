@@ -164,5 +164,10 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navBTTL_TBX_CT_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+
+        }
     }
 }

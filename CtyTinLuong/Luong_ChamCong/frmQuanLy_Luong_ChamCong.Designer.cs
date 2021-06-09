@@ -59,6 +59,8 @@
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.navBTTL_TBX_CT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_TBX_TQ = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,7 +223,9 @@
             this.navBarItem18,
             this.navTTL_TGD,
             this.navBTTL_TGD_TD,
-            this.navChamCom_TGD});
+            this.navChamCom_TGD,
+            this.navBTTL_TBX_CT,
+            this.navBTTL_TBX_TQ});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
@@ -272,7 +276,9 @@
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD_TD)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD_TD),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX_CT),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX_TQ)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -320,6 +326,17 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(971, 621);
             this.panelControl1.TabIndex = 70;
+            // 
+            // navBTTL_TBX_CT
+            // 
+            this.navBTTL_TBX_CT.Caption = "Tổ Bốc xếp - Chi tiết";
+            this.navBTTL_TBX_CT.Name = "navBTTL_TBX_CT";
+            this.navBTTL_TBX_CT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TBX_CT_LinkClicked);
+            // 
+            // navBTTL_TBX_TQ
+            // 
+            this.navBTTL_TBX_TQ.Caption = "Tổ Bốc xếp - Tổng quan";
+            this.navBTTL_TBX_TQ.Name = "navBTTL_TBX_TQ";
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -372,5 +389,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TGD_TD;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
         private DevExpress.XtraNavBar.NavBarItem navChamCom_TGD;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX_CT;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX_TQ;
     }
 }
