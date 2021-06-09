@@ -59,12 +59,11 @@
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
-<<<<<<< HEAD
+
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.navBTTL_TBX_CT = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TBX_TQ = new DevExpress.XtraNavBar.NavBarItem();
-=======
->>>>>>> d9f4c8b12e465cdd179e529caa963b168bb9554c
+
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -330,7 +329,7 @@
             this.navChamCom_TGD.Name = "navChamCom_TGD";
             this.navChamCom_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCom_TGD_LinkClicked);
             // 
-<<<<<<< HEAD
+
             // panelControl1
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -352,8 +351,6 @@
             this.navBTTL_TBX_TQ.Caption = "Tổ Bốc xếp - Tổng quan";
             this.navBTTL_TBX_TQ.Name = "navBTTL_TBX_TQ";
             // 
-=======
->>>>>>> d9f4c8b12e465cdd179e529caa963b168bb9554c
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

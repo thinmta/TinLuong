@@ -154,7 +154,6 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
-<<<<<<< HEAD
 
         private void navToBocXep_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
@@ -170,7 +169,5 @@ namespace CtyTinLuong
         {
 
         }
-=======
->>>>>>> d9f4c8b12e465cdd179e529caa963b168bb9554c
     }
 }
