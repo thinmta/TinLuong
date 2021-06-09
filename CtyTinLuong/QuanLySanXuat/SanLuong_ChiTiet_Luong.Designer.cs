@@ -191,7 +191,7 @@
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit2});
-            this.gridControl2.Size = new System.Drawing.Size(1255, 215);
+            this.gridControl2.Size = new System.Drawing.Size(1255, 391);
             this.gridControl2.TabIndex = 11;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -248,6 +248,7 @@
             this.gridView3.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.gridView3.OptionsView.RowAutoHeight = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView3_CustomDrawCell);
             // 
             // clSTT1
             // 
@@ -272,7 +273,7 @@
             this.clTenVTHH1.OptionsColumn.AllowEdit = false;
             this.clTenVTHH1.Visible = true;
             this.clTenVTHH1.VisibleIndex = 1;
-            this.clTenVTHH1.Width = 84;
+            this.clTenVTHH1.Width = 64;
             // 
             // repositoryItemMemoEdit2
             // 
@@ -287,7 +288,7 @@
             this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 70;
+            this.gridColumn2.Width = 50;
             // 
             // Ngay1
             // 
@@ -676,13 +677,13 @@
             gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode2});
-            this.gridControl1.Location = new System.Drawing.Point(2, 245);
+            this.gridControl1.Location = new System.Drawing.Point(2, 421);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.memohoten,
             this.memoTenVTHH});
-            this.gridControl1.Size = new System.Drawing.Size(1255, 227);
+            this.gridControl1.Size = new System.Drawing.Size(1255, 51);
             this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -969,16 +970,16 @@
             this.layoutControlItem10.Control = this.gridControl2;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(1259, 219);
+            this.layoutControlItem10.Size = new System.Drawing.Size(1259, 395);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 243);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 419);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1259, 231);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1259, 55);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
