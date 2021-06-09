@@ -19,6 +19,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCong_TBX : Form
     {
+        private string tenbophan = "Tổ Bốc xếp";
         public int _nam, _thang, _id_bophan = 25;
         private DataTable _data;
         private bool isload = true;
@@ -97,6 +98,7 @@ namespace CtyTinLuong
             isload = true;
             if (islandau)
             {
+
                 DateTime dtnow = DateTime.Now;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString(); 
@@ -145,6 +147,19 @@ namespace CtyTinLuong
                     cbNhanSu.DataSource = dt_;
                     cbNhanSu.DisplayMember = "TenNhanVien";
                     cbNhanSu.ValueMember = "ID_NhanSu";
+                    //
+                    dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                    if(dt_!= null && dt_.Rows.Count == 1)
+                    {
+                        _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                    }
+                    else
+                    {
+                        _id_bophan = 0;
+                        MessageBox.Show("Chưa có bộ phận " + tenbophan + ". Hãy đến Cấu hình quản trị để cài đặt thêm " + tenbophan);
+                        return;
+                    }
+                    dt_.Dispose();
                 }
             }
             else
@@ -192,6 +207,14 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
+                    if(Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString()))
+                    {
+                        _data.Rows[i]["Cong"] = "Tăng";
+                    }
+                    else
+                    {
+                        _data.Rows[i]["Cong"] = "Công";
+                    }
                     ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
                        
                     Ngay1 = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
@@ -531,10 +554,10 @@ namespace CtyTinLuong
           
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            //GuiDuLieuBangLuong();
+            GuiDuLieuBangLuong();
 
-            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
-            ff.Show();
+            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
+            //ff.Show();
         }
          
          
@@ -549,13 +572,7 @@ namespace CtyTinLuong
             }
         }
         private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew)
-        {
-            int stt_ = 0;
-            //
-            if (_data != null && _data.Rows.Count > 1)
-            {
-                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 2]["STT"].ToString());
-            }
+        { 
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
@@ -581,7 +598,7 @@ namespace CtyTinLuong
             else
             {
                 DataRow _ravi = _data.NewRow();
-                _ravi["ID_ChamCom"] = 0;
+                _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
                 _ravi["ID_CongNhan"] = id_nhansu_;
                 _ravi["Thang"] = _thang;
                 _ravi["Nam"] = _nam;
@@ -602,9 +619,34 @@ namespace CtyTinLuong
                 _ravi["MaNhanVien"] = "";
                 _ravi["TenNhanVien"] = ten_;
 
+                _ravi["Cong"] = "Công";
+                 
+                _data.Rows.Add(_ravi);
 
-                ++stt_;
-                _ravi["STT"] = (stt_);
+                 _ravi = _data.NewRow();
+                _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
+                _ravi["ID_CongNhan"] = id_nhansu_;
+                _ravi["Thang"] = _thang;
+                _ravi["Nam"] = _nam;
+                _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
+                _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
+                _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
+                _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
+                _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
+                _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
+                _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
+                _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
+                _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
+                _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
+                _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
+
+                _ravi["Tong"] = 0;
+                _ravi["GuiDuLieu"] = false;
+                _ravi["MaNhanVien"] = "";
+                _ravi["TenNhanVien"] = ten_;
+
+                _ravi["Cong"] = "Tăng";
+                  
                 _data.Rows.Add(_ravi);
             }
             //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
@@ -618,7 +660,7 @@ namespace CtyTinLuong
 
 
             DataRow _ravi2 = _data.NewRow();
-            _ravi2["ID_ChamCom"] = 0;
+            _ravi2["ID_ChiTietChamCong_ToGapDan"] = 0;
             _ravi2["ID_CongNhan"] = 0;
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
@@ -711,11 +753,11 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    if (_data.Rows[i]["ID_VTHH"].ToString() == "")
+                    if (_data.Rows[i]["ID_CongNhan"].ToString() == "")
                         continue;
 
-                    int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
-                    if (id_vthh_ == 0)
+                    int ID_CongNhan_ = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+                    if (ID_CongNhan_ == 0)
                     {
                         continue;
                     }
@@ -730,11 +772,11 @@ namespace CtyTinLuong
                         isTang = true;
                     }
                     clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                        Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
+                        ID_CongNhan_,
                         _thang,
                         _nam,
-                        id_vthh_,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString()),
+                        0,
+                        0,
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString()),
@@ -766,7 +808,7 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true, isTang);
+                        0, true, isTang, _id_bophan);
                 }
                 if (isGuiThanhCong)
                 {

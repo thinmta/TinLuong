@@ -279,6 +279,7 @@ namespace CtyTinLuong
          
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
+            //
         }
           
         private float ConvertToFloat(string s)

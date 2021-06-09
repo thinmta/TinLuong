@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong_TBX));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -60,10 +60,9 @@
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,6 +105,7 @@
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -166,9 +166,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // btThoat
@@ -259,9 +259,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -333,10 +333,9 @@
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clSTT,
             this.clTenNhanVien,
+            this.Cong,
             this.clTongLuong,
-            this.TenVTHH,
             this.clID_ChiTietChamCong,
             this.clID_ChamCong,
             this.clThang,
@@ -378,11 +377,13 @@
             this.Ngay30,
             this.Ngay31,
             this.clGuiDuLieu,
-            this.Tong});
+            this.Tong,
+            this.KyNhan});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
+            this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
@@ -391,40 +392,28 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
-            // clSTT
-            // 
-            this.clSTT.AppearanceCell.Options.UseTextOptions = true;
-            this.clSTT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSTT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clSTT.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.clSTT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSTT.AppearanceHeader.Options.UseFont = true;
-            this.clSTT.AppearanceHeader.Options.UseTextOptions = true;
-            this.clSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clSTT.Caption = "STT";
-            this.clSTT.FieldName = "STT";
-            this.clSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.clSTT.Name = "clSTT";
-            this.clSTT.OptionsColumn.AllowEdit = false;
-            this.clSTT.OptionsColumn.FixedWidth = true;
-            this.clSTT.Visible = true;
-            this.clSTT.VisibleIndex = 0;
-            this.clSTT.Width = 30;
-            // 
             // clTenNhanVien
             // 
             this.clTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenNhanVien.AppearanceCell.Options.UseFont = true;
-            this.clTenNhanVien.Caption = "Họ tên";
+            this.clTenNhanVien.Caption = "HỌ TÊN";
             this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit3;
             this.clTenNhanVien.FieldName = "TenNhanVien";
             this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 1;
-            this.clTenNhanVien.Width = 120;
+            this.clTenNhanVien.VisibleIndex = 0;
+            this.clTenNhanVien.Width = 71;
+            // 
+            // Cong
+            // 
+            this.Cong.Caption = "CÔNG";
+            this.Cong.FieldName = "Cong";
+            this.Cong.Name = "Cong";
+            this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Cong.Visible = true;
+            this.Cong.VisibleIndex = 1;
             // 
             // clTongLuong
             // 
@@ -444,19 +433,6 @@
             this.clTongLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
             this.clTongLuong.Width = 80;
-            // 
-            // TenVTHH
-            // 
-            this.TenVTHH.Caption = "Nội dung";
-            this.TenVTHH.FieldName = "TenVTHH";
-            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.TenVTHH.MaxWidth = 185;
-            this.TenVTHH.MinWidth = 185;
-            this.TenVTHH.Name = "TenVTHH";
-            this.TenVTHH.OptionsColumn.AllowEdit = false;
-            this.TenVTHH.Visible = true;
-            this.TenVTHH.VisibleIndex = 2;
-            this.TenVTHH.Width = 185;
             // 
             // clID_ChiTietChamCong
             // 
@@ -543,6 +519,7 @@
             this.Ngay1.MaxWidth = 27;
             this.Ngay1.MinWidth = 27;
             this.Ngay1.Name = "Ngay1";
+            this.Ngay1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsColumn.FixedWidth = true;
             this.Ngay1.OptionsFilter.AllowAutoFilter = false;
             this.Ngay1.OptionsFilter.AllowFilter = false;
@@ -555,7 +532,7 @@
             this.Ngay1.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay1.Visible = true;
-            this.Ngay1.VisibleIndex = 3;
+            this.Ngay1.VisibleIndex = 2;
             this.Ngay1.Width = 23;
             // 
             // Ngay2
@@ -568,6 +545,7 @@
             this.Ngay2.MaxWidth = 27;
             this.Ngay2.MinWidth = 27;
             this.Ngay2.Name = "Ngay2";
+            this.Ngay2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsColumn.FixedWidth = true;
             this.Ngay2.OptionsFilter.AllowAutoFilter = false;
             this.Ngay2.OptionsFilter.AllowFilter = false;
@@ -580,7 +558,7 @@
             this.Ngay2.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay2.Visible = true;
-            this.Ngay2.VisibleIndex = 4;
+            this.Ngay2.VisibleIndex = 3;
             this.Ngay2.Width = 26;
             // 
             // Ngay3
@@ -593,6 +571,7 @@
             this.Ngay3.MaxWidth = 27;
             this.Ngay3.MinWidth = 27;
             this.Ngay3.Name = "Ngay3";
+            this.Ngay3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsColumn.FixedWidth = true;
             this.Ngay3.OptionsFilter.AllowAutoFilter = false;
             this.Ngay3.OptionsFilter.AllowFilter = false;
@@ -605,7 +584,7 @@
             this.Ngay3.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay3.Visible = true;
-            this.Ngay3.VisibleIndex = 5;
+            this.Ngay3.VisibleIndex = 4;
             this.Ngay3.Width = 27;
             // 
             // Ngay4
@@ -618,6 +597,7 @@
             this.Ngay4.MaxWidth = 27;
             this.Ngay4.MinWidth = 27;
             this.Ngay4.Name = "Ngay4";
+            this.Ngay4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsColumn.FixedWidth = true;
             this.Ngay4.OptionsFilter.AllowAutoFilter = false;
             this.Ngay4.OptionsFilter.AllowFilter = false;
@@ -630,7 +610,7 @@
             this.Ngay4.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay4.Visible = true;
-            this.Ngay4.VisibleIndex = 6;
+            this.Ngay4.VisibleIndex = 5;
             this.Ngay4.Width = 27;
             // 
             // Ngay5
@@ -643,6 +623,7 @@
             this.Ngay5.MaxWidth = 27;
             this.Ngay5.MinWidth = 27;
             this.Ngay5.Name = "Ngay5";
+            this.Ngay5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsColumn.FixedWidth = true;
             this.Ngay5.OptionsFilter.AllowAutoFilter = false;
             this.Ngay5.OptionsFilter.AllowFilter = false;
@@ -655,7 +636,7 @@
             this.Ngay5.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay5.Visible = true;
-            this.Ngay5.VisibleIndex = 7;
+            this.Ngay5.VisibleIndex = 6;
             this.Ngay5.Width = 26;
             // 
             // Ngay6
@@ -668,6 +649,7 @@
             this.Ngay6.MaxWidth = 27;
             this.Ngay6.MinWidth = 27;
             this.Ngay6.Name = "Ngay6";
+            this.Ngay6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsColumn.FixedWidth = true;
             this.Ngay6.OptionsFilter.AllowAutoFilter = false;
             this.Ngay6.OptionsFilter.AllowFilter = false;
@@ -680,7 +662,7 @@
             this.Ngay6.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay6.Visible = true;
-            this.Ngay6.VisibleIndex = 8;
+            this.Ngay6.VisibleIndex = 7;
             this.Ngay6.Width = 25;
             // 
             // Ngay7
@@ -693,6 +675,7 @@
             this.Ngay7.MaxWidth = 27;
             this.Ngay7.MinWidth = 27;
             this.Ngay7.Name = "Ngay7";
+            this.Ngay7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsColumn.FixedWidth = true;
             this.Ngay7.OptionsFilter.AllowAutoFilter = false;
             this.Ngay7.OptionsFilter.AllowFilter = false;
@@ -705,7 +688,7 @@
             this.Ngay7.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay7.Visible = true;
-            this.Ngay7.VisibleIndex = 9;
+            this.Ngay7.VisibleIndex = 8;
             this.Ngay7.Width = 22;
             // 
             // Ngay8
@@ -718,6 +701,7 @@
             this.Ngay8.MaxWidth = 27;
             this.Ngay8.MinWidth = 27;
             this.Ngay8.Name = "Ngay8";
+            this.Ngay8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsColumn.FixedWidth = true;
             this.Ngay8.OptionsFilter.AllowAutoFilter = false;
             this.Ngay8.OptionsFilter.AllowFilter = false;
@@ -730,7 +714,7 @@
             this.Ngay8.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay8.Visible = true;
-            this.Ngay8.VisibleIndex = 10;
+            this.Ngay8.VisibleIndex = 9;
             this.Ngay8.Width = 20;
             // 
             // Ngay9
@@ -743,6 +727,7 @@
             this.Ngay9.MaxWidth = 27;
             this.Ngay9.MinWidth = 27;
             this.Ngay9.Name = "Ngay9";
+            this.Ngay9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsColumn.FixedWidth = true;
             this.Ngay9.OptionsFilter.AllowAutoFilter = false;
             this.Ngay9.OptionsFilter.AllowFilter = false;
@@ -755,7 +740,7 @@
             this.Ngay9.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay9.Visible = true;
-            this.Ngay9.VisibleIndex = 11;
+            this.Ngay9.VisibleIndex = 10;
             this.Ngay9.Width = 27;
             // 
             // Ngay10
@@ -768,6 +753,7 @@
             this.Ngay10.MaxWidth = 27;
             this.Ngay10.MinWidth = 27;
             this.Ngay10.Name = "Ngay10";
+            this.Ngay10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsColumn.FixedWidth = true;
             this.Ngay10.OptionsFilter.AllowAutoFilter = false;
             this.Ngay10.OptionsFilter.AllowFilter = false;
@@ -781,7 +767,7 @@
             this.Ngay10.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay10.Visible = true;
-            this.Ngay10.VisibleIndex = 12;
+            this.Ngay10.VisibleIndex = 11;
             this.Ngay10.Width = 27;
             // 
             // Ngay11
@@ -794,6 +780,7 @@
             this.Ngay11.MaxWidth = 27;
             this.Ngay11.MinWidth = 27;
             this.Ngay11.Name = "Ngay11";
+            this.Ngay11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsColumn.FixedWidth = true;
             this.Ngay11.OptionsFilter.AllowAutoFilter = false;
             this.Ngay11.OptionsFilter.AllowFilter = false;
@@ -806,7 +793,7 @@
             this.Ngay11.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay11.Visible = true;
-            this.Ngay11.VisibleIndex = 13;
+            this.Ngay11.VisibleIndex = 12;
             this.Ngay11.Width = 27;
             // 
             // Ngay12
@@ -819,6 +806,7 @@
             this.Ngay12.MaxWidth = 27;
             this.Ngay12.MinWidth = 27;
             this.Ngay12.Name = "Ngay12";
+            this.Ngay12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsColumn.FixedWidth = true;
             this.Ngay12.OptionsFilter.AllowAutoFilter = false;
             this.Ngay12.OptionsFilter.AllowFilter = false;
@@ -831,7 +819,7 @@
             this.Ngay12.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay12.Visible = true;
-            this.Ngay12.VisibleIndex = 14;
+            this.Ngay12.VisibleIndex = 13;
             this.Ngay12.Width = 27;
             // 
             // Ngay13
@@ -844,6 +832,7 @@
             this.Ngay13.MaxWidth = 27;
             this.Ngay13.MinWidth = 27;
             this.Ngay13.Name = "Ngay13";
+            this.Ngay13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsColumn.FixedWidth = true;
             this.Ngay13.OptionsFilter.AllowAutoFilter = false;
             this.Ngay13.OptionsFilter.AllowFilter = false;
@@ -856,7 +845,7 @@
             this.Ngay13.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay13.Visible = true;
-            this.Ngay13.VisibleIndex = 15;
+            this.Ngay13.VisibleIndex = 14;
             this.Ngay13.Width = 27;
             // 
             // Ngay14
@@ -869,6 +858,7 @@
             this.Ngay14.MaxWidth = 27;
             this.Ngay14.MinWidth = 27;
             this.Ngay14.Name = "Ngay14";
+            this.Ngay14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsColumn.FixedWidth = true;
             this.Ngay14.OptionsFilter.AllowAutoFilter = false;
             this.Ngay14.OptionsFilter.AllowFilter = false;
@@ -881,7 +871,7 @@
             this.Ngay14.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay14.Visible = true;
-            this.Ngay14.VisibleIndex = 16;
+            this.Ngay14.VisibleIndex = 15;
             this.Ngay14.Width = 27;
             // 
             // Ngay15
@@ -894,6 +884,7 @@
             this.Ngay15.MaxWidth = 27;
             this.Ngay15.MinWidth = 27;
             this.Ngay15.Name = "Ngay15";
+            this.Ngay15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsColumn.FixedWidth = true;
             this.Ngay15.OptionsFilter.AllowAutoFilter = false;
             this.Ngay15.OptionsFilter.AllowFilter = false;
@@ -906,7 +897,7 @@
             this.Ngay15.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay15.Visible = true;
-            this.Ngay15.VisibleIndex = 17;
+            this.Ngay15.VisibleIndex = 16;
             this.Ngay15.Width = 27;
             // 
             // Ngay16
@@ -919,6 +910,7 @@
             this.Ngay16.MaxWidth = 27;
             this.Ngay16.MinWidth = 27;
             this.Ngay16.Name = "Ngay16";
+            this.Ngay16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsColumn.FixedWidth = true;
             this.Ngay16.OptionsFilter.AllowAutoFilter = false;
             this.Ngay16.OptionsFilter.AllowFilter = false;
@@ -931,7 +923,7 @@
             this.Ngay16.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay16.Visible = true;
-            this.Ngay16.VisibleIndex = 18;
+            this.Ngay16.VisibleIndex = 17;
             this.Ngay16.Width = 27;
             // 
             // Ngay17
@@ -944,6 +936,7 @@
             this.Ngay17.MaxWidth = 27;
             this.Ngay17.MinWidth = 27;
             this.Ngay17.Name = "Ngay17";
+            this.Ngay17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsColumn.FixedWidth = true;
             this.Ngay17.OptionsFilter.AllowAutoFilter = false;
             this.Ngay17.OptionsFilter.AllowFilter = false;
@@ -956,7 +949,7 @@
             this.Ngay17.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay17.Visible = true;
-            this.Ngay17.VisibleIndex = 19;
+            this.Ngay17.VisibleIndex = 18;
             this.Ngay17.Width = 24;
             // 
             // Ngay18
@@ -969,6 +962,7 @@
             this.Ngay18.MaxWidth = 27;
             this.Ngay18.MinWidth = 27;
             this.Ngay18.Name = "Ngay18";
+            this.Ngay18.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsColumn.FixedWidth = true;
             this.Ngay18.OptionsFilter.AllowAutoFilter = false;
             this.Ngay18.OptionsFilter.AllowFilter = false;
@@ -981,7 +975,7 @@
             this.Ngay18.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay18.Visible = true;
-            this.Ngay18.VisibleIndex = 20;
+            this.Ngay18.VisibleIndex = 19;
             this.Ngay18.Width = 27;
             // 
             // Ngay19
@@ -994,6 +988,7 @@
             this.Ngay19.MaxWidth = 27;
             this.Ngay19.MinWidth = 27;
             this.Ngay19.Name = "Ngay19";
+            this.Ngay19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsColumn.FixedWidth = true;
             this.Ngay19.OptionsFilter.AllowAutoFilter = false;
             this.Ngay19.OptionsFilter.AllowFilter = false;
@@ -1006,7 +1001,7 @@
             this.Ngay19.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay19.Visible = true;
-            this.Ngay19.VisibleIndex = 21;
+            this.Ngay19.VisibleIndex = 20;
             this.Ngay19.Width = 22;
             // 
             // Ngay20
@@ -1019,6 +1014,7 @@
             this.Ngay20.MaxWidth = 27;
             this.Ngay20.MinWidth = 27;
             this.Ngay20.Name = "Ngay20";
+            this.Ngay20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsColumn.FixedWidth = true;
             this.Ngay20.OptionsFilter.AllowAutoFilter = false;
             this.Ngay20.OptionsFilter.AllowFilter = false;
@@ -1031,7 +1027,7 @@
             this.Ngay20.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay20.Visible = true;
-            this.Ngay20.VisibleIndex = 22;
+            this.Ngay20.VisibleIndex = 21;
             this.Ngay20.Width = 20;
             // 
             // Ngay21
@@ -1044,6 +1040,7 @@
             this.Ngay21.MaxWidth = 27;
             this.Ngay21.MinWidth = 27;
             this.Ngay21.Name = "Ngay21";
+            this.Ngay21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsColumn.FixedWidth = true;
             this.Ngay21.OptionsFilter.AllowAutoFilter = false;
             this.Ngay21.OptionsFilter.AllowFilter = false;
@@ -1056,7 +1053,7 @@
             this.Ngay21.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay21.Visible = true;
-            this.Ngay21.VisibleIndex = 23;
+            this.Ngay21.VisibleIndex = 22;
             this.Ngay21.Width = 27;
             // 
             // Ngay22
@@ -1069,6 +1066,7 @@
             this.Ngay22.MaxWidth = 27;
             this.Ngay22.MinWidth = 27;
             this.Ngay22.Name = "Ngay22";
+            this.Ngay22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsColumn.FixedWidth = true;
             this.Ngay22.OptionsFilter.AllowAutoFilter = false;
             this.Ngay22.OptionsFilter.AllowFilter = false;
@@ -1081,7 +1079,7 @@
             this.Ngay22.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay22.Visible = true;
-            this.Ngay22.VisibleIndex = 24;
+            this.Ngay22.VisibleIndex = 23;
             this.Ngay22.Width = 27;
             // 
             // Ngay23
@@ -1094,6 +1092,7 @@
             this.Ngay23.MaxWidth = 27;
             this.Ngay23.MinWidth = 27;
             this.Ngay23.Name = "Ngay23";
+            this.Ngay23.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsColumn.FixedWidth = true;
             this.Ngay23.OptionsFilter.AllowAutoFilter = false;
             this.Ngay23.OptionsFilter.AllowFilter = false;
@@ -1106,7 +1105,7 @@
             this.Ngay23.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay23.Visible = true;
-            this.Ngay23.VisibleIndex = 25;
+            this.Ngay23.VisibleIndex = 24;
             this.Ngay23.Width = 25;
             // 
             // Ngay24
@@ -1119,6 +1118,7 @@
             this.Ngay24.MaxWidth = 27;
             this.Ngay24.MinWidth = 27;
             this.Ngay24.Name = "Ngay24";
+            this.Ngay24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsColumn.FixedWidth = true;
             this.Ngay24.OptionsFilter.AllowAutoFilter = false;
             this.Ngay24.OptionsFilter.AllowFilter = false;
@@ -1131,7 +1131,7 @@
             this.Ngay24.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay24.Visible = true;
-            this.Ngay24.VisibleIndex = 26;
+            this.Ngay24.VisibleIndex = 25;
             this.Ngay24.Width = 27;
             // 
             // Ngay25
@@ -1144,6 +1144,7 @@
             this.Ngay25.MaxWidth = 27;
             this.Ngay25.MinWidth = 27;
             this.Ngay25.Name = "Ngay25";
+            this.Ngay25.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsColumn.FixedWidth = true;
             this.Ngay25.OptionsFilter.AllowAutoFilter = false;
             this.Ngay25.OptionsFilter.AllowFilter = false;
@@ -1156,7 +1157,7 @@
             this.Ngay25.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay25.Visible = true;
-            this.Ngay25.VisibleIndex = 27;
+            this.Ngay25.VisibleIndex = 26;
             this.Ngay25.Width = 21;
             // 
             // Ngay26
@@ -1169,6 +1170,7 @@
             this.Ngay26.MaxWidth = 27;
             this.Ngay26.MinWidth = 27;
             this.Ngay26.Name = "Ngay26";
+            this.Ngay26.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsColumn.FixedWidth = true;
             this.Ngay26.OptionsFilter.AllowAutoFilter = false;
             this.Ngay26.OptionsFilter.AllowFilter = false;
@@ -1181,7 +1183,7 @@
             this.Ngay26.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay26.Visible = true;
-            this.Ngay26.VisibleIndex = 28;
+            this.Ngay26.VisibleIndex = 27;
             this.Ngay26.Width = 27;
             // 
             // Ngay27
@@ -1194,6 +1196,7 @@
             this.Ngay27.MaxWidth = 27;
             this.Ngay27.MinWidth = 27;
             this.Ngay27.Name = "Ngay27";
+            this.Ngay27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsColumn.FixedWidth = true;
             this.Ngay27.OptionsFilter.AllowAutoFilter = false;
             this.Ngay27.OptionsFilter.AllowFilter = false;
@@ -1206,7 +1209,7 @@
             this.Ngay27.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay27.Visible = true;
-            this.Ngay27.VisibleIndex = 29;
+            this.Ngay27.VisibleIndex = 28;
             this.Ngay27.Width = 27;
             // 
             // Ngay28
@@ -1219,6 +1222,7 @@
             this.Ngay28.MaxWidth = 27;
             this.Ngay28.MinWidth = 27;
             this.Ngay28.Name = "Ngay28";
+            this.Ngay28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsColumn.FixedWidth = true;
             this.Ngay28.OptionsFilter.AllowAutoFilter = false;
             this.Ngay28.OptionsFilter.AllowFilter = false;
@@ -1231,7 +1235,7 @@
             this.Ngay28.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay28.Visible = true;
-            this.Ngay28.VisibleIndex = 30;
+            this.Ngay28.VisibleIndex = 29;
             this.Ngay28.Width = 20;
             // 
             // Ngay29
@@ -1244,6 +1248,7 @@
             this.Ngay29.MaxWidth = 27;
             this.Ngay29.MinWidth = 27;
             this.Ngay29.Name = "Ngay29";
+            this.Ngay29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsColumn.FixedWidth = true;
             this.Ngay29.OptionsFilter.AllowAutoFilter = false;
             this.Ngay29.OptionsFilter.AllowFilter = false;
@@ -1256,7 +1261,7 @@
             this.Ngay29.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay29.Visible = true;
-            this.Ngay29.VisibleIndex = 31;
+            this.Ngay29.VisibleIndex = 30;
             this.Ngay29.Width = 20;
             // 
             // Ngay30
@@ -1269,6 +1274,7 @@
             this.Ngay30.MaxWidth = 27;
             this.Ngay30.MinWidth = 27;
             this.Ngay30.Name = "Ngay30";
+            this.Ngay30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsColumn.FixedWidth = true;
             this.Ngay30.OptionsFilter.AllowAutoFilter = false;
             this.Ngay30.OptionsFilter.AllowFilter = false;
@@ -1281,7 +1287,7 @@
             this.Ngay30.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay30.Visible = true;
-            this.Ngay30.VisibleIndex = 32;
+            this.Ngay30.VisibleIndex = 31;
             this.Ngay30.Width = 21;
             // 
             // Ngay31
@@ -1294,6 +1300,7 @@
             this.Ngay31.MaxWidth = 27;
             this.Ngay31.MinWidth = 27;
             this.Ngay31.Name = "Ngay31";
+            this.Ngay31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsColumn.FixedWidth = true;
             this.Ngay31.OptionsFilter.AllowAutoFilter = false;
             this.Ngay31.OptionsFilter.AllowFilter = false;
@@ -1306,7 +1313,7 @@
             this.Ngay31.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay31.Visible = true;
-            this.Ngay31.VisibleIndex = 33;
+            this.Ngay31.VisibleIndex = 32;
             this.Ngay31.Width = 20;
             // 
             // clGuiDuLieu
@@ -1324,16 +1331,25 @@
             this.Tong.AppearanceCell.Options.UseTextOptions = true;
             this.Tong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Tong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Tong.Caption = "Tổng";
+            this.Tong.Caption = "TỔNG";
             this.Tong.FieldName = "Tong";
-            this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.Tong.MaxWidth = 44;
             this.Tong.MinWidth = 44;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
+            this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 34;
+            this.Tong.VisibleIndex = 33;
             this.Tong.Width = 44;
+            // 
+            // KyNhan
+            // 
+            this.KyNhan.Caption = "KÝ NHẬN";
+            this.KyNhan.FieldName = "KyNhan";
+            this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.KyNhan.Visible = true;
+            this.KyNhan.VisibleIndex = 34;
             // 
             // gridControl1
             // 
@@ -1527,10 +1543,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn clTongLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clThang;
@@ -1585,5 +1599,7 @@
         private System.Windows.Forms.ComboBox cbNhanSu;
         private System.Windows.Forms.Button btnThemNhanVien;
         private System.Windows.Forms.Label label7;
+        private DevExpress.XtraGrid.Columns.GridColumn Cong;
+        private DevExpress.XtraGrid.Columns.GridColumn KyNhan;
     }
 }
