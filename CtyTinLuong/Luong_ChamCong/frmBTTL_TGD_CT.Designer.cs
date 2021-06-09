@@ -333,7 +333,6 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
-            this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
@@ -373,7 +372,6 @@
             this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
-            this.clTenNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
             this.clTenNhanVien.Width = 120;
@@ -406,7 +404,6 @@
             this.Cong.MinWidth = 185;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
-            this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 2;
             this.Cong.Width = 185;
@@ -489,13 +486,12 @@
             // SanLuong
             // 
             this.SanLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.SanLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SanLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SanLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SanLuong.Caption = "SẢN LƯỢNG";
             this.SanLuong.FieldName = "SanLuong";
             this.SanLuong.MinWidth = 10;
             this.SanLuong.Name = "SanLuong";
-            this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
             this.SanLuong.OptionsFilter.AllowFilter = false;
@@ -513,13 +509,12 @@
             // DonGia
             // 
             this.DonGia.AppearanceCell.Options.UseTextOptions = true;
-            this.DonGia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.DonGia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DonGia.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.DonGia.Caption = "ĐƠN GIÁ";
             this.DonGia.FieldName = "DonGia";
             this.DonGia.MinWidth = 10;
             this.DonGia.Name = "DonGia";
-            this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
             this.DonGia.OptionsFilter.AllowFilter = false;
@@ -538,13 +533,12 @@
             // ThanhTien
             // 
             this.ThanhTien.AppearanceCell.Options.UseTextOptions = true;
-            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ThanhTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThanhTien.Caption = "THÀNH TIỀN";
             this.ThanhTien.FieldName = "ThanhTien";
             this.ThanhTien.MinWidth = 10;
             this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.OptionsColumn.FixedWidth = true;
             this.ThanhTien.OptionsFilter.AllowAutoFilter = false;
             this.ThanhTien.OptionsFilter.AllowFilter = false;
@@ -563,13 +557,12 @@
             // TongLuong
             // 
             this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongLuong.Caption = "TỔNG LƯƠNG";
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 10;
             this.TongLuong.Name = "TongLuong";
-            this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
             this.TongLuong.OptionsFilter.AllowFilter = false;
@@ -588,13 +581,12 @@
             // SoNgayAn
             // 
             this.SoNgayAn.AppearanceCell.Options.UseTextOptions = true;
-            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SoNgayAn.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SoNgayAn.Caption = "SỐ NGÀY ĂN";
             this.SoNgayAn.FieldName = "SoNgayAn";
             this.SoNgayAn.MinWidth = 10;
             this.SoNgayAn.Name = "SoNgayAn";
-            this.SoNgayAn.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SoNgayAn.OptionsColumn.FixedWidth = true;
             this.SoNgayAn.OptionsFilter.AllowAutoFilter = false;
             this.SoNgayAn.OptionsFilter.AllowFilter = false;
@@ -613,13 +605,12 @@
             // TruTienCom
             // 
             this.TruTienCom.AppearanceCell.Options.UseTextOptions = true;
-            this.TruTienCom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TruTienCom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TruTienCom.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TruTienCom.Caption = "TRỪ TIỀN CƠM";
             this.TruTienCom.FieldName = "TruTienCom";
             this.TruTienCom.MinWidth = 10;
             this.TruTienCom.Name = "TruTienCom";
-            this.TruTienCom.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TruTienCom.OptionsColumn.FixedWidth = true;
             this.TruTienCom.OptionsFilter.AllowAutoFilter = false;
             this.TruTienCom.OptionsFilter.AllowFilter = false;
@@ -638,13 +629,12 @@
             // TongTien
             // 
             this.TongTien.AppearanceCell.Options.UseTextOptions = true;
-            this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongTien.Caption = "TỔNG TIỀN";
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 10;
             this.TongTien.Name = "TongTien";
-            this.TongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
             this.TongTien.OptionsFilter.AllowFilter = false;
@@ -663,13 +653,12 @@
             // TamUng
             // 
             this.TamUng.AppearanceCell.Options.UseTextOptions = true;
-            this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TamUng.Caption = "TẠM ỨNG";
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 10;
             this.TamUng.Name = "TamUng";
-            this.TamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
             this.TamUng.OptionsFilter.AllowFilter = false;
@@ -688,13 +677,12 @@
             // ThucNhan
             // 
             this.ThucNhan.AppearanceCell.Options.UseTextOptions = true;
-            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThucNhan.Caption = "THỰC NHẬN";
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
-            this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
             this.ThucNhan.OptionsFilter.AllowFilter = false;
@@ -714,13 +702,12 @@
             // KyNhan
             // 
             this.KyNhan.AppearanceCell.Options.UseTextOptions = true;
-            this.KyNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.KyNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.KyNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.KyNhan.Caption = "KÝ NHẬN";
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 10;
             this.KyNhan.Name = "KyNhan";
-            this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
             this.KyNhan.OptionsFilter.AllowFilter = false;
