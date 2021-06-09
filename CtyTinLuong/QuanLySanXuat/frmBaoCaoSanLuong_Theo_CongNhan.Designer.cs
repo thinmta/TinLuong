@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoSanLuong_Theo_CongNhan));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.grid_TongLuong = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSTT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -86,8 +87,8 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.clNgaySanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -150,14 +151,23 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(104, 2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(124, 20);
+            this.txtTimKiem.TabIndex = 113;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
+            // 
             // grid_TongLuong
             // 
             this.grid_TongLuong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.grid_TongLuong.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.grid_TongLuong.Location = new System.Drawing.Point(2, 28);
             this.grid_TongLuong.MainView = this.gridView1;
             this.grid_TongLuong.Name = "grid_TongLuong";
@@ -180,7 +190,7 @@
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
+            this.clSTT1,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -202,20 +212,22 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             // 
-            // gridColumn1
+            // clSTT1
             // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn1.Caption = "STT";
-            this.gridColumn1.FieldName = "STT";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.FixedWidth = true;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 79;
+            this.clSTT1.AppearanceCell.Options.UseTextOptions = true;
+            this.clSTT1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSTT1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clSTT1.Caption = "STT";
+            this.clSTT1.FieldName = "STT";
+            this.clSTT1.Name = "clSTT1";
+            this.clSTT1.OptionsColumn.AllowEdit = false;
+            this.clSTT1.OptionsColumn.FixedWidth = true;
+            this.clSTT1.Visible = true;
+            this.clSTT1.VisibleIndex = 0;
+            this.clSTT1.Width = 79;
             // 
             // gridColumn2
             // 
@@ -364,9 +376,9 @@
             this.grid_ChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.grid_ChiTiet.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.grid_ChiTiet.Location = new System.Drawing.Point(2, 253);
             this.grid_ChiTiet.MainView = this.gridView2;
             this.grid_ChiTiet.Name = "grid_ChiTiet";
@@ -402,7 +414,8 @@
             this.clDinhMuc_Tang,
             this.clThanhTien,
             this.clMaVT,
-            this.clDonViTinh});
+            this.clDonViTinh,
+            this.clNgaySanXuat});
             this.gridView2.GridControl = this.grid_ChiTiet;
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.clThanhTien, "{0:N2}")});
@@ -410,6 +423,7 @@
             this.gridView2.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView2.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.gridView2.OptionsView.RowAutoHeight = true;
+            this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
             this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
@@ -466,8 +480,8 @@
             this.clTenVTHH.Name = "clTenVTHH";
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 3;
-            this.clTenVTHH.Width = 416;
+            this.clTenVTHH.VisibleIndex = 4;
+            this.clTenVTHH.Width = 239;
             // 
             // memoTenVTHH
             // 
@@ -483,7 +497,7 @@
             this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Thuong.OptionsColumn.FixedWidth = true;
             this.clSanLuong_Thuong.Visible = true;
-            this.clSanLuong_Thuong.VisibleIndex = 4;
+            this.clSanLuong_Thuong.VisibleIndex = 5;
             this.clSanLuong_Thuong.Width = 80;
             // 
             // clSanLuong_TangCa
@@ -496,7 +510,7 @@
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
             this.clSanLuong_TangCa.Visible = true;
-            this.clSanLuong_TangCa.VisibleIndex = 5;
+            this.clSanLuong_TangCa.VisibleIndex = 6;
             this.clSanLuong_TangCa.Width = 80;
             // 
             // clID_DinhMuc_Luong
@@ -521,7 +535,7 @@
             this.clDinhMuc_KhongTang.OptionsColumn.AllowEdit = false;
             this.clDinhMuc_KhongTang.OptionsColumn.FixedWidth = true;
             this.clDinhMuc_KhongTang.Visible = true;
-            this.clDinhMuc_KhongTang.VisibleIndex = 7;
+            this.clDinhMuc_KhongTang.VisibleIndex = 8;
             this.clDinhMuc_KhongTang.Width = 90;
             // 
             // clDinhMuc_Tang
@@ -538,7 +552,7 @@
             this.clDinhMuc_Tang.OptionsColumn.AllowEdit = false;
             this.clDinhMuc_Tang.OptionsColumn.FixedWidth = true;
             this.clDinhMuc_Tang.Visible = true;
-            this.clDinhMuc_Tang.VisibleIndex = 6;
+            this.clDinhMuc_Tang.VisibleIndex = 7;
             this.clDinhMuc_Tang.Width = 90;
             // 
             // clThanhTien
@@ -557,7 +571,7 @@
             this.clThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:#,##0.00}")});
             this.clThanhTien.Visible = true;
-            this.clThanhTien.VisibleIndex = 8;
+            this.clThanhTien.VisibleIndex = 9;
             this.clThanhTien.Width = 120;
             // 
             // clMaVT
@@ -568,7 +582,7 @@
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.OptionsColumn.FixedWidth = true;
             this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 2;
+            this.clMaVT.VisibleIndex = 3;
             this.clMaVT.Width = 71;
             // 
             // clDonViTinh
@@ -579,7 +593,7 @@
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
             this.clDonViTinh.OptionsColumn.FixedWidth = true;
             this.clDonViTinh.Visible = true;
-            this.clDonViTinh.VisibleIndex = 1;
+            this.clDonViTinh.VisibleIndex = 2;
             this.clDonViTinh.Width = 54;
             // 
             // btprint_ALL
@@ -797,15 +811,6 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(104, 2);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(124, 20);
-            this.txtTimKiem.TabIndex = 113;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
-            this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.txtTimKiem;
@@ -813,6 +818,15 @@
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(230, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(99, 13);
+            // 
+            // clNgaySanXuat
+            // 
+            this.clNgaySanXuat.Caption = "Ngày SX";
+            this.clNgaySanXuat.FieldName = "NgaySanXuat";
+            this.clNgaySanXuat.Name = "clNgaySanXuat";
+            this.clNgaySanXuat.Visible = true;
+            this.clNgaySanXuat.VisibleIndex = 1;
+            this.clNgaySanXuat.Width = 106;
             // 
             // frmBaoCaoSanLuong_Theo_CongNhan
             // 
@@ -894,7 +908,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clDonViTinh;
         private DevExpress.XtraGrid.GridControl grid_TongLuong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn clSTT1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
@@ -913,5 +927,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private System.Windows.Forms.TextBox txtTimKiem;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraGrid.Columns.GridColumn clNgaySanXuat;
     }
 }
