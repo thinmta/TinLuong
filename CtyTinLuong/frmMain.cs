@@ -460,8 +460,8 @@ namespace CtyTinLuong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan();
-            //ff.Show();
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(6, 2021);
+            ff.Show();
         }
     }
 }
