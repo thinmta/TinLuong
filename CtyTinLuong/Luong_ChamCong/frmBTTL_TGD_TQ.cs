@@ -279,7 +279,6 @@ namespace CtyTinLuong
          
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            GuiDuLieuBangLuong();
         }
           
         private float ConvertToFloat(string s)
@@ -317,74 +316,6 @@ namespace CtyTinLuong
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void GuiDuLieuBangLuong()
-        {
-            bool isGuiThanhCong = false;
-            using (clsThin clsThin_ = new clsThin())
-            {
-                for (int i = 0; i < _data.Rows.Count; ++i)
-                {
-                    int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
-                    if (id_vthh_ == 0)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        isGuiThanhCong = true;
-                    }
-                    clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                        Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
-                        _thang,
-                        _nam,
-                        id_vthh_,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay4"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay5"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay6"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay7"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay8"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay9"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay10"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay11"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay12"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay13"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay14"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay15"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay16"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay17"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay18"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay19"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay20"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay21"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay22"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay23"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay24"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay25"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay26"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay27"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay28"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true);
-                }
-                if (isGuiThanhCong)
-                {
-                    MessageBox.Show("Gửi dữ liệu chấm công thành công!");
-                }
-                else
-                {
-                    MessageBox.Show( "Chưa chọn loại hàng hóa","Lỗi",
-       MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                }
-            }
-               
-
         }
     }
 }

@@ -155,7 +155,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, _id_vthh, "");
+                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
                 ds_id_congnhan = new List<int>();
 
                 int Ngay1 = 0;
@@ -537,84 +537,7 @@ namespace CtyTinLuong
             ff.Show();
         }
          
-
-        private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-
-            lbChinhSua.Text = "Chỉnh sửa";
-            txtDinhMuc.ForeColor = Color.Black;
-            _id_vthh = (int)cbLoaiHangSX.SelectedValue;
-            if(_id_vthh==0)
-            {
-                _ten_vthh = "";
-            }
-            else
-            {
-                _ten_vthh = cbLoaiHangSX.Text;
-            }
-            using (clsThin clsThin_ = new clsThin())
-            {
-                int nam_, thang_;
-                try {
-                    thang_ = Convert.ToInt32(txtThang.Text);
-                }
-                catch
-                {
-                    MessageBox.Show( "Tháng không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                try
-                {
-                    nam_ = Convert.ToInt32(txtNam.Text);
-                }
-                catch
-                {
-                    MessageBox.Show( "Năm không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }  
-                if(_id_vthh==0)
-                {
-                    _id_dinhmuc_togapdan = 0;
-                    txtDinhMuc.Text = "-->Tất cả";
-                }
-                else
-                {
-                    DataRow row_ = ((DataRowView)cbLoaiHangSX.SelectedItem).Row; 
-                    _id_dinhmuc_togapdan = Convert.ToInt32(row_["ID_DinhMuc_Luong_SanLuong"].ToString());
-                    txtDinhMuc.Text = row_["DienGiai"].ToString() + " (" + row_["MaDinhMuc"].ToString() + ")";
-                }
-                /*
-                DataTable dt_ = clsThin_.T_DinhMuc_DinhMuc_Luong_TheoSanLuong_SO(id_vthh_, thang_, nam_);
-                 
-                if (dt_ != null && dt_.Rows.Count > 0)
-                {
-                    _id_dinhmuc_togapdan = Convert.ToInt32(dt_.Rows[0]["ID_DinhMuc_Luong_SanLuong"]);
-                    float dinhmuc_ = ConvertToFloat(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
-                    txtDinhMuc.Text = dt_.Rows[0]["MaDinhMuc"] + " (" + dinhmuc_.ToString("N0") + ")";
-                    if (_id_dinhmuc_togapdan == 0)
-                    {
-                        txtDinhMuc.Text = "Chưa cài đặt định mức!";
-                        lbChinhSua.Text = "Thêm mới";
-                        txtDinhMuc.ForeColor = Color.Red; 
-                    }
-                    else
-                    {
-
-                    }
-                } 
-                else
-                {
-                    txtDinhMuc.Text = "Chưa cài đặt định mức!";
-                    lbChinhSua.Text = "Thêm mới";
-                    txtDinhMuc.ForeColor = Color.Red;
-                    _id_dinhmuc_togapdan = 0;
-                }*/
-            }
-            LoadData(false);
-        }
-
+         
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
             if ((int)cbNhanSu.SelectedValue == 0)
@@ -800,6 +723,12 @@ namespace CtyTinLuong
                     {
                         isGuiThanhCong = true;
                     }
+                    string Cong_ = _data.Rows[i]["Cong"].ToString();
+                    bool isTang = false;
+                    if(Cong_== "Tăng")
+                    {
+                        isTang = true;
+                    }
                     clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
                         Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
                         _thang,
@@ -837,7 +766,7 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true);
+                        0, true, isTang);
                 }
                 if (isGuiThanhCong)
                 {
