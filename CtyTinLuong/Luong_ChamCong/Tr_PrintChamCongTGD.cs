@@ -11,6 +11,7 @@ namespace CtyTinLuong.Luong_ChamCong
     {
         private int _thang;
         private int _nam;
+        List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
@@ -20,6 +21,38 @@ namespace CtyTinLuong.Luong_ChamCong
             _thang = thang;
             _nam = nam;
             InitializeComponent();
+            //
+            Ds_NgayTitle.Add(xrTableCell37);
+            Ds_NgayTitle.Add(xrTableCell38);
+            Ds_NgayTitle.Add(xrTableCell39);
+            Ds_NgayTitle.Add(xrTableCell40);
+            Ds_NgayTitle.Add(xrTableCell41);
+            Ds_NgayTitle.Add(xrTableCell42);
+            Ds_NgayTitle.Add(xrTableCell43);
+            Ds_NgayTitle.Add(xrTableCell44);
+            Ds_NgayTitle.Add(xrTableCell45);
+            Ds_NgayTitle.Add(xrTableCell46);
+            Ds_NgayTitle.Add(xrTableCell47);
+            Ds_NgayTitle.Add(xrTableCell48);
+            Ds_NgayTitle.Add(xrTableCell49);
+            Ds_NgayTitle.Add(xrTableCell50);
+            Ds_NgayTitle.Add(xrTableCell51);
+            Ds_NgayTitle.Add(xrTableCell52);
+            Ds_NgayTitle.Add(xrTableCell53);
+            Ds_NgayTitle.Add(xrTableCell54);
+            Ds_NgayTitle.Add(xrTableCell55);
+            Ds_NgayTitle.Add(xrTableCell56);
+            Ds_NgayTitle.Add(xrTableCell57);
+            Ds_NgayTitle.Add(xrTableCell58);
+            Ds_NgayTitle.Add(xrTableCell59);
+            Ds_NgayTitle.Add(xrTableCell60);
+            Ds_NgayTitle.Add(xrTableCell61);
+            Ds_NgayTitle.Add(xrTableCell62);
+            Ds_NgayTitle.Add(xrTableCell63);
+            Ds_NgayTitle.Add(xrTableCell64);
+            Ds_NgayTitle.Add(xrTableCell65);
+            Ds_NgayTitle.Add(xrTableCell66);
+            Ds_NgayTitle.Add(xrTableCell67);
 
             //
             Ds_Ngay.Add(Ngay1);
@@ -395,9 +428,41 @@ namespace CtyTinLuong.Luong_ChamCong
                 //
                 hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
                 congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
-                xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.228479;
+                //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
-                Ngay1.WidthF = (float)25.1299;
+                for (int i = 0; i < ngaycuathang_; ++i)
+                {
+                    Ds_NgayTitle[i].WidthF = (float)25.247899;
+                    Ds_Ngay_Header[i].WidthF = (float)25.247899;
+                }
+                //ng1.WidthF = ng2.WidthF = ng3.WidthF = ng4.WidthF = ng5.WidthF;
+                //Ngay6.WidthF = ng6.WidthF;
+                //Ngay7.WidthF = ng7.WidthF;
+                //Ngay8.WidthF = ng8.WidthF;
+                //Ngay9.WidthF = ng9.WidthF;
+                //Ngay10.WidthF = ng10.WidthF;
+                //Ngay11.WidthF = ng11.WidthF;
+                //Ngay12.WidthF = ng12.WidthF;
+                //Ngay13.WidthF = ng13.WidthF;
+                //Ngay14.WidthF = ng14.WidthF;
+                //Ngay15.WidthF = ng15.WidthF;
+                //Ngay16.WidthF = ng16.WidthF;
+                //Ngay17.WidthF = ng17.WidthF;
+                //Ngay18.WidthF = ng18.WidthF;
+                //Ngay19.WidthF = ng19.WidthF;
+                //Ngay20.WidthF = ng20.WidthF;
+                //Ngay21.WidthF = ng21.WidthF;
+                //Ngay22.WidthF = ng22.WidthF;
+                //Ngay23.WidthF = ng23.WidthF;
+                //Ngay24.WidthF = ng24.WidthF;
+                //Ngay25.WidthF = ng25.WidthF;
+                //Ngay26.WidthF = ng26.WidthF;
+                //Ngay27.WidthF = ng27.WidthF;
+                //Ngay28.WidthF = ng28.WidthF;
+                //Ngay29.WidthF = ng29.WidthF;
+                //Ngay30.WidthF = ng30.WidthF;
+                //
+                Ngay1.WidthF = ng1.WidthF;
                 Ngay2.WidthF = ng2.WidthF;
                 Ngay3.WidthF = ng3.WidthF;
                 Ngay4.WidthF = ng4.WidthF;
