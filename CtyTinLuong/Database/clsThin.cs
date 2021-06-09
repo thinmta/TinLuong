@@ -302,6 +302,7 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+
         public void T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(int iID_CongNhan, int iThang, int iNam
             , int iID_VTHH, int iID_DinhMuc_Luong_SanLuong, float fNgay1, float fNgay2, float fNgay3, float fNgay4
             , float fNgay5, float fNgay6, float fNgay7, float fNgay8, float fNgay9
