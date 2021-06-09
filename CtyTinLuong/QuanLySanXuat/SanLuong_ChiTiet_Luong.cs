@@ -54,7 +54,7 @@ namespace CtyTinLuong
         public void LoadData_Thin()
         {
             //
-           
+           //đ
                 DateTime dtnow = DateTime.Now;
               
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
