@@ -24,7 +24,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void T_frmPrintChamCongToGapDan_Load(object sender, EventArgs e)
         {
-            T_PrintChamCongToGapDan xtr111 = new T_PrintChamCongToGapDan();
+            T_PrintChamCongToGapDan xtr111 = new T_PrintChamCongToGapDan(_thang, _nam);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbCongNhatChamCongToGapDan.Clone();

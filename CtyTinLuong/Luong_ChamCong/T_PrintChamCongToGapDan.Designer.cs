@@ -73,8 +73,8 @@
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlbThang = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlbNam = new DevExpress.XtraReports.UI.XRLabel();
             this.KyNhan2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
@@ -727,8 +727,8 @@
             this.xrLabel1,
             this.xrLabel2,
             this.xrLabel4,
-            this.xrLabel5,
-            this.xrLabel6});
+            this.xrlbThang,
+            this.xrlbNam});
             this.ReportHeader.HeightF = 63.90279F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
@@ -781,35 +781,35 @@
             this.xrLabel4.Text = "năm";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // xrLabel5
+            // xrlbThang
             // 
-            this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.xrlbThang.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pMonth]")});
-            this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(497.2674F, 40.90279F);
-            this.xrLabel5.Multiline = true;
-            this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(39.58337F, 17.27082F);
-            this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Tháng";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrlbThang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
+            this.xrlbThang.LocationFloat = new DevExpress.Utils.PointFloat(497.2674F, 40.90279F);
+            this.xrlbThang.Multiline = true;
+            this.xrlbThang.Name = "xrlbThang";
+            this.xrlbThang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrlbThang.SizeF = new System.Drawing.SizeF(39.58337F, 17.27082F);
+            this.xrlbThang.StylePriority.UseFont = false;
+            this.xrlbThang.StylePriority.UseTextAlignment = false;
+            this.xrlbThang.Text = "Tháng";
+            this.xrlbThang.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // xrLabel6
+            // xrlbNam
             // 
-            this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.xrlbNam.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pYear]")});
-            this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(583.7916F, 40.90279F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(39.58337F, 17.27082F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Tháng";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrlbNam.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
+            this.xrlbNam.LocationFloat = new DevExpress.Utils.PointFloat(583.7916F, 40.90279F);
+            this.xrlbNam.Multiline = true;
+            this.xrlbNam.Name = "xrlbNam";
+            this.xrlbNam.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrlbNam.SizeF = new System.Drawing.SizeF(39.58337F, 17.27082F);
+            this.xrlbNam.StylePriority.UseFont = false;
+            this.xrlbNam.StylePriority.UseTextAlignment = false;
+            this.xrlbNam.Text = "Tháng";
+            this.xrlbNam.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // KyNhan2
             // 
@@ -2564,8 +2564,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.UI.XRLabel xrlbThang;
+        private DevExpress.XtraReports.UI.XRLabel xrlbNam;
         private DevExpress.XtraReports.Parameters.Parameter pMonth;
         private DevExpress.XtraReports.Parameters.Parameter pYear;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
