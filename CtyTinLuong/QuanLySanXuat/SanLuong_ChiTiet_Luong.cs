@@ -14,16 +14,18 @@ namespace CtyTinLuong
     public partial class SanLuong_ChiTiet_Luong : Form
     {
         private List<GridColumn> ds_grid = new List<GridColumn>();
-        DateTime ngaydauthang, ngaycuoithang;
         private void Load_LockUp()
         {
+            
 
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            DataTable dt = cls.SelectAll_distinct_ID_CongNhan_W_NgayThang(ngaydauthang, ngaycuoithang);
-          
+            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
+            DataTable dtNguoi = clsNguoi.SelectAll();
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            DataView dvCaTruong = dtNguoi.DefaultView;
+            DataTable newdtCaTruong = dvCaTruong.ToTable();
 
-            gridCongNhan.Properties.DataSource = dt;
-            gridCongNhan.Properties.ValueMember = "ID_CongNhan";
+            gridCongNhan.Properties.DataSource = newdtCaTruong;
+            gridCongNhan.Properties.ValueMember = "ID_NhanSu";
             gridCongNhan.Properties.DisplayMember = "MaNhanVien";
 
           
@@ -49,6 +51,7 @@ namespace CtyTinLuong
             }
             return "";
         }
+<<<<<<< HEAD
 
         DataTable dt2;
 
@@ -64,9 +67,16 @@ namespace CtyTinLuong
             return retDateTime;
         }
         public void LoadData(int xxID_CongNhan)
+=======
+        public void LoadData_Thin()
+>>>>>>> ed0cb8e58a6732b7bb506f91b6146ac81a50d948
         {
-                DateTime date_ = new DateTime(ngaydauthang.Year, ngaydauthang.Month, 1);
-                int ngaycuathang_ = (((new DateTime(ngaydauthang.Year, ngaydauthang.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+            //
+           //đ
+                DateTime dtnow = DateTime.Now;
+              
+                DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
+                int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
                 if (ngaycuathang_ == 28)
                 {
                     Ngay31.Visible = false;
@@ -94,7 +104,7 @@ namespace CtyTinLuong
                 string thu_ = LayThu(date_);
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-                    ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(ngaydauthang.Year, ngaydauthang.Month, (i + 1)));
+                    ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(dtnow.Year, dtnow.Month, (i + 1)));
                     if (ds_grid[i].Caption.Contains("CN"))
                     {
                         ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
@@ -104,6 +114,7 @@ namespace CtyTinLuong
                     }
                 }
 
+<<<<<<< HEAD
              dt2 = new DataTable();
 
            
@@ -218,22 +229,82 @@ namespace CtyTinLuong
          
             gridControl2.DataSource = dt2;
             
+=======
+             
+>>>>>>> ed0cb8e58a6732b7bb506f91b6146ac81a50d948
         }
-
-        public void HienThiGridcontrol2(int iiID_CongNhan)
+        private void LoadData(int ID_CongNhanxxx, DateTime xxtungay, DateTime xxdenngay)
         {
+            //gridControl1.DataSource = null;
 
-            gridControl1.DataSource = null;
 
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+            //DataTable dt2 = new DataTable();
+            //dt2 = new DataTable();
+            //dt2.Columns.Add("STT", typeof(string));           
+            //dt2.Columns.Add("ID_VTHH_Ra", typeof(string));
+            //dt2.Columns.Add("MaVT", typeof(string));
+            //dt2.Columns.Add("TenVTHH", typeof(string));
+            //dt2.Columns.Add("DonViTinh", typeof(string));
+            //dt2.Columns.Add("ID_DinhMuc_Luong", typeof(string));
+            //dt2.Columns.Add("SanLuong_Thuong", typeof(string));
+            //dt2.Columns.Add("SanLuong_TangCa", typeof(string));
+            //dt2.Columns.Add("DinhMuc_KhongTang", typeof(double));
+            //dt2.Columns.Add("DinhMuc_Tang", typeof(double));
+            //dt2.Columns.Add("ThanhTien", typeof(double));
 
-            DataTable dtxxxx = new DataTable();
-            dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan_HUU(iiID_CongNhan, ngaydauthang, ngaycuoithang);
+            //clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+            //clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
+            //clsNhanSu_tbNhanSu clsnhansu = new clsNhanSu_tbNhanSu();
+            //clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();        
+          
+            //DataTable dtxxxx = new DataTable();
+            //dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(ID_CongNhanxxx, xxtungay, xxdenngay);
 
-            gridControl1.DataSource = dtxxxx;
+            //for (int k = 0; k < dtxxxx.Rows.Count; k++)
+            //{
+            //    int xxID_VTHH_Ra = Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
+            //    DataTable dttong = cls.Select_SUM_W_ID_VTHH_Ra_NgayThang_CongNhan(xxID_VTHH_Ra, ID_CongNhanxxx, xxtungay, xxdenngay);
+            //    DataTable dtdinhmuc = cls.Select_W_ID_VTHH_Ra_W_CongNhan_NgayThang(xxID_VTHH_Ra, ID_CongNhanxxx, xxtungay, xxdenngay);
+
+            //    double deTOngtien;
+            //    object xxxx = dttong.Compute("sum(ThanhTien)", "ThanhTien > 0");
+            //    if (xxxx.ToString() != "")
+            //        deTOngtien = Convert.ToDouble(xxxx);
+            //    else deTOngtien = 0;
+
+            //    if (dtdinhmuc.Rows.Count > 0)
+            //    {
+            //        double dongia = Convert.ToDouble(dtdinhmuc.Rows[0]["DinhMuc_KhongTang"].ToString());
+            //        double dongia_Tang = Convert.ToDouble(dtdinhmuc.Rows[0]["DinhMuc_Tang"].ToString());
+            //        int ID_DinhMuc_Luongxx = Convert.ToInt32(dtdinhmuc.Rows[0]["ID_DinhMuc_Luong"].ToString());
+
+            //        DataRow _ravi = dt2.NewRow();
+            //        clsvt.iID_VTHH = xxID_VTHH_Ra;
+            //        DataTable dtvt_Ra = clsvt.SelectOne();
+            //        string MaVT_Ra = clsvt.sMaVT.Value;
+            //        string DonViTinh_Ra = clsvt.sDonViTinh.Value;
+            //        string TenVatTu_Ra = clsvt.sTenVTHH.Value;
+            //        _ravi["STT"] = k + 1;                    
+            //        _ravi["ID_VTHH_Ra"] = xxID_VTHH_Ra;
+            //        _ravi["MaVT"] = MaVT_Ra;
+            //        _ravi["TenVTHH"] = TenVatTu_Ra;
+            //        _ravi["DonViTinh"] = DonViTinh_Ra;
+            //        _ravi["ID_DinhMuc_Luong"] = ID_DinhMuc_Luongxx;
+            //        _ravi["SanLuong_Thuong"] = Convert.ToDouble(dttong.Rows[0]["SanLuong_Thuong"].ToString());
+            //        _ravi["SanLuong_TangCa"] = Convert.ToDouble(dttong.Rows[0]["SanLuong_TangCa"].ToString());
+            //        _ravi["DinhMuc_KhongTang"] = dongia;
+            //        _ravi["DinhMuc_Tang"] = dongia_Tang;
+            //        _ravi["ThanhTien"] = Convert.ToDouble(dttong.Rows[0]["ThanhTien"].ToString());
+
+            //        dt2.Rows.Add(_ravi);
+
+            //    }
+
+            //}
+
+            //gridControl1.DataSource = dt2;
 
         }
-
         public SanLuong_ChiTiet_Luong()
         {
             InitializeComponent();
@@ -263,7 +334,7 @@ namespace CtyTinLuong
 
                 txtHoTen.Text = clsncc.sTenNhanVien.Value;
                 int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
+                LoadData(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             }
             catch
@@ -274,20 +345,24 @@ namespace CtyTinLuong
 
         private void SanLuong_ChiTiet_Luong_Load(object sender, EventArgs e)
         {
-            
-            DateTime dtnow = DateTime.Now;
-            txtNam.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year.ToString();
-            txtThang.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month.ToString();
-            ngaydauthang = GetFistDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
-            ngaycuoithang=GetLastDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
-            
-            LoadData(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
-            HienThiGridcontrol2(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
-            Load_LockUp();
-            gridCongNhan.EditValue = frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan;
+            LoadData_Thin();
+            //Load_LockUp();
+            //dteTuNgay.EditValue = SanLuong_To_DOT_DAP.mdatungay;
+            //dteDenNgay.EditValue = SanLuong_To_DOT_DAP.mdadenngay;
+            //gridCongNhan.EditValue = SanLuong_To_DOT_DAP.miID_VTHH_Ra;
 
+            LoadData(SanLuong_To_DOT_DAP.miID_VTHH_Ra, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
         }
 
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
+                LoadData(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            }
+        }
 
         private void btRefesh_Click(object sender, EventArgs e)
         {
@@ -297,63 +372,6 @@ namespace CtyTinLuong
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void gridView3_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT1)
-                if(e.RowHandle%2==0)
-                e.DisplayText = (e.RowHandle/2 + 1).ToString();
-        }
-
-        private void txtThang_TextChanged(object sender, EventArgs e)
-        {
-           
-            
-        }
-
-        private void txtNam_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void txtThang_Leave(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(txtNam.Text.ToString()) > 0 & Convert.ToInt32(txtThang.Text.ToString()) > 0)
-            {
-                ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
-                HienThiGridcontrol2(xxID);
-                Load_LockUp();
-            }
-        }
-
-        private void txtNam_Leave(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(txtNam.Text.ToString()) > 0 & Convert.ToInt32(txtThang.Text.ToString()) > 0)
-            {
-                ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
-                HienThiGridcontrol2(xxID);
-                Load_LockUp();
-            }
-        }
-
-        private void txtThang_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
-                HienThiGridcontrol2(xxID);
-                Load_LockUp();
-            }
         }
 
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
