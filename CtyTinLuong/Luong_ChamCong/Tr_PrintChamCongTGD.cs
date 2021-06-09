@@ -263,7 +263,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 //
                 nameTong.WidthF = (float)140.98;
-                nameCong.WidthF = (float)64.84;
+                congFooter.WidthF = (float)64.84;
                 tg1.WidthF = Ngay1.WidthF;
                 tg2.WidthF = Ngay2.WidthF;
                 tg3.WidthF = Ngay3.WidthF;
@@ -349,7 +349,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 //
                 nameTong.WidthF = (float)140.98;
-                nameCong.WidthF = (float)64.84;
+                congFooter.WidthF = (float)64.84;
                 tg1.WidthF = Ngay1.WidthF;
                 tg2.WidthF = Ngay2.WidthF;
                 tg3.WidthF = Ngay3.WidthF;
@@ -393,8 +393,10 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                hoTen.WidthF = (float)140.98;
-                cong.WidthF = (float)64.84;
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
+                xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.228479;
+                //
                 Ngay1.WidthF = (float)25.1299;
                 Ngay2.WidthF = ng2.WidthF;
                 Ngay3.WidthF = ng3.WidthF;
@@ -425,11 +427,8 @@ namespace CtyTinLuong.Luong_ChamCong
                 Ngay28.WidthF = ng28.WidthF;
                 Ngay29.WidthF = ng29.WidthF;
                 Ngay30.WidthF = ng30.WidthF;
-                TongCel.WidthF = (float)42.89;
 
                 //
-                nameTong.WidthF = (float)140.98;
-                nameCong.WidthF = (float)64.84;
                 tg1.WidthF = Ngay1.WidthF;
                 tg2.WidthF = Ngay2.WidthF;
                 tg3.WidthF = Ngay3.WidthF;
@@ -460,7 +459,6 @@ namespace CtyTinLuong.Luong_ChamCong
                 tg28.WidthF = Ngay28.WidthF;
                 tg29.WidthF = Ngay29.WidthF;
                 tg30.WidthF = Ngay30.WidthF;
-                tgSum.WidthF = (float)42.89;
             }
             else if (ngaycuathang_ == 31)
             {

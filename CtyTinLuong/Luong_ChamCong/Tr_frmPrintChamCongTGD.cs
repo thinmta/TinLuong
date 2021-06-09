@@ -23,7 +23,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintChamCongTGD_Load(object sender, EventArgs e)
         {
-            Tr_PrintChamCongTGD xtr111 = new Tr_PrintChamCongTGD(_nam, _thang);
+            Tr_PrintChamCongTGD xtr111 = new Tr_PrintChamCongTGD(_thang, _nam);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             //ds.tbCongNhatChamCongToGapDan.Clone();
