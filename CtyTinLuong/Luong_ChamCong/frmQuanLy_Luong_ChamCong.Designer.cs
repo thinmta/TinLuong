@@ -59,11 +59,14 @@
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
+<<<<<<< HEAD
 
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.navBTTL_TBX_CT = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TBX_TQ = new DevExpress.XtraNavBar.NavBarItem();
 
+=======
+>>>>>>> 470208023fea3d95d139550c334a7cd7140d8fa6
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,9 +229,7 @@
             this.navBarItem18,
             this.navTTL_TGD,
             this.navBTTL_TGD_TD,
-            this.navChamCom_TGD,
-            this.navBTTL_TBX_CT,
-            this.navBTTL_TBX_TQ});
+            this.navChamCom_TGD});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
@@ -278,9 +279,7 @@
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD_TD),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX_CT),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX_TQ)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD_TD)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -329,6 +328,7 @@
             this.navChamCom_TGD.Name = "navChamCom_TGD";
             this.navChamCom_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCom_TGD_LinkClicked);
             // 
+<<<<<<< HEAD
 
             // panelControl1
             // 
@@ -351,6 +351,8 @@
             this.navBTTL_TBX_TQ.Caption = "Tổ Bốc xếp - Tổng quan";
             this.navBTTL_TBX_TQ.Name = "navBTTL_TBX_TQ";
             // 
+=======
+>>>>>>> 470208023fea3d95d139550c334a7cd7140d8fa6
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,7 +404,5 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TGD_TD;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
         private DevExpress.XtraNavBar.NavBarItem navChamCom_TGD;
-        private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX_CT;
-        private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX_TQ;
     }
 }
