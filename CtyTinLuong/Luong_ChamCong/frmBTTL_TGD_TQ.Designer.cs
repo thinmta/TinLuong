@@ -351,7 +351,7 @@
             // TongLuong
             // 
             this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongLuong.Caption = "TỔNG LƯƠNG";
             this.TongLuong.FieldName = "TongLuong";
@@ -375,7 +375,7 @@
             // SoNgayAn
             // 
             this.SoNgayAn.AppearanceCell.Options.UseTextOptions = true;
-            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.SoNgayAn.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SoNgayAn.Caption = "SỐ NGÀY ĂN";
             this.SoNgayAn.FieldName = "SoNgayAn";
@@ -399,7 +399,7 @@
             // TruTienCom
             // 
             this.TruTienCom.AppearanceCell.Options.UseTextOptions = true;
-            this.TruTienCom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TruTienCom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TruTienCom.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TruTienCom.Caption = "TRỪ TIỀN CƠM";
             this.TruTienCom.FieldName = "TruTienCom";
@@ -423,7 +423,7 @@
             // TongTien
             // 
             this.TongTien.AppearanceCell.Options.UseTextOptions = true;
-            this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongTien.Caption = "TỔNG TIỀN";
             this.TongTien.FieldName = "TongTien";
@@ -447,7 +447,7 @@
             // TamUng
             // 
             this.TamUng.AppearanceCell.Options.UseTextOptions = true;
-            this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TamUng.Caption = "TẠM ỨNG";
             this.TamUng.FieldName = "TamUng";
@@ -471,7 +471,7 @@
             // ThucNhan
             // 
             this.ThucNhan.AppearanceCell.Options.UseTextOptions = true;
-            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThucNhan.Caption = "THỰC NHẬN";
             this.ThucNhan.FieldName = "ThucNhan";

@@ -715,6 +715,9 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
+                    if (_data.Rows[i]["ID_VTHH"].ToString() == "")
+                        continue;
+
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     if (id_vthh_ == 0)
                     {

@@ -24,7 +24,7 @@ namespace CtyTinLuong
         public string msTenNhanVien;
 
         public int _nam, _thang;
-        public string _tennhanvien = "", _ten_vthh;
+        public string  _ten_vthh;
         private DataTable _data;
         private bool isload = true;
 
@@ -60,7 +60,7 @@ namespace CtyTinLuong
             int thucnhan_ = 0; 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang , 0, _tennhanvien); 
+                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang ); 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
