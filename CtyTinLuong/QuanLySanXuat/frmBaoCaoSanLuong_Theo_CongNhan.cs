@@ -29,6 +29,21 @@ namespace CtyTinLuong
         {
 
             grid_ChiTiet.DataSource = null;
+
+            //DataTable dt2 = new DataTable();
+            //dt2 = new DataTable();
+            //dt2.Columns.Add("STT", typeof(string));
+            //dt2.Columns.Add("ID_VTHH_Ra", typeof(string));
+            //dt2.Columns.Add("MaVT", typeof(string));
+            //dt2.Columns.Add("TenVTHH", typeof(string));
+            //dt2.Columns.Add("DonViTinh", typeof(string));
+            //dt2.Columns.Add("ID_DinhMuc_Luong", typeof(string));
+            //dt2.Columns.Add("SanLuong_Thuong", typeof(string));
+            //dt2.Columns.Add("SanLuong_TangCa", typeof(string));
+            //dt2.Columns.Add("DinhMuc_KhongTang", typeof(double));
+            //dt2.Columns.Add("DinhMuc_Tang", typeof(double));
+            //dt2.Columns.Add("ThanhTien", typeof(double));
+
             
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();            
 
