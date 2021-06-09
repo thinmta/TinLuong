@@ -204,6 +204,24 @@
     <Compile Include="frmPrint_Nhap_Xuat_Kho.Designer.cs">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_TGD_CT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_TGD_TQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintChamCongTGD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintChamCongTGD.designer.cs">
+      <DependentUpon>Tr_PrintChamCongTGD.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1685,7 +1703,15 @@
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT.resx">
+      <DependentUpon>Tr_PrintBTTL_TGD_CT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ.resx">
+      <DependentUpon>Tr_PrintBTTL_TGD_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintChamCongTGD.resx">
+      <DependentUpon>Tr_PrintChamCongTGD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </EmbeddedResource>
