@@ -74,7 +74,7 @@ namespace CtyTinLuong
                 double deTOngtien = 0;
                 int xxxID_CongNhan_ = Convert.ToInt32(dtxxxx.Rows[k]["ID_CongNhan"].ToString());
                 deTOngtien = Convert.ToDouble(dtxxxx.Compute("sum(ThanhTien)", "ID_CongNhan=" + xxxID_CongNhan_ + ""));
-              
+
                 int ID_CongNhan_ = 0;
                
                 if (k < dtxxxx.Rows.Count - 1)

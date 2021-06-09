@@ -50,7 +50,7 @@ namespace CtyTinLuong
             return "";
         }
 
-      
+        DataTable dt2;
 
         public static DateTime GetFistDayInMonth(int year, int month)
         {
@@ -104,7 +104,7 @@ namespace CtyTinLuong
                     }
                 }
 
-            DataTable dt2 = new DataTable();
+             dt2 = new DataTable();
 
            
             dt2.Columns.Add("TenVTHH", typeof(string));
@@ -156,14 +156,21 @@ namespace CtyTinLuong
             DataRow _ravi_2 = dt2.NewRow();
            
             int id_vthh_cu_ = 0;
+            double tong1 = 0, tong2 = 0;
             for (int k = 0; k < dtxxxx.Rows.Count; k++)
             {
                 double snluong_thuong = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
                 double snluong_tangca = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
-
+                //int xxid_vthh= Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
+                //tong1 = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxid_vthh + ""));
+           
                 int ngay_ = (Convert.ToDateTime(dtxxxx.Rows[k]["NgaySanXuat"].ToString()).Day);
                 _ravi_1["Ngay" + (ngay_)] = snluong_thuong.ToString();
                 _ravi_2["Ngay" + (ngay_)] = snluong_tangca.ToString();
+                tong1 += snluong_thuong;
+                tong2 += snluong_tangca;
+                _ravi_1["Tong"]  = tong1.ToString();
+                _ravi_2["Tong"] = tong2;
                 //
                 int id_vthh_ = 0;
                 if (k < dtxxxx.Rows.Count - 1)
@@ -181,7 +188,8 @@ namespace CtyTinLuong
 
                         dt2.Rows.Add(_ravi_1);
                         dt2.Rows.Add(_ravi_2);
-
+                        tong1 = 0;
+                        tong2 = 0;
                         _ravi_1 = dt2.NewRow();
                         _ravi_2 = dt2.NewRow();
                         id_vthh_cu_ = id_vthh_;
@@ -201,6 +209,8 @@ namespace CtyTinLuong
                     dt2.Rows.Add(_ravi_1);
                     dt2.Rows.Add(_ravi_2);
 
+                    tong1 = 0;
+                    tong2 = 0;
                     _ravi_1 = dt2.NewRow();
                     _ravi_2 = dt2.NewRow();
                 }                 
@@ -344,6 +354,12 @@ namespace CtyTinLuong
                 HienThiGridcontrol2(xxID);
                 Load_LockUp();
             }
+        }
+
+        private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+           
+           
         }
 
         private void btPrint_Click(object sender, EventArgs e)
