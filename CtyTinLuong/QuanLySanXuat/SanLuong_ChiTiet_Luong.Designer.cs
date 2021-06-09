@@ -29,46 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_ChiTiet_Luong));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.btPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memohoten = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.clID_VTHH_Ra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memoTenVTHH = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.clSanLuong_Thuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clSanLuong_TangCa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_DinhMuc_Luong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDinhMuc_KhongTang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDinhMuc_Tang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dteDenNgay = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridCongNhan = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtNam = new System.Windows.Forms.TextBox();
+            this.txtThang = new System.Windows.Forms.TextBox();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenVTHH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,40 +73,64 @@
             this.Ngay29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.btPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.memohoten = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.clID_VTHH_Ra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.memoTenVTHH = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.clSanLuong_Thuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSanLuong_TangCa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_DinhMuc_Luong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clDinhMuc_KhongTang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clDinhMuc_Tang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.gridCongNhan = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.clTong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memohoten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCongNhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -151,14 +148,14 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Controls.Add(this.dteTuNgay);
+            this.dataLayoutControl1.Controls.Add(this.txtNam);
+            this.dataLayoutControl1.Controls.Add(this.txtThang);
             this.dataLayoutControl1.Controls.Add(this.gridControl2);
             this.dataLayoutControl1.Controls.Add(this.btThoat);
             this.dataLayoutControl1.Controls.Add(this.btPrint);
             this.dataLayoutControl1.Controls.Add(this.gridControl1);
             this.dataLayoutControl1.Controls.Add(this.txtHoTen);
             this.dataLayoutControl1.Controls.Add(this.gridCongNhan);
-            this.dataLayoutControl1.Controls.Add(this.dteDenNgay);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 13);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
@@ -167,18 +164,481 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
-            // btPrint
+            // txtNam
             // 
-            this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint.Appearance.Options.UseFont = true;
-            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(1050, 476);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(110, 22);
-            this.btPrint.StyleController = this.dataLayoutControl1;
-            this.btPrint.TabIndex = 110;
-            this.btPrint.Text = "Print";
-            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
+            this.txtNam.Location = new System.Drawing.Point(226, 2);
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(147, 20);
+            this.txtNam.TabIndex = 113;
+            // 
+            // txtThang
+            // 
+            this.txtThang.Location = new System.Drawing.Point(57, 2);
+            this.txtThang.Name = "txtThang";
+            this.txtThang.Size = new System.Drawing.Size(110, 20);
+            this.txtThang.TabIndex = 112;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControl2.Location = new System.Drawing.Point(2, 26);
+            this.gridControl2.MainView = this.gridView3;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit2});
+            this.gridControl2.Size = new System.Drawing.Size(1255, 215);
+            this.gridControl2.TabIndex = 11;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.Row.Options.UseFont = true;
+            this.gridView3.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView3.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.clSTT1,
+            this.clTenVTHH1,
+            this.gridColumn2,
+            this.Ngay1,
+            this.Ngay2,
+            this.Ngay3,
+            this.Ngay4,
+            this.Ngay5,
+            this.Ngay6,
+            this.Ngay7,
+            this.Ngay8,
+            this.Ngay9,
+            this.Ngay10,
+            this.Ngay11,
+            this.Ngay12,
+            this.Ngay13,
+            this.Ngay14,
+            this.Ngay15,
+            this.Ngay16,
+            this.Ngay17,
+            this.Ngay18,
+            this.Ngay19,
+            this.Ngay20,
+            this.Ngay21,
+            this.Ngay22,
+            this.Ngay23,
+            this.Ngay24,
+            this.Ngay25,
+            this.Ngay26,
+            this.Ngay27,
+            this.Ngay28,
+            this.Ngay29,
+            this.Ngay30,
+            this.Ngay31,
+            this.clTong});
+            this.gridView3.GridControl = this.gridControl2;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.AllowHtmlDrawHeaders = true;
+            this.gridView3.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
+            this.gridView3.OptionsView.RowAutoHeight = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // clSTT1
+            // 
+            this.clSTT1.AppearanceCell.Options.UseTextOptions = true;
+            this.clSTT1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSTT1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clSTT1.Caption = "TT";
+            this.clSTT1.FieldName = "STT";
+            this.clSTT1.Name = "clSTT1";
+            this.clSTT1.OptionsColumn.AllowEdit = false;
+            this.clSTT1.OptionsColumn.FixedWidth = true;
+            this.clSTT1.Visible = true;
+            this.clSTT1.VisibleIndex = 0;
+            this.clSTT1.Width = 30;
+            // 
+            // clTenVTHH1
+            // 
+            this.clTenVTHH1.Caption = "Tên hàng";
+            this.clTenVTHH1.ColumnEdit = this.repositoryItemMemoEdit2;
+            this.clTenVTHH1.FieldName = "TenVTHH";
+            this.clTenVTHH1.Name = "clTenVTHH1";
+            this.clTenVTHH1.OptionsColumn.AllowEdit = false;
+            this.clTenVTHH1.Visible = true;
+            this.clTenVTHH1.VisibleIndex = 1;
+            this.clTenVTHH1.Width = 84;
+            // 
+            // repositoryItemMemoEdit2
+            // 
+            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Nội dung";
+            this.gridColumn2.FieldName = "NoiDung";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.FixedWidth = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 70;
+            // 
+            // Ngay1
+            // 
+            this.Ngay1.Caption = "1";
+            this.Ngay1.FieldName = "Ngay1";
+            this.Ngay1.Name = "Ngay1";
+            this.Ngay1.OptionsColumn.AllowEdit = false;
+            this.Ngay1.OptionsColumn.FixedWidth = true;
+            this.Ngay1.Visible = true;
+            this.Ngay1.VisibleIndex = 3;
+            this.Ngay1.Width = 33;
+            // 
+            // Ngay2
+            // 
+            this.Ngay2.Caption = "2";
+            this.Ngay2.FieldName = "Ngay2";
+            this.Ngay2.Name = "Ngay2";
+            this.Ngay2.OptionsColumn.AllowEdit = false;
+            this.Ngay2.OptionsColumn.FixedWidth = true;
+            this.Ngay2.Visible = true;
+            this.Ngay2.VisibleIndex = 4;
+            this.Ngay2.Width = 33;
+            // 
+            // Ngay3
+            // 
+            this.Ngay3.Caption = "3";
+            this.Ngay3.FieldName = "Ngay3";
+            this.Ngay3.Name = "Ngay3";
+            this.Ngay3.OptionsColumn.AllowEdit = false;
+            this.Ngay3.OptionsColumn.FixedWidth = true;
+            this.Ngay3.Visible = true;
+            this.Ngay3.VisibleIndex = 5;
+            this.Ngay3.Width = 33;
+            // 
+            // Ngay4
+            // 
+            this.Ngay4.Caption = "4";
+            this.Ngay4.FieldName = "Ngay4";
+            this.Ngay4.Name = "Ngay4";
+            this.Ngay4.OptionsColumn.AllowEdit = false;
+            this.Ngay4.OptionsColumn.FixedWidth = true;
+            this.Ngay4.Visible = true;
+            this.Ngay4.VisibleIndex = 6;
+            this.Ngay4.Width = 33;
+            // 
+            // Ngay5
+            // 
+            this.Ngay5.Caption = "5";
+            this.Ngay5.FieldName = "Ngay5";
+            this.Ngay5.Name = "Ngay5";
+            this.Ngay5.OptionsColumn.AllowEdit = false;
+            this.Ngay5.OptionsColumn.FixedWidth = true;
+            this.Ngay5.Visible = true;
+            this.Ngay5.VisibleIndex = 7;
+            this.Ngay5.Width = 33;
+            // 
+            // Ngay6
+            // 
+            this.Ngay6.Caption = "6";
+            this.Ngay6.FieldName = "Ngay6";
+            this.Ngay6.Name = "Ngay6";
+            this.Ngay6.OptionsColumn.AllowEdit = false;
+            this.Ngay6.OptionsColumn.FixedWidth = true;
+            this.Ngay6.Visible = true;
+            this.Ngay6.VisibleIndex = 8;
+            this.Ngay6.Width = 33;
+            // 
+            // Ngay7
+            // 
+            this.Ngay7.Caption = "7";
+            this.Ngay7.FieldName = "Ngay7";
+            this.Ngay7.Name = "Ngay7";
+            this.Ngay7.OptionsColumn.AllowEdit = false;
+            this.Ngay7.OptionsColumn.FixedWidth = true;
+            this.Ngay7.Visible = true;
+            this.Ngay7.VisibleIndex = 9;
+            this.Ngay7.Width = 33;
+            // 
+            // Ngay8
+            // 
+            this.Ngay8.Caption = "8";
+            this.Ngay8.FieldName = "Ngay8";
+            this.Ngay8.Name = "Ngay8";
+            this.Ngay8.OptionsColumn.AllowEdit = false;
+            this.Ngay8.OptionsColumn.FixedWidth = true;
+            this.Ngay8.Visible = true;
+            this.Ngay8.VisibleIndex = 10;
+            this.Ngay8.Width = 33;
+            // 
+            // Ngay9
+            // 
+            this.Ngay9.Caption = "9";
+            this.Ngay9.FieldName = "Ngay9";
+            this.Ngay9.Name = "Ngay9";
+            this.Ngay9.OptionsColumn.AllowEdit = false;
+            this.Ngay9.OptionsColumn.FixedWidth = true;
+            this.Ngay9.Visible = true;
+            this.Ngay9.VisibleIndex = 11;
+            this.Ngay9.Width = 33;
+            // 
+            // Ngay10
+            // 
+            this.Ngay10.Caption = "10";
+            this.Ngay10.FieldName = "Ngay10";
+            this.Ngay10.Name = "Ngay10";
+            this.Ngay10.OptionsColumn.AllowEdit = false;
+            this.Ngay10.OptionsColumn.FixedWidth = true;
+            this.Ngay10.Visible = true;
+            this.Ngay10.VisibleIndex = 12;
+            this.Ngay10.Width = 33;
+            // 
+            // Ngay11
+            // 
+            this.Ngay11.Caption = "11";
+            this.Ngay11.FieldName = "Ngay11";
+            this.Ngay11.Name = "Ngay11";
+            this.Ngay11.OptionsColumn.AllowEdit = false;
+            this.Ngay11.OptionsColumn.FixedWidth = true;
+            this.Ngay11.Visible = true;
+            this.Ngay11.VisibleIndex = 13;
+            this.Ngay11.Width = 33;
+            // 
+            // Ngay12
+            // 
+            this.Ngay12.Caption = "12";
+            this.Ngay12.FieldName = "Ngay12";
+            this.Ngay12.Name = "Ngay12";
+            this.Ngay12.OptionsColumn.AllowEdit = false;
+            this.Ngay12.OptionsColumn.FixedWidth = true;
+            this.Ngay12.Visible = true;
+            this.Ngay12.VisibleIndex = 14;
+            this.Ngay12.Width = 33;
+            // 
+            // Ngay13
+            // 
+            this.Ngay13.Caption = "13";
+            this.Ngay13.FieldName = "Ngay13";
+            this.Ngay13.Name = "Ngay13";
+            this.Ngay13.OptionsColumn.AllowEdit = false;
+            this.Ngay13.OptionsColumn.FixedWidth = true;
+            this.Ngay13.Visible = true;
+            this.Ngay13.VisibleIndex = 15;
+            this.Ngay13.Width = 33;
+            // 
+            // Ngay14
+            // 
+            this.Ngay14.Caption = "14";
+            this.Ngay14.FieldName = "Ngay14";
+            this.Ngay14.Name = "Ngay14";
+            this.Ngay14.OptionsColumn.AllowEdit = false;
+            this.Ngay14.OptionsColumn.FixedWidth = true;
+            this.Ngay14.Visible = true;
+            this.Ngay14.VisibleIndex = 16;
+            this.Ngay14.Width = 33;
+            // 
+            // Ngay15
+            // 
+            this.Ngay15.Caption = "15";
+            this.Ngay15.FieldName = "Ngay15";
+            this.Ngay15.Name = "Ngay15";
+            this.Ngay15.OptionsColumn.AllowEdit = false;
+            this.Ngay15.OptionsColumn.FixedWidth = true;
+            this.Ngay15.Visible = true;
+            this.Ngay15.VisibleIndex = 17;
+            this.Ngay15.Width = 33;
+            // 
+            // Ngay16
+            // 
+            this.Ngay16.Caption = "16";
+            this.Ngay16.FieldName = "Ngay16";
+            this.Ngay16.Name = "Ngay16";
+            this.Ngay16.OptionsColumn.AllowEdit = false;
+            this.Ngay16.OptionsColumn.FixedWidth = true;
+            this.Ngay16.Visible = true;
+            this.Ngay16.VisibleIndex = 18;
+            this.Ngay16.Width = 33;
+            // 
+            // Ngay17
+            // 
+            this.Ngay17.Caption = "17";
+            this.Ngay17.FieldName = "Ngay17";
+            this.Ngay17.Name = "Ngay17";
+            this.Ngay17.OptionsColumn.AllowEdit = false;
+            this.Ngay17.OptionsColumn.FixedWidth = true;
+            this.Ngay17.Visible = true;
+            this.Ngay17.VisibleIndex = 19;
+            this.Ngay17.Width = 33;
+            // 
+            // Ngay18
+            // 
+            this.Ngay18.Caption = "18";
+            this.Ngay18.FieldName = "Ngay18";
+            this.Ngay18.Name = "Ngay18";
+            this.Ngay18.OptionsColumn.AllowEdit = false;
+            this.Ngay18.OptionsColumn.FixedWidth = true;
+            this.Ngay18.Visible = true;
+            this.Ngay18.VisibleIndex = 20;
+            this.Ngay18.Width = 33;
+            // 
+            // Ngay19
+            // 
+            this.Ngay19.Caption = "19";
+            this.Ngay19.FieldName = "Ngay19";
+            this.Ngay19.Name = "Ngay19";
+            this.Ngay19.OptionsColumn.AllowEdit = false;
+            this.Ngay19.OptionsColumn.FixedWidth = true;
+            this.Ngay19.Visible = true;
+            this.Ngay19.VisibleIndex = 21;
+            this.Ngay19.Width = 33;
+            // 
+            // Ngay20
+            // 
+            this.Ngay20.Caption = "20";
+            this.Ngay20.FieldName = "Ngay20";
+            this.Ngay20.Name = "Ngay20";
+            this.Ngay20.OptionsColumn.AllowEdit = false;
+            this.Ngay20.OptionsColumn.FixedWidth = true;
+            this.Ngay20.Visible = true;
+            this.Ngay20.VisibleIndex = 22;
+            this.Ngay20.Width = 33;
+            // 
+            // Ngay21
+            // 
+            this.Ngay21.Caption = "21";
+            this.Ngay21.FieldName = "Ngay21";
+            this.Ngay21.Name = "Ngay21";
+            this.Ngay21.OptionsColumn.AllowEdit = false;
+            this.Ngay21.OptionsColumn.FixedWidth = true;
+            this.Ngay21.Visible = true;
+            this.Ngay21.VisibleIndex = 23;
+            this.Ngay21.Width = 33;
+            // 
+            // Ngay22
+            // 
+            this.Ngay22.Caption = "22";
+            this.Ngay22.FieldName = "Ngay22";
+            this.Ngay22.Name = "Ngay22";
+            this.Ngay22.OptionsColumn.AllowEdit = false;
+            this.Ngay22.OptionsColumn.FixedWidth = true;
+            this.Ngay22.Visible = true;
+            this.Ngay22.VisibleIndex = 24;
+            this.Ngay22.Width = 33;
+            // 
+            // Ngay23
+            // 
+            this.Ngay23.Caption = "23";
+            this.Ngay23.FieldName = "Ngay23";
+            this.Ngay23.Name = "Ngay23";
+            this.Ngay23.OptionsColumn.AllowEdit = false;
+            this.Ngay23.OptionsColumn.FixedWidth = true;
+            this.Ngay23.Visible = true;
+            this.Ngay23.VisibleIndex = 25;
+            this.Ngay23.Width = 33;
+            // 
+            // Ngay24
+            // 
+            this.Ngay24.Caption = "24";
+            this.Ngay24.FieldName = "Ngay24";
+            this.Ngay24.Name = "Ngay24";
+            this.Ngay24.OptionsColumn.AllowEdit = false;
+            this.Ngay24.OptionsColumn.FixedWidth = true;
+            this.Ngay24.Visible = true;
+            this.Ngay24.VisibleIndex = 26;
+            this.Ngay24.Width = 33;
+            // 
+            // Ngay25
+            // 
+            this.Ngay25.Caption = "25";
+            this.Ngay25.FieldName = "Ngay25";
+            this.Ngay25.Name = "Ngay25";
+            this.Ngay25.OptionsColumn.AllowEdit = false;
+            this.Ngay25.OptionsColumn.FixedWidth = true;
+            this.Ngay25.Visible = true;
+            this.Ngay25.VisibleIndex = 27;
+            this.Ngay25.Width = 33;
+            // 
+            // Ngay26
+            // 
+            this.Ngay26.Caption = "26";
+            this.Ngay26.FieldName = "Ngay26";
+            this.Ngay26.Name = "Ngay26";
+            this.Ngay26.OptionsColumn.AllowEdit = false;
+            this.Ngay26.OptionsColumn.FixedWidth = true;
+            this.Ngay26.Visible = true;
+            this.Ngay26.VisibleIndex = 28;
+            this.Ngay26.Width = 33;
+            // 
+            // Ngay27
+            // 
+            this.Ngay27.Caption = "27";
+            this.Ngay27.FieldName = "Ngay27";
+            this.Ngay27.Name = "Ngay27";
+            this.Ngay27.OptionsColumn.AllowEdit = false;
+            this.Ngay27.OptionsColumn.FixedWidth = true;
+            this.Ngay27.Visible = true;
+            this.Ngay27.VisibleIndex = 29;
+            this.Ngay27.Width = 33;
+            // 
+            // Ngay28
+            // 
+            this.Ngay28.Caption = "28";
+            this.Ngay28.FieldName = "Ngay28";
+            this.Ngay28.Name = "Ngay28";
+            this.Ngay28.OptionsColumn.AllowEdit = false;
+            this.Ngay28.OptionsColumn.FixedWidth = true;
+            this.Ngay28.Visible = true;
+            this.Ngay28.VisibleIndex = 30;
+            this.Ngay28.Width = 33;
+            // 
+            // Ngay29
+            // 
+            this.Ngay29.Caption = "29";
+            this.Ngay29.FieldName = "Ngay29";
+            this.Ngay29.Name = "Ngay29";
+            this.Ngay29.OptionsColumn.AllowEdit = false;
+            this.Ngay29.OptionsColumn.FixedWidth = true;
+            this.Ngay29.Visible = true;
+            this.Ngay29.VisibleIndex = 31;
+            this.Ngay29.Width = 33;
+            // 
+            // Ngay30
+            // 
+            this.Ngay30.Caption = "30";
+            this.Ngay30.FieldName = "Ngay30";
+            this.Ngay30.Name = "Ngay30";
+            this.Ngay30.OptionsColumn.AllowEdit = false;
+            this.Ngay30.OptionsColumn.FixedWidth = true;
+            this.Ngay30.Visible = true;
+            this.Ngay30.VisibleIndex = 32;
+            this.Ngay30.Width = 33;
+            // 
+            // Ngay31
+            // 
+            this.Ngay31.Caption = "31";
+            this.Ngay31.FieldName = "Ngay31";
+            this.Ngay31.Name = "Ngay31";
+            this.Ngay31.OptionsColumn.AllowEdit = false;
+            this.Ngay31.OptionsColumn.FixedWidth = true;
+            this.Ngay31.Visible = true;
+            this.Ngay31.VisibleIndex = 33;
+            this.Ngay31.Width = 33;
+            // 
+            // clTong
+            // 
+            this.clTong.Caption = "Tổng";
+            this.clTong.Name = "clTong";
+            this.clTong.OptionsColumn.AllowEdit = false;
+            this.clTong.OptionsColumn.FixedWidth = true;
+            this.clTong.Visible = true;
+            this.clTong.VisibleIndex = 34;
+            this.clTong.Width = 50;
             // 
             // btThoat
             // 
@@ -194,6 +654,19 @@
             this.btThoat.TabIndex = 0;
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
+            // btPrint
+            // 
+            this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint.Appearance.Options.UseFont = true;
+            this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
+            this.btPrint.Location = new System.Drawing.Point(1050, 476);
+            this.btPrint.Name = "btPrint";
+            this.btPrint.Size = new System.Drawing.Size(110, 22);
+            this.btPrint.StyleController = this.dataLayoutControl1;
+            this.btPrint.TabIndex = 110;
+            this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // gridControl1
             // 
@@ -417,63 +890,22 @@
             this.clDonViTinh.VisibleIndex = 3;
             this.clDonViTinh.Width = 54;
             // 
-            // dteDenNgay
+            // txtHoTen
             // 
-            this.dteDenNgay.EditValue = null;
-            this.dteDenNgay.Location = new System.Drawing.Point(1023, 2);
-            this.dteDenNgay.Name = "dteDenNgay";
-            this.dteDenNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteDenNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteDenNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteDenNgay.Size = new System.Drawing.Size(234, 20);
-            this.dteDenNgay.StyleController = this.dataLayoutControl1;
-            this.dteDenNgay.TabIndex = 88;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem10,
-            this.layoutControlItem2,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.emptySpaceItem1,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem3});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1259, 500);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.dteDenNgay;
-            this.layoutControlItem1.CustomizationFormText = "Đến ngày";
-            this.layoutControlItem1.Location = new System.Drawing.Point(966, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(293, 24);
-            this.layoutControlItem1.Text = "Đến ngày";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 13);
+            this.txtHoTen.Location = new System.Drawing.Point(711, 2);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(546, 20);
+            this.txtHoTen.TabIndex = 17;
             // 
             // gridCongNhan
             // 
             this.gridCongNhan.EditValue = "";
-            this.gridCongNhan.Location = new System.Drawing.Point(57, 2);
+            this.gridCongNhan.Location = new System.Drawing.Point(432, 2);
             this.gridCongNhan.Name = "gridCongNhan";
             this.gridCongNhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridCongNhan.Properties.PopupView = this.gridView1;
-            this.gridCongNhan.Size = new System.Drawing.Size(133, 20);
+            this.gridCongNhan.Size = new System.Drawing.Size(220, 20);
             this.gridCongNhan.StyleController = this.dataLayoutControl1;
             this.gridCongNhan.TabIndex = 24;
             this.gridCongNhan.EditValueChanged += new System.EventHandler(this.gridCongNhan_EditValueChanged);
@@ -512,439 +944,25 @@
             this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 309;
             // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.gridCongNhan;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(192, 24);
-            this.layoutControlItem8.Text = "Công nhân";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 13);
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.Location = new System.Drawing.Point(249, 2);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(331, 20);
-            this.txtHoTen.TabIndex = 17;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.txtHoTen;
-            this.layoutControlItem9.Location = new System.Drawing.Point(192, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(390, 24);
-            this.layoutControlItem9.Text = "Họ tên";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(52, 13);
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControl2.Location = new System.Drawing.Point(2, 26);
-            this.gridControl2.MainView = this.gridView3;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit2});
-            this.gridControl2.Size = new System.Drawing.Size(1255, 215);
-            this.gridControl2.TabIndex = 11;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView3.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView3.Appearance.Row.Options.UseFont = true;
-            this.gridView3.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView3.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clSTT1,
-            this.clTenVTHH1,
-            this.Ngay1,
-            this.Ngay2,
-            this.Ngay3,
-            this.Ngay4,
-            this.Ngay5,
-            this.Ngay6,
-            this.Ngay7,
-            this.Ngay8,
-            this.Ngay9,
-            this.Ngay10,
-            this.Ngay11,
-            this.Ngay12,
-            this.Ngay13,
-            this.Ngay14,
-            this.Ngay15,
-            this.Ngay16,
-            this.Ngay17,
-            this.Ngay18,
-            this.Ngay19,
-            this.Ngay20,
-            this.Ngay21,
-            this.Ngay22,
-            this.Ngay23,
-            this.Ngay24,
-            this.Ngay25,
-            this.Ngay26,
-            this.Ngay27,
-            this.Ngay28,
-            this.Ngay29,
-            this.Ngay30,
-            this.Ngay31,
-            this.clTong});
-            this.gridView3.GridControl = this.gridControl2;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.AllowHtmlDrawHeaders = true;
-            this.gridView3.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
-            this.gridView3.OptionsView.RowAutoHeight = true;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // clSTT1
-            // 
-            this.clSTT1.AppearanceCell.Options.UseTextOptions = true;
-            this.clSTT1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSTT1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clSTT1.Caption = "TT";
-            this.clSTT1.FieldName = "STT";
-            this.clSTT1.Name = "clSTT1";
-            this.clSTT1.OptionsColumn.AllowEdit = false;
-            this.clSTT1.OptionsColumn.FixedWidth = true;
-            this.clSTT1.Visible = true;
-            this.clSTT1.VisibleIndex = 0;
-            this.clSTT1.Width = 30;
-            // 
-            // clTenVTHH1
-            // 
-            this.clTenVTHH1.Caption = "Tên hàng";
-            this.clTenVTHH1.ColumnEdit = this.repositoryItemMemoEdit2;
-            this.clTenVTHH1.FieldName = "TenVTHH";
-            this.clTenVTHH1.Name = "clTenVTHH1";
-            this.clTenVTHH1.OptionsColumn.AllowEdit = false;
-            this.clTenVTHH1.Visible = true;
-            this.clTenVTHH1.VisibleIndex = 1;
-            this.clTenVTHH1.Width = 109;
-            // 
-            // repositoryItemMemoEdit2
-            // 
-            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
-            // 
-            // Ngay1
-            // 
-            this.Ngay1.Caption = "1";
-            this.Ngay1.Name = "Ngay1";
-            this.Ngay1.OptionsColumn.AllowEdit = false;
-            this.Ngay1.OptionsColumn.FixedWidth = true;
-            this.Ngay1.Visible = true;
-            this.Ngay1.VisibleIndex = 2;
-            this.Ngay1.Width = 33;
-            // 
-            // Ngay2
-            // 
-            this.Ngay2.Caption = "2";
-            this.Ngay2.Name = "Ngay2";
-            this.Ngay2.OptionsColumn.AllowEdit = false;
-            this.Ngay2.OptionsColumn.FixedWidth = true;
-            this.Ngay2.Visible = true;
-            this.Ngay2.VisibleIndex = 3;
-            this.Ngay2.Width = 33;
-            // 
-            // Ngay3
-            // 
-            this.Ngay3.Caption = "3";
-            this.Ngay3.Name = "Ngay3";
-            this.Ngay3.OptionsColumn.AllowEdit = false;
-            this.Ngay3.OptionsColumn.FixedWidth = true;
-            this.Ngay3.Visible = true;
-            this.Ngay3.VisibleIndex = 4;
-            this.Ngay3.Width = 33;
-            // 
-            // Ngay4
-            // 
-            this.Ngay4.Caption = "4";
-            this.Ngay4.Name = "Ngay4";
-            this.Ngay4.OptionsColumn.AllowEdit = false;
-            this.Ngay4.OptionsColumn.FixedWidth = true;
-            this.Ngay4.Visible = true;
-            this.Ngay4.VisibleIndex = 5;
-            this.Ngay4.Width = 33;
-            // 
-            // Ngay5
-            // 
-            this.Ngay5.Caption = "5";
-            this.Ngay5.Name = "Ngay5";
-            this.Ngay5.OptionsColumn.AllowEdit = false;
-            this.Ngay5.OptionsColumn.FixedWidth = true;
-            this.Ngay5.Visible = true;
-            this.Ngay5.VisibleIndex = 6;
-            this.Ngay5.Width = 33;
-            // 
-            // Ngay6
-            // 
-            this.Ngay6.Caption = "6";
-            this.Ngay6.Name = "Ngay6";
-            this.Ngay6.OptionsColumn.AllowEdit = false;
-            this.Ngay6.OptionsColumn.FixedWidth = true;
-            this.Ngay6.Visible = true;
-            this.Ngay6.VisibleIndex = 7;
-            this.Ngay6.Width = 33;
-            // 
-            // Ngay7
-            // 
-            this.Ngay7.Caption = "7";
-            this.Ngay7.Name = "Ngay7";
-            this.Ngay7.OptionsColumn.AllowEdit = false;
-            this.Ngay7.OptionsColumn.FixedWidth = true;
-            this.Ngay7.Visible = true;
-            this.Ngay7.VisibleIndex = 8;
-            this.Ngay7.Width = 33;
-            // 
-            // Ngay8
-            // 
-            this.Ngay8.Caption = "8";
-            this.Ngay8.Name = "Ngay8";
-            this.Ngay8.OptionsColumn.AllowEdit = false;
-            this.Ngay8.OptionsColumn.FixedWidth = true;
-            this.Ngay8.Visible = true;
-            this.Ngay8.VisibleIndex = 9;
-            this.Ngay8.Width = 33;
-            // 
-            // Ngay9
-            // 
-            this.Ngay9.Caption = "9";
-            this.Ngay9.Name = "Ngay9";
-            this.Ngay9.OptionsColumn.AllowEdit = false;
-            this.Ngay9.OptionsColumn.FixedWidth = true;
-            this.Ngay9.Visible = true;
-            this.Ngay9.VisibleIndex = 10;
-            this.Ngay9.Width = 33;
-            // 
-            // Ngay10
-            // 
-            this.Ngay10.Caption = "10";
-            this.Ngay10.Name = "Ngay10";
-            this.Ngay10.OptionsColumn.AllowEdit = false;
-            this.Ngay10.OptionsColumn.FixedWidth = true;
-            this.Ngay10.Visible = true;
-            this.Ngay10.VisibleIndex = 11;
-            this.Ngay10.Width = 33;
-            // 
-            // Ngay11
-            // 
-            this.Ngay11.Caption = "11";
-            this.Ngay11.Name = "Ngay11";
-            this.Ngay11.OptionsColumn.AllowEdit = false;
-            this.Ngay11.OptionsColumn.FixedWidth = true;
-            this.Ngay11.Visible = true;
-            this.Ngay11.VisibleIndex = 12;
-            this.Ngay11.Width = 33;
-            // 
-            // Ngay12
-            // 
-            this.Ngay12.Caption = "12";
-            this.Ngay12.Name = "Ngay12";
-            this.Ngay12.OptionsColumn.AllowEdit = false;
-            this.Ngay12.OptionsColumn.FixedWidth = true;
-            this.Ngay12.Visible = true;
-            this.Ngay12.VisibleIndex = 13;
-            this.Ngay12.Width = 33;
-            // 
-            // Ngay13
-            // 
-            this.Ngay13.Caption = "13";
-            this.Ngay13.Name = "Ngay13";
-            this.Ngay13.OptionsColumn.AllowEdit = false;
-            this.Ngay13.OptionsColumn.FixedWidth = true;
-            this.Ngay13.Visible = true;
-            this.Ngay13.VisibleIndex = 14;
-            this.Ngay13.Width = 33;
-            // 
-            // Ngay14
-            // 
-            this.Ngay14.Caption = "14";
-            this.Ngay14.Name = "Ngay14";
-            this.Ngay14.OptionsColumn.AllowEdit = false;
-            this.Ngay14.OptionsColumn.FixedWidth = true;
-            this.Ngay14.Visible = true;
-            this.Ngay14.VisibleIndex = 15;
-            this.Ngay14.Width = 33;
-            // 
-            // Ngay15
-            // 
-            this.Ngay15.Caption = "15";
-            this.Ngay15.Name = "Ngay15";
-            this.Ngay15.OptionsColumn.AllowEdit = false;
-            this.Ngay15.OptionsColumn.FixedWidth = true;
-            this.Ngay15.Visible = true;
-            this.Ngay15.VisibleIndex = 16;
-            this.Ngay15.Width = 33;
-            // 
-            // Ngay16
-            // 
-            this.Ngay16.Caption = "16";
-            this.Ngay16.Name = "Ngay16";
-            this.Ngay16.OptionsColumn.AllowEdit = false;
-            this.Ngay16.OptionsColumn.FixedWidth = true;
-            this.Ngay16.Visible = true;
-            this.Ngay16.VisibleIndex = 17;
-            this.Ngay16.Width = 33;
-            // 
-            // Ngay17
-            // 
-            this.Ngay17.Caption = "17";
-            this.Ngay17.Name = "Ngay17";
-            this.Ngay17.OptionsColumn.AllowEdit = false;
-            this.Ngay17.OptionsColumn.FixedWidth = true;
-            this.Ngay17.Visible = true;
-            this.Ngay17.VisibleIndex = 18;
-            this.Ngay17.Width = 33;
-            // 
-            // Ngay18
-            // 
-            this.Ngay18.Caption = "18";
-            this.Ngay18.Name = "Ngay18";
-            this.Ngay18.OptionsColumn.AllowEdit = false;
-            this.Ngay18.OptionsColumn.FixedWidth = true;
-            this.Ngay18.Visible = true;
-            this.Ngay18.VisibleIndex = 19;
-            this.Ngay18.Width = 33;
-            // 
-            // Ngay19
-            // 
-            this.Ngay19.Caption = "19";
-            this.Ngay19.Name = "Ngay19";
-            this.Ngay19.OptionsColumn.AllowEdit = false;
-            this.Ngay19.OptionsColumn.FixedWidth = true;
-            this.Ngay19.Visible = true;
-            this.Ngay19.VisibleIndex = 20;
-            this.Ngay19.Width = 33;
-            // 
-            // Ngay20
-            // 
-            this.Ngay20.Caption = "20";
-            this.Ngay20.Name = "Ngay20";
-            this.Ngay20.OptionsColumn.AllowEdit = false;
-            this.Ngay20.OptionsColumn.FixedWidth = true;
-            this.Ngay20.Visible = true;
-            this.Ngay20.VisibleIndex = 21;
-            this.Ngay20.Width = 33;
-            // 
-            // Ngay21
-            // 
-            this.Ngay21.Caption = "21";
-            this.Ngay21.Name = "Ngay21";
-            this.Ngay21.OptionsColumn.AllowEdit = false;
-            this.Ngay21.OptionsColumn.FixedWidth = true;
-            this.Ngay21.Visible = true;
-            this.Ngay21.VisibleIndex = 22;
-            this.Ngay21.Width = 33;
-            // 
-            // Ngay22
-            // 
-            this.Ngay22.Caption = "22";
-            this.Ngay22.Name = "Ngay22";
-            this.Ngay22.OptionsColumn.AllowEdit = false;
-            this.Ngay22.OptionsColumn.FixedWidth = true;
-            this.Ngay22.Visible = true;
-            this.Ngay22.VisibleIndex = 23;
-            this.Ngay22.Width = 33;
-            // 
-            // Ngay23
-            // 
-            this.Ngay23.Caption = "23";
-            this.Ngay23.Name = "Ngay23";
-            this.Ngay23.OptionsColumn.AllowEdit = false;
-            this.Ngay23.OptionsColumn.FixedWidth = true;
-            this.Ngay23.Visible = true;
-            this.Ngay23.VisibleIndex = 24;
-            this.Ngay23.Width = 33;
-            // 
-            // Ngay24
-            // 
-            this.Ngay24.Caption = "24";
-            this.Ngay24.Name = "Ngay24";
-            this.Ngay24.OptionsColumn.AllowEdit = false;
-            this.Ngay24.OptionsColumn.FixedWidth = true;
-            this.Ngay24.Visible = true;
-            this.Ngay24.VisibleIndex = 25;
-            this.Ngay24.Width = 33;
-            // 
-            // Ngay25
-            // 
-            this.Ngay25.Caption = "25";
-            this.Ngay25.Name = "Ngay25";
-            this.Ngay25.OptionsColumn.AllowEdit = false;
-            this.Ngay25.OptionsColumn.FixedWidth = true;
-            this.Ngay25.Visible = true;
-            this.Ngay25.VisibleIndex = 26;
-            this.Ngay25.Width = 33;
-            // 
-            // Ngay26
-            // 
-            this.Ngay26.Caption = "26";
-            this.Ngay26.Name = "Ngay26";
-            this.Ngay26.OptionsColumn.AllowEdit = false;
-            this.Ngay26.OptionsColumn.FixedWidth = true;
-            this.Ngay26.Visible = true;
-            this.Ngay26.VisibleIndex = 27;
-            this.Ngay26.Width = 33;
-            // 
-            // Ngay27
-            // 
-            this.Ngay27.Caption = "27";
-            this.Ngay27.Name = "Ngay27";
-            this.Ngay27.OptionsColumn.AllowEdit = false;
-            this.Ngay27.OptionsColumn.FixedWidth = true;
-            this.Ngay27.Visible = true;
-            this.Ngay27.VisibleIndex = 28;
-            this.Ngay27.Width = 33;
-            // 
-            // Ngay28
-            // 
-            this.Ngay28.Caption = "28";
-            this.Ngay28.Name = "Ngay28";
-            this.Ngay28.OptionsColumn.AllowEdit = false;
-            this.Ngay28.OptionsColumn.FixedWidth = true;
-            this.Ngay28.Visible = true;
-            this.Ngay28.VisibleIndex = 29;
-            this.Ngay28.Width = 33;
-            // 
-            // Ngay29
-            // 
-            this.Ngay29.Caption = "29";
-            this.Ngay29.Name = "Ngay29";
-            this.Ngay29.OptionsColumn.AllowEdit = false;
-            this.Ngay29.OptionsColumn.FixedWidth = true;
-            this.Ngay29.Visible = true;
-            this.Ngay29.VisibleIndex = 30;
-            this.Ngay29.Width = 33;
-            // 
-            // Ngay30
-            // 
-            this.Ngay30.Caption = "30";
-            this.Ngay30.Name = "Ngay30";
-            this.Ngay30.OptionsColumn.AllowEdit = false;
-            this.Ngay30.OptionsColumn.FixedWidth = true;
-            this.Ngay30.Visible = true;
-            this.Ngay30.VisibleIndex = 31;
-            this.Ngay30.Width = 33;
-            // 
-            // Ngay31
-            // 
-            this.Ngay31.Caption = "31";
-            this.Ngay31.Name = "Ngay31";
-            this.Ngay31.OptionsColumn.AllowEdit = false;
-            this.Ngay31.OptionsColumn.FixedWidth = true;
-            this.Ngay31.Visible = true;
-            this.Ngay31.VisibleIndex = 32;
-            this.Ngay31.Width = 33;
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem10,
+            this.layoutControlItem2,
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.emptySpaceItem1,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1259, 500);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem10
             // 
@@ -990,42 +1008,41 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(1048, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // dteTuNgay
+            // layoutControlItem8
             // 
-            this.dteTuNgay.EditValue = null;
-            this.dteTuNgay.Location = new System.Drawing.Point(639, 2);
-            this.dteTuNgay.Name = "dteTuNgay";
-            this.dteTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteTuNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteTuNgay.Size = new System.Drawing.Size(325, 20);
-            this.dteTuNgay.StyleController = this.dataLayoutControl1;
-            this.dteTuNgay.TabIndex = 111;
+            this.layoutControlItem8.Control = this.gridCongNhan;
+            this.layoutControlItem8.Location = new System.Drawing.Point(375, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(279, 24);
+            this.layoutControlItem8.Text = "Công nhân";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 13);
             // 
-            // layoutControlItem3
+            // layoutControlItem9
             // 
-            this.layoutControlItem3.Control = this.dteTuNgay;
-            this.layoutControlItem3.Location = new System.Drawing.Point(582, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(384, 24);
-            this.layoutControlItem3.Text = "Từ ngày";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(52, 13);
+            this.layoutControlItem9.Control = this.txtHoTen;
+            this.layoutControlItem9.Location = new System.Drawing.Point(654, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(605, 24);
+            this.layoutControlItem9.Text = "Họ tên";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(52, 13);
             // 
-            // clTong
+            // layoutControlItem4
             // 
-            this.clTong.Caption = "Tổng";
-            this.clTong.Name = "clTong";
-            this.clTong.OptionsColumn.AllowEdit = false;
-            this.clTong.OptionsColumn.FixedWidth = true;
-            this.clTong.Visible = true;
-            this.clTong.VisibleIndex = 33;
-            this.clTong.Width = 50;
+            this.layoutControlItem4.Control = this.txtThang;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(169, 24);
+            this.layoutControlItem4.Text = "Tháng";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtNam;
+            this.layoutControlItem5.Location = new System.Drawing.Point(169, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(206, 24);
+            this.layoutControlItem5.Text = "Năm";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(52, 13);
             // 
             // SanLuong_ChiTiet_Luong
             // 
@@ -1040,29 +1057,25 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memohoten)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCongNhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1090,9 +1103,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clThanhTien;
         private DevExpress.XtraGrid.Columns.GridColumn clMaVT;
         private DevExpress.XtraGrid.Columns.GridColumn clDonViTinh;
-        private DevExpress.XtraEditors.DateEdit dteDenNgay;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.GridLookUpEdit gridCongNhan;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn clID_NhanSu;
@@ -1137,13 +1148,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn Ngay29;
         private DevExpress.XtraGrid.Columns.GridColumn Ngay30;
         private DevExpress.XtraGrid.Columns.GridColumn Ngay31;
-        private DevExpress.XtraEditors.DateEdit dteTuNgay;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraGrid.Columns.GridColumn clTong;
+        private System.Windows.Forms.TextBox txtNam;
+        private System.Windows.Forms.TextBox txtThang;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
