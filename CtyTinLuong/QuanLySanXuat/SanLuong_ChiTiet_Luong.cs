@@ -207,7 +207,7 @@ namespace CtyTinLuong
                  
             } 
 
-            ngaydauthang = ngaydauthang.AddDays(1);
+          //  ngaydauthang = ngaydauthang.AddDays(1);
           
 
             //for (int i = 0; i < days; i++)
@@ -238,7 +238,7 @@ namespace CtyTinLuong
             //    ngaydauthang = ngaydauthang.AddDays(1);
             //}
             gridControl2.DataSource = dt2;
-            ngaydauthang= GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+            //ngaydauthang= GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
         }
 
 
