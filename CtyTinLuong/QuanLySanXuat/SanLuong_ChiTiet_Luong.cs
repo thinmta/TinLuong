@@ -53,6 +53,7 @@ namespace CtyTinLuong
         }
         public void LoadData_Thin()
         {
+            //
            
                 DateTime dtnow = DateTime.Now;
               
