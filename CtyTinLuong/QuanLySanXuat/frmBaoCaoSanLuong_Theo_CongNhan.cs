@@ -153,15 +153,7 @@ namespace CtyTinLuong
 
         private void gridView2_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString() != "")
-            {
-                miID_CongNhan = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_CongNhan).ToString());
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
-                ff.Show();
-
-            }
+           
         }
 
         private void btPrint_Click(object sender, EventArgs e)
@@ -235,6 +227,19 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT1)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString() != "")
+            {
+                miID_CongNhan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
+                ff.Show();
+
+            }
         }
 
         public frmBaoCaoSanLuong_Theo_CongNhan()
